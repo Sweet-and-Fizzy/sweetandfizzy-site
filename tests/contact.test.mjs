@@ -42,3 +42,9 @@ test('status messages live in polite and alert regions', { skip: !built }, () =>
   assert.match(html(), /aria-live="polite"/);
   assert.match(html(), /role="alert"/);
 });
+
+test('the form keeps native validation for visitors without JavaScript', { skip: !built }, () => {
+  const form = html().match(/<form[^>]*name="contact"[^>]*>/)[0];
+  assert.equal(/novalidate/i.test(form), false);
+  assert.match(html(), /<input[^>]*name="email"[^>]*required|<input[^>]*required[^>]*name="email"/);
+});

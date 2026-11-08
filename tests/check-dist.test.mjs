@@ -32,3 +32,20 @@ test('built homepage never hides content with inline opacity:0', { skip: !exists
 test('findPlaceholders also catches placeholders in href and src attributes', () => {
   assert.deepEqual(findPlaceholders('<a href="[BOOKING LINK]">Book</a>'), ['[BOOKING LINK]']);
 });
+
+test('findPlaceholders scans every attribute, not only href and src', () => {
+  assert.deepEqual(findPlaceholders('<img alt="[PHOTO of Andrew]"><meta content="[DESC]"><b aria-label="[LABEL]"></b><a href="mailto:[EMAIL]">x</a>'),
+    ['[PHOTO of Andrew]', '[DESC]', '[LABEL]', '[EMAIL]']);
+});
+
+test('findPlaceholders scans JSON-LD scripts', () => {
+  assert.deepEqual(findPlaceholders('<script type="application/ld+json">{"name":"[NAME]"}</script>'), ['[NAME]']);
+});
+
+test('findPlaceholders catches a placeholder that wraps across lines', () => {
+  assert.deepEqual(findPlaceholders('<p>[Two sentences on\nthe community.]</p>'), ['[Two sentences on the community.]']);
+});
+
+test('findPlaceholders catches a placeholder wrapped around inline markup', () => {
+  assert.deepEqual(findPlaceholders('<p>[<strong>N</strong>]</p>'), ['[N]']);
+});

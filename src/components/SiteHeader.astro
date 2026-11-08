@@ -30,16 +30,23 @@ const current = (href: string) => (path === href ? 'page' : undefined);
 <script>
   const btn = document.querySelector<HTMLButtonElement>('.menu-btn');
   const nav = document.getElementById('main-nav');
-  const dd = document.querySelector<HTMLButtonElement>('.dd-t');
-  const setOpen = (open: boolean) => {
+  const dd = document.querySelector<HTMLElement>('.dd');
+  const ddBtn = dd?.querySelector<HTMLButtonElement>('.dd-t');
+  const setMenu = (open: boolean) => {
     btn?.setAttribute('aria-expanded', String(open));
     nav?.classList.toggle('open', open);
   };
-  btn?.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
-  dd?.addEventListener('click', () => dd.setAttribute('aria-expanded', String(dd.getAttribute('aria-expanded') !== 'true')));
+  const setDd = (open: boolean) => ddBtn?.setAttribute('aria-expanded', String(open));
+  btn?.addEventListener('click', () => setMenu(btn.getAttribute('aria-expanded') !== 'true'));
+  ddBtn?.addEventListener('click', () => setDd(ddBtn.getAttribute('aria-expanded') !== 'true'));
+  dd?.addEventListener('focusout', (e) => { if (!dd.contains(e.relatedTarget as Node)) setDd(false); });
+  dd?.addEventListener('mouseleave', () => dd.classList.remove('esc'));
+  document.addEventListener('click', (e) => { if (dd && !dd.contains(e.target as Node)) setDd(false); });
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
-    if (btn?.getAttribute('aria-expanded') === 'true') { setOpen(false); btn.focus(); }
-    if (dd?.getAttribute('aria-expanded') === 'true') { dd.setAttribute('aria-expanded', 'false'); dd.focus(); }
+    if (ddBtn && (ddBtn.getAttribute('aria-expanded') === 'true' || dd?.matches(':hover'))) {
+      setDd(false); dd?.classList.add('esc'); ddBtn.focus(); return;
+    }
+    if (btn?.getAttribute('aria-expanded') === 'true') { setMenu(false); btn.focus(); }
   });
 </script>

@@ -146,10 +146,11 @@ a.mc:hover .ar2{background:var(--accent);transform:translateX(3px)}
 .dd{position:relative;z-index:50}
 .dd-t{display:inline-flex;align-items:center;gap:6px;background:none;border:0;border-bottom:3px solid transparent;padding:6px 0;margin:0;font:inherit;font-size:16px;font-weight:700;color:#111111;cursor:pointer}
 .dd-t svg{transition:transform .15s ease}
-.dd:hover .dd-t,.dd:focus-within .dd-t,.dd-t.on{border-bottom-color:#fcee21}
-.dd:hover .dd-t svg,.dd:focus-within .dd-t svg{transform:rotate(180deg)}
+.dd:not(.esc):hover .dd-t,.dd-t[aria-expanded=true],.dd-t.on{border-bottom-color:#fcee21}
+.dd:not(.esc):hover .dd-t svg,.dd-t[aria-expanded=true] svg{transform:rotate(180deg)}
 .dd-m{display:none;position:absolute;top:100%;left:-20px;min-width:280px;padding:8px 0;background:#ffffff;border:1px solid #d6d6d6;border-top:4px solid #5abdff;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.dd:hover .dd-m,.dd:focus-within .dd-m{display:flex;flex-direction:column}
+/* Shown by mouse hover or by the button's aria-expanded; Escape suppresses hover until the pointer leaves. */
+.dd:not(.esc):hover .dd-m{display:flex;flex-direction:column}
 .nav .dd-m a:not(.btn){padding:12px 20px;border-bottom:0;border-left:4px solid transparent}
 .nav .dd-m a:not(.btn):hover,.nav .dd-m a[aria-current=page]{border-left-color:#fcee21;background:#f4f4f4}
 @media (prefers-reduced-motion:reduce){.dd-t svg{transition:none}}
@@ -181,7 +182,7 @@ a.mc:hover .ar2{background:var(--accent);transform:translateX(3px)}
   html.js .nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:4px solid var(--blue);box-shadow:0 12px 24px rgba(0,0,0,.08);flex-direction:column;align-items:stretch;gap:0;padding:8px var(--gutter) 20px}
   html.js .nav.open{display:flex}
   html.js .nav a:not(.btn),html.js .nav .dd-m a:not(.btn){padding:12px 0;border-bottom:1px solid var(--hairline);border-left:0}
-  html.js .nav .btn{display:none}
+  html.js .nav .btn{margin-top:16px;width:100%;justify-content:center}
 }
 @media (max-width:420px){html.js .nav-cta-mobile{display:none}}
 

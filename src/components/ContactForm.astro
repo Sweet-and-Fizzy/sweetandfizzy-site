@@ -3,7 +3,7 @@ import { contact } from '../data/contact';
 import { site } from '../data/site';
 import Icon from './Icon.astro';
 ---
-<form name="contact" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company_url" class="cf" novalidate>
+<form name="contact" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company_url" class="cf">
   <input type="hidden" name="form-name" value="contact" />
   <p class="hp" aria-hidden="true"><label for="cf-hp">Leave this empty</label><input id="cf-hp" name="company_url" tabindex="-1" autocomplete="off" /></p>
 
@@ -62,6 +62,7 @@ import Icon from './Icon.astro';
   const error = document.getElementById('cf-error')!;
   const done = document.getElementById('cf-done')!;
 
+  form.noValidate = true; // the script validates with clearer messages; without JS the browser does
   const pre = audienceFromQuery(location.search);
   if (pre) select.value = pre;
   const sync = () => {

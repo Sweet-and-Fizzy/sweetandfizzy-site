@@ -5,14 +5,20 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const PLACEHOLDER = /\[[A-Z][^\]\n<>]{0,120}\]/g;
+// A placeholder is a bracket that opens on a capital letter: [CITY], [N%],
+// [Two sentences on the community.]. It may wrap across lines.
+const PLACEHOLDER = /\[[A-Z][^\][<>]{0,200}\]/g;
+const tidy = (m) => m.replace(/\s+/g, ' ');
 
 export function findPlaceholders(html) {
-  const text = html
-    .replace(/<(script|style|code|pre)\b[^>]*>[\s\S]*?<\/\1>/gi, '')
-    .replace(/<[^>]+>/g, ' ');
-  const attrs = [...html.matchAll(/\b(?:href|src)="(\[[A-Z][^"\]]*\])"/g)].map((m) => m[1]);
-  return [...attrs, ...(text.match(PLACEHOLDER) || [])].filter((m) => !/\]\(/.test(m));
+  // JSON-LD is page copy too; other scripts, styles and code samples are not.
+  const ld = [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)].map((m) => m[1]);
+  const markup = html.replace(/<(script|style|code|pre)\b[^>]*>[\s\S]*?<\/\1>/gi, '');
+  // Every attribute value (alt, content, aria-label, href, ...).
+  const attrs = [...markup.matchAll(/\s[\w:-]+="([^"]*)"/g)].flatMap((m) => m[1].match(PLACEHOLDER) || []);
+  // Visible text, with inline tags removed so [<strong>N</strong>] reads [N].
+  const text = markup.replace(/<[^>]+>/g, '');
+  return [...attrs, ...(text.match(PLACEHOLDER) || []), ...ld.flatMap((j) => j.match(PLACEHOLDER) || [])].map(tidy);
 }
 
 function targetExists(path, files) {
