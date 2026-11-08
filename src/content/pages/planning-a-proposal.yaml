@@ -50,4 +50,3 @@ cta:
   body: "Send the solicitation, your deadline and a few lines about your idea. We will reply within two days with how we can help."
   button: Talk to us
   href: /contact/?audience=proposal
-  secondary: { label: See Connect.CI membership, href: /connect-ci/#membership }

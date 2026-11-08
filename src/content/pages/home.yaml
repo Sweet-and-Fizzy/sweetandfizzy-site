@@ -7,7 +7,7 @@ hero:
   lead: "And we bring the same care to startups and to organizations with a story to tell."
   doors:
     - { n: "01", href: "#research", color: blue, title: Research computing, text: "Community platforms and AI tools that connect researchers to people, answers and computing." }
-    - { n: "02", href: "#startups", color: orange, title: Quickstart your Startup, text: "Prototypes, strategy, branding and custom software to get your business off the ground." }
+    - { n: "02", href: "#startups", color: orange, title: Startups, text: "Discovery sprints, product design and software to get your idea off the ground." }
     - { n: "03", href: "#websites", color: yellow, title: Websites & branding, text: "Websites, logos and brands for organizations with a story to tell, kept fast and safe after launch." }
 areas:
   - id: research
@@ -84,7 +84,7 @@ areas:
     more:
       - { name: Molly B. Burnham, line: A playful site for a children’s book author, image: ../../assets/home/burnham.jpg }
       - { name: AroundHere.Live, line: "Live music listings for the Pioneer Valley, where fans follow artists and venues and get notified about shows", image: ../../assets/home/aroundhere.jpg }
-      - { name: Museums, line: "Ziibiwing Center, Chicago History Museum, Sioux City museum, horse museum project", image: ../../assets/home/museums.jpg }
+      - { name: Museums, line: "Work for museums including the Ziibiwing Center and the Chicago History Museum", image: ../../assets/home/museums.jpg }
 principles:
   title: How we build
   lead: We use AI thoughtfully, with every change reviewed by a person.

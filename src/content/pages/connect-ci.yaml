@@ -97,7 +97,7 @@ papers:
   title: Papers
   lead: "How the platform was built and how it stays funded, peer reviewed."
   items:
-    - { venue: PEARC 2026, title: "The Connect.CI Portal: Building and Sustaining a Cyberinfrastructure Community Platform", authors: "J. Ma, L. Fein, A. Pasquale, V. Gazula, K. Brandt, D. Chakravorty, A. Chalker, W. Figurelle, A. Sherman, F. Ghahramani", doi: 10.1145/3785462.3815904 }
+    - { venue: PEARC 2026, title: "The Connect.CI Portal: Building and Sustaining a Cyberinfrastructure Community Platform", authors: "J. Ma, L. Fein, V. Gazula, A. Pasquale, K. Brandt, D. Chakravorty, A. Chalker, W. Figurelle, M. France, F. Ghahramani, A. Sherman", doi: 10.1145/3785462.3815904 }
     - { venue: "PEARC 2021 · Best short paper", title: The Connect.Cyberinfrastructure Portal, authors: "J. Ma et al. The platform's origins as the Northeast Cyberteam portal and its first expansion.", doi: 10.1145/3437359.3465606 }
 supporters:
   title: Development supported by

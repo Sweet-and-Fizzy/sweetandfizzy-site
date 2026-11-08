@@ -7,7 +7,7 @@ hero:
   title: From answering questions to submitting jobs.
   body: "We build AI assistants and agents for research computing programs. They answer from your documentation, read live data from your systems, and act for a user with that user's own permissions. We test them against questions your staff write, so you know how well they work before your users rely on them."
   primary: { label: Plan a program partnership, href: /contact/?audience=program }
-  secondary: { label: Read about the HUST paper, href: "#paper" }
+  secondary: { label: Read about our SC26 paper, href: "#paper" }
   art: agents
 sections:
   - kind: cards
@@ -20,7 +20,7 @@ sections:
   - kind: rows
     title: Work in production
     items:
-      - { title: ACCESS support agent, text: "One agent that answers ACCESS documentation questions and live questions in the same conversation, like which GPU resources are available or what is down for maintenance. It draws on 11 MCP servers covering allocations, compute resources, system status, events, announcements, software, affinity groups, NSF awards, usage metrics and ticketing. Supported by NSF award 2138286 under the ACCESS program.", link: { label: Read the case story, href: /work/access-ai-assistant/ }, image: { src: ../../assets/work/access-ai-registration.jpg, alt: "The ACCESS support agent explaining an event registration, with a side pane waiting for the researcher to confirm" } }
+      - { title: ACCESS AI Assistant, text: "One agent that answers ACCESS documentation questions and live questions in the same conversation, like which GPU resources are available or what is down for maintenance. It draws on 11 live data servers covering allocations, compute resources, system status, events, announcements, software, affinity groups, NSF awards, usage charts, usage data and ticketing. Supported by NSF award 2138286 under the ACCESS program.", link: { label: Read the case story, href: /work/access-ai-assistant/ }, image: { src: ../../assets/work/access-ai-registration.jpg, alt: "The ACCESS AI Assistant explaining an event registration, with a side pane waiting for the researcher to confirm" } }
       - { title: ACCESS MCP servers, text: "Public MCP servers for the ACCESS program, hosted at mcp.access-ci.org. Anyone can add one to Claude and ask about ACCESS resources in plain language.", link: { label: See the setup guide, href: "https://mcp.access-ci.org/docs/getting-started" }, image: { src: ../../assets/work/access-ai-events-answer.jpg, alt: "The ACCESS Assistant listing an upcoming GPU programming course, read live from the ACCESS events server" } }
       - { title: OOD API for Open OnDemand, text: "An Open OnDemand app that lets researchers and their AI assistants submit jobs, manage files and check on their cluster without a terminal. Every request runs as the signed-in user, inside the permission model Open OnDemand already has. Site operators set local policy in a plain text file that every AI client reads before acting. It is early software.", link: { label: See the code, href: "https://github.com/Sweet-and-Fizzy/ood-api" }, image: { src: ../../assets/home/ood-api.jpg, alt: "The OOD API README, listing what researchers, lab pipelines, CI runners and site operators can do with it" } }
       - { title: Appverse review assistant, text: "A Claude Code plugin that reviews app submissions to the Open OnDemand Appverse for structure, security, quality and maintenance. It produces an evidence-backed report and a draft reply, and a human reviewer decides.", link: { label: See the code, href: "https://github.com/Sweet-and-Fizzy/appverse-review" }, image: { src: ../../assets/work/appverse-review-report.jpg, alt: "An Appverse review report, opening with repository details and required criteria marked PASS with evidence" } }
@@ -28,10 +28,10 @@ sections:
     dark: true
     title: How we keep it trustworthy
     items:
-      - { title: "Tested against your questions.", text: "Before an agent ships, it is graded on questions your staff write, fact by fact, and checked again with every change." }
-      - { title: "The user's own permissions.", text: "Agents act as the signed-in person, so they can never see or do more than that person can." }
+      - { title: "Tested against your questions.", text: "Before an agent ships, it is graded on questions your staff write, fact by fact, and checked again before each release." }
+      - { title: "The user's own permissions.", text: "Agents work with the signed-in person's own permissions, so they cannot reach anything that person cannot." }
       - { title: "Guardrails on anything risky.", text: "Access limited to what the task needs, sensitive files blocked, every action logged, and a clear warning before anything that cannot be undone." }
-      - { title: "People make the call.", text: "Agents explain what they would do and wait for a person to confirm. Reviews and recommendations go to a person to decide." }
+      - { title: "People make the call.", text: "Before an agent changes something that matters, it explains what it will do and waits for a person to confirm. Reviews and recommendations go to a person to decide." }
       - { title: "Open, with your choice of model.", text: "The code is public, so your program does not depend on us, and agents can run on open models hosted by a partner institution or on commercial models." }
   - kind: steps
     title: How an engagement runs
@@ -44,7 +44,7 @@ sections:
   - kind: paper
     id: paper
     title: Paper
-    paper: { venue: "HUST workshop at SC26 · November 2026", title: "From Answering to Acting: An AI Agent for Research Computing User Support", authors: "A. Pasquale, V. Gazula, J. E. Bacal", summary: "How the ACCESS support agent combines documentation search with live data from MCP servers, and how we test its answers." }
+    paper: { venue: "HUST workshop at SC26 · Accepted, November 2026", title: "From Answering to Acting: An AI Agent for Research Computing User Support", authors: "A. Pasquale, V. Gazula, J. E. Bacal", summary: "How the ACCESS AI Assistant combines documentation search with live data from MCP servers, and how we test its answers." }
 cta:
   title: Bring AI to your users, carefully.
   body: "Tell us what your users ask most and where your data lives. We can start with a discovery sprint, or write the work into your next proposal."

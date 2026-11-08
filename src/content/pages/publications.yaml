@@ -6,23 +6,23 @@ hero:
   title: Papers and writing
   body: "We publish what we build with the research computing community, so programs can see how the work holds up. These papers cover the platforms, catalogs and AI tools we build and run with our partners."
 stats:
-  - { n: "5", label: peer-reviewed papers we wrote }
+  - { n: "5", label: peer-reviewed papers we co-authored }
   - { n: "1", label: best paper award }
   - { n: "3", label: "venues: SC, PEARC and JOCSE" }
-note: "Newest first within each group. Sweet & Fizzy authors are Andrew Pasquale, Lissie Fein and Joe Bacal."
+note: "Newest first within each group. Sweet & Fizzy authors are Andrew Pasquale, Lissie Fein, Joe Bacal and Miles France."
 groups:
   - title: AI agents
     color: yellow
     blurb: An agent that answers ACCESS support questions from docs and live system data.
     link: { label: Case study, href: /work/access-ai-assistant/ }
     papers:
-      - { venue: "HUST workshop at SC26 · November 2026", title: "From Answering to Acting: An AI Agent for Research Computing User Support", authors: "A. Pasquale, V. Gazula, J. E. Bacal", summary: "How the ACCESS support agent combines documentation search with live data from MCP servers, and how we test its answers." }
+      - { venue: "HUST workshop at SC26 · Accepted, November 2026", title: "From Answering to Acting: An AI Agent for Research Computing User Support", authors: "A. Pasquale, V. Gazula, J. E. Bacal", summary: "How the ACCESS AI Assistant combines documentation search with live data from MCP servers, and how we test its answers." }
   - title: Connect.CI
     color: blue
     blurb: The community platform shared by 13 research computing communities.
     link: { label: About Connect.CI, href: /connect-ci/ }
     papers:
-      - { venue: PEARC 2026, title: "The Connect.CI Portal: Building and Sustaining a Cyberinfrastructure Community Platform", authors: "J. Ma, L. Fein, A. Pasquale, V. Gazula, K. Brandt, D. Chakravorty, A. Chalker, W. Figurelle, A. Sherman, F. Ghahramani", summary: "How one shared platform came to serve 13 research computing communities, and how it is sustained.", doi: 10.1145/3785462.3815904 }
+      - { venue: PEARC 2026, title: "The Connect.CI Portal: Building and Sustaining a Cyberinfrastructure Community Platform", authors: "J. Ma, L. Fein, V. Gazula, A. Pasquale, K. Brandt, D. Chakravorty, A. Chalker, W. Figurelle, M. France, F. Ghahramani, A. Sherman", summary: "How one shared platform came to serve 13 research computing communities, and how it is sustained.", doi: 10.1145/3785462.3815904 }
       - { venue: "PEARC 2021 · Best Short Paper, Workforce Development track", title: The Connect.Cyberinfrastructure Portal, authors: J. Ma and 30 others, summary: "The origins of the platform we now develop and run, as the Northeast Cyberteam portal and its first expansion. We were not authors on this paper.", doi: 10.1145/3437359.3465606 }
   - title: Open OnDemand
     color: orange
