@@ -20,7 +20,7 @@ sections:
     lead: Ready to paste. Ask and we send the current versions within two days.
     items:
       - { title: Facilities paragraph., text: "Our development and hosting capacity, written as a facilities section: managed hosting for the Connect.CI platform, automated testing on every change, daily database and file backups, and open source code on GitHub." }
-      - { title: Budget justification text., text: "Contractual services lines at our $150 blended rate, in the NSF budget justification format." }
+      - { title: Budget justification text., text: "Contractual services lines with our current rates, in the NSF budget justification format." }
       - { title: Letter of collaboration., text: "NSF's one-sentence format: \"If the proposal submitted by Dr. (PI name) entitled (proposal title) is selected for funding by NSF, it is my intent to collaborate and/or commit resources as detailed in the Project Description or the Facilities, Equipment or Other Resources section of the proposal.\"" }
       - { title: Lead time., text: "Six to eight weeks before the deadline for co-writing or full drafting, two to three weeks for our sections." }
   - kind: cards
