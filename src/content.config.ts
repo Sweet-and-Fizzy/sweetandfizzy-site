@@ -63,4 +63,40 @@ const home = defineCollection({
   },
 });
 
-export const collections = { work, home };
+const cta = z.object({ title: z.string(), body: z.string(), button: z.string() });
+const paper = z.object({ venue: z.string(), title: z.string(), authors: z.string(), summary: z.string().optional(), doi: z.string().optional() });
+const titled = <T extends z.ZodTypeAny>(item: T) => z.object({ title: z.string(), lead: z.string().optional(), items: z.array(item) });
+
+const connectci = defineCollection({
+  loader: glob({ pattern: 'connect-ci.yaml', base: './src/content/pages' }),
+  schema: ({ image }) => z.object({
+    title: z.string(), description: z.string(),
+    hero: z.object({ eyebrow: z.string(), title: z.string(), body: z.string(), primary: link, secondary: link }),
+    stats: z.array(z.object({ n: z.string(), label: z.string() })),
+    communities: z.object({ title: z.string(), lead: z.string(), link, items: z.array(z.object({ name: z.string(), logo: image().optional(), text: z.string() })) }),
+    features: titled(z.object({ icon: z.string(), title: z.string(), text: z.string() })),
+    help: titled(z.object({ title: z.string(), text: z.string() })),
+    budget: z.object({ title: z.string(), lead: z.string(), steps: z.array(z.object({ n: z.string(), title: z.string(), text: z.string() })) }),
+    owners: z.object({ title: z.string(), body: z.string() }),
+    membership: z.object({ title: z.string(), lead: z.string(), tiers: z.array(z.object({ name: z.string(), who: z.string(), price: z.string(), per: z.string(), items: z.array(z.string()), cta: link })) }),
+    faq: titled(z.object({ q: z.string(), a: z.string() })),
+    papers: titled(paper),
+    supporters: z.string(),
+    cta,
+  }),
+});
+
+const publications = defineCollection({
+  loader: glob({ pattern: 'publications.yaml', base: './src/content/pages' }),
+  schema: z.object({
+    title: z.string(), description: z.string(),
+    hero: z.object({ eyebrow: z.string(), title: z.string(), body: z.string() }),
+    stats: z.array(z.object({ n: z.string(), label: z.string() })),
+    note: z.string(),
+    groups: z.array(z.object({ title: z.string(), color, blurb: z.string(), link, papers: z.array(paper) })),
+    more: z.string(),
+    cta,
+  }),
+});
+
+export const collections = { work, home, connectci, publications };

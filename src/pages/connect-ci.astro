@@ -1,0 +1,188 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Pic from '../components/Pic.astro';
+import Icon from '../components/Icon.astro';
+import PaperCard from '../components/sections/PaperCard.astro';
+import CtaBand from '../components/sections/CtaBand.astro';
+import { featureIcons } from '../data/icons';
+import { md } from '../lib/md';
+
+const c = (await getEntry('connectci', 'connect-ci'))!.data;
+---
+<Base title={c.title} description={c.description}>
+  <section class="page-hero" aria-labelledby="cc-title">
+    <div class="wrap" style="padding-top: 80px; padding-bottom: 64px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+        <div style="flex: 1 1 min(520px, 100%); min-width: 0; display: flex; flex-direction: column; gap: 24px">
+          <p class="eyebrow-xl" style="color: #5abdff; font-family: inherit">{c.hero.eyebrow}</p>
+          <h1 id="cc-title" class="h1-xl">{c.hero.title}</h1>
+          <p style="margin: 0; color: #c8c8c8; max-width: 600px">{c.hero.body}</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center">
+            <a class="btn btn-light" href={c.hero.primary.href}>{c.hero.primary.label}<Icon name="arrow-right" class="ar" size={20} stroke={2} /></a>
+            <a class="lk lk-light cta-lk" href={c.hero.secondary.href}>{c.hero.secondary.label}</a>
+          </div>
+        </div>
+        <div aria-hidden="true" class="cc-art">
+          <svg viewBox="0 0 400 380" style="width: 100%; max-width: 380px; height: auto; display: block">
+            <g fill="#ffffff" stroke="#111111" stroke-width="14" paint-order="stroke" stroke-linejoin="round">
+              <path d="M218 24h150a26 26 0 0 1 26 26v104a26 26 0 0 1-26 26h-86l-46 40 8-40h-26a26 26 0 0 1-26-26V50a26 26 0 0 1 26-26z"></path>
+              <circle cx="238" cy="196" r="44"></circle>
+              <path d="M156 372a82 82 0 0 1 164 0z"></path>
+              <circle cx="128" cy="168" r="56"></circle>
+              <path d="M18 372a110 110 0 0 1 220 0z"></path>
+            </g>
+            <g fill="#111111"><circle cx="252" cy="102" r="13"></circle><circle cx="293" cy="102" r="13"></circle><circle cx="334" cy="102" r="13"></circle></g>
+          </svg>
+        </div>
+      </div>
+      <dl class="stats" aria-label="Platform at a glance">
+        {c.stats.map((s) => <div><dt>{s.label}</dt><dd>{s.n}</dd><span class="sb" aria-hidden="true" style="background: #5abdff"></span></div>)}
+      </dl>
+    </div>
+  </section>
+
+  <section aria-labelledby="communities" style="background: #f4f4f4">
+    <div class="wrap" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 32px">
+        <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+          <h2 id="communities" class="h2-sec">{c.communities.title}</h2>
+          <p style="margin: 0; color: #595959">{c.communities.lead}</p>
+        </div>
+        <a class="ul-lk tgt" href={c.communities.link.href}>{c.communities.link.label}</a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px 32px">
+        {c.communities.items.map((cm) => (
+          <article class="rv" style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+            <div class="logo-box">
+              {cm.logo ? <Pic src={cm.logo} alt={`${cm.name} logo`} sizes="240px" widths={[240, 480]} style="display: block; max-width: 100%; max-height: 80px; width: auto; height: auto; object-fit: contain" /> : <span class="logo-name">{cm.name}</span>}
+            </div>
+            <h3 class="h3-card" style="margin-top: 8px">{cm.name}</h3>
+            <p style="margin: 0; color: #595959">{cm.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="get" style="background: #ffffff">
+    <div class="wrap" style="padding-top: 80px; padding-bottom: 48px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+        <h2 id="get" class="h2-sec">{c.features.title}</h2>
+        <p style="margin: 0; color: #595959">{c.features.lead}</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 32px">
+        {c.features.items.map((f) => (
+          <div class="rv" style="border-top: 4px solid #5abdff; padding-top: 20px; display: flex; flex-direction: column; gap: 6px">
+            {featureIcons[f.icon] && <img src={featureIcons[f.icon]} alt="" width="36" height="36" style="display: block; margin-bottom: 8px" />}
+            <h3 class="h3-card">{f.title}</h3>
+            <p style="margin: 0; color: #595959">{f.text}</p>
+          </div>
+        ))}
+      </div>
+      <div class="help-panel rv">
+        <h3 style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #5abdff">{c.help.title}</h3>
+        <p style="margin: 0; color: #c8c8c8; max-width: 720px">{c.help.lead}</p>
+        <ul class="helprow">
+          {c.help.items.map((h) => <li><span style="font-weight: 700; font-size: 24px; line-height: 1.2">{h.title}</span><span style="color: #c8c8c8">{h.text}</span></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="owns" style="background: #5abdff">
+    <div class="wrap" style="padding-top: 56px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 48px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+        <h2 id="owns" class="h2-sec">{c.budget.title}</h2>
+        <p style="margin: 0">{c.budget.lead}</p>
+      </div>
+      <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 32px">
+        {c.budget.steps.map((s) => (
+          <li class="rv" style="display: flex; flex-direction: column; gap: 8px">
+            <span aria-hidden="true" style="display: block; width: 48px; height: 6px; margin-bottom: 16px; background: #111111"></span>
+            <span aria-hidden="true" style="font-weight: 700; font-size: 48px; line-height: 1; margin-bottom: 12px">{s.n}</span>
+            <h3 class="h3-card">{s.title}</h3>
+            <p style="margin: 0">{s.text}</p>
+          </li>
+        ))}
+      </ol>
+      <div class="share">
+        <h3 style="margin: 0; font-weight: 700; font-size: clamp(26px, 3vw, 36px); line-height: 1.2">{c.owners.title}</h3>
+        <div class="prose-md owners" set:html={md(c.owners.body)} />
+      </div>
+    </div>
+  </section>
+
+  <section id="membership" aria-labelledby="member" style="background: #ffffff">
+    <div class="wrap" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+        <h2 id="member" class="h2-sec">{c.membership.title}</h2>
+        <p style="margin: 0; color: #595959">{c.membership.lead}</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 32px">
+        {c.membership.tiers.map((t) => (
+          <article class="tier rv">
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <h3 class="h3-card" style="text-transform: uppercase; letter-spacing: 1px">{t.name}</h3>
+              <span style="font-size: 16px; color: #595959">{t.who}</span>
+            </div>
+            <p style="margin: 0"><span style="font-weight: 700; font-size: 36px">{t.price}</span> <span style="font-size: 18px; font-weight: 700">{t.per}</span></p>
+            <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px">{t.items.map((i) => <li>{i}</li>)}</ul>
+            <a class="ul-lk tgt" href={t.cta.href} style="margin-top: auto">{t.cta.label} →</a>
+          </article>
+        ))}
+      </div>
+      <div class="faq" style="display: flex; flex-direction: column; gap: 12px; padding-top: 24px">
+        <h3 style="margin: 0 0 12px; font-weight: 700; line-height: 1.2; font-size: clamp(28px, 4vw, 36px)">{c.faq.title}</h3>
+        {c.faq.items.map((q) => (
+          <details>
+            <summary>{q.q}<span class="pm" aria-hidden="true"></span></summary>
+            <p>{q.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="papers" aria-labelledby="papers-title" style="background: #f4f4f4">
+    <div class="wrap" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+        <h2 id="papers-title" class="h2-sec">{c.papers.title}</h2>
+        <p style="margin: 0; color: #595959">{c.papers.lead}</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 32px">
+        {c.papers.items.map((p) => <PaperCard paper={p} boxed />)}
+      </div>
+      <p style="margin: 0; color: #595959"><span class="eyebrow-sm">Development supported by</span><br />{c.supporters}</p>
+    </div>
+  </section>
+
+  <CtaBand title={c.cta.title} body={c.cta.body} button={c.cta.button} href="/contact/?audience=program" secondary={{ label: 'Planning a proposal?', href: '/planning-a-proposal/' }} />
+</Base>
+
+<style is:global>
+  .cc-art{flex:1 1 320px;min-width:0;align-self:flex-start;display:flex;justify-content:center;padding-top:8px}
+  @media (max-width:700px){.cc-art{display:none}}
+  .logo-box{height:112px;background:#ffffff;display:flex;align-items:center;justify-content:center;padding:16px 24px}
+  .logo-name{font-weight:700;font-size:20px;text-align:center}
+  .help-panel{background:#111111;color:#ffffff;padding:40px;display:flex;flex-direction:column;gap:20px}
+  .helprow{margin:8px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+  .helprow li{display:flex;flex-direction:column;gap:8px;padding-left:24px;border-left:1px solid #3a3a3a}
+  .helprow li:first-child{border-left:0;padding-left:0}
+  @media (max-width:900px){.helprow li{border-left:0;padding-left:0}}
+  @media (max-width:600px){.help-panel{padding:28px 24px}}
+  .share{border-top:1px solid #111111;padding-top:32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:16px 32px;align-items:baseline}
+  .owners a{text-decoration-color:#111111}
+  @media (max-width:900px){.share{grid-template-columns:1fr}}
+  .tier{display:flex;flex-direction:column;gap:20px;padding:28px;background:#ffffff;border:4px solid #5abdff}
+  .faq details{border:4px solid #5abdff}
+  .faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px;padding:16px 24px;font-weight:700;font-size:clamp(19px,2.2vw,24px);line-height:1.3;cursor:pointer}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq .pm{position:relative;width:22px;height:22px;flex:none;transition:transform .2s ease}
+  .faq .pm::before,.faq .pm::after{content:"";position:absolute;background:#111111}
+  .faq .pm::before{left:0;right:0;top:9.5px;height:3px}
+  .faq .pm::after{top:0;bottom:0;left:9.5px;width:3px}
+  .faq details[open] .pm{transform:rotate(45deg)}
+  .faq details p{margin:0;padding:0 24px 24px;max-width:720px}
+  @media (prefers-reduced-motion:reduce){.faq .pm{transition:none}}
+</style>

@@ -1,0 +1,32 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync, existsSync } from 'node:fs';
+
+const read = (p) => readFileSync(`dist/${p}/index.html`, 'utf8');
+const built = existsSync('dist/index.html');
+
+test('Connect.CI page shows the three tiers and onboarding price', { skip: !built }, () => {
+  const html = read('connect-ci');
+  for (const t of ['Community', 'Program', 'Partner', '$3,000', '$7,500', 'From $15,000', 'Onboarding starts at $5,000']) assert.ok(html.includes(t), t);
+});
+
+test('Connect.CI FAQ uses native details elements', { skip: !built }, () => {
+  assert.ok((read('connect-ci').match(/<details/g) || []).length >= 5);
+});
+
+test('Connect.CI says 13 communities', { skip: !built }, () => {
+  assert.match(read('connect-ci'), />13</);
+});
+
+test('Publications lists the HUST paper without a link', { skip: !built }, () => {
+  const html = read('publications');
+  const li = html.match(/<li(?=[\s>])[^>]*>(?:(?!<\/?li[\s>])[\s\S])*From Answering to Acting[\s\S]*?<\/li>/);
+  assert.ok(li, 'HUST entry missing');
+  assert.equal(/<a\b/.test(li[0]), false);
+});
+
+test('Publications links each published paper to its DOI', { skip: !built }, () => {
+  const html = read('publications');
+  for (const doi of ['10.1145/3785462.3815904', '10.1145/3785462.3815803', '10.1145/3569951.3597590', '10.22369/issn.2153-4136/13/2/4', '10.1145/3437359.3465606'])
+    assert.ok(html.includes(`https://doi.org/${doi}`), doi);
+});

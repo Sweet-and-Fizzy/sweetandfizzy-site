@@ -1,0 +1,44 @@
+# Publications page copy. Layout from the Publications board; copy from the Draft copy tab.
+title: Publications
+description: Peer-reviewed papers on the community platforms, catalogs and AI tools Sweet & Fizzy Digital builds with the research computing community.
+hero:
+  eyebrow: Publications
+  title: Papers and writing
+  body: "We publish what we build with the research computing community, so programs can see how the work holds up. These papers cover the platforms, catalogs and AI tools we build and run with our partners."
+stats:
+  - { n: "5", label: peer-reviewed papers we wrote }
+  - { n: "1", label: best paper award }
+  - { n: "3", label: "venues: SC, PEARC and JOCSE" }
+note: Newest first within each group. Sweet & Fizzy authors are Andrew Pasquale and Lissie Fein.
+groups:
+  - title: AI agents
+    color: yellow
+    blurb: An agent that answers ACCESS support questions from docs and live system data.
+    link: { label: Case study, href: /work/access-ai-assistant/ }
+    papers:
+      - { venue: "HUST workshop at SC26 · November 2026", title: "From Answering to Acting: An AI Agent for Research Computing User Support", authors: "A. Pasquale, V. Gazula, J. E. Bacal", summary: "How the ACCESS support agent combines documentation search with live data from MCP servers, and how we test its answers." }
+  - title: Connect.CI
+    color: blue
+    blurb: The community platform shared by 13 research computing communities.
+    link: { label: About Connect.CI, href: /connect-ci/ }
+    papers:
+      - { venue: PEARC 2026, title: "The Connect.CI Portal: Building and Sustaining a Cyberinfrastructure Community Platform", authors: "J. Ma, L. Fein, A. Pasquale, V. Gazula, K. Brandt, D. Chakravorty, A. Chalker, W. Figurelle, A. Sherman, F. Ghahramani", summary: "How one shared platform came to serve 13 research computing communities, and how it is sustained.", doi: 10.1145/3785462.3815904 }
+      - { venue: "PEARC 2021 · Best Short Paper, Workforce Development track", title: The Connect.Cyberinfrastructure Portal, authors: J. Ma and 30 others, summary: "The origins of the platform we now develop and run, as the Northeast Cyberteam portal and its first expansion. We were not authors on this paper.", doi: 10.1145/3437359.3465606 }
+  - title: Open OnDemand
+    color: orange
+    blurb: The Appverse, a shared catalog to publish and find Open OnDemand apps.
+    link: { label: Case study, href: /work/open-ondemand/ }
+    papers:
+      - { venue: "PEARC 2026 · Best paper", title: "The Appverse: A Community-Driven Catalog for Open OnDemand Applications", authors: "J. Winchell, D. Chakravorty, S. M. Anderson, J. Ma, A. Chalker, L. Fein, A. Pasquale and 6 others", summary: "A catalog where research computing centers share Open OnDemand apps, kept in sync with GitHub and reviewed against a shared checklist.", doi: 10.1145/3785462.3815803 }
+  - title: NSF ACCESS
+    color: yellow
+    blurb: Contributions to the national research computing program.
+    link: { label: ACCESS Support case study, href: /work/access-support/ }
+    papers:
+      - { venue: PEARC 2023, title: "ACCESS Pegasus: Bringing Workflows to the ACCESS Masses", authors: "M. Rynge, K. Vahi, M. Z. Alam, E. Deelman and 9 others, including A. Pasquale and L. Fein", summary: "A hosted workflow service that lets ACCESS researchers run Pegasus workflows without installing anything.", doi: 10.1145/3569951.3597590 }
+      - { venue: "Journal of Computational Science Education · December 2022", title: "The Multi-Tier Assistance, Training, and Computational Help (MATCH) Project, a Track 2 NSF ACCESS Initiative", authors: "S. L. Knuth, J. Ma, J. C. Adams and 11 others, including A. Pasquale", summary: "The ACCESS support track that matches researchers with help, from self-service resources to embedded experts.", doi: 10.22369/issn.2153-4136/13/2/4 }
+more: "Andrew's full publication record is on [ORCID](https://orcid.org/0000-0002-7501-367X). Our open source work is on [GitHub](https://github.com/Sweet-and-Fizzy). [Add Lissie's ORCID if she has one.]"
+cta:
+  title: Writing a paper or a proposal about your platform?
+  body: "We help partners document and publish what we build together, from system descriptions to evaluation results."
+  button: Talk to us

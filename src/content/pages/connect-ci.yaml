@@ -1,0 +1,106 @@
+# Connect.CI page copy. Layout from the Connect.CI board; copy from the Draft copy tab.
+# Edit text freely; bracketed [PLACEHOLDERS] block launch.
+title: Connect.CI community platform
+description: Connect.CI gives research computing communities directories, events, mentorship, a knowledge base, single sign-on and AI tools from day one. 13 communities share it.
+hero:
+  eyebrow: Connect.CI community platform
+  title: Start with what 13 research computing communities already share.
+  body: "Connect.CI gives your community directories, events, mentorship, a shared knowledge base, single sign-on and AI tools from the first day. Your budget goes to what is new about your program, and what we build for you becomes part of the platform for everyone."
+  primary: { label: Bring your community, href: /contact/?audience=program }
+  secondary: { label: Read the papers, href: "#papers" }
+stats:
+  - { n: "13", label: communities on one platform }
+  - { n: "74,000", label: members with one shared profile }
+  - { n: "7", label: NSF awards since 2017 }
+  - { n: "[N]", label: events hosted in the last year }
+communities:
+  title: Communities on Connect.CI
+  lead: "Each community has its own site, name and look. Members keep one profile as they move between them."
+  link: { label: Visit connectci.org, href: "https://connectci.org/" }
+  items:
+    - { name: ACCESS Support, logo: ../../assets/logos/access-support.png, text: "The support hub for the NSF ACCESS program, with its knowledge base, people directory, affinity groups and the MATCH services." }
+    - { name: Campus Champions, logo: ../../assets/logos/campus-champions.svg, text: "A national network of research computing facilitators, with mentorship and recognition built in." }
+    - { name: CCMNet, logo: ../../assets/logos/ccmnet.jpg, text: "The Cyberinfrastructure Community-wide Mentorship Network, running structured mentor and mentee engagements." }
+    - { name: Open OnDemand Community Hub, logo: ../../assets/logos/ood-hub.png, text: "The home of the Open OnDemand community, including the Appverse app catalog and contributor wall." }
+    - { name: Pennsylvania Science DMZ, text: "A regional site for science network engineers across Pennsylvania." }
+    - { name: Regional cyberteams, logo: ../../assets/logos/ne-cyberteam.png, text: "Where Connect.CI started, with project workflows for the Northeast Cyberteam and others." }
+features:
+  title: What your community gets on day one
+  lead: "Turn on the features you need. All of it is hosted, secured and kept current as part of membership."
+  items:
+    - { icon: People directories, title: People directories, text: "Searchable profiles with skills, interests and expertise tags." }
+    - { icon: Affinity groups, title: Affinity groups, text: "Topic groups with coordinators, announcements, meeting notes and mailing lists." }
+    - { icon: Events, title: Events, text: "Recurring events with registration, waitlists, reminders, surveys and recordings." }
+    - { icon: Knowledge base, title: Knowledge base, text: "Curated tutorials and documentation, with community voting and Ask.CI questions and answers." }
+    - { icon: Mentorship and matching, title: Mentorship and matching, text: "Structured engagements with goals and progress tracking." }
+    - { icon: Recognition, title: Recognition, text: "A shared community profile, badges and contributor walls." }
+    - { icon: App catalogs, title: App catalogs, text: "Catalogs kept in sync with GitHub, like the Open OnDemand Appverse." }
+    - { icon: AI layer, title: AI tools, text: "A support assistant, plus MCP servers (Model Context Protocol, the standard way AI tools read live data) for platform content." }
+    - { icon: Single sign-on, title: Single sign-on, text: "CILogon across every community, so members log in with their own institution's account." }
+help:
+  title: Help running your community, not just the software
+  lead: "Platforms succeed when coordinators feel confident and members stay engaged. We help with both."
+  items:
+    - { title: Coordinator training, text: "We get affinity group coordinators comfortable running their groups on the platform." }
+    - { title: Moderation help, text: "Clear policies, the right tools and a hand when something needs attention." }
+    - { title: Onboarding, text: "Content migration, launch planning and outreach to your members." }
+    - { title: Engagement reporting, text: "Membership, event and activity numbers ready for your annual reports." }
+budget:
+  title: Your budget goes to what is new
+  lead: "Most of what a research community needs is already built and running. You fund the part that is genuinely yours, and every improvement becomes shared infrastructure. That is a sustainability story reviewers recognize."
+  steps:
+    - { n: "01", title: Join, text: "Launch your site on the shared platform with your name, your look and the features you need." }
+    - { n: "02", title: Build what is new, text: "Fund development for the part of your program nobody has built yet." }
+    - { n: "03", title: Everyone benefits, text: "Your improvements reach every community on the platform, and theirs reach you." }
+owners:
+  title: Who builds and runs Connect.CI
+  body: |-
+    Sweet & Fizzy Digital develops, hosts and maintains Connect.CI. No single program owns it. The work is paid for by the programs that rely on it: ACCESS through the University of Colorado Boulder, Open OnDemand through the Ohio Supercomputer Center by way of an MGHPCC subaward, Texas A&M, and smaller contributions from Campus Champions and the Pennsylvania Science DMZ. Seven NSF awards have supported the platform since 2017.
+
+    The platform code is open source under GPL-2.0, on GitHub at [connectci-platform/portal](https://github.com/connectci-platform/portal), so it does not depend on any one funder, or on us. Each community owns its content and can export it; each member owns their own account. We are forming a roadmap group of the programs that fund the platform, meeting twice a year to set priorities together. [Update to "meets twice a year" once the first meeting happens.]
+membership:
+  title: Membership
+  lead: "Every membership includes hosting, security patches and Drupal version upgrades. Onboarding starts at $5,000. Development for your program is scoped separately and can be written into your proposal."
+  tiers:
+    - name: Community
+      who: User groups, cyberteams and affinity networks
+      price: "$3,000"
+      per: a year
+      items: [Your site on the shared platform, "Your domain, name and theme", "Directory, events, groups, knowledge base and single sign-on", "Hosting, security and upgrades"]
+      cta: { label: Start as a Community, href: /contact/?audience=program }
+    - name: Program
+      who: NSF programs and funded projects
+      price: "$7,500"
+      per: a year
+      items: [Everything in Community, Mentorship and matching, Coordinator training, Engagement reporting for grant reviews, About 25 support hours]
+      cta: { label: Talk about your program, href: /contact/?audience=program }
+    - name: Partner
+      who: Funders and anchor institutions
+      price: "From $15,000"
+      per: a year
+      items: [Everything in Program, A seat on the roadmap group, Development hours for shared features, AI assistant and community management hours]
+      cta: { label: Become a partner, href: /contact/?audience=program }
+faq:
+  title: Questions programs ask
+  items:
+    - q: Can our community have its own domain and look?
+      a: "Yes. Each community has its own domain, name, theme and navigation, while sharing members and knowledge with the rest of the platform."
+    - q: Who owns our content and member data?
+      a: "Your content is yours: pages, events, groups, knowledge base articles and engagement records, and we help you export them at any time. Each member's account belongs to that person, because one account works across every community they join. If your community moves off the platform, you take your member list and their activity in your community. Each person's wider profile stays theirs. [Add a short data section to the shared Connect.CI privacy policy and link it here.]"
+    - q: How long does onboarding take?
+      a: "[Answer needed: typical weeks from kickoff to launch, for example the Pennsylvania Science DMZ.]"
+    - q: Can Connect.CI be written into our proposal budget?
+      a: "Yes. Membership and development fit a subaward or a purchase order. We provide budget text, a letter of collaboration and sustainability language."
+    - q: What happens to features we fund?
+      a: "They become part of the shared platform. We maintain them with everything else, and other communities that need them can use them."
+papers:
+  title: Papers
+  lead: "How the platform was built and how it stays funded, peer reviewed."
+  items:
+    - { venue: PEARC 2026, title: "The Connect.CI Portal: Building and Sustaining a Cyberinfrastructure Community Platform", authors: "J. Ma, L. Fein, A. Pasquale, V. Gazula, K. Brandt, D. Chakravorty, A. Chalker, W. Figurelle, A. Sherman, F. Ghahramani", doi: 10.1145/3785462.3815904 }
+    - { venue: "PEARC 2021 · Best short paper", title: The Connect.Cyberinfrastructure Portal, authors: "J. Ma et al. The platform's origins as the Northeast Cyberteam portal and its first expansion.", doi: 10.1145/3437359.3465606 }
+supporters: "ACCESS (NSF) · MGHPCC · CU Boulder · Ohio Supercomputer Center"
+cta:
+  title: Bring your community to Connect.CI
+  body: "Tell us about your program and your timeline. If you are writing a proposal, we can provide budget text, a letter of collaboration and sustainability language."
+  button: Talk to us

@@ -1,0 +1,68 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import PaperCard from '../components/sections/PaperCard.astro';
+import CtaBand from '../components/sections/CtaBand.astro';
+import { brand } from '../data/colors';
+import { mdInline } from '../lib/md';
+
+const p = (await getEntry('publications', 'publications'))!.data;
+const statColors = [brand.yellow, brand.blue, brand.orange];
+---
+<Base title={p.title} description={p.description}>
+  <section class="page-hero" aria-labelledby="pb-title">
+    <div class="wrap" style="padding-top: 80px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 48px">
+      <div class="pb-top">
+        <div style="display: flex; flex-direction: column; gap: 20px; max-width: 780px; min-width: 0">
+          <p class="eyebrow-xl" style="color: #fcee21">{p.hero.eyebrow}</p>
+          <h1 id="pb-title" class="h1-xl">{p.hero.title}</h1>
+          <p style="margin: 0; color: #c8c8c8">{p.hero.body}</p>
+        </div>
+        <svg class="pb-icon" aria-hidden="true" width="220" height="280" viewBox="0 0 220 280">
+          <path fill="#ffffff" d="M0 0h150l70 70v210H0z"></path>
+          <path fill="none" stroke="#111111" stroke-width="8" d="M150 0v70h70"></path>
+          <rect x="36" y="128" width="148" height="16" fill="#111111"></rect>
+          <rect x="36" y="168" width="148" height="16" fill="#111111"></rect>
+          <rect x="36" y="208" width="96" height="16" fill="#111111"></rect>
+        </svg>
+      </div>
+      <dl class="stats">
+        {p.stats.map((s, i) => <div><dt>{s.label}</dt><dd>{s.n}</dd><span class="sb" aria-hidden="true" style={`background: ${statColors[i % 3]}`}></span></div>)}
+      </dl>
+    </div>
+  </section>
+
+  <section aria-label="Papers" style="background: #ffffff">
+    <div class="wrap" style="padding-top: 72px; padding-bottom: 32px">
+      <p style="margin: 0; color: #595959">{p.note}</p>
+    </div>
+    {p.groups.map((g) => (
+      <div class="wrap pb-group">
+        <div class="pb-side">
+          <div class="pb-tag" style={`--accent: ${brand[g.color]}`}><h2 class="h2-sec" style="color: #ffffff">{g.title}</h2></div>
+          <p style="margin: 0">{g.blurb}</p>
+          <a class="go-lk" href={g.link.href} style={`--accent: ${brand[g.color]}`}><span class="circ" aria-hidden="true"><Icon name="arrow-right" stroke={1.5} /></span><span class="x">{g.link.label}</span></a>
+        </div>
+        <ol class="pb-list">
+          {g.papers.map((paper) => <li class="rv"><PaperCard paper={paper} /></li>)}
+        </ol>
+      </div>
+    ))}
+    <div class="wrap" style="padding-top: 16px; padding-bottom: 80px">
+      <p class="prose-md" style="margin: 0; max-width: 760px" set:html={mdInline(p.more)} />
+    </div>
+  </section>
+
+  <CtaBand title={p.cta.title} body={p.cta.body} button={p.cta.button} href="/contact/?audience=program" secondary={{ label: 'Planning a proposal?', href: '/planning-a-proposal/' }} />
+</Base>
+
+<style is:global>
+  .pb-top{display:flex;align-items:center;justify-content:space-between;gap:64px}
+  .pb-icon{display:block;flex:none}
+  @media (max-width:760px){.pb-top{flex-direction:column;align-items:flex-start}.pb-icon{width:120px;height:153px}}
+  .pb-group{display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-start;padding-top:32px;padding-bottom:48px}
+  .pb-side{flex:1 1 280px;display:flex;flex-direction:column;gap:12px;min-width:0}
+  .pb-tag{background:#111111;padding:16px 56px 18px 24px;margin-bottom:8px;clip-path:polygon(0 0,calc(100% - 32px) 0,100% 32px,100% 100%,0 100%);border-bottom:6px solid var(--accent)}
+  .pb-list{flex:2 1 min(560px,100%);min-width:0;margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:32px}
+</style>

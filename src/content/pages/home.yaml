@@ -25,7 +25,7 @@ areas:
         body: Assistants answer from your docs and live systems and act with user’s permissions, like the ACCESS support agent and its 11 MCP servers. Our OOD API, now in early release, brings the same power to Open OnDemand. Agents are graded on questions your staff write.
         link: { label: AI agents, href: /services/ai-agents/ }
       - title: Connect.CI platform
-        body: Start with features many research computing communities already share, like events and community directories, mentorship, and single sign-on, and fund new features you want. Hosted membership starts at $5,000 a year, and improvements are shared with the community.
+        body: Start with features many research computing communities already share, like events and community directories, mentorship, and single sign-on, and fund new features you want. Hosted membership starts at $3,000 a year, and improvements are shared with the community.
         link: { label: Connect.CI, href: /connect-ci/ }
       - title: Curated catalogs
         body: "Catalogs that run themselves: anyone can submit software, tools or other resources from GitHub, submissions sync on a schedule, and moderators review, rate and flag issues before they are published. Our Open OnDemand Appverse lists 81 apps from 16 organizations. Best paper, PEARC 2026."
