@@ -5,6 +5,7 @@ import Pic from '../components/Pic.astro';
 import Icon from '../components/Icon.astro';
 import PaperCard from '../components/sections/PaperCard.astro';
 import CtaBand from '../components/sections/CtaBand.astro';
+import LogoStrip from '../components/sections/LogoStrip.astro';
 import { featureIcons } from '../data/icons';
 import { md } from '../lib/md';
 
@@ -153,7 +154,10 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 32px">
         {c.papers.items.map((p) => <PaperCard paper={p} boxed />)}
       </div>
-      <p style="margin: 0; color: #595959"><span class="eyebrow-sm">Development supported by</span><br />{c.supporters}</p>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding-top: 16px">
+        <h3 class="eyebrow-sm">{c.supporters.title}</h3>
+        <LogoStrip items={c.supporters.items} />
+      </div>
     </div>
   </section>
 

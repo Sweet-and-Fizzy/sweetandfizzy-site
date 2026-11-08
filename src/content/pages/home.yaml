@@ -22,7 +22,7 @@ areas:
     papersLink: { label: 5 papers published, href: /publications/ }
     offers:
       - title: AI agents and integrations
-        body: Assistants answer from your docs and live systems and act with user’s permissions, like the ACCESS support agent and its 11 MCP servers. Our OOD API, now in early release, brings the same power to Open OnDemand. Agents are graded on questions your staff write.
+        body: "We adapt the agent we built for ACCESS to your program. It already answers from documentation and 11 live data sources and acts with each user's own permissions, so your project starts from tested, open source work instead of a blank page. Our OOD API, now in early release, brings the same approach to Open OnDemand, and we grade every agent on questions your staff write."
         link: { label: AI agents, href: /services/ai-agents/ }
       - title: Connect.CI platform
         body: Start with features many research computing communities already share, like events and community directories, mentorship, and single sign-on, and fund new features you want. Hosted membership starts at $3,000 a year, and improvements are shared with the community.

@@ -84,7 +84,7 @@ const connectci = defineCollection({
     membership: obj({ title: z.string(), lead: z.string(), tiers: z.array(obj({ name: z.string(), who: z.string(), price: z.string(), per: z.string(), items: z.array(z.string()), cta: link })) }),
     faq: titled(obj({ q: z.string(), a: z.string() })),
     papers: titled(paper),
-    supporters: z.string(),
+    supporters: obj({ title: z.string(), items: z.array(obj({ name: z.string(), logo: z.string().optional(), award: z.string().optional() })) }),
     cta,
   }),
 });

@@ -99,7 +99,15 @@ papers:
   items:
     - { venue: PEARC 2026, title: "The Connect.CI Portal: Building and Sustaining a Cyberinfrastructure Community Platform", authors: "J. Ma, L. Fein, A. Pasquale, V. Gazula, K. Brandt, D. Chakravorty, A. Chalker, W. Figurelle, A. Sherman, F. Ghahramani", doi: 10.1145/3785462.3815904 }
     - { venue: "PEARC 2021 · Best short paper", title: The Connect.Cyberinfrastructure Portal, authors: "J. Ma et al. The platform's origins as the Northeast Cyberteam portal and its first expansion.", doi: 10.1145/3437359.3465606 }
-supporters: "ACCESS (NSF) · MGHPCC · CU Boulder · Ohio Supercomputer Center"
+supporters:
+  title: Development supported by
+  # logo: a file name in src/assets/logos/ (leave it out to show the name as text).
+  items:
+    - { name: ACCESS (NSF) }
+    - { name: MGHPCC }
+    - { name: CU Boulder }
+    - { name: Ohio Supercomputer Center }
+    - { name: "Texas A&M" }
 cta:
   title: Bring your community to Connect.CI
   body: "Tell us about your program and your timeline. If you are writing a proposal, we can provide budget text, a letter of collaboration and sustainability language."
