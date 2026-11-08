@@ -8,6 +8,7 @@ import CtaBand from '../components/sections/CtaBand.astro';
 import LogoStrip from '../components/sections/LogoStrip.astro';
 import { featureIcons } from '../data/icons';
 import { md } from '../lib/md';
+import connectCiLogo from '../assets/logos/connect-ci.jpg';
 
 const c = (await getEntry('connectci', 'connect-ci'))!.data;
 ---
@@ -16,6 +17,7 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
     <div class="wrap" style="padding-top: 80px; padding-bottom: 64px; display: flex; flex-direction: column; gap: 40px">
       <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
         <div style="flex: 1 1 min(520px, 100%); min-width: 0; display: flex; flex-direction: column; gap: 24px">
+          <span class="cc-logo"><Pic src={connectCiLogo} alt="Connect.CI" sizes="260px" widths={[260, 520]} loading="eager" /></span>
           <p class="eyebrow-xl" style="color: #5abdff; font-family: inherit">{c.hero.eyebrow}</p>
           <h1 id="cc-title" class="h1-xl">{c.hero.title}</h1>
           <p style="margin: 0; color: #c8c8c8; max-width: 600px">{c.hero.body}</p>
@@ -120,16 +122,16 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
         <h2 id="member" class="h2-sec">{c.membership.title}</h2>
         <p style="margin: 0; color: #595959">{c.membership.lead}</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 32px">
+      <div class="tiers">
         {c.membership.tiers.map((t) => (
           <article class="tier rv">
-            <div style="display: flex; flex-direction: column; gap: 4px">
+            <div class="tier-head">
               <h3 class="h3-card" style="text-transform: uppercase; letter-spacing: 1px">{t.name}</h3>
-              <span style="font-size: 16px; color: #595959">{t.who}</span>
+              <span class="tier-who">{t.who}</span>
             </div>
-            <p style="margin: 0"><span style="font-weight: 700; font-size: 36px">{t.price}</span> <span style="font-size: 18px; font-weight: 700">{t.per}</span></p>
-            <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px">{t.items.map((i) => <li>{i}</li>)}</ul>
-            <a class="ul-lk tgt" href={t.cta.href} style="margin-top: auto">{t.cta.label} →</a>
+            <p class="tier-price"><span class="amt">{t.price}</span> <span class="per">{t.per}</span></p>
+            <ul class="tier-list">{t.items.map((i) => <li>{i}</li>)}</ul>
+            <a class="ul-lk tgt" href={t.cta.href}>{t.cta.label} →</a>
           </article>
         ))}
       </div>
@@ -165,6 +167,8 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
 </Base>
 
 <style is:global>
+  .cc-logo{align-self:flex-start;display:block;background:#ffffff;padding:14px 22px 12px;border-radius:6px}
+  .cc-logo img{display:block;width:220px;height:auto}
   .cc-art{flex:1 1 320px;min-width:0;align-self:flex-start;display:flex;justify-content:center;padding-top:8px}
   @media (max-width:700px){.cc-art{display:none}}
   .logo-box{height:112px;background:#ffffff;display:flex;align-items:center;justify-content:center;padding:16px 24px}
@@ -178,7 +182,16 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
   .share{border-top:1px solid #111111;padding-top:32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:16px 32px;align-items:baseline}
   .owners a{text-decoration-color:#111111}
   @media (max-width:900px){.share{grid-template-columns:1fr}}
-  .tier{display:flex;flex-direction:column;gap:20px;padding:28px;background:#ffffff;border:4px solid #5abdff}
+  /* Tiers share row tracks (subgrid) so prices, lists and links line up across cards. */
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:32px}
+  .tier{grid-row:span 4;display:grid;grid-template-rows:subgrid;row-gap:18px;padding:28px;background:#ffffff;border:4px solid #5abdff}
+  .tier-head{display:flex;flex-direction:column;gap:4px}
+  .tier-who{font-size:16px;line-height:1.35;color:#595959}
+  .tier-price{margin:0;line-height:1.1;align-self:end}
+  .tier-price .amt{font-weight:700;font-size:34px}
+  .tier-price .per{font-size:17px;font-weight:700;white-space:nowrap}
+  .tier-list{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;line-height:1.35}
+  .tier .ul-lk{align-self:end;justify-self:start}
   .faq details{border:4px solid #5abdff}
   .faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px;padding:16px 24px;font-weight:700;font-size:clamp(19px,2.2vw,24px);line-height:1.3;cursor:pointer}
   .faq summary::-webkit-details-marker{display:none}

@@ -22,7 +22,7 @@ communities:
     - { name: Campus Champions, logo: ../../assets/logos/campus-champions.svg, text: "A national network of research computing facilitators, with mentorship and recognition built in." }
     - { name: CCMNet, logo: ../../assets/logos/ccmnet.jpg, text: "The Cyberinfrastructure Community-wide Mentorship Network, running structured mentor and mentee engagements." }
     - { name: Open OnDemand Community Hub, logo: ../../assets/logos/ood-hub.png, text: "The home of the Open OnDemand community, including the Appverse app catalog and contributor wall." }
-    - { name: Pennsylvania Science DMZ, text: "A regional site for science network engineers across Pennsylvania." }
+    - { name: Pennsylvania Science DMZ, logo: ../../assets/logos/pa-science-dmz.png, text: "A regional site for science network engineers across Pennsylvania." }
     - { name: Regional cyberteams, logo: ../../assets/logos/ne-cyberteam.png, text: "Where Connect.CI started, with project workflows for the Northeast Cyberteam and others." }
 features:
   title: What your community gets on day one
