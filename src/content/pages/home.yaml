@@ -53,7 +53,7 @@ areas:
     offers:
       - { title: One or three week discovery sprint, body: "Hands-on sessions sharpen your idea into an MVP scope, so you know what to build first. You leave with a plan, designs, and a budget and timeline you can show investors." }
       - { title: Software design and development, body: "We design and build your web and mobile apps, with AI features where they help, from the first version to launch. After launch, we stay on for support and improvements." }
-      - { title: Technical and product leadership, body: "We can help with your business decisions, from roadmaps and hiring to investor and board updates. [Engagement length and price.]" }
+      - { title: Technical and product leadership, body: "We can help with your business decisions, from roadmaps and hiring to investor and board updates. We step in as fractional technical and product leadership, so you have experienced judgment before you are ready to hire a full-time CTO." }
     cta: { label: Tell us about your startup, href: /contact/?audience=startup }
     workTitle: Some of our startup work
     work:
@@ -74,8 +74,8 @@ areas:
       - "Care plans keep sites fast and safe"
     offers:
       - { title: Websites, body: "Fast sites that tell your story well and are easy for your team to update, accessible from the first sketch. Projects start at about $2,500." }
-      - { title: Logos and brand identities, body: "Names, logos and visual identities that make your organization easy to recognize and remember, for programs like Campus Champions and Ask.CI, small businesses, authors and artists. [What a brand project includes.]" }
-      - { title: Care plans, body: "Hosting, updates, backups and small fixes, so your site stays fast and safe, whether we built it or not. [Plan names, prices and what each includes.]" }
+      - { title: Logos and brand identities, body: "Names, logos and visual identities that make your organization easy to recognize and remember, for programs like Campus Champions and Ask.CI, small businesses, authors and artists." }
+      - { title: Care plans, body: "Hosting, updates, backups and small fixes, so your site stays fast and safe, whether we built it or not." }
     cta: { label: Tell us about your website, href: /contact/?audience=website }
     workTitle: Website and branding work
     work:
