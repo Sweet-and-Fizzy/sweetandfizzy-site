@@ -104,12 +104,12 @@ const publications = defineCollection({
   }),
 });
 
-const item = obj({ title: z.string(), text: z.string(), link: link.optional() });
-const section = z.discriminatedUnion('kind', [
-  obj({ kind: z.literal('cards'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(item) }),
-  obj({ kind: z.literal('rows'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(item) }),
-  obj({ kind: z.literal('list'), id: z.string().optional(), dark: z.boolean().optional(), title: z.string(), lead: z.string().optional(), items: z.array(item) }),
-  obj({ kind: z.literal('steps'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(item) }),
+const flexItem = (image: any) => obj({ title: z.string(), text: z.string(), link: link.optional(), image: obj({ src: image(), alt: z.string() }).optional() });
+const flexSection = (image: any) => z.discriminatedUnion('kind', [
+  obj({ kind: z.literal('cards'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(flexItem(image)) }),
+  obj({ kind: z.literal('rows'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(flexItem(image)) }),
+  obj({ kind: z.literal('list'), id: z.string().optional(), dark: z.boolean().optional(), title: z.string(), lead: z.string().optional(), items: z.array(flexItem(image)) }),
+  obj({ kind: z.literal('steps'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(flexItem(image)) }),
   obj({ kind: z.literal('prose'), id: z.string().optional(), title: z.string(), body: z.string() }),
   obj({ kind: z.literal('paper'), id: z.string().optional(), title: z.string(), paper }),
   obj({ kind: z.literal('logos'), id: z.string().optional(), title: z.string(), body: z.string().optional(),
@@ -118,10 +118,10 @@ const section = z.discriminatedUnion('kind', [
 
 const flex = defineCollection({
   loader: glob({ pattern: ['ai-agents.yaml', 'planning-a-proposal.yaml', 'privacy.yaml'], base: './src/content/pages' }),
-  schema: obj({
+  schema: ({ image }) => obj({
     title: z.string(), description: z.string(), accent: color,
-    hero: obj({ eyebrow: z.string(), title: z.string(), body: z.string(), primary: link.optional(), secondary: link.optional() }),
-    sections: z.array(section),
+    hero: obj({ eyebrow: z.string(), title: z.string(), body: z.string(), primary: link.optional(), secondary: link.optional(), art: z.enum(['agents']).optional() }),
+    sections: z.array(flexSection(image)),
     cta: obj({ title: z.string(), body: z.string(), button: z.string(), href: z.string(), secondary: link.optional() }).optional(),
   }),
 });

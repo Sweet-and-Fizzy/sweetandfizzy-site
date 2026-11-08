@@ -8,6 +8,8 @@ import { brand } from '../../data/colors';
 import { md, mdInline } from '../../lib/md';
 import { slugify } from '../../lib/slug';
 import LogoStrip from '../sections/LogoStrip.astro';
+import AgentArt from './AgentArt.astro';
+import Pic from '../Pic.astro';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props { page: CollectionEntry<'flex'>['data'] }
@@ -17,7 +19,8 @@ const isExternal = (href: string) => /^https?:/.test(href);
 ---
 <Base title={page.title} description={page.description}>
   <section class="page-hero" aria-labelledby="page-title" style={`--accent: ${accent}`}>
-    <div class="wrap hero-in" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 20px; max-width: var(--container)">
+    <div class="wrap" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+    <div class="hero-in" style="flex: 1 1 min(620px, 100%); min-width: 0; display: flex; flex-direction: column; gap: 20px">
       <p class="eyebrow-xl" style={`color: ${accent}; --i: 0`}>{page.hero.eyebrow}</p>
       <h1 id="page-title" class="h1-xl" style="max-width: 900px; --i: 1">{page.hero.title}</h1>
       <p style="margin: 0; color: #c8c8c8; max-width: 760px; font-size: clamp(19px, 2vw, 22px); --i: 2">{page.hero.body}</p>
@@ -27,6 +30,8 @@ const isExternal = (href: string) => /^https?:/.test(href);
           {page.hero.secondary && <a class="lk lk-light cta-lk" href={page.hero.secondary.href}>{page.hero.secondary.label}</a>}
         </div>
       )}
+    </div>
+    {page.hero.art === 'agents' && <div class="hero-art"><AgentArt /></div>}
     </div>
   </section>
 
@@ -57,12 +62,13 @@ const isExternal = (href: string) => /^https?:/.test(href);
           {s.kind === 'rows' && (
             <div class="flex-rows">
               {s.items.map((it) => (
-                <article class="rv">
+                <article class:list={['rv', { 'has-img': it.image }]}>
                   <h3 class="h3-card">{it.title}</h3>
                   <div style="display: flex; flex-direction: column; gap: 12px">
                     <p style="margin: 0" set:html={mdInline(it.text)} />
                     {it.link && <a class="go-lk" href={it.link.href}><span class="circ" aria-hidden="true"><Icon name="arrow-right" stroke={1.5} /></span><span class="x">{it.link.label}{isExternal(it.link.href) && <span class="sr-only"> (external site)</span>}</span></a>}
                   </div>
+                  {it.image && <div class="row-shot"><Pic src={it.image.src} alt={it.image.alt} sizes="(max-width: 900px) 100vw, 420px" widths={[420, 840]} /></div>}
                 </article>
               ))}
             </div>
@@ -107,8 +113,13 @@ const isExternal = (href: string) => /^https?:/.test(href);
   .flex-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:40px 32px}
   .flex-rows{display:flex;flex-direction:column}
   .flex-rows article{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:12px 48px;padding:32px 0;border-top:1px solid #d6d6d6}
+  .flex-rows article.has-img{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) minmax(0,1.2fr);align-items:start}
+  .row-shot{aspect-ratio:16/10;overflow:hidden;border:1px solid #5abdff;background:#f4f4f4}
+  .row-shot img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
+  .hero-art{flex:0 1 380px;display:flex;justify-content:center}
+  @media (max-width:900px){.hero-art{display:none}}
   .flex-rows article:last-child{border-bottom:1px solid #d6d6d6}
-  @media (max-width:800px){.flex-rows article{grid-template-columns:1fr}}
+  @media (max-width:900px){.flex-rows article,.flex-rows article.has-img{grid-template-columns:1fr}}
   .flex-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px;max-width:860px}
   .flex-list li{position:relative;padding-left:26px}
   .flex-list li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;background:var(--accent)}

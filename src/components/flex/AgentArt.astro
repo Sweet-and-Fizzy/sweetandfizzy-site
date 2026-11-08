@@ -1,0 +1,26 @@
+---
+// Hero drawing for the AI agents page: a researcher's question reaches the
+// agent, which draws on docs, live data and the cluster, then answers.
+// Same language as the Connect.CI mark: white strokes, brand-colored nodes.
+---
+<svg viewBox="0 0 400 340" aria-hidden="true" class="agent-art">
+  <g fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 52h120a18 18 0 0 1 18 18v52a18 18 0 0 1-18 18H82l-30 26 6-26H28a18 18 0 0 1-18-18V70a18 18 0 0 1 18-18z" />
+    <path d="M166 106 C 210 106, 214 170, 250 170" />
+    <circle cx="282" cy="170" r="32" />
+    <path d="M308 150 L 352 88" />
+    <path d="M314 170 L 360 170" />
+    <path d="M308 190 L 352 252" />
+    <path d="M282 202 C 282 262, 210 290, 150 290" />
+    <path d="M150 290 h-90" />
+  </g>
+  <g fill="#ffffff"><circle cx="58" cy="96" r="7" /><circle cx="88" cy="96" r="7" /><circle cx="118" cy="96" r="7" /></g>
+  <circle cx="282" cy="170" r="14" fill="#f07537" />
+  <circle cx="360" cy="78" r="16" fill="#5abdff" />
+  <circle cx="372" cy="170" r="16" fill="#ffc32c" />
+  <circle cx="360" cy="262" r="16" fill="#ef4326" />
+  <path d="M44 290 l12 12 l22 -24" fill="none" stroke="#ffc32c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+<style is:global>
+  .agent-art{width:min(380px,100%);height:auto;display:block}
+</style>
