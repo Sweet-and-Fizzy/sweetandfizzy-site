@@ -62,7 +62,7 @@ areas:
     more:
       - { name: BankTell, line: A bank finder that maps and compares nearby banks, image: ../../assets/home/banktell.jpg }
       - { name: Corvid Partners, line: Bond yield calculations matched to Bloomberg conventions, image: ../../assets/home/corvid.jpg }
-      - { name: Reading Success Lab, line: Online reading screening for schools and families, image: ../../assets/home/rsl.jpg }
+      - { name: Reading Success Lab, line: Online reading screening for schools and families, image: ../../assets/home/rsl.jpg, href: "https://readingsuccesslab.com" }
   - id: websites
     n: "03"
     color: yellow
@@ -79,11 +79,11 @@ areas:
     cta: { label: Tell us about your website, href: /contact/?audience=website }
     workTitle: Website and branding work
     work:
-      - { name: Emily Dickinson Virtual Tour, line: "An interactive walkthrough of the Dickinson Homestead, room by room, with its objects and stories.", image: ../../assets/home/dickinson.jpg }
+      - { name: Emily Dickinson Virtual Tour, line: "An interactive walkthrough of the Dickinson Homestead, room by room, with its objects and stories.", image: ../../assets/home/dickinson.jpg, href: "https://www.emilydickinsonmuseum.org/homestead-parlors/" }
       - { name: PDMcBride, line: An artist’s portfolio with an online shop., image: ../../assets/home/pdmcbride.jpg }
     more:
-      - { name: Molly B. Burnham, line: A playful site for a children’s book author, image: ../../assets/home/burnham.jpg }
-      - { name: AroundHere.Live, line: "Live music listings for the Pioneer Valley, where fans follow artists and venues and get notified about shows", image: ../../assets/home/aroundhere.jpg }
+      - { name: Molly B. Burnham, line: A playful site for a children’s book author, image: ../../assets/home/burnham.jpg, href: "https://mollybburnham.com" }
+      - { name: AroundHere.Live, line: "Live music listings for the Pioneer Valley, where fans follow artists and venues and get notified about shows", image: ../../assets/home/aroundhere.jpg, href: "https://aroundhere.live" }
       - { name: Museums, line: "Work for museums including the Ziibiwing Center and the Chicago History Museum", image: ../../assets/home/museums.jpg }
 principles:
   title: How we build

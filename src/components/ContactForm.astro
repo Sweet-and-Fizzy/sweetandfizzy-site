@@ -86,10 +86,15 @@ import Icon from './Icon.astro';
     return !first;
   };
 
+  const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+  const submitLabel = submit.innerHTML;
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (submit.disabled) return;
     error.hidden = true;
     if (!check()) return;
+    submit.disabled = true;
+    submit.textContent = 'Sending…';
     const w = window as unknown as { dataLayer: unknown[] };
     w.dataLayer = w.dataLayer || [];
     let ok = false;
@@ -101,6 +106,8 @@ import Icon from './Icon.astro';
       });
       ok = res.ok;
     } catch { ok = false; }
+    submit.disabled = false;
+    submit.innerHTML = submitLabel;
     onSubmitResult(ok, select.value, w.dataLayer);
     if (ok) {
       form.hidden = true;

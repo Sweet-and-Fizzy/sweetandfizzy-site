@@ -74,10 +74,10 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
         ))}
       </div>
       <div class="help-panel rv">
-        <h3 style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #5abdff">{c.help.title}</h3>
+        <h3 class="h3-card" style="color: #ffffff">{c.help.title}</h3>
         <p style="margin: 0; color: #c8c8c8; max-width: 720px">{c.help.lead}</p>
         <ul class="helprow">
-          {c.help.items.map((h) => <li><span style="font-weight: 700; font-size: 24px; line-height: 1.2">{h.title}</span><span style="color: #c8c8c8">{h.text}</span></li>)}
+          {c.help.items.map((h) => <li><h4 style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1.2">{h.title}</h4><span style="color: #c8c8c8">{h.text}</span></li>)}
         </ul>
       </div>
     </div>

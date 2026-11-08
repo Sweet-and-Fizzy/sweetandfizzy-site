@@ -68,7 +68,7 @@ const description = d.description || `${d.name}: ${d.title}. A Sweet & Fizzy Dig
         </article>
         {d.goal.figures.length > 0 && <div class="goal-figs">{d.goal.figures.map((f) => <Figure fig={f} />)}</div>}
       </div>
-      {d.goal.pull && <blockquote class="pull" style="margin: 0">{d.goal.pull}</blockquote>}
+      {d.goal.pull && <blockquote class="pull" style="margin: 0">{d.goal.pull.trim().startsWith('{') ? <><span aria-hidden="true">{'{ '}</span>{d.goal.pull.trim().replace(/^\{\s*|\s*\}$/g, '')}<span aria-hidden="true">{' }'}</span></> : d.goal.pull}</blockquote>}
     </div>
   </section>
 

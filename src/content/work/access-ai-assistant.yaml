@@ -119,7 +119,7 @@ today:
   figures:
     - caption: The ACCESS Q&A widget on support.access-ci.org
       image:
-        src: ../../assets/work/access-ai-assistant-751bec62.gif
+        src: ../../assets/work/access-ai-assistant-751bec62.png
         alt: "The ACCESS Q&A widget answering how to get a large allocation for medical research using AI, with Helpful and Not helpful buttons"
 results:
   - n: "11"

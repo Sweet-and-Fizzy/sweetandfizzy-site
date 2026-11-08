@@ -11,7 +11,7 @@ const { fig } = Astro.props;
       {fig.process.loop && <p class="process-loop"><span aria-hidden="true">↺</span> {fig.process.loop}</p>}
     </div>
   ) : fig.image?.src
-    ? <div class:list={['shotx', { 'shot-wide': fig.wide }]}><Pic src={fig.image.src} alt={fig.image.alt} sizes={fig.wide ? '(max-width: 1200px) 100vw, 1152px' : undefined} widths={fig.wide ? [800, 1600, 2160] : undefined} /></div>
+    ? <a class:list={['shotx', 'fig-link', { 'shot-wide': fig.wide }]} href={fig.image.src.src}><Pic src={fig.image.src} alt={fig.image.alt} sizes={fig.wide ? '(max-width: 1200px) 100vw, 1152px' : undefined} widths={fig.wide ? [800, 1600, 2160] : undefined} /><span class="sr-only"> (open full size)</span></a>
     : <div class="ph">{fig.placeholder ?? '[SCREENSHOT]'}</div>}
   {fig.caption && <figcaption set:html={mdInline(fig.caption)} />}
 </figure>

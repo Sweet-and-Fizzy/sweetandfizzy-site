@@ -9,6 +9,7 @@ export const contact = {
     { title: 'A discovery sprint', text: 'when you are ready to scope the work. $3,500 for one week or $9,500 for three.' },
   ],
   options: [
+    { value: '', label: 'Choose one' },
     { value: 'program', label: 'A research computing program' },
     { value: 'proposal', label: 'A proposal with a deadline' },
     { value: 'startup', label: 'A startup or product' },

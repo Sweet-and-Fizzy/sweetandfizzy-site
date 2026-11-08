@@ -39,3 +39,24 @@ test('Google Tag Manager does not load off the production domain', async ({ page
   await page.goto('/');
   await expect(page.locator('script[src*="googletagmanager.com"]')).toHaveCount(0);
 });
+
+test('the send button shows progress and blocks a second send', async ({ page }) => {
+  await page.route('**/', async (route) => {
+    if (route.request().method() !== 'POST') return route.continue();
+    await new Promise((r) => setTimeout(r, 1500));
+    return route.fulfill({ status: 200, body: 'ok' });
+  });
+  await page.goto('/contact/?audience=website');
+  await page.getByLabel('Name', { exact: true }).fill('Ada');
+  await page.getByLabel('Email', { exact: true }).fill('ada@example.org');
+  await page.getByLabel('A few lines about it').fill('A new site.');
+  await page.getByRole('button', { name: 'Send' }).click();
+  const btn = page.getByRole('button', { name: /Sending/ });
+  await expect(btn).toBeDisabled();
+});
+
+test('with no audience chosen, organization is optional', async ({ page }) => {
+  await page.goto('/contact/');
+  await expect(page.getByLabel('What are you working on?')).toHaveValue('');
+  await expect(page.getByLabel(/Institution or organization/)).not.toHaveAttribute('required', '');
+});

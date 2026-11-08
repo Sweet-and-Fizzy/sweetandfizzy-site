@@ -14,7 +14,7 @@ groups:
   - title: AI agents
     color: yellow
     blurb: An agent that answers ACCESS support questions from docs and live system data.
-    link: { label: Case study, href: /work/access-ai-assistant/ }
+    link: { label: ACCESS AI Assistant case study, href: /work/access-ai-assistant/ }
     papers:
       - { venue: "HUST workshop at SC26 · Accepted, November 2026", title: "From Answering to Acting: An AI Agent for Research Computing User Support", authors: "A. Pasquale, V. Gazula, J. E. Bacal", summary: "How the ACCESS AI Assistant combines documentation search with live data from MCP servers, and how we test its answers." }
   - title: Connect.CI
@@ -27,7 +27,7 @@ groups:
   - title: Open OnDemand
     color: orange
     blurb: The Appverse, a shared catalog to publish and find Open OnDemand apps.
-    link: { label: Case study, href: /work/open-ondemand/ }
+    link: { label: Open OnDemand case study, href: /work/open-ondemand/ }
     papers:
       - { venue: "PEARC 2026 · Best paper", title: "The Appverse: A Community-Driven Catalog for Open OnDemand Applications", authors: "J. Winchell, D. Chakravorty, S. M. Anderson, J. Ma, A. Chalker, L. Fein, A. Pasquale and 6 others", summary: "A catalog where research computing centers share Open OnDemand apps, kept in sync with GitHub and reviewed against a shared checklist.", doi: 10.1145/3785462.3815803 }
   - title: NSF ACCESS

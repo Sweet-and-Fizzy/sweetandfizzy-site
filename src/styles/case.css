@@ -95,3 +95,5 @@ h3.chap,.story h3.chap{font-family:'DM Sans',sans-serif;font-size:36px;font-weig
 /* Goal band figure: white frame on blue, caption in ink */
 .goal .ch-fig figcaption{color:#111111}
 .goal .shotx{border-color:#111111}
+a.fig-link{display:block;cursor:zoom-in}
+a.fig-link:focus-visible{outline:3px solid #111111;outline-offset:3px}
