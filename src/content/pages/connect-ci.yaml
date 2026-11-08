@@ -90,7 +90,7 @@ faq:
     - q: How long does onboarding take?
       a: "A few weeks for a site built from the platform's existing features. The Pennsylvania Science DMZ portal was stood up in a few weeks. New features take longer, and we scope them with you."
     - q: Can Connect.CI be written into our proposal budget?
-      a: "Yes. Membership and development fit a subaward or a purchase order. We provide budget text, a letter of collaboration and sustainability language."
+      a: "Yes. Membership and development fit a subaward or a purchase order. We provide budget text, a statement of work and sustainability language."
     - q: What happens to features we fund?
       a: "They become part of the shared platform. We maintain them with everything else, and other communities that need them can use them."
 papers:
@@ -110,5 +110,5 @@ supporters:
     - { name: "Texas A&M", logo: texas-am.png }
 cta:
   title: Bring your community to Connect.CI
-  body: "Tell us about your program and your timeline. If you are writing a proposal, we can provide budget text, a letter of collaboration and sustainability language."
+  body: "Tell us about your program and your timeline. If you are writing a proposal, we can provide budget text, a statement of work and sustainability language."
   button: Talk to us
