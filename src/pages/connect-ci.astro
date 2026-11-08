@@ -8,7 +8,7 @@ import CtaBand from '../components/sections/CtaBand.astro';
 import LogoStrip from '../components/sections/LogoStrip.astro';
 import { featureIcons } from '../data/icons';
 import { md } from '../lib/md';
-import connectCiLogo from '../assets/logos/connect-ci.jpg';
+import connectCiMark from '../assets/logos/connect-ci-mark-light.svg';
 
 const c = (await getEntry('connectci', 'connect-ci'))!.data;
 ---
@@ -17,7 +17,6 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
     <div class="wrap" style="padding-top: 80px; padding-bottom: 64px; display: flex; flex-direction: column; gap: 40px">
       <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
         <div style="flex: 1 1 min(520px, 100%); min-width: 0; display: flex; flex-direction: column; gap: 24px">
-          <span class="cc-logo"><Pic src={connectCiLogo} alt="Connect.CI" sizes="260px" widths={[260, 520]} loading="eager" /></span>
           <p class="eyebrow-xl" style="color: #5abdff; font-family: inherit">{c.hero.eyebrow}</p>
           <h1 id="cc-title" class="h1-xl">{c.hero.title}</h1>
           <p style="margin: 0; color: #c8c8c8; max-width: 600px">{c.hero.body}</p>
@@ -27,16 +26,7 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
           </div>
         </div>
         <div aria-hidden="true" class="cc-art">
-          <svg viewBox="0 0 400 380" style="width: 100%; max-width: 380px; height: auto; display: block">
-            <g fill="#ffffff" stroke="#111111" stroke-width="14" paint-order="stroke" stroke-linejoin="round">
-              <path d="M218 24h150a26 26 0 0 1 26 26v104a26 26 0 0 1-26 26h-86l-46 40 8-40h-26a26 26 0 0 1-26-26V50a26 26 0 0 1 26-26z"></path>
-              <circle cx="238" cy="196" r="44"></circle>
-              <path d="M156 372a82 82 0 0 1 164 0z"></path>
-              <circle cx="128" cy="168" r="56"></circle>
-              <path d="M18 372a110 110 0 0 1 220 0z"></path>
-            </g>
-            <g fill="#111111"><circle cx="252" cy="102" r="13"></circle><circle cx="293" cy="102" r="13"></circle><circle cx="334" cy="102" r="13"></circle></g>
-          </svg>
+          <img src={connectCiMark.src} alt="" width="320" height="320" />
         </div>
       </div>
       <dl class="stats" aria-label="Platform at a glance">
@@ -167,9 +157,8 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
 </Base>
 
 <style is:global>
-  .cc-logo{align-self:flex-start;display:block;background:#ffffff;padding:14px 22px 12px;border-radius:6px}
-  .cc-logo img{display:block;width:220px;height:auto}
-  .cc-art{flex:1 1 320px;min-width:0;align-self:flex-start;display:flex;justify-content:center;padding-top:8px}
+  .cc-art{flex:1 1 320px;min-width:0;align-self:center;display:flex;justify-content:center}
+  .cc-art img{width:min(320px,100%);height:auto}
   @media (max-width:700px){.cc-art{display:none}}
   .logo-box{height:112px;background:#ffffff;display:flex;align-items:center;justify-content:center;padding:16px 24px}
   .logo-name{font-weight:700;font-size:20px;text-align:center}
