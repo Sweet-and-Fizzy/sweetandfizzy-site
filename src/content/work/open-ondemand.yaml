@@ -108,17 +108,17 @@ today:
   title: Where it is today
   body: "**Open OnDemand runs at organizations around the world.** More than 2,100 organizations use it today, and 1,430 people take part in its community forum. Since the Community Hub launched at GOOD25, the Contributor Wall makes contributions visible beyond code commits."
   figures:
-    - caption: Known Open OnDemand deployments, from openondemand.org
+    - caption: Open OnDemand deployments worldwide, December 2025, from openondemand.org
       image:
-        src: ../../assets/work/open-ondemand-77252f5a.jpg
-        alt: A world map of known Open OnDemand deployments
+        src: ../../assets/work/open-ondemand-map-2025.jpg
+        alt: A world map of Open OnDemand deployments, dense across North America and Europe with sites on every inhabited continent
 results:
-  - n: 250+
-    label: known installations by 2022
+  - n: "2,100+"
+    label: organizations running Open OnDemand
   - n: "100+"
-    label: apps in the Appverse (November 2026)
+    label: apps in the Appverse
   - n: "69"
-    label: people on the Contributor Wall (November 2026)
+    label: people on the Contributor Wall
 prev:
   href: /#research
   label: Research computing work
