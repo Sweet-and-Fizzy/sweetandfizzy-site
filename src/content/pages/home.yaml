@@ -28,7 +28,7 @@ areas:
         body: Start with features many research computing communities already share, like events and community directories, mentorship, and single sign-on, and fund new features you want. Hosted membership starts at $3,000 a year, and improvements are shared with the community.
         link: { label: Connect.CI, href: /connect-ci/ }
       - title: Curated catalogs
-        body: "Catalogs that run themselves: anyone can submit software, tools or other resources from GitHub, submissions sync on a schedule, and moderators review, rate and flag issues before they are published. Our Open OnDemand Appverse lists 81 apps from 16 organizations. Best paper, PEARC 2026."
+        body: "Catalogs your community builds together: anyone can submit software, tools or other resources from GitHub, listings stay in sync with each repository, and moderators review, rate and flag issues before anything is published. Our Open OnDemand Appverse lists 81 apps from 16 organizations. Best paper, PEARC 2026."
         link: { label: Explore the Appverse, href: /work/open-ondemand/#the-appverse }
     cta: { label: Tell us about your program, href: /contact/?audience=program }
     secondary: { label: Planning a proposal?, href: /planning-a-proposal/ }
