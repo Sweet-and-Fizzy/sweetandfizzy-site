@@ -1,0 +1,119 @@
+# Case study copy. Edit text freely; bracketed [PLACEHOLDERS] block launch. Images: src/assets/work/.
+name: ACCESS Support
+title: Helping researchers find their way in national computing
+order: 1
+phase: 1
+description: ""
+link:
+  href: https://support.access-ci.org/
+  label: Visit support.access-ci.org
+heroImage:
+  src: ../../assets/work/access-support-14e51022.png
+  alt: The ACCESS arrow mark
+did:
+  - Design
+  - Drupal development
+  - AI tools
+  - Regression testing
+  - Marketing and communications
+  - Analytics
+  - Collaboration
+facts:
+  - k: Client
+    v: NSF ACCESS
+  - k: Platform
+    v: Drupal, on Connect.CI
+  - k: Years
+    v: "[2022 to present]"
+goal:
+  icon: "?"
+  title: The goal
+  body: |-
+    **A new program, and a lot of people with questions.** In 2022, ACCESS took over from XSEDE as the NSF program that gives researchers time on national computing systems. Many of the people it serves are not computing experts. They are biologists, economists and engineers with a research question and a deadline.
+
+    They needed somewhere to start: how to get an allocation, which system to use, where to find software, and who to ask when they get stuck. [One detail about what support looked like before the portal, if we can share it.]
+  pull: Asking for help with a supercomputer should feel as easy as asking a colleague.
+chapters:
+  - level: 2
+    title: Our approach
+    body: |-
+      **Start with people, not pages.** We worked side by side with the ACCESS support team to decide what researchers need first: a knowledge base, a place to meet others doing similar work, and a clear way to reach a person. We built the portal on Drupal with custom modules, as part of Connect.CI, so it shares profiles and features with other research computing communities.
+
+      The design is professional with a touch of whimsy. Bright shapes and plain language make a technical subject feel welcoming.
+    figures:
+      - caption: The ACCESS Support home page
+        image:
+          src: ../../assets/work/access-support-1c8c0c78.jpg
+          alt: The ACCESS Support home page
+    icon: "{ }"
+  - level: 3
+    title: Community platform
+    body: |-
+      **One place for news, events and people.** ACCESS Support runs on Connect.CI, so it shares the platform’s community features and keeps people up to date:
+
+      - Events and announcements
+      - Event registration
+      - A biweekly email digest
+    figures:
+      - caption: The biweekly digest
+        image:
+          src: ../../assets/work/access-support-d38a0270.png
+          alt: An ACCESS Support email digest
+  - level: 3
+    title: AI Assistant
+    body: |-
+      **Answers at any hour.** A Q&A assistant answers most user questions from the ACCESS documentation, and AI suggests tags for new posts based on what they say.
+
+      That work led to our next step: the [ACCESS AI Assistant](/work/access-ai-assistant/), which also reads live system data.
+    figures:
+      - caption: The Q&A assistant
+        image:
+          src: ../../assets/work/access-support-751bec62.gif
+          alt: The ACCESS Q&A assistant answering a question
+  - level: 3
+    title: Affinity groups
+    body: "**A home for people who share a focus.** Affinity groups give communities of practice their own space for news, events, resources and email lists. [Which ACCESS affinity groups to name.]"
+    figures:
+      - caption: "[Affinity groups screenshot]"
+        placeholder: "[SCREENSHOT]"
+  - level: 3
+    title: UI design on the tools
+    body: |-
+      **Tools that are easy to use.** We designed the interfaces for ACCESS tools that help researchers plan their work:
+
+      - ARA, the ACCESS Resource Advisor, which helps researchers find the right resources
+      - SDS, the Software Documentation Service, which shows the software installed on each system
+      - Resource documentation pages, built from a template we designed and built
+    figures:
+      - caption: The Software Documentation Service
+        image:
+          src: ../../assets/work/access-support-035bb12a.jpg
+          alt: The Software Documentation Service
+  - level: 3
+    title: Researcher stories
+    body: "**Showing what researchers do with ACCESS.** [One or two sentences on the researcher stories: what they cover, where they appear and why they matter.]"
+    figures:
+      - caption: "[Researcher stories screenshot]"
+        placeholder: "[SCREENSHOT]"
+today:
+  icon: "!"
+  title: Where it is today
+  body: "**The portal has received excellent reviews from the community.** [Two sentences on who uses it today and what has changed for them.]"
+  figures: []
+results:
+  - n: "[N]"
+    label: "[researchers and staff using the portal]"
+  - n: "[N]"
+    label: "[MATCH engagements completed]"
+  - n: "[N%]"
+    label: "[questions the Q&A bot answers without a ticket]"
+prev:
+  href: /#research
+  label: Research computing work
+next:
+  href: /work/access-ai-assistant/
+  label: "Next: ACCESS AI Assistant"
+cta:
+  title: Need a home for your research community?
+  body: ACCESS Support runs on Connect.CI, our shared community platform. Tell us about your program and we can start from there.
+  button: Tell us about your program

@@ -1,0 +1,81 @@
+/* Case study styles, from the case study boards. */
+.btn-sm{padding:9px 20px;font-size:16px;border-width:2px}
+.go-lk:hover .circ{background:var(--accent);color:#111111}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.btn,.lk,.go-lk .circ,.go-lk .x,.btn .ar{transition:none}.go-lk:hover .circ,.btn:hover .ar{transform:none}}
+/* Current page in the nav */
+.nav a[aria-current=page]{border-bottom-color:#fcee21}
+/* Inline link with a leading icon (code, external) */
+.lk:has(svg){display:inline-flex;align-items:center;gap:8px}
+/* Inline link on black */
+.lk-light{color:#ffffff}.lk-light:hover{color:#c8c8c8}
+/* Testimonial: yellow panel, white quote mark, bold large quote */
+@media (max-width:700px){.tq{grid-template-columns:1fr!important;padding:32px 24px!important}.tq svg{width:72px;height:58px;margin-bottom:16px}.tq blockquote p{font-size:28px!important}}
+/* Case study: ACCESS Support */
+.cs-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;align-items:center}
+.cs-row .im{order:var(--o,0)}
+.shotx{display:block;aspect-ratio:16 / 10;overflow:hidden;background:#f4f4f4;border:1px solid #5abdff}
+.shotx img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.chips{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.chips li{font-size:16px;font-weight:700;padding:6px 14px;border:2px solid #5abdff}
+.chips-dark li{color:#ffffff;flex:1 1 auto;text-align:center}
+.story{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.story p{margin:0}
+.chap{display:flex;align-items:center;gap:16px;margin:0 0 4px!important;font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;line-height:1.1;letter-spacing:1px;text-transform:uppercase;color:#111111}
+.chap b{flex:none;width:58px;height:58px;border-radius:50%;background:transparent;border:5px solid #5abdff;box-sizing:border-box;color:#111111;display:inline-flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-weight:700;font-size:26px;line-height:1;letter-spacing:0}
+.ch-row{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:center}
+.ch-row.flip .story{order:2}
+.bul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.bul li{position:relative;padding-left:22px}
+.bul-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px;font-size:16px}
+@media (max-width:600px){.bul-2{grid-template-columns:1fr}}
+.bul li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;background:#5abdff}
+.ph{aspect-ratio:16 / 10;display:flex;align-items:center;justify-content:center;font-size:14px;color:#595959;background:#f4f4f4;border:1px solid #5abdff}
+.ch-row+.ch-row{position:relative;padding-top:64px}
+.ch-row+.ch-row::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:repeating-linear-gradient(90deg,#5abdff 0 6px,transparent 6px 18px)}
+/* Heading levels: H2 = The goal, Our approach, Where it is today. H3 = items under Our approach. */
+h2.chap,.story h2.chap{font-family:'DM Sans',sans-serif;font-size:40px;font-weight:700;line-height:1.1}
+h3.chap,.story h3.chap{font-family:'DM Sans',sans-serif;font-size:36px;font-weight:700;line-height:1.15;letter-spacing:0;text-transform:none}
+.story strong{font-weight:700}
+.ch-row .story{max-width:none;margin:0}
+.ch-fig{margin:0;display:flex;flex-direction:column;gap:10px;font-size:16px;color:#595959}
+.ch-fig+.ch-fig{margin-top:24px}
+/* Blue band: black ring and rule on blue */
+.goal .chap b{border-color:#111111}
+.goal .pull{border-left-color:#111111}
+@media (max-width:860px){.ch-row{grid-template-columns:1fr;gap:28px}.ch-row.flip .story{order:0}}
+.story h2{margin:0;font-family:'DM Sans',sans-serif;font-weight:700;font-size:36px;line-height:1.15}
+.wide{max-width:1200px;margin:16px auto 0;display:flex;flex-direction:column;gap:10px}
+.wide figcaption,.pair figcaption{font-size:16px;color:#595959}
+.pair{max-width:1200px;margin:16px auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.pair figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.pull{max-width:960px;margin:24px auto;border-left:8px solid #5abdff;padding:4px 0 4px 32px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:40px;line-height:1.2;text-wrap:pretty}
+@media (max-width:800px){.pair{grid-template-columns:1fr}.pull{font-size:28px}}
+@media (max-width:800px){.cs-row{grid-template-columns:1fr;gap:24px}.cs-row .im{order:0}}
+
+/* Case page pieces, moved from the boards' inline styles */
+.crumbs{font-size:16px;color:#ffffff}
+.crumbs a{display:inline-flex;align-items:center;min-height:44px}
+.cs-hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:48px;align-items:center}
+.kicker{margin:0;color:#5abdff;font-size:36px;font-weight:700;line-height:1.2;text-transform:uppercase;font-family:Oswald,"Arial Narrow",sans-serif}
+.cs-name{margin:0;font-family:Oswald,"Arial Narrow",sans-serif;font-weight:500;font-size:56px;line-height:1.05}
+.cs-h1{margin:0;font-weight:700;font-size:50px;line-height:1.05;text-wrap:balance;color:#5abdff}
+.facts{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px 32px;padding-top:8px}
+.facts dt{font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#a6a6a6}
+.facts dd{margin:0;font-weight:700}
+.tq{margin:0;padding:56px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 32px;align-items:start;background:#5abdff}
+.tq-text{margin:0;font-weight:700;font-size:40px;line-height:1.2;color:#111111;max-width:900px;text-wrap:pretty}
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}
+.res-n{font-weight:700;font-size:56px;line-height:1}
+.paper-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:48px;margin-top:8px}
+.paper{border:2px solid #5abdff;padding:32px;display:flex;flex-direction:column;gap:10px}
+.eyebrow{margin:0;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#595959}
+.pn{border-top:1px solid #c8c8c8;padding-top:16px;margin-top:16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-weight:700}
+.pn a{text-decoration:none}
+.tgt{display:inline-flex;align-items:center;min-height:44px}
+/* Links inside story copy: underlined so they never rely on color alone */
+.story a{font-weight:700;color:#111111;text-decoration:underline;text-decoration-color:#5abdff;text-decoration-thickness:3px;text-underline-offset:5px}
+.goal .story a{text-decoration-color:#111111}
+.bul-ol{counter-reset:n}
+.ch-fig .shotx img{height:100%}
+@media (max-width:700px){.kicker{font-size:28px}.cs-name{font-size:40px}.cs-h1{font-size:36px}.res-n{font-size:44px}.tq-text{font-size:28px}}

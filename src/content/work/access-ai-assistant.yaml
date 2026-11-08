@@ -1,0 +1,125 @@
+# Case study copy. Edit text freely; bracketed [PLACEHOLDERS] block launch. Images: src/assets/work/.
+name: ACCESS AI Assistant
+title: An AI support agent that reads live system data
+order: 2
+phase: 1
+description: ""
+link:
+  href: https://github.com/connectci-platform/access-agent
+  label: See the code on GitHub
+heroImage:
+  src: ../../assets/work/access-ai-assistant-14e51022.png
+  alt: The ACCESS arrow mark
+did:
+  - AI agents
+  - MCP servers
+  - Evaluation
+  - UX design
+  - Open source
+facts:
+  - k: Client
+    v: NSF ACCESS
+  - k: Funding
+    v: NSF award OAC-2138286
+  - k: Years
+    v: "[2025 to present]"
+goal:
+  icon: "?"
+  title: The goal
+  body: |-
+    **Good answers need the docs and the live system at once.** ACCESS researchers ask questions that mix the two: how to request a GPU allocation, and which GPU systems are up today. Documentation answers the first half. The second lives in allocation, status and resource systems that a documentation chatbot cannot see.
+
+    When an assistant cannot see live data, it either guesses or sends people to file a ticket. [Ticket volume or a typical example from ACCESS support, if we can share it.]
+  pull: "{ The docs know how. The live systems know right now. Researchers need both. }"
+chapters:
+  - level: 2
+    title: Our approach
+    body: |-
+      **One agent, documentation plus 11 live data sources.** We built a support agent that answers ACCESS documentation questions and live questions in the same conversation, like which GPU resources are available or what is down for maintenance.
+
+      It runs on commercial models or on open models hosted by a partner university, so ACCESS can choose.
+    figures:
+      - caption: Answering a GPU planning question with live outage data
+        image:
+          src: ../../assets/work/access-ai-assistant-d6b1fc20.jpg
+          alt: The ACCESS support agent answering a GPU planning question with live outage data
+    icon: "{ }"
+  - level: 3
+    title: Support agent
+    body: |-
+      **From a question to a checked answer.** Every question goes through the same steps:
+
+      - A researcher asks in plain language, mixing how-to and right-now questions
+      - The agent plans which sources the question needs
+      - It reads the documentation and the live data
+      - It gives one answer, with live facts and documentation together
+      - If it cannot help, it opens a ticket for a person
+    figures:
+      - caption: The Q&A assistant
+        image:
+          src: ../../assets/work/access-ai-assistant-751bec62.gif
+          alt: The ACCESS Q&A assistant answering a question
+  - level: 3
+    title: 11 MCP servers
+    body: |-
+      **Live ACCESS data, open to any AI tool.** Each server connects the agent to one ACCESS system. They are public at mcp.access-ci.org, so researchers can add them to Claude themselves:
+
+      - Allocations
+      - Compute resources
+      - System status
+      - Events
+      - Announcements
+      - Software
+      - Affinity groups
+      - NSF awards
+      - Usage metrics
+      - Ticketing
+    figures:
+      - caption: mcp.access-ci.org
+        placeholder: "[Screenshot: the ACCESS MCP setup guide]"
+  - level: 3
+    title: Evaluation battery
+    body: "**Measured, not demoed.** We grade the agent against questions written by people, fact by fact. Each required fact comes from the documentation, never from the agent’s own answer."
+    figures:
+      - caption: How the agent is evaluated
+        placeholder: "[Architecture diagram from the HUST paper, once it is published]"
+today:
+  icon: "!"
+  title: Where it is today
+  body: "**The agent and its servers are open source.** [One measured outcome from the evaluation battery, for example the share of required facts answered correctly.]"
+  figures: []
+results:
+  - n: "[N%]"
+    label: "[required facts answered correctly on the evaluation battery]"
+  - n: "11"
+    label: MCP servers for live ACCESS data, public at mcp.access-ci.org
+  - n: "[N]"
+    label: "[questions in the evaluation battery]"
+  - n: "2"
+    label: "model options: commercial or university-hosted open models"
+prev:
+  href: /work/
+  label: All case stories
+next:
+  href: /work/open-ondemand/
+  label: "Next: Open OnDemand"
+cta:
+  title: Want an agent that knows your systems?
+  body: Tell us about your documentation and your data sources. The ACCESS agent is open source, so we can start from it.
+  button: Tell us about your program
+paper:
+  kicker: Paper · HUST at SC26 · Forthcoming
+  title: "From Answering to Acting: An AI Agent for Research Computing User Support"
+  authors: A. Pasquale, V. Gazula, J. E. Bacal. November 2026.
+links:
+  title: Check the work
+  items:
+    - href: https://github.com/connectci-platform/access-agent
+      label: connectci-platform/access-agent
+      note: the agent, Apache-2.0
+    - href: https://github.com/connectci-platform/access-mcp
+      label: connectci-platform/access-mcp
+      note: the MCP servers, MIT
+    - href: https://mcp.access-ci.org/docs/getting-started
+      label: ACCESS MCP setup guide
+      note: add the servers to Claude yourself

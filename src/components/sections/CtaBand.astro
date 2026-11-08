@@ -1,0 +1,17 @@
+---
+import Icon from '../Icon.astro';
+interface Props { title: string; body: string; button: string; href: string; secondary?: { label: string; href: string } }
+const { title, body, button, href, secondary } = Astro.props;
+---
+<section aria-labelledby="cta-title" style="background: #111111; color: #ffffff">
+  <div class="wrap rv" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 40px">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 620px">
+      <h2 id="cta-title" style="margin: 0; font-weight: 700; font-size: clamp(28px, 4vw, 36px); line-height: 1.15">{title}</h2>
+      <p style="margin: 0; color: #c8c8c8">{body}</p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center">
+      <a class="btn btn-light" href={href}>{button}<Icon name="arrow-right" class="ar" size={20} stroke={2} /></a>
+      {secondary && <a class="lk lk-light cta-lk" href={secondary.href}>{secondary.label}</a>}
+    </div>
+  </div>
+</section>

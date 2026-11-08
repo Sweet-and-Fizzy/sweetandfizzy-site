@@ -1,0 +1,115 @@
+# Case study copy. Edit text freely; bracketed [PLACEHOLDERS] block launch. Images: src/assets/work/.
+name: MGHPCC
+title: Telling the story of a green supercomputing center, online and on the show floor
+order: 4
+phase: 1
+description: ""
+link:
+  href: https://mghpcc.org/
+  label: Visit mghpcc.org
+heroImage:
+  src: ../../assets/work/mghpcc-c40480bb.png
+  alt: MGHPCC, Massachusetts Green High Performance Computing Center
+did:
+  - Design
+  - Booth printwork
+  - Interactive kiosks
+  - WordPress
+  - Web development
+  - Analytics
+facts:
+  - k: Client
+    v: Massachusetts Green High Performance Computing Center
+  - k: Platform
+    v: WordPress
+  - k: Years
+    v: "[N]"
+goal:
+  icon: "?"
+  title: The goal
+  body: |-
+    **Show the research, not just the racks.** The MGHPCC in Holyoke, Massachusetts is a shared research computing center for Boston University, Harvard, MIT, Northeastern and the University of Massachusetts. It was the first university research data center to earn LEED Platinum.
+
+    It needed a website that explains what the center does and who it serves, and a presence at SC, the largest supercomputing conference in the world, that pulls people across a crowded floor and into the booth.
+  pull: "{ A data center is a building. The research inside it is the story. }"
+chapters:
+  - level: 2
+    title: Our approach
+    body: "**One story, from the website to the booth.** We look after mghpcc.org all year, and each fall we create the branded materials for SC, lining up the MGHPCC and SC brand guidelines so the booth, the kiosk and the virtual booth all feel like one place."
+    figures:
+      - caption: Two brands, one booth
+        image:
+          src: ../../assets/work/mghpcc-450d49bc.jpg
+          alt: The MGHPCC and SC23 logos side by side
+    icon: "{ }"
+  - level: 3
+    title: The MGHPCC website
+    body: |-
+      **Everything the center does, in one place.** We design and build mghpcc.org on WordPress, so researchers, partners and the public can see what runs in Holyoke and who it serves:
+
+      - A catalog of research projects, from climate to medicine
+      - Collaborative projects with regional and national networks
+      - Outreach and education, internships and scholarships
+      - News, events and monthly publications
+    figures:
+      - caption: mghpcc.org
+        placeholder: "[Screenshot: the mghpcc.org home page]"
+  - level: 3
+    title: The virtual booth
+    body: "**The booth, online.** Each year we build a website for SC that highlights projects at the MGHPCC, so people can keep exploring after they leave the floor."
+    figures:
+      - caption: The SC23 virtual booth
+        image:
+          src: ../../assets/work/mghpcc-d76f3008.jpg
+          alt: The MGHPCC SC23 virtual booth website
+  - level: 3
+    title: Research projects
+    body: |-
+      **Every project gets a video and a face.** A custom content type gives each research project its own page:
+
+      - A video about the project
+      - A short summary of the research
+      - The researchers involved, with photos
+    figures:
+      - caption: A research project page
+        image:
+          src: ../../assets/work/mghpcc-8701240c.jpg
+          alt: A research project page for the Harvard Billion Object Platform
+  - level: 3
+    title: Print displays
+    body: "**The green story, in print.** Panels mounted in the booth explain the MGHPCC, with a focus on its green credentials and partner universities. QR codes send people to the website to learn more."
+    figures:
+      - caption: Booth display panels
+        image:
+          src: ../../assets/work/mghpcc-d2f48097.jpg
+          alt: MGHPCC SC23 display panels
+  - level: 3
+    title: Animations & interactive kiosk
+    body: "**Drawing people in.** The kiosk runs an animated attract loop of researchers and their work, which entices people to step into the booth and explore the projects."
+    figures:
+      - caption: The kiosk and its attract loop
+        image:
+          src: ../../assets/work/mghpcc-d51be2c6.jpg
+          alt: The MGHPCC SC23 kiosk design
+today:
+  icon: "!"
+  title: Where it is today
+  body: "**The MGHPCC heads to SC26 this November.** [Two sentences on how the booth and the website have grown over the years.]"
+  figures: []
+results:
+  - n: "[N]"
+    label: SC conferences
+  - n: "[N]"
+    label: "[booth visitors or kiosk sessions]"
+  - n: "[N]"
+    label: "[research projects shown with video]"
+prev:
+  href: /#research
+  label: Research computing work
+next:
+  href: /work/access-support/
+  label: "Next: ACCESS Support"
+cta:
+  title: Heading to a conference?
+  body: Tell us about your event. We can design the booth, the kiosk and the website that goes with it.
+  button: Tell us about your program

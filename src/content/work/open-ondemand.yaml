@@ -1,0 +1,126 @@
+# Case study copy. Edit text freely; bracketed [PLACEHOLDERS] block launch. Images: src/assets/work/.
+name: Open OnDemand
+title: Supercomputing in a browser, and a community to match
+order: 3
+phase: 1
+description: ""
+link:
+  href: https://openondemand.org/
+  label: Visit openondemand.org
+did:
+  - Content strategy
+  - Web development
+  - Graphics
+  - Automation
+  - Collaboration
+  - Community management
+facts:
+  - k: Client
+    v: Ohio Supercomputer Center
+  - k: Platform
+    v: Drupal
+  - k: Years
+    v: "3"
+goal:
+  icon: "?"
+  title: The goal
+  body: |-
+    **A website as easy to use as the software.** Open OnDemand lets researchers use a supercomputer from a web browser, with nothing to install and no command line to learn. The Ohio Supercomputer Center has built it since 2015 with NSF support, and by 2022 it had more than 250 known installations.
+
+    The website needed to catch up: line up with the Open OnDemand brand, make the key paths easy to find for people who run it, administer it and contribute to it, and give a growing community somewhere to gather.
+  pull: "{ Software that makes supercomputers easy deserves a website that does too. }"
+chapters:
+  - level: 2
+    title: Our approach
+    body: |-
+      **Refresh the brand, simplify the paths.** We refreshed openondemand.org to match the Open OnDemand brand and streamlined the navigation, so people reach what they came for in fewer clicks: running it, administering it or contributing to it.
+
+      Behind the scenes, GitHub Actions automate the Pantheon workflow, so every change is built, tested and deployed the same way.
+    figures:
+      - caption: The Open OnDemand home page
+        image:
+          src: ../../assets/work/open-ondemand-e23a36fe.jpg
+          alt: The Open OnDemand home page
+    icon: "{ }"
+  - level: 3
+    title: Web communications
+    body: "**Keeping the site current.** We make design and web content updates for openondemand.org, so new pages and information look and read like the rest of the site."
+    figures:
+      - caption: A page design for openondemand.org
+        image:
+          src: ../../assets/work/open-ondemand-00047439.jpg
+          alt: A page on openondemand.org
+  - level: 3
+    title: Affinity groups
+    body: |-
+      **Find your people.** Affinity groups let members share tools, code and expertise around a topic. We designed the postcard that invited people at PEARC26 to join one of the 11 groups:
+
+      - Containers
+      - The Appverse
+      - Affinity Group Coordinators
+      - Multilingual Community
+      - Project Design
+      - Customizing the OOD Backend
+      - OOD on Azure
+      - Open OnDemand Security Best Practices
+      - LLMs and OOD
+      - OOD in the Classroom
+      - Structural Biology OOD Apps
+    figures:
+      - caption: The affinity groups postcard for PEARC26
+        image:
+          src: ../../assets/work/open-ondemand-1d069f7a.jpg
+          alt: The Join Community Affinity Groups postcard
+  - level: 3
+    title: The Appverse
+    body: |-
+      **A catalog that runs itself.** The Appverse is a community catalog of apps for Open OnDemand:
+
+      - Anyone can submit an app from GitHub
+      - Submissions sync on a schedule
+      - Moderators review, rate and flag issues before they are published
+      - 81 apps from 16 organizations, and a best paper award at PEARC 2026
+    figures:
+      - caption: The Appverse
+        image:
+          src: ../../assets/work/open-ondemand-bb59ea73.jpg
+          alt: The Open OnDemand Appverse
+  - level: 3
+    title: Contributor Wall
+    body: |-
+      **Contributors get the credit they deserve.** On the Open OnDemand Community Hub, built on Connect.CI, the Contributor Wall shows code, documentation, forum and Appverse contributions across the year, with a rotating Community Spotlight.
+
+      - Automated badging from contribution activity
+      - Manual badging for work that does not show up in the data
+      - Spreadsheet upload to add many contributions at once
+    figures:
+      - caption: The Contributor Wall
+        image:
+          src: ../../assets/work/open-ondemand-f1131371.jpg
+          alt: The Community Hub Contributor Wall
+today:
+  icon: "!"
+  title: Where it is today
+  body: "**Open OnDemand runs at organizations around the world.** [Two sentences on the community today and what the new site changed for them.]"
+  figures:
+    - caption: Known Open OnDemand deployments, from openondemand.org
+      image:
+        src: ../../assets/work/open-ondemand-77252f5a.jpg
+        alt: A world map of known Open OnDemand deployments
+results:
+  - n: 250+
+    label: known installations by 2022
+  - n: "81"
+    label: apps in the Appverse, from 16 organizations
+  - n: "[N]"
+    label: "[contributors on the Contributor Wall]"
+prev:
+  href: /#research
+  label: Research computing work
+next:
+  href: /work/access-support/
+  label: "Next: ACCESS Support"
+cta:
+  title: Want your project to be this easy to find?
+  body: Tell us about your software and your community. We can refresh your site, build your hub on Connect.CI, or both.
+  button: Tell us about your program

@@ -188,3 +188,4 @@ a.mc:hover .ar2{background:var(--accent);transform:translateX(3px)}
 /* Footer helpers */
 .lk-light{color:#fff}.lk-light:hover{color:var(--muted-on-dark)}
 .fl a{display:inline-flex;align-items:center;min-height:44px}
+.cta-lk{display:inline-flex;align-items:center;min-height:44px}

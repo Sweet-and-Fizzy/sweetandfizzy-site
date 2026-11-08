@@ -1,0 +1,10 @@
+---
+// A chapter's copy: heading with optional ring icon, then Markdown body.
+import { md } from '../../lib/md';
+interface Props { level: 2 | 3; icon?: string; title: string; body: string; id?: string }
+const { level, icon, title, body, id } = Astro.props;
+const H = `h${level}`;
+const html = md(body).replace(/<ul>/g, '<ul class="bul">').replace(/<ol>/g, '<ol class="bul bul-ol">');
+---
+<H id={id} class="chap">{icon && <b aria-hidden="true">{icon}</b>}{title}</H>
+<Fragment set:html={html} />

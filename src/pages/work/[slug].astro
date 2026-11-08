@@ -1,0 +1,144 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pic from '../../components/Pic.astro';
+import Figure from '../../components/case/Figure.astro';
+import Story from '../../components/case/Story.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+import '../../styles/case.css';
+import { getPhase1Work, type Work } from '../../data/work';
+
+export async function getStaticPaths() {
+  const work = await getPhase1Work();
+  return work.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props as { entry: Work };
+const d = entry.data;
+const barColors = ['#5abdff', '#ef4326', '#fcee21'];
+const description = d.description || `${d.name}: ${d.title}. A Sweet & Fizzy Digital case story.`;
+---
+<Base title={`${d.name} case story`} description={description}>
+  <section aria-labelledby="cs-title" style="background: #111111; color: #ffffff">
+    <div class="wrap" style="padding-top: 48px; padding-bottom: 64px; display: flex; flex-direction: column; gap: 40px">
+      <nav aria-label="Breadcrumb" class="crumbs"><a class="lk lk-light" href="/work/">Case stories</a>&nbsp;/ Research computing / <b aria-current="page">{d.name}</b></nav>
+      <div class="cs-hero">
+        <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 16px">
+            <p class="kicker">Case story</p>
+            <p class="cs-name">{d.name}</p>
+          </div>
+          <h1 id="cs-title" class="cs-h1">{d.title}</h1>
+          <ul class="chips chips-dark" aria-label="What we did">
+            {d.did.map((x) => <li>{x}</li>)}
+          </ul>
+        </div>
+        {(d.link || d.heroImage) && (
+          <figure style="margin: 0; display: flex; flex-direction: column; gap: 20px; min-width: 0">
+            {d.link && (
+              <a class="go-lk" href={d.link.href} style="color: #ffffff; align-self: flex-end; flex-direction: row-reverse">
+                <span class="circ" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span><span class="x">{d.link.label}</span>
+              </a>
+            )}
+            {d.heroImage && (
+              <div style="display: flex; align-items: center; justify-content: center; padding-top: 8px">
+                <Pic src={d.heroImage.src} alt={d.heroImage.alt} loading="eager" sizes="420px" widths={[420, 840]} style="display: block; width: 100%; max-width: 420px; height: auto" />
+              </div>
+            )}
+          </figure>
+        )}
+      </div>
+      <dl class="facts">
+        {d.facts.map((f, i) => (
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span aria-hidden="true" style={`display: block; width: 48px; height: 6px; margin-bottom: 8px; background: ${barColors[i % 3]}`}></span>
+            <dt>{f.k}</dt>
+            <dd>{f.v}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section aria-labelledby="goal-title" class="goal" style="background: #5abdff">
+    <div class="wrap" style="padding-top: 88px; padding-bottom: 88px; display: flex; flex-direction: column; gap: 56px">
+      <article class="story" style="max-width: 760px; margin: 0">
+        <Story level={2} id="goal-title" icon={d.goal.icon} title={d.goal.title} body={d.goal.body} />
+      </article>
+      {d.goal.pull && <blockquote class="pull" style="margin: 0">{d.goal.pull}</blockquote>}
+    </div>
+  </section>
+
+  <section aria-label="The story" style="background: #ffffff">
+    <div class="wrap" style="padding-top: 96px; padding-bottom: 40px; display: flex; flex-direction: column; gap: 64px">
+      {d.chapters.map((c) => (
+        <div class="ch-row">
+          <article class="story"><Story level={c.level} icon={c.icon} title={c.title} body={c.body} /></article>
+          {c.figures.length > 0 && <div>{c.figures.map((f) => <Figure fig={f} />)}</div>}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {d.quote && (
+    <section aria-label="Client quote" style="background: #ffffff">
+      <div class="wrap" style="padding-top: 24px; padding-bottom: 96px">
+        <figure class="tq">
+          <svg aria-hidden="true" width="120" height="96" viewBox="0 0 120 96" style="display: block; margin-top: 6px"><path fill="#ffffff" d="M0 96V58C0 24 16 5 48 0l6 12C36 18 28 30 27 46h25v50z"></path><path fill="#ffffff" d="M66 96V58c0-34 16-53 48-58l6 12c-18 6-26 18-27 34h25v50z"></path></svg>
+          <div style="display: flex; flex-direction: column; gap: 28px; min-width: 0">
+            <blockquote style="margin: 0"><p class="tq-text">{d.quote.text}</p></blockquote>
+            <figcaption style="display: flex; align-items: center; gap: 16px">
+              <span aria-hidden="true" style="display: block; width: 32px; height: 4px; background: #111111"></span>
+              <span><strong style="font-size: 18px">{d.quote.name}</strong><span style="color: #3a3a3a; font-size: 16px"> · {d.quote.role}</span></span>
+            </figcaption>
+          </div>
+        </figure>
+      </div>
+    </section>
+  )}
+
+  <section aria-labelledby="results" style="background: #f4f4f4">
+    <div class="wrap" style="padding-top: 88px; padding-bottom: 56px; display: flex; flex-direction: column; gap: 40px">
+      <div class="story" style="max-width: 760px; margin: 0">
+        <Story level={2} id="results" icon={d.today.icon} title={d.today.title} body={d.today.body} />
+      </div>
+      {d.today.figures.map((f) => <Figure fig={f} />)}
+      <div class="results">
+        {d.results.map((r, i) => (
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <span aria-hidden="true" style={`display: block; width: 48px; height: 6px; margin-bottom: 8px; background: ${barColors[i % 3]}`}></span>
+            <span class="res-n">{r.n}</span>
+            <span style="font-size: 16px; color: #595959">{r.label}</span>
+          </div>
+        ))}
+      </div>
+      {(d.paper || d.links) && (
+        <div class="paper-row">
+          {d.paper && (
+            <article class="paper">
+              <p class="eyebrow">{d.paper.kicker}</p>
+              <h3 style="margin: 0; font-weight: 700; font-size: 24px; line-height: 1.2">{d.paper.title}</h3>
+              <p style="margin: 0; color: #595959">{d.paper.authors}</p>
+              {d.paper.doi && <a class="ul-lk" href={`https://doi.org/${d.paper.doi}`}>Read the paper</a>}
+            </article>
+          )}
+          {d.links && (
+            <div style="display: flex; flex-direction: column; gap: 16px">
+              <p class="eyebrow">{d.links.title}</p>
+              <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px">
+                {d.links.items.map((l) => <li><a class="lk tgt" href={l.href}>{l.label}</a> <span style="color: #595959">· {l.note}</span></li>)}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
+      {(d.prev || d.next) && (
+        <nav aria-label="More case stories" class="pn">
+          {d.prev ? <a class="tgt" href={d.prev.href}>← {d.prev.label}</a> : <span></span>}
+          {d.next && <a class="tgt" href={d.next.href}>{d.next.label} →</a>}
+        </nav>
+      )}
+    </div>
+  </section>
+
+  <CtaBand title={d.cta.title} body={d.cta.body} button={d.cta.button} href={d.cta.href} secondary={{ label: 'Planning a proposal?', href: '/planning-a-proposal/' }} />
+</Base>
