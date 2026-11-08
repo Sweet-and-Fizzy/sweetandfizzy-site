@@ -28,3 +28,7 @@ test('built homepage never hides content with inline opacity:0', { skip: !exists
   const html = readFileSync('dist/index.html', 'utf8');
   assert.equal(/style="[^"]*opacity:\s*0[;"]/.test(html), false);
 });
+
+test('findPlaceholders also catches placeholders in href and src attributes', () => {
+  assert.deepEqual(findPlaceholders('<a href="[BOOKING LINK]">Book</a>'), ['[BOOKING LINK]']);
+});

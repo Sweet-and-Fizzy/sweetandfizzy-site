@@ -11,7 +11,8 @@ export function findPlaceholders(html) {
   const text = html
     .replace(/<(script|style|code|pre)\b[^>]*>[\s\S]*?<\/\1>/gi, '')
     .replace(/<[^>]+>/g, ' ');
-  return (text.match(PLACEHOLDER) || []).filter((m) => !/\]\(/.test(m));
+  const attrs = [...html.matchAll(/\b(?:href|src)="(\[[A-Z][^"\]]*\])"/g)].map((m) => m[1]);
+  return [...attrs, ...(text.match(PLACEHOLDER) || [])].filter((m) => !/\]\(/.test(m));
 }
 
 function targetExists(path, files) {

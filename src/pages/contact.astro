@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { contact } from '../data/contact';
+import { site } from '../data/site';
+---
+<Base title="Contact" description="Tell Sweet & Fizzy Digital about your research computing program, proposal, product or website. Lissie or Andrew reply within two days.">
+  <section class="page-hero" aria-labelledby="ct-title">
+    <div class="wrap hero-in" style="padding-top: 72px; padding-bottom: 64px; display: flex; flex-direction: column; gap: 16px">
+      <h1 id="ct-title" class="h1-xl" style="max-width: 900px">{contact.title}</h1>
+      <p style="margin: 0; color: #c8c8c8; max-width: 760px; font-size: clamp(19px, 2vw, 22px)">{contact.body}</p>
+    </div>
+  </section>
+  <section aria-label="Contact form" style="background: #ffffff">
+    <div class="wrap ct-grid" style="padding-top: 64px; padding-bottom: 88px">
+      <div><ContactForm /></div>
+      <aside aria-labelledby="ways" class="ct-side">
+        <h2 id="ways" class="h3-card">{contact.waysTitle}</h2>
+        <ul class="flex-list" style="--accent: #5abdff">
+          {contact.ways.map((w) => (
+            <li><strong>{w.title}</strong> {w.text}{w.booking && <> <a class="ul-lk" style="--accent: #5abdff" href={site.bookingUrl}>Book a call</a></>}</li>
+          ))}
+        </ul>
+        <p style="margin: 0; color: #595959">{site.name} · {site.city} · <a class="ul-lk" style="--accent: #5abdff" href={`mailto:${site.email}`}>{site.email}</a></p>
+      </aside>
+    </div>
+  </section>
+</Base>
+<style is:global>
+  .ct-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:48px 64px;align-items:start}
+  .ct-side{display:flex;flex-direction:column;gap:20px;padding:28px;border:4px solid #5abdff}
+  @media (max-width:900px){.ct-grid{grid-template-columns:1fr}}
+</style>

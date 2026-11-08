@@ -1,0 +1,12 @@
+---
+// Shown after a form post without JavaScript.
+import Base from '../layouts/Base.astro';
+import { contact } from '../data/contact';
+---
+<Base title="Thanks" description="Your message reached Sweet & Fizzy Digital." noindex>
+  <section class="wrap" style="padding-top: 96px; padding-bottom: 120px; display: flex; flex-direction: column; gap: 20px; max-width: 760px">
+    <h1 class="h1-xl">Thanks</h1>
+    <p style="margin: 0; font-size: 22px">{contact.thanks}</p>
+    <p style="margin: 0"><a class="ul-lk" style="--accent: #5abdff" href="/">Back to the homepage</a></p>
+  </section>
+</Base>

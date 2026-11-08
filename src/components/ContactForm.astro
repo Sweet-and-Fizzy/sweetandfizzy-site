@@ -1,0 +1,137 @@
+---
+import { contact } from '../data/contact';
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+---
+<form name="contact" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company_url" class="cf" novalidate>
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="hp" aria-hidden="true"><label for="cf-hp">Leave this empty</label><input id="cf-hp" name="company_url" tabindex="-1" autocomplete="off" /></p>
+
+  <div role="alert" class="cf-error" id="cf-error" tabindex="-1" hidden>{contact.error}</div>
+
+  <div class="cf-grid">
+    <p class="cf-field">
+      <label for="cf-name">Name</label>
+      <input id="cf-name" name="name" autocomplete="name" required aria-describedby="cf-name-err" />
+      <span class="cf-msg" id="cf-name-err" hidden>Please add your name.</span>
+    </p>
+    <p class="cf-field">
+      <label for="cf-email">Email</label>
+      <input id="cf-email" name="email" type="email" autocomplete="email" required aria-describedby="cf-email-err" />
+      <span class="cf-msg" id="cf-email-err" hidden>Please add an email address we can reply to.</span>
+    </p>
+    <p class="cf-field">
+      <label for="cf-org">Institution or organization <span class="cf-opt" data-org-opt>(optional)</span></label>
+      <input id="cf-org" name="organization" autocomplete="organization" aria-describedby="cf-org-err" />
+      <span class="cf-msg" id="cf-org-err" hidden>Please add your institution or organization.</span>
+    </p>
+    <p class="cf-field">
+      <label for="cf-audience">What are you working on?</label>
+      <select id="cf-audience" name="audience">
+        {contact.options.map((o) => <option value={o.value}>{o.label}</option>)}
+      </select>
+    </p>
+    <p class="cf-field cf-wide" data-deadline>
+      <label for="cf-deadline">Proposal deadline</label>
+      <input id="cf-deadline" name="deadline" aria-describedby="cf-deadline-hint" />
+      <span class="cf-hint" id="cf-deadline-hint">{contact.deadlineHint}</span>
+    </p>
+    <p class="cf-field cf-wide">
+      <label for="cf-message">A few lines about it</label>
+      <textarea id="cf-message" name="message" rows="6" required aria-describedby="cf-message-err"></textarea>
+      <span class="cf-msg" id="cf-message-err" hidden>Please tell us a little about it.</span>
+    </p>
+  </div>
+  <button type="submit" class="btn">Send<Icon name="arrow-right" class="ar" size={20} stroke={2} /></button>
+</form>
+
+<div class="cf-done" id="cf-done" aria-live="polite" tabindex="-1">
+  <div data-done-body hidden>
+    <p class="cf-thanks">{contact.thanks}</p>
+    <p data-booking hidden>{contact.thanksBooking} <a class="btn btn-sm" href={site.bookingUrl}>Book a call</a></p>
+  </div>
+</div>
+
+<script>
+  import { audienceFromQuery, onSubmitResult } from '../lib/contact';
+  const form = document.querySelector<HTMLFormElement>('form[name="contact"]')!;
+  const select = form.querySelector<HTMLSelectElement>('#cf-audience')!;
+  const deadline = form.querySelector<HTMLElement>('[data-deadline]')!;
+  const org = form.querySelector<HTMLInputElement>('#cf-org')!;
+  const orgOpt = form.querySelector<HTMLElement>('[data-org-opt]')!;
+  const error = document.getElementById('cf-error')!;
+  const done = document.getElementById('cf-done')!;
+
+  const pre = audienceFromQuery(location.search);
+  if (pre) select.value = pre;
+  const sync = () => {
+    const a = select.value;
+    deadline.hidden = a !== 'proposal';
+    const needOrg = a === 'program' || a === 'proposal';
+    org.required = needOrg;
+    orgOpt.hidden = needOrg;
+  };
+  select.addEventListener('change', sync);
+  sync();
+
+  const check = () => {
+    let first: HTMLElement | null = null;
+    for (const el of form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input[required], textarea[required]')) {
+      const bad = !el.value.trim() || (el.type === 'email' && !/^\S+@\S+\.\S+$/.test(el.value));
+      el.setAttribute('aria-invalid', String(bad));
+      const msg = document.getElementById(`${el.id}-err`);
+      if (msg) msg.hidden = !bad;
+      if (bad && !first) first = el;
+    }
+    first?.focus();
+    return !first;
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    error.hidden = true;
+    if (!check()) return;
+    const w = window as unknown as { dataLayer: unknown[] };
+    w.dataLayer = w.dataLayer || [];
+    let ok = false;
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form) as unknown as Record<string, string>).toString(),
+      });
+      ok = res.ok;
+    } catch { ok = false; }
+    onSubmitResult(ok, select.value, w.dataLayer);
+    if (ok) {
+      form.hidden = true;
+      done.querySelector<HTMLElement>('[data-done-body]')!.hidden = false;
+      done.querySelector<HTMLElement>('[data-booking]')!.hidden = !(select.value === 'program' || select.value === 'proposal');
+      done.focus();
+    } else {
+      error.hidden = false;
+      error.focus();
+    }
+  });
+</script>
+
+<style is:global>
+  .cf{display:flex;flex-direction:column;gap:24px;max-width:760px}
+  .cf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px}
+  .cf-wide{grid-column:1 / -1}
+  @media (max-width:700px){.cf-grid{grid-template-columns:1fr}}
+  .cf-field{margin:0;display:flex;flex-direction:column;gap:8px}
+  .cf-field[hidden]{display:none}
+  .cf-field label{font-weight:700}
+  .cf-opt{font-weight:400;color:#595959}
+  .cf-field input,.cf-field select,.cf-field textarea{min-height:48px;width:100%;box-sizing:border-box}
+  .cf-field [aria-invalid=true]{border:2px solid #b4400f}
+  .cf-msg{color:#b4400f;font-size:16px;font-weight:700}
+  .cf-hint{color:#595959;font-size:16px}
+  .cf-error{padding:16px 20px;border-left:6px solid #b4400f;background:#fdf0ec;font-weight:700}
+  .cf .btn{align-self:flex-start}
+  .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+  .cf-thanks{font-size:24px;font-weight:700;margin:0 0 16px}
+  .cf-done p{margin:0 0 12px}
+  .cf-done:focus{outline:none}
+</style>

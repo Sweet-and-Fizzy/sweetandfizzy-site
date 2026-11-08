@@ -30,10 +30,13 @@ const fullTitle = Astro.url.pathname === '/' ? title : `${title} | ${site.name}`
     <script is:inline>document.documentElement.classList.add('js')</script>
     <script is:inline define:vars={{ gtm: site.gtm }}>
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
-      const s = document.createElement('script'); s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtm.js?id=' + gtm;
-      document.head.appendChild(s);
+      // Only the live domain reports to analytics; previews and local builds stay out.
+      if (/^(www\.)?sweetandfizzy\.com$/.test(location.hostname)) {
+        window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+        const s = document.createElement('script'); s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtm.js?id=' + gtm;
+        document.head.appendChild(s);
+      }
     </script>
   </head>
   <body>

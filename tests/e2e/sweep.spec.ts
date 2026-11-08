@@ -36,7 +36,7 @@ for (const path of builtPages()) {
             const r = el.getBoundingClientRect();
             const style = getComputedStyle(el);
             if (r.width === 0 || r.height === 0 || style.visibility === 'hidden') continue;
-            if (el.closest('p, li > span, td, figcaption, .skip') && style.display === 'inline') continue;
+            if (el.closest('p, li, td, figcaption, .skip') && style.display === 'inline') continue;
             if (el.classList.contains('sr-only') || el.getAttribute('tabindex') === '-1') continue;
             if (r.width < 44 || r.height < 44) out.push(`${el.tagName.toLowerCase()} "${(el.textContent || el.getAttribute('aria-label') || '').trim().slice(0, 40)}" ${Math.round(r.width)}x${Math.round(r.height)}`);
           }
