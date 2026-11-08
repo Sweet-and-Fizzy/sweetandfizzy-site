@@ -103,11 +103,11 @@ supporters:
   title: Development supported by
   # logo: a file name in src/assets/logos/ (leave it out to show the name as text).
   items:
-    - { name: ACCESS (NSF) }
-    - { name: MGHPCC }
-    - { name: CU Boulder }
-    - { name: Ohio Supercomputer Center }
-    - { name: "Texas A&M" }
+    - { name: ACCESS (NSF), logo: access-nsf.jpg }
+    - { name: MGHPCC, logo: mghpcc.jpg }
+    - { name: CU Boulder, logo: cu-boulder.svg }
+    - { name: Ohio Supercomputer Center, logo: osc.svg }
+    - { name: "Texas A&M", logo: texas-am.png }
 cta:
   title: Bring your community to Connect.CI
   body: "Tell us about your program and your timeline. If you are writing a proposal, we can provide budget text, a letter of collaboration and sustainability language."

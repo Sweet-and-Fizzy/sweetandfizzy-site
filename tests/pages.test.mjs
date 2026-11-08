@@ -56,5 +56,6 @@ test('proposal page strip lists each program with the NSF award the Connect.CI p
 test('Connect.CI shows its development supporters as a logo strip, including Texas A&M', { skip: !built }, () => {
   const strip = read('connect-ci').match(/<ul[^>]*class="logo-strip"[\s\S]*?<\/ul>/);
   assert.ok(strip, 'no supporters strip');
-  for (const n of ['ACCESS (NSF)', 'MGHPCC', 'CU Boulder', 'Ohio Supercomputer Center', 'Texas A&amp;M']) assert.ok(strip[0].includes(n), n);
+  for (const n of ['ACCESS (NSF)', 'MGHPCC', 'CU Boulder', 'Ohio Supercomputer Center', 'Texas A&M']) assert.ok(strip[0].replace(/&(amp|#38);/g, '&').includes(n), n);
+  assert.equal((strip[0].match(/<img/g) || []).length, 5, 'every supporter shows a logo');
 });
