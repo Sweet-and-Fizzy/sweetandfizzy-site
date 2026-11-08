@@ -28,7 +28,7 @@ facts:
   - k: Platform
     v: WordPress
   - k: Years
-    v: "[N]"
+    v: 2019 to present
 goal:
   icon: "?"
   title: The goal
@@ -104,8 +104,8 @@ today:
   body: "**The MGHPCC heads to SC26 this November.** The booth went online in 2020 with a Minecraft model of the center and its five member universities, and kiosks featuring research projects. It has grown into a virtual booth of project profiles, research highlights and videos that keeps working long after the show floor closes."
   figures: []
 results:
-  - n: "[N]"
-    label: SC conferences
+  - n: "7"
+    label: "SC conference booths, SC19 to SC26"
   - n: "133"
     label: research projects in the mghpcc.org catalog
   - n: "32"

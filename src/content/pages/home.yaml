@@ -3,8 +3,8 @@
 title: Sweet & Fizzy Digital
 description: Community platforms and AI agents for research computing programs, plus product builds for startups and websites for organizations with a story to tell.
 hero:
-  title: We can help you
-  lead: Whatever your development need, we can help you!
+  title: We build the platforms and AI tools research computing runs on
+  lead: "And we bring the same care to startups and to organizations with a story to tell."
   doors:
     - { n: "01", href: "#research", color: blue, title: Research computing, text: "Community platforms and AI tools that connect researchers to people, answers and computing." }
     - { n: "02", href: "#startups", color: orange, title: Quickstart your Startup, text: "Prototypes, strategy, branding and custom software to get your business off the ground." }
@@ -39,7 +39,7 @@ areas:
     more:
       - { name: Open OnDemand, line: A refreshed openondemand.org and a Community Hub with a Contributor Wall, image: ../../assets/home/ood.jpg, href: /work/open-ondemand/ }
       - { name: Open OnDemand Appverse, line: "A shared catalog of Open OnDemand apps. Best paper, PEARC 2026", image: ../../assets/home/appverse.jpg, href: /work/open-ondemand/#the-appverse }
-      - { name: Open OnDemand job submission, line: AI assistants that run computing jobs with the researcher’s own permissions, href: /services/ai-agents/ }
+      - { name: Open OnDemand job submission, line: AI assistants that run computing jobs with the researcher’s own permissions, image: ../../assets/home/ood-api.jpg, href: /services/ai-agents/ }
       - { name: MGHPCC, line: "The mghpcc.org website, plus SC booths, a kiosk and a showcase of research projects", image: ../../assets/home/mghpcc.jpg, href: /work/mghpcc/ }
   - id: startups
     n: "02"
@@ -58,7 +58,7 @@ areas:
     workTitle: Some of our startup work
     work:
       - { name: Eggz, line: "A social investing app we designed, built and helped lead.", image: ../../assets/home/eggz.jpg }
-      - { name: Jemurai, line: "A friendly, developer-focused brand for a cybersecurity firm: content strategy, a WordPress site, marketing campaigns and product work." }
+      - { name: Jemurai, line: "A friendly, developer-focused brand for a cybersecurity firm: content strategy, a WordPress site, marketing campaigns and product work.", image: ../../assets/home/jemurai.jpg }
     more:
       - { name: BankTell, line: A bank finder that maps and compares nearby banks, image: ../../assets/home/banktell.jpg }
       - { name: Corvid Partners, line: Bond yield calculations matched to Bloomberg conventions, image: ../../assets/home/corvid.jpg }

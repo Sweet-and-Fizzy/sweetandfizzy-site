@@ -37,7 +37,7 @@ groups:
     papers:
       - { venue: PEARC 2023, title: "ACCESS Pegasus: Bringing Workflows to the ACCESS Masses", authors: "M. Rynge, K. Vahi, M. Z. Alam, E. Deelman and 9 others, including A. Pasquale and L. Fein", summary: "A hosted workflow service that lets ACCESS researchers run Pegasus workflows without installing anything.", doi: 10.1145/3569951.3597590 }
       - { venue: "Journal of Computational Science Education · December 2022", title: "The Multi-Tier Assistance, Training, and Computational Help (MATCH) Project, a Track 2 NSF ACCESS Initiative", authors: "S. L. Knuth, J. Ma, J. C. Adams and 11 others, including A. Pasquale", summary: "The ACCESS support track that matches researchers with help, from self-service resources to embedded experts.", doi: 10.22369/issn.2153-4136/13/2/4 }
-more: "Andrew's full publication record is on [ORCID](https://orcid.org/0000-0002-7501-367X). Our open source work is on [GitHub](https://github.com/Sweet-and-Fizzy). [Add Lissie's ORCID if she has one.]"
+more: "Andrew's full publication record is on [ORCID](https://orcid.org/0000-0002-7501-367X). Our open source work is on [GitHub](https://github.com/Sweet-and-Fizzy)."
 cta:
   title: Writing a paper or a proposal about your platform?
   body: "We help partners document and publish what we build together, from system descriptions to evaluation results."
