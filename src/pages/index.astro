@@ -89,7 +89,7 @@ const d = (i: number) => `${(i * 0.1).toFixed(1)}s`;
             </div>
             <ul class="mini" aria-label={`More ${a.title} projects`} style={`grid-template-columns: repeat(${a.more.length}, minmax(0, 1fr))`}>
               {a.more.map((m, i) => {
-                const thumb = <span class="th">{m.image ? <Pic src={m.image} alt="" sizes="(max-width: 900px) 50vw, 280px" widths={[280, 560]} /> : <span class="ph-tile">[SCREENSHOT]</span>}</span>;
+                const thumb = <span class="th">{m.image ? <Pic src={m.image} alt="" sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 380px" widths={[380, 760, 1140]} /> : <span class="ph-tile">[SCREENSHOT]</span>}</span>;
                 return (
                   <li class="rv" style={`--d: ${d(i)}`}>
                     {m.href

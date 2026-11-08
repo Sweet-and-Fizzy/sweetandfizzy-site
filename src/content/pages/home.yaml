@@ -83,7 +83,7 @@ areas:
       - { name: PDMcBride, line: An artist’s portfolio with an online shop., image: ../../assets/home/pdmcbride.jpg }
     more:
       - { name: Molly B. Burnham, line: A playful site for a children’s book author, image: ../../assets/home/burnham.jpg }
-      - { name: The Bromantics, line: "A band site with tour dates, press and merch", image: ../../assets/home/bromantics.jpg }
+      - { name: AroundHere.Live, line: "Live music listings for the Pioneer Valley, where fans follow artists and venues and get notified about shows", image: ../../assets/home/aroundhere.jpg }
       - { name: Museums, line: "Ziibiwing Center, Chicago History Museum, Sioux City museum, horse museum project" }
 principles:
   title: How we build
