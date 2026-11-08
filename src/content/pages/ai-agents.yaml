@@ -26,13 +26,12 @@ sections:
   - kind: list
     dark: true
     title: How we keep it trustworthy
-    lead: "The same rules run through every agent we build, from the ACCESS support agent to the OOD API and the Appverse review assistant."
     items:
-      - { title: "Tested against your questions.", text: "Before an agent ships, it is graded on questions your staff write, fact by fact. The ACCESS agent is checked this way before every release." }
-      - { title: "The user's own permissions.", text: "Agents act as the signed-in person, never more. The ACCESS agent registers researchers for events under their own identity, and the OOD API runs every request inside Open OnDemand's per-user process." }
-      - { title: "Guardrails on anything risky.", text: "The OOD API limits file access to allowed paths, blocks SSH keys and other sensitive files, logs every operation, and names the actions that cannot be undone. A site policy file tells every AI client which partitions and accounts to use." }
-      - { title: "People make the call.", text: "The ACCESS agent shows what it would do and waits for the researcher to confirm. The Appverse review assistant recommends a decision and drafts the reply, and a reviewer decides." }
-      - { title: "Open, with your choice of model.", text: "The code is public on GitHub, so your program does not depend on us. The ACCESS agent runs on open models hosted by a partner university or on commercial models." }
+      - { title: "Tested against your questions.", text: "Before an agent ships, it is graded on questions your staff write, fact by fact, and checked again with every change." }
+      - { title: "The user's own permissions.", text: "Agents act as the signed-in person, so they can never see or do more than that person can." }
+      - { title: "Guardrails on anything risky.", text: "Access limited to what the task needs, sensitive files blocked, every action logged, and a clear warning before anything that cannot be undone." }
+      - { title: "People make the call.", text: "Agents explain what they would do and wait for a person to confirm. Reviews and recommendations go to a person to decide." }
+      - { title: "Open, with your choice of model.", text: "The code is public, so your program does not depend on us, and agents can run on open models hosted by a partner institution or on commercial models." }
   - kind: steps
     title: How an engagement runs
     items:
