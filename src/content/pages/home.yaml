@@ -28,7 +28,7 @@ areas:
         body: "Start with features 13 research computing communities already share, like directories, events, mentorship and single sign-on, then fund only what is new for your program. Membership starts at $3,000 a year, and every improvement is shared."
         link: { label: Connect.CI, href: /connect-ci/ }
       - title: Curated catalogs
-        body: "We built the Open OnDemand Appverse, a catalog of 81 apps from 16 organizations and a PEARC 2026 best paper. We can build one for your program the same way, with submissions from GitHub and moderators who review each listing."
+        body: "We built the Open OnDemand Appverse, the community app catalog that won best paper at PEARC 2026. We can build one for your program the same way, with submissions from GitHub and moderators who review each listing."
         link: { label: Explore the Appverse, href: /work/open-ondemand/#the-appverse }
     cta: { label: Tell us about your program, href: /contact/?audience=program }
     secondary: { label: Planning a proposal?, href: /planning-a-proposal/ }
@@ -38,7 +38,7 @@ areas:
       - { name: ACCESS AI Assistant, line: An AI support agent that answers researchers from the ACCESS documentation and live system data in one conversation., image: ../../assets/home/access-ai.jpg, href: /work/access-ai-assistant/ }
     more:
       - { name: Open OnDemand, line: A refreshed openondemand.org and a Community Hub with a Contributor Wall, image: ../../assets/home/ood.jpg, href: /work/open-ondemand/ }
-      - { name: Open OnDemand Appverse, line: "A shared catalog of 81 apps from 16 organizations. Best paper, PEARC 2026", image: ../../assets/home/appverse.jpg, href: /work/open-ondemand/#the-appverse }
+      - { name: Open OnDemand Appverse, line: "A shared catalog of Open OnDemand apps. Best paper, PEARC 2026", image: ../../assets/home/appverse.jpg, href: /work/open-ondemand/#the-appverse }
       - { name: Open OnDemand job submission, line: AI assistants that run computing jobs with the researcher’s own permissions, href: /services/ai-agents/ }
       - { name: MGHPCC, line: "The mghpcc.org website, plus SC booths, a kiosk and a showcase of research projects", image: ../../assets/home/mghpcc.jpg, href: /work/mghpcc/ }
   - id: startups

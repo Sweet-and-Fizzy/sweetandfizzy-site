@@ -12,7 +12,7 @@ stats:
   - { n: "13", label: communities on one platform }
   - { n: "74,000", label: members with one shared profile }
   - { n: "7", label: NSF awards since 2017 }
-  - { n: "[N]", label: events hosted in the last year }
+  - { n: "628", label: events hosted in the last year }
 communities:
   title: Communities on Connect.CI
   lead: "Each community has its own site, name and look. Members keep one profile as they move between them."
@@ -57,7 +57,7 @@ owners:
   body: |-
     Sweet & Fizzy Digital develops, hosts and maintains Connect.CI. No single program owns it. The work is paid for by the programs that rely on it: ACCESS through the University of Colorado Boulder, Open OnDemand through the Ohio Supercomputer Center by way of an MGHPCC subaward, Texas A&M, and smaller contributions from Campus Champions and the Pennsylvania Science DMZ. Seven NSF awards have supported the platform since 2017.
 
-    The platform code is open source under GPL-2.0, on GitHub at [connectci-platform/portal](https://github.com/connectci-platform/portal), so it does not depend on any one funder, or on us. Each community owns its content and can export it; each member owns their own account. We are forming a roadmap group of the programs that fund the platform, meeting twice a year to set priorities together. [Update to "meets twice a year" once the first meeting happens.]
+    The platform code is open source under GPL-2.0, on GitHub at [connectci-platform/portal](https://github.com/connectci-platform/portal), so it does not depend on any one funder, or on us. Each community owns its content and can export it; each member owns their own account. We are forming a roadmap group of the programs that fund the platform, meeting twice a year to set priorities together.
 membership:
   title: Membership
   lead: "Every membership includes hosting, security patches and Drupal version upgrades. Onboarding starts at $5,000. Development for your program is scoped separately and can be written into your proposal."
@@ -86,9 +86,9 @@ faq:
     - q: Can our community have its own domain and look?
       a: "Yes. Each community has its own domain, name, theme and navigation, while sharing members and knowledge with the rest of the platform."
     - q: Who owns our content and member data?
-      a: "Your content is yours: pages, events, groups, knowledge base articles and engagement records, and we help you export them at any time. Each member's account belongs to that person, because one account works across every community they join. If your community moves off the platform, you take your member list and their activity in your community. Each person's wider profile stays theirs. [Add a short data section to the shared Connect.CI privacy policy and link it here.]"
+      a: "Your content is yours: pages, events, groups, knowledge base articles and engagement records, and we help you export them at any time. Each member's account belongs to that person, because one account works across every community they join. If your community moves off the platform, you take your member list and their activity in your community. Each person's wider profile stays theirs."
     - q: How long does onboarding take?
-      a: "[Answer needed: typical weeks from kickoff to launch, for example the Pennsylvania Science DMZ.]"
+      a: "A few weeks for a site built from the platform's existing features. The Pennsylvania Science DMZ portal was stood up in a few weeks. New features take longer, and we scope them with you."
     - q: Can Connect.CI be written into our proposal budget?
       a: "Yes. Membership and development fit a subaward or a purchase order. We provide budget text, a letter of collaboration and sustainability language."
     - q: What happens to features we fund?

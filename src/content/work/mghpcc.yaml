@@ -101,15 +101,15 @@ chapters:
 today:
   icon: "!"
   title: Where it is today
-  body: "**The MGHPCC heads to SC26 this November.** [Two sentences on how the booth and the website have grown over the years.]"
+  body: "**The MGHPCC heads to SC26 this November.** The booth went online in 2020 with a Minecraft model of the center and its five member universities, and kiosks featuring research projects. It has grown into a virtual booth of project profiles, research highlights and videos that keeps working long after the show floor closes."
   figures: []
 results:
   - n: "[N]"
     label: SC conferences
-  - n: "[N]"
-    label: "[booth visitors or kiosk sessions]"
-  - n: "[N]"
-    label: "[research projects shown with video]"
+  - n: "133"
+    label: research projects in the mghpcc.org catalog
+  - n: "32"
+    label: research projects shown with video
 prev:
   href: /#research
   label: Research computing work

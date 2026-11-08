@@ -84,7 +84,7 @@ chapters:
       - Anyone can submit an app from GitHub
       - Submissions sync on a schedule
       - Moderators review, rate and flag issues before they are published
-      - 81 apps from 16 organizations, and a best paper award at PEARC 2026
+      - More than 100 apps, and a best paper award at PEARC 2026
     figures:
       - caption: The Appverse
         image:
@@ -106,7 +106,7 @@ chapters:
 today:
   icon: "!"
   title: Where it is today
-  body: "**Open OnDemand runs at organizations around the world.** [Two sentences on the community today and what the new site changed for them.]"
+  body: "**Open OnDemand runs at organizations around the world.** More than 2,100 organizations use it today, and 1,430 people take part in its community forum. Since the Community Hub launched at GOOD25, the Contributor Wall makes contributions visible beyond code commits."
   figures:
     - caption: Known Open OnDemand deployments, from openondemand.org
       image:
@@ -115,10 +115,10 @@ today:
 results:
   - n: 250+
     label: known installations by 2022
-  - n: "81"
-    label: apps in the Appverse, from 16 organizations
-  - n: "[N]"
-    label: "[contributors on the Contributor Wall]"
+  - n: "100+"
+    label: apps in the Appverse (November 2026)
+  - n: "69"
+    label: people on the Contributor Wall (November 2026)
 prev:
   href: /#research
   label: Research computing work
