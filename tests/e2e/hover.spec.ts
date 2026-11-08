@@ -30,7 +30,7 @@ test('card hover parts share one easing curve and a calm duration', async ({ pag
       const cs = getComputedStyle(el);
       return { sel, fn: cs.transitionTimingFunction, dur: cs.transitionDuration };
     };
-    return ['.door', '.door .circ', '.cs .shot img', '.cs .go-lk .circ', '.go-lk .x', '.mc .th img', '.mc .ar2', '.btn .ar'].map(pick);
+    return ['.door', '.door .circ', '.cs .shot', '.cs .go-lk .circ', '.go-lk .x', '.mc .th', '.mc .ar2', '.btn .ar'].map(pick);
   });
   for (const t of timings) {
     for (const fn of t.fn.split(/,\s*(?![^(]*\))/)) expect(fn, t.sel).toBe('cubic-bezier(0.16, 1, 0.3, 1)');
@@ -38,8 +38,19 @@ test('card hover parts share one easing curve and a calm duration', async ({ pag
   }
 });
 
-test('hover images are on their own layer before the pointer arrives', async ({ page }) => {
+// Screenshots full of small text shimmer when scaled, so tile images never
+// transform; the frame takes the card's color instead.
+test('case tiles respond to hover without scaling the image', async ({ page }) => {
   await page.goto('/');
-  const wc = await page.locator('.cs .shot img').first().evaluate((el) => getComputedStyle(el).willChange);
-  expect(wc).toContain('transform');
+  const tile = page.locator('a.cs').first();
+  await tile.scrollIntoViewIfNeeded();
+  await page.evaluate(() => Promise.all(document.getAnimations().map((a) => a.finished)));
+  const shot = tile.locator('.shot');
+  const before = await shot.evaluate((el) => getComputedStyle(el).borderTopColor);
+  await tile.hover();
+  await page.waitForTimeout(800);
+  const img = await tile.locator('.shot img').evaluate((el) => getComputedStyle(el).transform);
+  expect(img).toBe('none');
+  const after = await shot.evaluate((el) => getComputedStyle(el).borderTopColor);
+  expect(after).not.toBe(before);
 });
