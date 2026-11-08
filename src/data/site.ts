@@ -1,7 +1,7 @@
 export const site = {
   name: 'Sweet & Fizzy Digital',
   email: 'hello@sweetandfizzy.com',
-  city: '[CITY]',
+  city: 'Florence, MA',
   gtm: 'GTM-TZHC8GN',
   bookingUrl: '[BOOKING LINK]',
   services: [
