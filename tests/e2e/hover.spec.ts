@@ -7,6 +7,7 @@ test.use({ viewport: { width: 1280, height: 900 } });
 test('a hero card stays lifted with the pointer near its bottom edge', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/');
+  await page.evaluate(() => Promise.all(document.getAnimations().map((a) => a.finished)));
   const door = page.locator('.door').first();
   const box = (await door.boundingBox())!;
   await page.mouse.move(box.x + box.width / 2, box.y + box.height - 2);

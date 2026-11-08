@@ -43,10 +43,12 @@ test('Planning a proposal page ends with a proposal contact call to action', { s
   assert.match(html, /href="\/contact\/\?audience=proposal"/);
 });
 
-test('proposal page shows a funder strip with every named program', { skip: !built }, () => {
+test('proposal page strip lists each program with the NSF award the Connect.CI paper names', { skip: !built }, () => {
   const html = read('planning-a-proposal');
   const strip = html.match(/<ul[^>]*class="logo-strip"[\s\S]*?<\/ul>/);
   assert.ok(strip, 'no logo strip');
-  for (const name of ['ACCESS (NSF)', 'MGHPCC', 'CU Boulder', 'Ohio Supercomputer Center']) assert.ok(strip[0].includes(name), name);
-  assert.match(strip[0], /NSF 2138286/);
+  for (const [name, award] of [['ACCESS MATCH', 'OAC-2138286'], ['CCMNet', 'OAC-2227656'], ['Open OnDemand', 'OAC-2303692'], ['Open OnDemand Appverse', 'OAC-2411375'], ['NAIRR', 'OAC-2505400']]) {
+    assert.ok(strip[0].includes(name), name);
+    assert.ok(strip[0].includes(`NSF ${award}`), award);
+  }
 });

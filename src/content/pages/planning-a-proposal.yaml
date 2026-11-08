@@ -36,11 +36,13 @@ sections:
     body: "Our work has been funded through ACCESS (NSF), MGHPCC, CU Boulder and the Ohio Supercomputer Center, among others. [Add other funders or programs we can name.]"
     # logo: a file name in src/assets/logos/ (leave it out to show the name as text).
     # award: the public NSF award number only, never our contract numbers with awardees.
+    # Programs and awards as acknowledged in the Connect.CI PEARC 2026 paper.
     items:
-      - { name: ACCESS (NSF), award: NSF 2138286 }
-      - { name: MGHPCC }
-      - { name: CU Boulder }
-      - { name: Ohio Supercomputer Center }
+      - { name: ACCESS MATCH, award: NSF OAC-2138286 }
+      - { name: CCMNet, award: NSF OAC-2227656, logo: ccmnet.jpg }
+      - { name: Open OnDemand (ALL GOOD), award: NSF OAC-2303692 }
+      - { name: Open OnDemand Appverse (GOODLUCK), award: NSF OAC-2411375 }
+      - { name: NAIRR AI mentorship (EAGER), award: NSF OAC-2505400 }
   - kind: prose
     title: When to reach out
     body: "The earlier the better. Six to eight weeks before the deadline for co-writing or full drafting, two to three weeks for our sections. If your deadline is close, contact us anyway and we will tell you what is realistic."
