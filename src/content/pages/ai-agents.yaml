@@ -35,8 +35,7 @@ sections:
   - kind: steps
     title: How an engagement runs
     items:
-      - { title: Plan it into your proposal, text: "We write the agent into your next proposal: our sections, a subaward budget and a letter of collaboration, or co-writing the technical parts with you. [See how proposal help works](/planning-a-proposal/)." }
-      - { title: Discovery sprint, text: "One or three weeks at a fixed price ($3,500 or $9,500) to map your users' questions, your data sources and where an agent would help most." }
+      - { title: Start with a proposal or a sprint, text: "Two ways in. Write the agent into your next proposal, with our sections, budget and letter of collaboration, or start now with a discovery sprint: one or three weeks at a fixed price ($3,500 or $9,500) to map your users' questions, your data sources and where an agent would help most. [Planning a proposal?](/planning-a-proposal/)" }
       - { title: Build, text: "Connect your documentation and systems, and build the agent or MCP servers in the open where your program allows." }
       - { title: Evaluate, text: "Your staff write the test questions. We report what the agent gets right, what it gets wrong and why." }
       - { title: Launch and improve, text: "Release to users with feedback built in, then tune from real questions." }
