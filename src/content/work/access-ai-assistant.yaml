@@ -90,10 +90,9 @@ chapters:
     body: |-
       **Measured, not demoed.** An answer can sound right and still be wrong. Asked whether a system would be up next week, the documentation-only assistant the agent replaced said it was fully operational, the week its maintenance moved. The agent read the live status feed and gave the new dates.
 
-      So we check answers against facts, not tone. ACCESS staff write the test questions and the facts a good answer must include. An automated judge grades every answer fact by fact, and human reviewers who never see its scores keep the judge honest. The full method and results are in the paper.
+      So we check answers against facts, not tone. ACCESS staff write the test questions and the facts a good answer must include. An automated judge grades every answer fact by fact, and human reviewers who never see its scores keep the judge honest. Checking the facts also catches errors in the documentation itself, which go back to the team that owns the page. The full method and results are in the paper.
     figures:
-      - caption: How every change to the agent is checked before it ships
-        wide: true
+      - wide: true
         process:
           steps:
             - Staff write questions and the facts a good answer must include
@@ -101,7 +100,6 @@ chapters:
             - A judge checks each answer, fact by fact
             - Reviewers check the judge, without seeing its scores
             - The change ships only if answers hold up
-          loop: Facts that reviewers flag become documentation fixes, sent back to whoever owns the page
 today:
   icon: "!"
   title: Where it is today
