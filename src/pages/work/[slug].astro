@@ -102,10 +102,12 @@ const description = d.description || `${d.name}: ${d.title}. A Sweet & Fizzy Dig
 
   <section aria-labelledby="results" style="background: #f4f4f4">
     <div class="wrap" style="padding-top: 88px; padding-bottom: 56px; display: flex; flex-direction: column; gap: 40px">
-      <div class="story" style="max-width: 760px; margin: 0">
-        <Story level={2} id="results" icon={d.today.icon} title={d.today.title} body={d.today.body} />
+      <div class:list={[{ 'ch-row': d.today.figures.length > 0 }]}>
+        <div class="story" style="max-width: 760px; margin: 0">
+          <Story level={2} id="results" icon={d.today.icon} title={d.today.title} body={d.today.body} />
+        </div>
+        {d.today.figures.length > 0 && <div>{d.today.figures.map((f) => <Figure fig={f} />)}</div>}
       </div>
-      {d.today.figures.length > 0 && <div class="today-figs">{d.today.figures.map((f) => <Figure fig={f} />)}</div>}
       <div class="results">
         {d.results.map((r, i) => (
           <div style="display: flex; flex-direction: column; gap: 8px">

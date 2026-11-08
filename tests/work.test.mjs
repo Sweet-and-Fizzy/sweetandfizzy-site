@@ -67,9 +67,10 @@ test('Connect.CI Community membership is $5,000 a year everywhere', { skip: !bui
   assert.equal(/\$3,000/.test(readFileSync('dist/connect-ci/index.html', 'utf8') + readFileSync('dist/index.html', 'utf8')), false);
 });
 
-test('the AI goal section shows the widget beside the goal text', { skip: !built }, () => {
+test('the AI Where it is today section shows the widget beside its text', { skip: !built }, () => {
   const html = readFileSync(page('access-ai-assistant'), 'utf8');
-  const goal = html.match(/<section[^>]*aria-labelledby="goal-title"[\s\S]*?<\/section>/)[0];
+  const goal = html.match(/<section[^>]*aria-labelledby="results"[\s\S]*?<\/section>/)[0];
+  assert.match(goal, /class="ch-row"/);
   assert.match(goal, /ACCESS Q&amp;A widget|ACCESS Q&A widget/);
   assert.match(goal, /<img[^>]*alt="The ACCESS Q(&amp;|&#38;)A widget/);
 });

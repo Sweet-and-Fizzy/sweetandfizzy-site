@@ -92,7 +92,6 @@ h3.chap,.story h3.chap{font-family:'DM Sans',sans-serif;font-size:36px;font-weig
 .process li:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translate(50%,-50%);font-weight:700;color:#111111;background:#ffffff;line-height:1}
 @media (max-width:900px){.process li:not(:last-child)::after{content:none}}
 .process-loop{margin:0;padding:10px 16px;border-left:6px solid #ef4326;background:#fff6f3;font-size:16px}
-.today-figs{max-width:640px}
 /* Goal band figure: white frame on blue, caption in ink */
 .goal .ch-fig figcaption{color:#111111}
 .goal .shotx{border-color:#111111}
