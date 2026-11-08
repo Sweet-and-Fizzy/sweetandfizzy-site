@@ -27,7 +27,7 @@ sections:
     title: What you can count on
     items:
       - { title: Realistic scope, text: "A budget and timeline we can deliver, scoped by deliverable, so the work you propose is the work that ships." }
-      - { title: A sustainability story, text: "Building on Connect.CI or shared open source means your investment outlives the award, and your improvements serve other communities too." }
+      - { title: A sustainability story, text: "Open source and a shared platform mean your investment outlives the award." }
       - { title: "A small, named team", text: "The people in the proposal are the people who do the work." }
       - { title: Writing reviewers can follow, text: "Plain language, specific numbers and no buzzwords." }
   - kind: logos
@@ -37,11 +37,11 @@ sections:
     # award: the public NSF award number only, never our contract numbers with awardees.
     # Programs and awards as acknowledged in the Connect.CI PEARC 2026 paper.
     items:
-      - { name: ACCESS MATCH, award: NSF OAC-2138286 }
+      - { name: ACCESS MATCH, award: NSF OAC-2138286, logo: access-nsf.jpg }
       - { name: CCMNet, award: NSF OAC-2227656, logo: ccmnet.jpg }
-      - { name: Open OnDemand (ALL GOOD), award: NSF OAC-2303692 }
-      - { name: Open OnDemand Appverse (GOODLUCK), award: NSF OAC-2411375 }
-      - { name: NAIRR AI mentorship (EAGER), award: NSF OAC-2505400 }
+      - { name: Open OnDemand (ALL GOOD), award: NSF OAC-2303692, logo: open-ondemand.svg }
+      - { name: Open OnDemand Appverse (GOODLUCK), award: NSF OAC-2411375, logo: appverse.png }
+      - { name: NAIRR AI mentorship (EAGER), award: NSF OAC-2505400, logo: campus-champions-ai.svg }
   - kind: prose
     title: When to reach out
     body: "The earlier the better. Six to eight weeks before the deadline for co-writing or full drafting, two to three weeks for our sections. If your deadline is close, contact us anyway and we will tell you what is realistic."

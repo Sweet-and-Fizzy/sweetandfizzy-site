@@ -14,7 +14,7 @@ const logoFor = (file?: string) => (file ? logos[`/src/assets/logos/${file}`]?.d
   {items.map((l) => (
     <li class="rv">
       <span class="logo-tile">{logoFor(l.logo) ? <Pic src={logoFor(l.logo)!} alt={l.name} sizes="200px" widths={[200, 400]} style="max-height: 64px; width: auto; height: auto; max-width: 100%" /> : <span class="logo-name">{l.name}</span>}</span>
-      {l.award && <span class="logo-award">{l.award}</span>}
+      {l.award && <span class="logo-award">{l.logo ? `${l.name} · ${l.award}` : l.award}</span>}
     </li>
   ))}
 </ul>
@@ -23,5 +23,5 @@ const logoFor = (file?: string) => (file ? logos[`/src/assets/logos/${file}`]?.d
   .logo-strip li{display:flex;flex-direction:column;gap:8px}
   .logo-tile{height:112px;background:#ffffff;border:1px solid #d6d6d6;display:flex;align-items:center;justify-content:center;padding:16px 20px;text-align:center}
   .logo-name{font-weight:700;font-size:20px;line-height:1.2}
-  .logo-award{font-size:14px;font-weight:700;letter-spacing:1px;color:#595959}
+  .logo-award{font-size:15px;font-weight:700;line-height:1.35;color:#595959}
 </style>
