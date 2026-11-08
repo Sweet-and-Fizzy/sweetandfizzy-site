@@ -56,12 +56,14 @@ a{color:#111111;text-underline-offset:4px}a:hover{color:#111111}
 /* Hero cards. Each one jumps down the page. Full-width color bar on top; the arrow circle fills and drops on hover. */
 .doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .door{position:relative;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box;padding:28px 28px 32px;background:#1c1c1c;color:#ffffff;text-decoration:none;transition:background-color .4s var(--ease-out),transform .4s var(--ease-out)}
-.door .bar{position:absolute;left:0;right:0;top:0;height:6px;background:var(--accent)}
+.door .bar{position:absolute;left:0;right:0;top:0;height:6px;background:var(--accent);transform-origin:top;transition:transform .4s var(--ease-out)}
 .door .num{font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;letter-spacing:1.5px;color:#a6a6a6}
 .door .go{margin-top:auto;padding-top:20px;display:flex;align-items:center;gap:14px;font-weight:700}
 .door .circ{width:44px;height:44px;border-radius:50%;border:2px solid var(--accent);color:#ffffff;display:inline-flex;align-items:center;justify-content:center;flex:none;transition:background-color .4s var(--ease-out),color .4s var(--ease-out),transform .4s var(--ease-out)}
-.doors li:hover .door,.door:focus-visible{color:#ffffff;background:#262626;transform:translateY(-4px)}
-.doors li:hover .door .circ,.door:focus-visible .circ{background:var(--accent);color:#111111;transform:translateY(4px)}
+/* Hover stays in place: the card lightens, its color bar thickens and the arrow circle fills. */
+.door:hover,.door:focus-visible{color:#ffffff;background:#262626}
+.door:hover .bar,.door:focus-visible .bar{transform:scaleY(2)}
+.door:hover .circ,.door:focus-visible .circ{background:var(--accent);color:#111111;transform:translateY(3px)}
 @media (max-width:900px){.doors{grid-template-columns:1fr}}
 
 /* Global: step marker. Short color bar above each item, echoing the hero cards. */
@@ -71,7 +73,7 @@ a{color:#111111;text-underline-offset:4px}a:hover{color:#111111}
 @media (max-width:700px){.logos{grid-template-columns:repeat(2,minmax(0,1fr))}}
 input,select,textarea{font:inherit;font-weight:400;padding:12px;border:1px solid #8c8c8c;border-radius:0;background:#ffffff;color:#111111}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:3px}
-@media (prefers-reduced-motion:reduce){.btn,.lk,.door,.door .circ,.go-lk .circ,.go-lk .x,.btn .ar{transition:none}.door:hover,.door:hover .circ,.go-lk:hover .circ,.btn:hover .ar{transform:none}}
+@media (prefers-reduced-motion:reduce){.btn,.lk,.door,.door .circ,.go-lk .circ,.go-lk .x,.btn .ar{transition:none}.door:hover .bar,.door:hover .circ,.go-lk:hover .circ,.btn:hover .ar{transform:none}}
 /* Global: footer. Social icons in orange stroked circles; links split by orange dividers. */
 .soc a{width:52px;height:52px;border-radius:50%;border:2.5px solid #ef4326;color:#ffffff;display:flex;align-items:center;justify-content:center;transition:background-color .15s ease,color .15s ease}
 .soc a:hover{background:#ef4326;color:#111111}

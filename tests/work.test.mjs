@@ -15,10 +15,16 @@ test('a case study with no quote renders no quote block', { skip: !built }, () =
   assert.equal(/class="tq"/.test(html), false);
 });
 
-test('a figure with no image renders the labelled placeholder, never an empty img', { skip: !built }, () => {
-  const html = readFileSync(page('access-support'), 'utf8');
-  assert.match(html, /class="ph"/);
-  for (const s of slugs) assert.equal(/<img[^>]*src=""/.test(readFileSync(page(s), 'utf8')), false, s);
+test('every figure without an image renders the labelled placeholder, never an empty img', { skip: !built }, async () => {
+  const { parse } = await import('yaml');
+  for (const s of slugs) {
+    const d = parse(readFileSync(`src/content/work/${s}.yaml`, 'utf8'));
+    const figs = [...d.chapters.flatMap((c) => c.figures || []), ...(d.today.figures || [])];
+    const missing = figs.filter((f) => !f.image).length;
+    const html = readFileSync(page(s), 'utf8');
+    assert.equal((html.match(/class="ph"/g) || []).length, missing, s);
+    assert.equal(/<img[^>]*src=""/.test(html), false, s);
+  }
 });
 
 test('case pages link to each other with site routes, not board files', { skip: !built }, () => {

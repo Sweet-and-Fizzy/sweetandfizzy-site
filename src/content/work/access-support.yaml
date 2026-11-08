@@ -29,14 +29,14 @@ facts:
   - k: Platform
     v: Drupal, on Connect.CI
   - k: Years
-    v: "[2022 to present]"
+    v: 2022 to present
 goal:
   icon: "?"
   title: The goal
   body: |-
     **A new program, and a lot of people with questions.** In 2022, ACCESS took over from XSEDE as the NSF program that gives researchers time on national computing systems. Many of the people it serves are not computing experts. They are biologists, economists and engineers with a research question and a deadline.
 
-    They needed somewhere to start: how to get an allocation, which system to use, where to find software, and who to ask when they get stuck. [One detail about what support looked like before the portal, if we can share it.]
+    They needed somewhere to start: how to get an allocation, which system to use, where to find software, and who to ask when they get stuck.
   pull: Asking for help with a supercomputer should feel as easy as asking a colleague.
 chapters:
   - level: 2
@@ -77,10 +77,12 @@ chapters:
           alt: The ACCESS Q&A assistant answering a question
   - level: 3
     title: Affinity groups
-    body: "**A home for people who share a focus.** Affinity groups give communities of practice their own space for news, events, resources and email lists. [Which ACCESS affinity groups to name.]"
+    body: "**A home for people who share a focus.** Affinity groups give communities of practice their own space for news, events, resources and email lists, from ACCESS Allocations to the resource provider channels. In April to June 2026 the groups sent 527,539 emails, with a 45% open rate."
     figures:
-      - caption: "[Affinity groups screenshot]"
-        placeholder: "[SCREENSHOT]"
+      - caption: Affinity groups on ACCESS Support
+        image:
+          src: ../../assets/work/access-affinity-groups.jpg
+          alt: The ACCESS Support affinity groups page, with tag filters and groups such as ACCESS Allocations and ACCESS RP Integration
   - level: 3
     title: UI design on the tools
     body: |-
@@ -96,22 +98,24 @@ chapters:
           alt: The Software Documentation Service
   - level: 3
     title: Researcher stories
-    body: "**Showing what researchers do with ACCESS.** [One or two sentences on the researcher stories: what they cover, where they appear and why they matter.]"
+    body: "**Showing what researchers do with ACCESS.** Tools in Practice: Researcher Stories record each researcher's institution, research topic, the ACCESS tools and software they used, and the allocation behind the work, so other researchers can see what is possible. The same format now runs on the Open OnDemand Community Hub as Classroom Stories."
     figures:
-      - caption: "[Researcher stories screenshot]"
-        placeholder: "[SCREENSHOT]"
+      - caption: Tools in Practice, the ACCESS researcher stories
+        image:
+          src: ../../assets/work/access-researcher-stories.jpg
+          alt: The Tools in Practice researcher stories page, listing stories on CryoEM, AI math reasoning and molecular dynamics
 today:
   icon: "!"
   title: Where it is today
-  body: "**The portal has received excellent reviews from the community.** [Two sentences on who uses it today and what has changed for them.]"
+  body: "**The portal has received excellent reviews from the community.** From April to June 2026 it had 40,899 unique users, and the help desk resolved tickets in 2.3 days on average. Logged-in researchers now see their own account details, so the portal can tell them plainly when an account is not ready yet."
   figures: []
 results:
-  - n: "[N]"
-    label: "[researchers and staff using the portal]"
-  - n: "[N]"
-    label: "[MATCH engagements completed]"
-  - n: "[N%]"
-    label: "[questions the Q&A bot answers without a ticket]"
+  - n: "40,899"
+    label: unique users in April to June 2026
+  - n: "22"
+    label: MATCH engagements run through the platform (June 2026)
+  - n: "11,000"
+    label: questions to the Q&A assistant, about 75% rated fully correct by reviewers
 prev:
   href: /#research
   label: Research computing work

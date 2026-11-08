@@ -2,18 +2,23 @@ import { test, expect } from '@playwright/test';
 
 test.use({ viewport: { width: 1280, height: 900 } });
 
-// A card that lifts on hover must not slide out from under a pointer resting
-// near its bottom edge, or it flickers between hovered and not.
-test('a hero card stays lifted with the pointer near its bottom edge', async ({ page }) => {
+// Hover feedback stays in place: the card never moves, its color bar grows
+// and its arrow circle fills with the card's color.
+test('a hero card responds to hover without moving', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/');
   await page.evaluate(() => Promise.all(document.getAnimations().map((a) => a.finished)));
   const door = page.locator('.door').first();
-  const box = (await door.boundingBox())!;
-  await page.mouse.move(box.x + box.width / 2, box.y + box.height - 2);
+  const before = (await door.boundingBox())!;
+  const barBefore = await door.locator('.bar').evaluate((el) => el.getBoundingClientRect().height);
+  await page.mouse.move(before.x + before.width / 2, before.y + before.height / 2);
   await page.waitForTimeout(700);
-  const lifted = await door.evaluate((el) => new DOMMatrix(getComputedStyle(el).transform).m42);
-  expect(lifted).toBeLessThan(-1);
+  const after = (await door.boundingBox())!;
+  expect(Math.abs(after.y - before.y)).toBeLessThan(0.5);
+  const barAfter = await door.locator('.bar').evaluate((el) => el.getBoundingClientRect().height);
+  expect(barAfter).toBeGreaterThan(barBefore + 2);
+  const circBg = await door.locator('.circ').evaluate((el) => getComputedStyle(el).backgroundColor);
+  expect(circBg).not.toBe('rgba(0, 0, 0, 0)');
 });
 
 // Every part of a card should move on the same curve so nothing lurches.

@@ -57,8 +57,10 @@ chapters:
       - Outreach and education, internships and scholarships
       - News, events and monthly publications
     figures:
-      - caption: mghpcc.org
-        placeholder: "[Screenshot: the mghpcc.org home page]"
+      - caption: The mghpcc.org home page
+        image:
+          src: ../../assets/work/mghpcc-home.jpg
+          alt: The MGHPCC home page, with a photo of the Holyoke building and the latest news
   - level: 3
     title: The virtual booth
     body: "**The booth, online.** Each year we build a website for SC that highlights projects at the MGHPCC, so people can keep exploring after they leave the floor."

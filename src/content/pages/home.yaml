@@ -16,7 +16,7 @@ areas:
     title: Research computing
     lead: Community platforms and AI tools that connect researchers to people, answers and computing.
     facts:
-      - "74,000 researchers on our platforms"
+      - "74,000 researchers on our platform"
       - "13 communities share Connect.CI"
       - "7 NSF awards since 2017"
     papersLink: { label: 5 papers published, href: /publications/ }
