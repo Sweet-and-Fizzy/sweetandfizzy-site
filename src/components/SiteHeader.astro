@@ -1,0 +1,45 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+const path = Astro.url.pathname;
+const current = (href: string) => (path === href ? 'page' : undefined);
+---
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label={`${site.name}, home`}>
+      <img src="/img/logo.svg" alt="" width="356" height="40" />
+    </a>
+    <div class="head-actions">
+      <a class="btn btn-sm nav-cta-mobile" href="/contact/">Contact us</a>
+      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="main-nav">
+        <Icon name="menu" size={20} stroke={2} />Menu
+      </button>
+    </div>
+    <nav class="nav" id="main-nav" aria-label="Main">
+      <div class="dd">
+        <button type="button" class="dd-t" aria-expanded="false" aria-controls="services-menu">Services<Icon name="chevron" size={14} stroke={2.5} /></button>
+        <div class="dd-m" id="services-menu">
+          {site.services.map((l) => <a href={l.href} aria-current={current(l.href)}>{l.label}</a>)}
+        </div>
+      </div>
+      {site.nav.map((l) => <a href={l.href} aria-current={current(l.href)}>{l.label}</a>)}
+      <a class="btn btn-sm" href="/contact/">Contact us</a>
+    </nav>
+  </div>
+</header>
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.menu-btn');
+  const nav = document.getElementById('main-nav');
+  const dd = document.querySelector<HTMLButtonElement>('.dd-t');
+  const setOpen = (open: boolean) => {
+    btn?.setAttribute('aria-expanded', String(open));
+    nav?.classList.toggle('open', open);
+  };
+  btn?.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+  dd?.addEventListener('click', () => dd.setAttribute('aria-expanded', String(dd.getAttribute('aria-expanded') !== 'true')));
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (btn?.getAttribute('aria-expanded') === 'true') { setOpen(false); btn.focus(); }
+    if (dd?.getAttribute('aria-expanded') === 'true') { dd.setAttribute('aria-expanded', 'false'); dd.focus(); }
+  });
+</script>

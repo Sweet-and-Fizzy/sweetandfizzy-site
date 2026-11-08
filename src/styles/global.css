@@ -1,0 +1,190 @@
+/* Design tokens. Values follow the chosen homepage board (ServicesAll.dc.html),
+   which supersedes design/tokens.json where they differ (font, ink). */
+:root{
+  --blue:#5abdff;--orange:#ef4326;--yellow:#fcee21;
+  --ink:#111111;--ink-muted:#595959;--ink-on-dark:#ffffff;--muted-on-dark:#c8c8c8;
+  --panel:#1c1c1c;--ground-alt:#f4f4f4;--hairline:#d6d6d6;
+  --link-research:#004e73;--link-startup:#b4400f;
+  --font:'DM Sans','Helvetica Neue',Arial,sans-serif;
+  --container:1200px;--gutter:24px;--measure:720px;
+}
+/* Base */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font);color:var(--ink);background:#ffffff;font-size:18px;line-height:1.55}
+img{max-width:100%;height:auto}
+.wrap{max-width:var(--container);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:16px;top:-100px;z-index:100;padding:12px 20px;background:var(--ink);color:#fff;font-weight:700}
+.skip:focus{top:12px;color:#fff}
+@media (max-width:600px){body{font-size:17px}}
+
+*{font-optical-sizing:none}
+a{color:#111111;text-underline-offset:4px}a:hover{color:#111111}
+
+/* Global: button. Rectangle with a 3px stroke in a brand color (--accent), bold black text, thin arrow.
+   Hover: fills with the stroke color, arrow nudges right. Text stays black (readable on all three colors). */
+.btn{--accent:#5abdff;display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:inherit;font-size:18px;font-weight:700;line-height:1.2;text-decoration:none;padding:16px 32px;border:3px solid var(--accent);border-radius:0;cursor:pointer;color:#111111;background:transparent;transition:background-color .15s ease}
+.btn:hover{color:#111111;background:var(--accent)}
+.btn .ar{flex:none;transition:transform .15s ease}
+.btn:hover .ar{transform:translateX(4px)}
+.btn-sm{padding:9px 20px;font-size:16px;border-width:2px;min-height:44px}
+/* On black: white text, same colored stroke */
+.btn-light{color:#ffffff}
+.btn-light:hover{color:#111111}
+
+/* Global: circle-arrow link. Blue circle with a thin black arrow, then the text.
+   Hover: circle nudges right and a blue underline draws in left to right. */
+.go-lk{--accent:#5abdff;display:inline-flex;align-items:center;gap:14px;font-size:18px;font-weight:700;color:#111111;text-decoration:none}
+.go-lk:hover{color:#111111}
+.go-lk .circ{width:44px;height:44px;border-radius:50%;background:transparent;border:2px solid var(--accent);box-sizing:border-box;color:inherit;display:inline-flex;align-items:center;justify-content:center;flex:none;transition:transform .15s ease}
+.go-lk .x{background:linear-gradient(var(--accent),var(--accent)) no-repeat 0 100%/0 3px;padding-bottom:4px;transition:background-size .25s ease}
+.go-lk:hover .x{background-size:100% 3px}
+.go-lk:hover .circ{transform:translateX(4px)}
+
+/* Global: inline link. Bold, no underline; softens to gray on hover. */
+.lk{font-weight:700;color:#111111;text-decoration:none;transition:color .15s ease}
+.lk:hover{color:#595959}
+/* Quiet link: paper references */
+.lk-q{display:inline-flex;align-items:center;gap:8px;font-size:16px;color:#595959;text-decoration:none}
+.lk-q:hover{color:#111111;text-decoration:underline}
+
+/* Global: navigation, sentence case */
+.nav a:not(.btn){font-size:16px;font-weight:700;text-decoration:none;padding:6px 0;border-bottom:3px solid transparent}
+.nav a:not(.btn):hover{border-bottom-color:#fcee21}
+
+/* Hero cards. Each one jumps down the page. Full-width color bar on top; the arrow circle fills and drops on hover. */
+.doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.door{position:relative;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box;padding:28px 28px 32px;background:#1c1c1c;color:#ffffff;text-decoration:none;transition:background-color .2s ease,transform .2s ease}
+.door .bar{position:absolute;left:0;right:0;top:0;height:6px;background:var(--accent)}
+.door .num{font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;letter-spacing:1.5px;color:#a6a6a6}
+.door .go{margin-top:auto;padding-top:20px;display:flex;align-items:center;gap:14px;font-weight:700}
+.door .circ{width:44px;height:44px;border-radius:50%;border:2px solid var(--accent);color:#ffffff;display:inline-flex;align-items:center;justify-content:center;flex:none;transition:background-color .2s ease,color .2s ease,transform .2s ease}
+.door:hover{color:#ffffff;background:#262626;transform:translateY(-4px)}
+.door:hover .circ{background:var(--accent);color:#111111;transform:translateY(4px)}
+@media (max-width:900px){.doors{grid-template-columns:1fr}}
+
+/* Global: step marker. Short color bar above each item, echoing the hero cards. */
+.sbar{display:block;width:32px;height:4px;background:#5abdff;margin-bottom:10px}
+.logo{mix-blend-mode:multiply}
+.logos{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:700px){.logos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+input,select,textarea{font:inherit;font-weight:400;padding:12px;border:1px solid #8c8c8c;border-radius:0;background:#ffffff;color:#111111}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.btn,.lk,.door,.door .circ,.go-lk .circ,.go-lk .x,.btn .ar{transition:none}.door:hover,.door:hover .circ,.go-lk:hover .circ,.btn:hover .ar{transform:none}}
+/* Global: footer. Social icons in orange stroked circles; links split by orange dividers. */
+.soc a{width:52px;height:52px;border-radius:50%;border:2.5px solid #ef4326;color:#ffffff;display:flex;align-items:center;justify-content:center;transition:background-color .15s ease,color .15s ease}
+.soc a:hover{background:#ef4326;color:#111111}
+.fl li{padding:0 18px;line-height:1.1}
+.fl li+li{border-left:2px solid #ef4326}
+.fl a{color:#ffffff;font-size:16px;text-decoration:none}
+.fl a:hover{color:#ffffff;text-decoration:underline;text-decoration-color:#ef4326;text-decoration-thickness:2px;text-underline-offset:6px}
+@media (prefers-reduced-motion:reduce){.soc a{transition:none}}
+
+/* Section opener: black panel with one notched corner, big section number and the section color */
+.op{position:relative;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:32px 56px;align-items:end;padding:48px 56px 52px;background:#111111;color:#ffffff;clip-path:polygon(0 0,calc(100% - 48px) 0,100% 48px,100% 100%,0 100%)}
+.op .n{display:flex;align-items:center;gap:20px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:56px;line-height:1}
+.op .n .grow{display:block;width:96px;height:8px}
+.op ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px}
+.op li{display:flex;gap:14px;align-items:baseline;color:#ffffff;font-weight:700}
+.op li::before{content:"";flex:none;width:12px;height:12px;background:var(--accent);transform:translateY(1px)}
+@media (max-width:900px){.op{grid-template-columns:1fr;padding:36px 24px 40px}}
+/* Case study tiles: image, then a black name block with the section color on top */
+.cs{display:flex;flex-direction:column;gap:14px;color:#111111;text-decoration:none;min-width:0}
+.cs:hover{color:#111111}
+.cs .shot{display:block;overflow:hidden;aspect-ratio:16 / 10;background:#f4f4f4;border:1px solid #d6d6d6;border-bottom:0}
+.cs .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.cs:hover .shot img{transform:scale(1.04)}
+.cs .name{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;border-top:6px solid var(--accent);color:#111111}
+.cs:hover .go-lk .x{background-size:100% 3px}
+.cs:hover .go-lk .circ{transform:translateX(4px)}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 32px}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 40px}
+@media (max-width:900px){.two,.three{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.cs .shot img{transition:none}.cs:hover .shot img{transform:none}}
+
+/* Motion. Content rises in as it scrolls into view (.rv), color bars draw in from the left (.grow).
+   Only runs once the page script has started (html.mo), so nothing is ever hidden without it,
+   and never for people who ask for reduced motion. --d staggers items in a row. */
+@keyframes sfRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes sfDraw{from{transform:scaleX(0)}to{transform:none}}
+@media (prefers-reduced-motion:no-preference){
+.hero-in>*{animation:sfRise .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 90ms)}
+html.mo .rv{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1) var(--d,0s),transform .7s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+html.mo .rv.in{opacity:1;transform:none}
+html.mo .grow{transform:scaleX(0);transform-origin:left center;transition:transform .9s cubic-bezier(.2,.7,.2,1) calc(var(--d,0s) + .2s)}
+html.mo .grow.in{transform:none}
+}
+
+/* Services page: circle links are strokes; they fill with the section color on hover */
+.go-lk .circ{background:transparent;border:2px solid var(--accent);box-sizing:border-box;transition:transform .15s ease,background-color .2s ease}
+.go-lk:hover .circ,.cs:hover .go-lk .circ{background:var(--accent)}
+/* Underlined text link in the section color */
+.ul-lk{font-weight:700;color:#111111;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:6px;transition:color .15s ease}
+.ul-lk:hover{color:#595959}
+/* Work heading: notched color tag sitting on a rule of the same color */
+.wk-head{display:flex;align-items:flex-end}
+.wk-head h3{margin:0;flex:none;padding:10px 48px 10px 20px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:18px;line-height:1.3;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%)}
+.wk-head .rule{flex:1;height:4px}
+/* More projects: small thumbnails */
+.mini{margin:0;padding:0;list-style:none;display:grid;gap:32px}
+.mini li{display:flex;min-width:0}
+.mc{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0;color:#111111;text-decoration:none}
+.mc:hover{color:#111111}
+.mc .th{display:block;aspect-ratio:16 / 10;overflow:hidden;background:#f4f4f4;border:0;border-bottom:4px solid var(--accent);margin-bottom:8px}
+.mc .th img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+a.mc:hover .th img{transform:scale(1.04)}
+.mc .row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.mc .nm{font-weight:700;line-height:1.3}
+.mc .wh{font-size:16px;color:#595959}
+.mc .ar2{flex:none;width:32px;height:32px;box-sizing:border-box;border-radius:50%;border:2px solid var(--accent);display:inline-flex;align-items:center;justify-content:center;transition:background-color .2s ease,transform .2s ease}
+a.mc:hover .ar2{background:var(--accent);transform:translateX(3px)}
+@media (max-width:900px){.mini{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (prefers-reduced-motion:reduce){.mc .th img,.mc .ar2{transition:none}a.mc:hover .th img{transform:none}}
+
+/* Global: Services dropdown in the main nav. Opens on hover or keyboard focus. */
+.dd{position:relative;z-index:50}
+.dd-t{display:inline-flex;align-items:center;gap:6px;background:none;border:0;border-bottom:3px solid transparent;padding:6px 0;margin:0;font:inherit;font-size:16px;font-weight:700;color:#111111;cursor:pointer}
+.dd-t svg{transition:transform .15s ease}
+.dd:hover .dd-t,.dd:focus-within .dd-t,.dd-t.on{border-bottom-color:#fcee21}
+.dd:hover .dd-t svg,.dd:focus-within .dd-t svg{transform:rotate(180deg)}
+.dd-m{display:none;position:absolute;top:100%;left:-20px;min-width:280px;padding:8px 0;background:#ffffff;border:1px solid #d6d6d6;border-top:4px solid #5abdff;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.dd:hover .dd-m,.dd:focus-within .dd-m{display:flex;flex-direction:column}
+.nav .dd-m a:not(.btn){padding:12px 20px;border-bottom:0;border-left:4px solid transparent}
+.nav .dd-m a:not(.btn):hover,.nav .dd-m a[aria-current=page]{border-left-color:#fcee21;background:#f4f4f4}
+@media (prefers-reduced-motion:reduce){.dd-t svg{transition:none}}
+
+/* Header */
+.site-header{background:#fff;border-bottom:1px solid var(--hairline);position:relative;z-index:40}
+.site-header .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
+.site-header .brand{display:flex;align-items:center;min-height:44px}
+.site-header .brand img{height:40px;width:auto;display:block}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:36px}
+.nav a:not(.btn),.dd-t{min-height:44px;display:inline-flex;align-items:center}
+.menu-btn{display:none}
+.nav-cta-mobile{display:none}
+.dd-t[aria-expanded=true]+.dd-m{display:flex;flex-direction:column}
+
+/* Mobile nav: a Menu button opens a full-width panel. Without JS (no html.js)
+   the links wrap under the logo instead, so nothing is unreachable. */
+@media (max-width:900px){
+  .site-header .bar{flex-wrap:wrap}
+  .site-header .brand img{height:32px}
+  .nav{gap:8px 24px}
+  .nav .dd-m{display:flex;flex-direction:column;position:static;border:0;box-shadow:none;padding:0;min-width:0}
+  .nav .dd-t{display:none}
+  .nav .dd{display:contents}
+  html.js .site-header .bar{flex-wrap:nowrap}
+  html.js .menu-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 16px;font:inherit;font-size:16px;font-weight:700;background:none;border:2px solid var(--ink);color:var(--ink);cursor:pointer}
+  html.js .nav-cta-mobile{display:inline-flex}
+  html.js .head-actions{display:flex;align-items:center;gap:12px}
+  html.js .nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:4px solid var(--blue);box-shadow:0 12px 24px rgba(0,0,0,.08);flex-direction:column;align-items:stretch;gap:0;padding:8px var(--gutter) 20px}
+  html.js .nav.open{display:flex}
+  html.js .nav a:not(.btn),html.js .nav .dd-m a:not(.btn){padding:12px 0;border-bottom:1px solid var(--hairline);border-left:0}
+  html.js .nav .btn{display:none}
+}
+@media (max-width:420px){html.js .nav-cta-mobile{display:none}}
+
+/* Footer helpers */
+.lk-light{color:#fff}.lk-light:hover{color:var(--muted-on-dark)}
+.fl a{display:inline-flex;align-items:center;min-height:44px}
