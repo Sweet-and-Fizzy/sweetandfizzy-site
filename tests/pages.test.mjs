@@ -30,3 +30,15 @@ test('Publications links each published paper to its DOI', { skip: !built }, () 
   for (const doi of ['10.1145/3785462.3815904', '10.1145/3785462.3815803', '10.1145/3569951.3597590', '10.22369/issn.2153-4136/13/2/4', '10.1145/3437359.3465606'])
     assert.ok(html.includes(`https://doi.org/${doi}`), doi);
 });
+
+test('AI agents page ends with a program contact call to action', { skip: !built }, () => {
+  const html = read('services/ai-agents');
+  assert.match(html, /From answering questions to submitting jobs/);
+  assert.match(html, /href="\/contact\/\?audience=program"/);
+});
+
+test('Planning a proposal page ends with a proposal contact call to action', { skip: !built }, () => {
+  const html = read('planning-a-proposal');
+  assert.match(html, /From the first draft to the funded project/);
+  assert.match(html, /href="\/contact\/\?audience=proposal"/);
+});

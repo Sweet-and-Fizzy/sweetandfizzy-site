@@ -1,0 +1,45 @@
+# Planning a proposal? page copy, from the Draft copy tab.
+title: Planning a proposal?
+description: Bring Sweet & Fizzy Digital into your NSF proposal for a community platform, AI tools or web engineering, from our sections to full drafting.
+accent: yellow
+hero:
+  eyebrow: Planning a proposal?
+  title: From the first draft to the funded project.
+  body: "If your program needs a community platform, AI tools or web engineering, bring us in before the deadline. We have worked inside NSF programs for years, and we know what reviewers look for in the technical and sustainability sections."
+  primary: { label: Talk about your proposal, href: /contact/?audience=proposal }
+sections:
+  - kind: steps
+    title: Three ways we help
+    lead: "Some PIs want a few sections to paste in. Others want a partner on the whole technical story. Pick the level that fits."
+    items:
+      - { title: Our sections, text: "We send a letter of collaboration, a subaward budget and justification, and descriptions of our facilities, platform and sustainability plan, ready to drop into your proposal." }
+      - { title: Co-writing, text: "We draft the technical and cyberinfrastructure parts with you. You own the science and the narrative, and we make sure the two fit." }
+      - { title: Full drafting, text: "For larger collaborations, we write the proposal with you from outline to submission, working from your goals and your science." }
+  - kind: list
+    title: Proposal kit
+    lead: Ready to paste. Ask and we send the current versions within two days.
+    items:
+      - { title: Facilities paragraph., text: "[Our hosting, development and support capacity, written as a facilities section.]" }
+      - { title: Budget justification text., text: "Subaward lines at our $150 blended rate, in the NSF budget justification format." }
+      - { title: Subaward facts., text: "UEI [UEI], rates [rates], and who signs for us: [NAME, title]." }
+      - { title: Letter of collaboration., text: "NSF's one-sentence format: \"If the proposal submitted by Dr. (PI name) entitled (proposal title) is selected for funding by NSF, it is my intent to collaborate and/or commit resources as detailed in the Project Description or the Facilities, Equipment or Other Resources section of the proposal.\"" }
+      - { title: Lead time., text: "Six to eight weeks before the deadline for co-writing or full drafting, two to three weeks for our sections." }
+  - kind: cards
+    title: What you can count on
+    items:
+      - { title: Realistic scope, text: "A budget and timeline we can deliver, scoped by deliverable, so the work you propose is the work that ships." }
+      - { title: A sustainability story, text: "Building on Connect.CI or shared open source means your investment outlives the award, and your improvements serve other communities too." }
+      - { title: "A small, named team", text: "The people in the proposal are the people who do the work." }
+      - { title: Writing reviewers can follow, text: "Plain language, specific numbers and no buzzwords." }
+  - kind: prose
+    title: Programs we have worked with
+    body: "Our work has been funded through ACCESS (NSF), MGHPCC, CU Boulder and the Ohio Supercomputer Center, among others. [Add other funders or programs we can name.]"
+  - kind: prose
+    title: When to reach out
+    body: "The earlier the better. Six to eight weeks before the deadline for co-writing or full drafting, two to three weeks for our sections. If your deadline is close, contact us anyway and we will tell you what is realistic."
+cta:
+  title: Tell us about your proposal
+  body: "Send the solicitation, your deadline and a few lines about your idea. We will reply within two days with how we can help."
+  button: Talk to us
+  href: /contact/?audience=proposal
+  secondary: { label: See Connect.CI membership, href: /connect-ci/#membership }

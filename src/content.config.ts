@@ -99,4 +99,24 @@ const publications = defineCollection({
   }),
 });
 
-export const collections = { work, home, connectci, publications };
+const item = z.object({ title: z.string(), text: z.string(), link: link.optional() });
+const section = z.discriminatedUnion('kind', [
+  z.object({ kind: z.literal('cards'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(item) }),
+  z.object({ kind: z.literal('rows'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(item) }),
+  z.object({ kind: z.literal('list'), id: z.string().optional(), dark: z.boolean().optional(), title: z.string(), lead: z.string().optional(), items: z.array(item) }),
+  z.object({ kind: z.literal('steps'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(item) }),
+  z.object({ kind: z.literal('prose'), id: z.string().optional(), title: z.string(), body: z.string() }),
+  z.object({ kind: z.literal('paper'), id: z.string().optional(), title: z.string(), paper }),
+]);
+
+const flex = defineCollection({
+  loader: glob({ pattern: ['ai-agents.yaml', 'planning-a-proposal.yaml', 'privacy.yaml'], base: './src/content/pages' }),
+  schema: z.object({
+    title: z.string(), description: z.string(), accent: color,
+    hero: z.object({ eyebrow: z.string(), title: z.string(), body: z.string(), primary: link.optional(), secondary: link.optional() }),
+    sections: z.array(section),
+    cta: z.object({ title: z.string(), body: z.string(), button: z.string(), href: z.string(), secondary: link.optional() }).optional(),
+  }),
+});
+
+export const collections = { work, home, connectci, publications, flex };

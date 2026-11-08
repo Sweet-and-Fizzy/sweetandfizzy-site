@@ -1,0 +1,114 @@
+---
+// Renders a page from the flexible section model (AI agents, proposals, privacy).
+import Base from '../../layouts/Base.astro';
+import Icon from '../Icon.astro';
+import PaperCard from '../sections/PaperCard.astro';
+import CtaBand from '../sections/CtaBand.astro';
+import { brand } from '../../data/colors';
+import { md, mdInline } from '../../lib/md';
+import { slugify } from '../../lib/slug';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props { page: CollectionEntry<'flex'>['data'] }
+const { page } = Astro.props;
+const accent = brand[page.accent];
+const isExternal = (href: string) => /^https?:/.test(href);
+---
+<Base title={page.title} description={page.description}>
+  <section class="page-hero" aria-labelledby="page-title" style={`--accent: ${accent}`}>
+    <div class="wrap hero-in" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 20px; max-width: var(--container)">
+      <p class="eyebrow-xl" style={`color: ${accent}; --i: 0`}>{page.hero.eyebrow}</p>
+      <h1 id="page-title" class="h1-xl" style="max-width: 900px; --i: 1">{page.hero.title}</h1>
+      <p style="margin: 0; color: #c8c8c8; max-width: 760px; font-size: clamp(19px, 2vw, 22px); --i: 2">{page.hero.body}</p>
+      {(page.hero.primary || page.hero.secondary) && (
+        <div style="display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; margin-top: 12px; --i: 3">
+          {page.hero.primary && <a class="btn btn-light" href={page.hero.primary.href} style={`--accent: ${accent}`}>{page.hero.primary.label}<Icon name="arrow-right" class="ar" size={20} stroke={2} /></a>}
+          {page.hero.secondary && <a class="lk lk-light cta-lk" href={page.hero.secondary.href}>{page.hero.secondary.label}</a>}
+        </div>
+      )}
+    </div>
+  </section>
+
+  {page.sections.map((s, si) => {
+    const id = s.id ?? slugify(s.title);
+    const dark = s.kind === 'list' && s.dark;
+    const bg = dark ? '#111111' : si % 2 ? '#f4f4f4' : '#ffffff';
+    return (
+      <section id={id} aria-labelledby={`${id}-h`} class:list={['flex-sec', { dark }]} style={`background: ${bg}; --accent: ${accent}`}>
+        <div class="wrap" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 40px">
+          <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+            <h2 id={`${id}-h`} class="h2-sec">{s.title}</h2>
+            {'lead' in s && s.lead && <p class="flex-lead" style="margin: 0">{s.lead}</p>}
+          </div>
+
+          {s.kind === 'cards' && (
+            <div class="flex-cards">
+              {s.items.map((it, i) => (
+                <article class="rv" style={`--d: ${(i * 0.1).toFixed(1)}s`}>
+                  <span class="grow" aria-hidden="true" style={`display: block; width: 48px; height: 6px; margin-bottom: 12px; background: ${accent}`}></span>
+                  <h3 class="h3-card">{it.title}</h3>
+                  <p style="margin: 8px 0 0; color: #595959" set:html={mdInline(it.text)} />
+                </article>
+              ))}
+            </div>
+          )}
+
+          {s.kind === 'rows' && (
+            <div class="flex-rows">
+              {s.items.map((it) => (
+                <article class="rv">
+                  <h3 class="h3-card">{it.title}</h3>
+                  <div style="display: flex; flex-direction: column; gap: 12px">
+                    <p style="margin: 0" set:html={mdInline(it.text)} />
+                    {it.link && <a class="go-lk" href={it.link.href}><span class="circ" aria-hidden="true"><Icon name="arrow-right" stroke={1.5} /></span><span class="x">{it.link.label}{isExternal(it.link.href) && <span class="sr-only"> (external site)</span>}</span></a>}
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+
+          {s.kind === 'list' && (
+            <ul class="flex-list">
+              {s.items.map((it) => <li class="rv"><strong>{it.title}</strong> <span set:html={mdInline(it.text)} /></li>)}
+            </ul>
+          )}
+
+          {s.kind === 'steps' && (
+            <ol class="flex-steps">
+              {s.items.map((it, i) => (
+                <li class="rv" style={`--d: ${(i * 0.1).toFixed(1)}s`}>
+                  <span aria-hidden="true" class="step-n">{String(i + 1).padStart(2, '0')}</span>
+                  <h3 class="h3-card" style="font-size: 24px">{it.title}</h3>
+                  <p style="margin: 0; color: #595959" set:html={mdInline(it.text)} />
+                </li>
+              ))}
+            </ol>
+          )}
+
+          {s.kind === 'prose' && <div class="prose-md" style="max-width: 760px" set:html={md(s.body)} />}
+
+          {s.kind === 'paper' && <div style="max-width: 760px"><PaperCard paper={s.paper} boxed /></div>}
+        </div>
+      </section>
+    );
+  })}
+
+  {page.cta && <CtaBand title={page.cta.title} body={page.cta.body} button={page.cta.button} href={page.cta.href} secondary={page.cta.secondary} />}
+</Base>
+
+<style is:global>
+  .flex-lead{color:#595959}
+  .flex-sec.dark{color:#ffffff}
+  .flex-sec.dark .flex-lead{color:#c8c8c8}
+  .flex-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:40px 32px}
+  .flex-rows{display:flex;flex-direction:column}
+  .flex-rows article{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:12px 48px;padding:32px 0;border-top:1px solid #d6d6d6}
+  .flex-rows article:last-child{border-bottom:1px solid #d6d6d6}
+  @media (max-width:800px){.flex-rows article{grid-template-columns:1fr}}
+  .flex-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px;max-width:860px}
+  .flex-list li{position:relative;padding-left:26px}
+  .flex-list li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;background:var(--accent)}
+  .flex-steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:24px}
+  .flex-steps li{display:flex;flex-direction:column;gap:8px;padding:28px 28px 32px;border:4px solid var(--accent);background:#ffffff}
+  .step-n{font-weight:700;font-size:48px;line-height:1}
+</style>

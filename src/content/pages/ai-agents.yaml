@@ -1,0 +1,51 @@
+# AI agents and integrations page copy, from the Draft copy tab.
+title: AI agents and integrations
+description: AI assistants and agents for research computing programs that answer from your docs, read live system data and act with each user's own permissions.
+accent: blue
+hero:
+  eyebrow: AI agents and integrations
+  title: From answering questions to submitting jobs.
+  body: "We build AI assistants and agents for research computing programs. They answer from your documentation, read live data from your systems, and act for a user with that user's own permissions. We test them against questions your staff write, so you know how well they work before your users rely on them."
+  primary: { label: Plan a program partnership, href: /contact/?audience=program }
+  secondary: { label: Read about the HUST paper, href: "#paper" }
+sections:
+  - kind: cards
+    title: What we build
+    items:
+      - { title: Support agents, text: "Assistants that answer from your documentation and your live systems in one conversation, and hand off to a human with a ticket when they should." }
+      - { title: MCP servers for your data, text: "MCP (Model Context Protocol) is the standard way AI tools like Claude connect to outside data. We wrap your APIs so any assistant can read allocations, system status, events or software listings directly." }
+      - { title: Agent access to HPC, text: "Interfaces that let an assistant submit jobs, read output and manage files on a cluster, running as the signed-in user with your site's policies applied." }
+      - { title: AI in your review and support workflows, text: "Tools that check submissions against your rubric and draft feedback, with a person making the final call." }
+  - kind: rows
+    title: Work in production
+    items:
+      - { title: ACCESS support agent, text: "One agent that answers ACCESS documentation questions and live questions in the same conversation, like which GPU resources are available or what is down for maintenance. It draws on 11 MCP servers covering allocations, compute resources, system status, events, announcements, software, affinity groups, NSF awards, usage metrics and ticketing. Supported by NSF award 2138286 under the ACCESS program.", link: { label: Read the case story, href: /work/access-ai-assistant/ } }
+      - { title: ACCESS MCP servers, text: "Public MCP servers for the ACCESS program, hosted at mcp.access-ci.org. Anyone can add one to Claude and ask about ACCESS resources in plain language.", link: { label: See the setup guide, href: "https://mcp.access-ci.org/docs/getting-started" } }
+      - { title: OOD API for Open OnDemand, text: "An Open OnDemand app that lets researchers and their AI assistants submit jobs, manage files and check on their cluster without a terminal. Every request runs as the signed-in user, inside the permission model Open OnDemand already has. Site operators set local policy in a plain text file that every AI client reads before acting. It is early software.", link: { label: See the code, href: "https://github.com/Sweet-and-Fizzy/ood-api" } }
+      - { title: Appverse review assistant, text: "A Claude Code plugin that reviews app submissions to the Open OnDemand Appverse for structure, security, quality and maintenance. It produces an evidence-backed report and a draft reply, and a human reviewer decides." }
+  - kind: list
+    dark: true
+    title: How we keep it trustworthy
+    items:
+      - { title: "Measured, not demoed.", text: "We grade the ACCESS agent against questions written by people, fact by fact, for every fact an answer must get right. Each fact comes from the documentation, never from the agent's own answer." }
+      - { title: The user's own permissions., text: "Agents act as the signed-in person, so they can never see or do more than that person can." }
+      - { title: Guardrails where it counts., text: "Path allowlists, blocked sensitive files, audit logs of every action, and clear warnings about anything that cannot be undone." }
+      - { title: People make the call., text: "Reviews and recommendations go to a person to decide." }
+      - { title: Your choice of model., text: "The ACCESS agent can run on open models hosted by a partner university as well as on commercial models." }
+  - kind: steps
+    title: How an engagement runs
+    items:
+      - { title: Discovery sprint, text: "One or three weeks at a fixed price ($3,500 or $9,500) to map your users' questions, your data sources and where an agent would help most." }
+      - { title: Build, text: "Connect your documentation and systems, and build the agent or MCP servers in the open where your program allows." }
+      - { title: Evaluate, text: "Your staff write the test questions. We report what the agent gets right, what it gets wrong and why." }
+      - { title: Launch and improve, text: "Release to users with feedback built in, then tune from real questions." }
+  - kind: paper
+    id: paper
+    title: Paper
+    paper: { venue: "HUST workshop at SC26 · November 2026", title: "From Answering to Acting: An AI Agent for Research Computing User Support", authors: "A. Pasquale, V. Gazula, J. E. Bacal", summary: "How the ACCESS support agent combines documentation search with live data from MCP servers, and how we test its answers." }
+cta:
+  title: Bring AI to your users, carefully.
+  body: "Tell us what your users ask most and where your data lives. We can start with a discovery sprint, or write the work into your next proposal."
+  button: Talk to us
+  href: /contact/?audience=program
+  secondary: { label: Planning a proposal?, href: /planning-a-proposal/ }

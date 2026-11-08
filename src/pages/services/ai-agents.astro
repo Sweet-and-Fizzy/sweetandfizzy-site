@@ -1,0 +1,6 @@
+---
+import { getEntry } from 'astro:content';
+import FlexPage from '../../components/flex/FlexPage.astro';
+const page = (await getEntry('flex', 'ai-agents'))!.data;
+---
+<FlexPage page={page} />
