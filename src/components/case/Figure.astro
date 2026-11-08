@@ -1,11 +1,11 @@
 ---
 import Pic from '../Pic.astro';
 import { mdInline } from '../../lib/md';
-interface Props { fig: { caption: string; image?: { src: any; alt: string }; placeholder?: string } }
+interface Props { fig: { caption: string; image?: { src?: any; alt: string }; placeholder?: string } }
 const { fig } = Astro.props;
 ---
 <figure class="ch-fig">
-  {fig.image
+  {fig.image?.src
     ? <div class="shotx"><Pic src={fig.image.src} alt={fig.image.alt} /></div>
     : <div class="ph">{fig.placeholder ?? '[SCREENSHOT]'}</div>}
   {fig.caption && <figcaption set:html={mdInline(fig.caption)} />}
