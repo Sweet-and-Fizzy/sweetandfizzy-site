@@ -1,11 +1,11 @@
-# Privacy page. A plain-language draft written for the new site; Andrew reviews before launch.
+# Privacy page. Plain-language policy for the new site, approved by Andrew Nov 8 2026.
 title: Privacy
 description: What Sweet & Fizzy Digital collects on sweetandfizzy.com, why, who processes it, and how to ask us to delete it.
 accent: blue
 hero:
   eyebrow: Privacy
   title: What we collect, and why
-  body: "This site collects as little as it can. Here is what we keep, what our hosting and analytics providers process for us, and how to reach us about it. [Andrew to review before launch.]"
+  body: "This site collects as little as it can. Here is what we keep, what our hosting and analytics providers process for us, and how to reach us about it."
 sections:
   - kind: list
     title: What we collect
