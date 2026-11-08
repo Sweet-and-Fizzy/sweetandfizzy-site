@@ -25,7 +25,7 @@ const work = defineCollection({
     heroImage: obj({ src: image(), alt: z.string() }).optional(),
     did: z.array(z.string()),
     facts: z.array(obj({ k: z.string(), v: z.string() })),
-    goal: obj({ icon: z.string().optional(), title: z.string(), body: z.string(), pull: z.string().optional() }),
+    goal: obj({ icon: z.string().optional(), title: z.string(), body: z.string(), pull: z.string().optional(), figures: z.array(figure(image)).default([]) }),
     chapters: z.array(obj({
       level: z.union([z.literal(2), z.literal(3)]),
       icon: z.string().optional(),

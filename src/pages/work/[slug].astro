@@ -62,9 +62,12 @@ const description = d.description || `${d.name}: ${d.title}. A Sweet & Fizzy Dig
 
   <section aria-labelledby="goal-title" class="goal" style="background: #5abdff">
     <div class="wrap" style="padding-top: 88px; padding-bottom: 88px; display: flex; flex-direction: column; gap: 56px">
-      <article class="story" style="max-width: 760px; margin: 0">
-        <Story level={2} id="goal-title" icon={d.goal.icon} title={d.goal.title} body={d.goal.body} />
-      </article>
+      <div class:list={[{ 'ch-row': d.goal.figures.length > 0 }]}>
+        <article class="story" style="max-width: 760px; margin: 0">
+          <Story level={2} id="goal-title" icon={d.goal.icon} title={d.goal.title} body={d.goal.body} />
+        </article>
+        {d.goal.figures.length > 0 && <div class="goal-figs">{d.goal.figures.map((f) => <Figure fig={f} />)}</div>}
+      </div>
       {d.goal.pull && <blockquote class="pull" style="margin: 0">{d.goal.pull}</blockquote>}
     </div>
   </section>

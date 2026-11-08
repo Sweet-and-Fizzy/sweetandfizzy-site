@@ -36,6 +36,11 @@ goal:
 
     When an assistant cannot see live data, it either guesses or sends people to file a ticket. ACCESS support handled 10,834 tickets in the year to June 2026.
   pull: "{ The docs know how. The live systems know right now. Researchers need both. }"
+  figures:
+    - caption: Researchers ask the ACCESS Q&A widget on support.access-ci.org
+      image:
+        src: ../../assets/work/access-ai-assistant-751bec62.gif
+        alt: "The ACCESS Q&A widget answering how to get a large allocation for medical research using AI, with Helpful and Not helpful buttons"
 chapters:
   - level: 2
     title: Our approach
@@ -103,12 +108,11 @@ chapters:
 today:
   icon: "!"
   title: Where it is today
-  body: "**The agent and its servers are open source.** Researchers meet it in two places: full screen at qa.access-ci.org, and as the ACCESS Q&A widget built into support.access-ci.org."
-  figures:
-    - caption: The ACCESS Q&A widget on support.access-ci.org
-      image:
-        src: ../../assets/work/access-ai-assistant-751bec62.gif
-        alt: "The ACCESS Q&A widget answering how to get a large allocation for medical research using AI, with Helpful and Not helpful buttons"
+  body: |-
+    **In production, and open for other programs.** The agent answers ACCESS researchers today, full screen at qa.access-ci.org and in the Q&A widget on support.access-ci.org. It runs on an open model hosted by the University of Kentucky, so researchers' questions stay inside the institution.
+
+    The agent and its MCP servers are open source. A program with its own documentation and systems can start from the same code, and the same evaluation keeps the answers honest as it grows.
+  figures: []
 results:
   - n: "Every"
     label: change checked against the test questions before it ships
