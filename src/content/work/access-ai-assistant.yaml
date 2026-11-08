@@ -91,6 +91,14 @@ chapters:
           src: ../../assets/work/access-ai-events-answer.jpg
           alt: "The ACCESS Assistant listing an upcoming GPU programming course on November 10, 2026, with speaker, description and registration link"
   - level: 3
+    title: From answering to acting
+    body: "**It can act for the researcher, carefully.** Asked to sign someone up for a training, the agent finds the event, checks the seats and shows exactly what would happen. Nothing is submitted until the researcher confirms, and the registration is made under their own signed-in identity, just as if they had used the events portal themselves."
+    figures:
+      - caption: Registering for a training. The agent explains, and the researcher confirms in the side pane.
+        image:
+          src: ../../assets/work/access-ai-registration.jpg
+          alt: "The ACCESS Assistant with an Event registration side pane for Introduction to GPU Programming: not registered yet, 40 seats left, and a Confirm registration button with the note Nothing is submitted until you confirm"
+  - level: 3
     title: Evaluation battery
     body: |-
       **Measured, not demoed.** An answer can sound right and still be wrong. Asked whether a system would be up next week, the documentation-only assistant the agent replaced said it was fully operational, the week its maintenance moved. The agent read the live status feed and gave the new dates.
