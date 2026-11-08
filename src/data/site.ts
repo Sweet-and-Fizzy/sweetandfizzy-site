@@ -3,7 +3,6 @@ export const site = {
   email: 'hello@sweetandfizzy.com',
   city: 'Florence, MA',
   gtm: 'GTM-TZHC8GN',
-  bookingUrl: '[BOOKING LINK]',
   services: [
     { label: 'AI agents and integrations', href: '/services/ai-agents/' },
     { label: 'Connect.CI platform', href: '/connect-ci/' },

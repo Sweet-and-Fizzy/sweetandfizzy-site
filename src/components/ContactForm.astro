@@ -1,6 +1,5 @@
 ---
 import { contact } from '../data/contact';
-import { site } from '../data/site';
 import Icon from './Icon.astro';
 ---
 <form name="contact" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company_url" class="cf">
@@ -48,7 +47,6 @@ import Icon from './Icon.astro';
 <div class="cf-done" id="cf-done" aria-live="polite" tabindex="-1">
   <div data-done-body hidden>
     <p class="cf-thanks">{contact.thanks}</p>
-    <p data-booking hidden>{contact.thanksBooking} <a class="btn btn-sm" href={site.bookingUrl}>Book a call</a></p>
   </div>
 </div>
 
@@ -107,7 +105,6 @@ import Icon from './Icon.astro';
     if (ok) {
       form.hidden = true;
       done.querySelector<HTMLElement>('[data-done-body]')!.hidden = false;
-      done.querySelector<HTMLElement>('[data-booking]')!.hidden = !(select.value === 'program' || select.value === 'proposal');
       done.focus();
     } else {
       error.hidden = false;

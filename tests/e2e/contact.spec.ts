@@ -9,7 +9,7 @@ test('audience from the link is preselected and proposal shows the deadline fiel
   await expect(page.getByLabel('Proposal deadline')).toBeVisible();
 });
 
-test('a successful send shows thanks, the booking link and pushes one lead event', async ({ page }) => {
+test('a successful send shows thanks and pushes one lead event', async ({ page }) => {
   await page.route('**/', (route) => route.request().method() === 'POST' ? route.fulfill({ status: 200, body: 'ok' }) : route.continue());
   await page.goto('/contact/?audience=proposal');
   await page.getByLabel('Name', { exact: true }).fill('Ada');
@@ -18,7 +18,7 @@ test('a successful send shows thanks, the booking link and pushes one lead event
   await page.getByLabel('A few lines about it').fill('A CSSI proposal.');
   await page.getByRole('button', { name: 'Send' }).click();
   await expect(page.getByText('Lissie or Andrew will reply within two days.').last()).toBeVisible();
-  await expect(page.locator('#cf-done').getByRole('link', { name: 'Book a call' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /book a call/i })).toHaveCount(0);
   const leads = await page.evaluate(() => (window as any).dataLayer.filter((e: any) => e.event === 'generate_lead'));
   expect(leads).toEqual([{ event: 'generate_lead', lead_source: 'proposal' }]);
 });
