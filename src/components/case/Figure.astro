@@ -1,12 +1,17 @@
 ---
 import Pic from '../Pic.astro';
 import { mdInline } from '../../lib/md';
-interface Props { fig: { caption: string; image?: { src?: any; alt: string }; placeholder?: string } }
+interface Props { fig: { caption: string; wide?: boolean; image?: { src?: any; alt: string }; placeholder?: string; process?: { steps: string[]; loop?: string } } }
 const { fig } = Astro.props;
 ---
 <figure class="ch-fig">
-  {fig.image?.src
-    ? <div class="shotx"><Pic src={fig.image.src} alt={fig.image.alt} /></div>
+  {fig.process ? (
+    <div class="process-wrap">
+      <ol class="process">{fig.process.steps.map((st) => <li><span class="pn" aria-hidden="true"></span><span>{st}</span></li>)}</ol>
+      {fig.process.loop && <p class="process-loop"><span aria-hidden="true">↺</span> {fig.process.loop}</p>}
+    </div>
+  ) : fig.image?.src
+    ? <div class:list={['shotx', { 'shot-wide': fig.wide }]}><Pic src={fig.image.src} alt={fig.image.alt} sizes={fig.wide ? '(max-width: 1200px) 100vw, 1152px' : undefined} widths={fig.wide ? [800, 1600, 2160] : undefined} /></div>
     : <div class="ph">{fig.placeholder ?? '[SCREENSHOT]'}</div>}
   {fig.caption && <figcaption set:html={mdInline(fig.caption)} />}
 </figure>

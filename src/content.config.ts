@@ -6,6 +6,8 @@ const obj = <T extends z.ZodRawShape>(shape: T) => z.object(shape).strict();
 
 const figure = (image: any) => obj({
   caption: z.string().default(''),
+  wide: z.boolean().optional(),
+  process: obj({ steps: z.array(z.string()), loop: z.string().optional() }).optional(),
   image: obj({ src: image(), alt: z.string() }).optional(),
   placeholder: z.string().optional(),
 });

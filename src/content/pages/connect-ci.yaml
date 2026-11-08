@@ -64,7 +64,7 @@ membership:
   tiers:
     - name: Community
       who: User groups, cyberteams and affinity networks
-      price: "$3,000"
+      price: "$5,000"
       per: a year
       items: [Your site on the shared platform, "Your domain, name and theme", "Directory, events, groups, knowledge base and single sign-on", "Hosting, security and upgrades"]
       cta: { label: Start as a Community, href: /contact/?audience=program }

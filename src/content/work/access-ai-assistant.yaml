@@ -44,10 +44,10 @@ chapters:
 
       It runs on commercial models or on open models hosted by a partner university, so ACCESS can choose.
     figures:
-      - caption: Answering a GPU planning question with live outage data
+      - caption: The ACCESS Assistant, full screen at qa.access-ci.org
         image:
-          src: ../../assets/work/access-ai-assistant-d6b1fc20.jpg
-          alt: The ACCESS support agent answering a GPU planning question with live outage data
+          src: ../../assets/work/access-ai-fullscreen.jpg
+          alt: The ACCESS Assistant start screen, with the ACCESS site navigation above a single message box
     icon: "{ }"
   - level: 3
     title: Support agent
@@ -60,10 +60,11 @@ chapters:
       - It gives one answer, with live facts and documentation together
       - If it cannot help, it opens a ticket for a person
     figures:
-      - caption: The Q&A assistant
+      - caption: "How the agent works: the researcher's verified identity flows through to the tools that act, and the model, retrieval and data stores stay inside the institution. From the HUST @ SC26 paper."
+        wide: true
         image:
-          src: ../../assets/work/access-ai-assistant-751bec62.gif
-          alt: The ACCESS Q&A assistant answering a question
+          src: ../../assets/work/access-ai-architecture.png
+          alt: "Architecture diagram. A user signs in with CILogon; a verified identity token passes to the agent, which uses an open model hosted at the University of Kentucky, retrieval over curated documentation, read tools for status, hardware, software, events and allocations, and write tools for tickets, events and announcements gated by the acting user's identity. Everything sits inside an institutional boundary, with only metadata telemetry leaving it."
   - level: 3
     title: 11 MCP servers
     body: |-
@@ -80,28 +81,41 @@ chapters:
       - Usage metrics
       - Ticketing
     figures:
-      - caption: The ACCESS MCP setup guide at mcp.access-ci.org
+      - caption: Upcoming GPU training, read live from the ACCESS events server
         image:
-          src: ../../assets/work/access-mcp-guide.jpg
-          alt: The Getting Started page for the ACCESS MCP servers, listing example questions such as which GPU resources are available
+          src: ../../assets/work/access-ai-events-answer.jpg
+          alt: "The ACCESS Assistant listing an upcoming GPU programming course on November 10, 2026, with speaker, description and registration link"
   - level: 3
     title: Evaluation battery
-    body: "**Measured, not demoed.** We grade the agent against questions written by people, fact by fact. Each required fact comes from the documentation, never from the agent’s own answer."
+    body: |-
+      **Measured, not demoed.** An answer can sound right and still be wrong. Asked whether a system would be up next week, the documentation-only assistant the agent replaced said it was fully operational, the week its maintenance moved. The agent read the live status feed and gave the new dates.
+
+      So we check answers against facts, not tone. ACCESS staff write the test questions and the facts a good answer must include. An automated judge grades every answer fact by fact, and human reviewers who never see its scores keep the judge honest. The full method and results are in the paper.
     figures:
-      - caption: How the agent is evaluated
-        placeholder: "[Architecture diagram from the HUST paper, once it is published]"
+      - caption: How every change to the agent is checked before it ships
+        wide: true
+        process:
+          steps:
+            - Staff write questions and the facts a good answer must include
+            - The agent answers every question
+            - A judge checks each answer, fact by fact
+            - Reviewers check the judge, without seeing its scores
+            - The change ships only if answers hold up
+          loop: Facts that reviewers flag become documentation fixes, sent back to whoever owns the page
 today:
   icon: "!"
   title: Where it is today
-  body: "**The agent and its servers are open source.** On our evaluation battery the agent scored 0.97 on required facts, against 0.47 for documentation search alone, and human reviewers confirmed the gap."
-  figures: []
+  body: "**The agent and its servers are open source.** Researchers meet it in two places: full screen at qa.access-ci.org, and as the ACCESS Q&A widget built into support.access-ci.org."
+  figures:
+    - caption: The ACCESS Q&A widget on support.access-ci.org
+      image:
+        src: ../../assets/work/access-ai-assistant-751bec62.gif
+        alt: "The ACCESS Q&A widget answering how to get a large allocation for medical research using AI, with Helpful and Not helpful buttons"
 results:
-  - n: "0.97"
-    label: "fact-grounded score on the evaluation battery, vs. 0.47 for plain retrieval"
+  - n: "Every"
+    label: change checked against the test questions before it ships
   - n: "11"
     label: MCP servers for live ACCESS data, public at mcp.access-ci.org
-  - n: "34"
-    label: questions in the evaluation battery, with 88 human-written required facts
   - n: "2"
     label: "model options: commercial or university-hosted open models"
 prev:

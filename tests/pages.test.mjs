@@ -7,7 +7,7 @@ const built = existsSync('dist/index.html');
 
 test('Connect.CI page shows the three tiers and onboarding price', { skip: !built }, () => {
   const html = read('connect-ci');
-  for (const t of ['Community', 'Program', 'Partner', '$3,000', '$7,500', 'From $15,000', 'Onboarding starts at $5,000']) assert.ok(html.includes(t), t);
+  for (const t of ['Community', 'Program', 'Partner', '$7,500', 'From $15,000', 'Onboarding starts at $5,000']) assert.ok(html.includes(t), t);
 });
 
 test('Connect.CI FAQ uses native details elements', { skip: !built }, () => {

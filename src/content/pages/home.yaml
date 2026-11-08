@@ -25,7 +25,7 @@ areas:
         body: "We adapt the agent we built for ACCESS to your program. It answers from your documentation and 11 live data sources, and acts with each user's own permissions. We test every agent on questions your staff write."
         link: { label: AI agents, href: /services/ai-agents/ }
       - title: Connect.CI platform
-        body: "Start with features 13 research computing communities already share, like directories, events, mentorship and single sign-on, then fund only what is new for your program. Membership starts at $3,000 a year, and every improvement is shared."
+        body: "Start with features 13 research computing communities already share, like directories, events, mentorship and single sign-on, then fund only what is new for your program. Membership starts at $5,000 a year, and every improvement is shared."
         link: { label: Connect.CI, href: /connect-ci/ }
       - title: Curated catalogs
         body: "We built the Open OnDemand Appverse, the community app catalog that won best paper at PEARC 2026. We can build one for your program the same way, with submissions from GitHub and moderators who review each listing."
