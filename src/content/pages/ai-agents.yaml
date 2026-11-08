@@ -34,12 +34,12 @@ sections:
       - { title: "Open, with your choice of model.", text: "The code is public, so your program does not depend on us, and agents can run on open models hosted by a partner institution or on commercial models." }
   - kind: steps
     title: How an engagement runs
-    lead: "Most programs start by writing the work into a proposal. If you have budget now, a one or three week discovery sprint can map the work first."
+    lead: "Most programs write the work into a proposal, or bring us on as a contractor once they are funded. If you have budget now, a one or three week discovery sprint can map the work first."
     items:
-      - { title: Plan it into your proposal, text: "We provide our sections, a subaward budget and a letter of collaboration, or co-write the technical parts with you." }
-      - { title: Build, text: "We connect your documentation and systems, and build the agent and its data servers in the open where your program allows." }
-      - { title: Evaluate, text: "Your staff write the test questions. We report what the agent gets right, what it gets wrong and why." }
-      - { title: Launch and improve, text: "We release it to your users with feedback built in, then tune it from the questions they really ask." }
+      - { title: Plan it into your award, text: "For a new proposal we provide budget text and a letter of collaboration. Funded programs bring us on as a contractor." }
+      - { title: Build with your team, text: "We connect your documentation and systems, and release early to a pilot group of your users." }
+      - { title: Evaluate and report, text: "Your staff write the test questions, and the results become numbers for your annual reports." }
+      - { title: Run it for the award, text: "Hosting, updates and tuning each year. The code is open, so the work outlives the award." }
   - kind: paper
     id: paper
     title: Paper
