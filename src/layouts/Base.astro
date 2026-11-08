@@ -27,7 +27,18 @@ const fullTitle = Astro.url.pathname === '/' ? title : `${title} | ${site.name}`
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Oswald:wght@500&display=swap" />
-    <script is:inline>document.documentElement.classList.add('js')</script>
+    <script is:inline>
+      // Runs before first paint, so content meant to fade in is hidden from the
+      // start instead of flashing. If the motion script never starts, a timer
+      // drops the class so nothing stays hidden.
+      (function (d) {
+        d.classList.add('js');
+        if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          d.classList.add('mo');
+          setTimeout(function () { if (!d.classList.contains('mo-on')) d.classList.remove('mo'); }, 3000);
+        }
+      })(document.documentElement);
+    </script>
     <script is:inline define:vars={{ gtm: site.gtm }}>
       window.dataLayer = window.dataLayer || [];
       // Only the live domain reports to analytics; previews and local builds stay out.

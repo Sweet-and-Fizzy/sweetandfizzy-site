@@ -1,11 +1,19 @@
-<script>
-  // Marks .rv and .grow elements as they scroll into view. Content is only
-  // hidden once html.mo is set here, so it stays visible without JS.
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    }), { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
-    document.documentElement.classList.add('mo');
-    document.querySelectorAll('.rv, .grow').forEach((el) => io.observe(el));
-  }
+<script is:inline>
+  // Reveals .rv and .grow elements as they scroll into view. Inline (not a
+  // deferred module) so it starts as soon as the page is parsed.
+  (function (d) {
+    if (!d.classList.contains('mo')) return;
+    d.classList.add('mo-on');
+    var reveal = function (el) { el.classList.add('in'); };
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
+    var vh = window.innerHeight;
+    var onScreen = [];
+    document.querySelectorAll('.rv, .grow').forEach(function (el) {
+      // On screen at load: reveal on the next frame so it eases in from the first paint.
+      if (el.getBoundingClientRect().top < vh * 0.9) onScreen.push(el); else io.observe(el);
+    });
+    requestAnimationFrame(function () { requestAnimationFrame(function () { onScreen.forEach(reveal); }); });
+  })(document.documentElement);
 </script>
