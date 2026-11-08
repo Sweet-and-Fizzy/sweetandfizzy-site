@@ -51,6 +51,8 @@ for (const path of builtPages()) {
     test.use({ javaScriptEnabled: false });
     test('keeps all main content visible', async ({ page }) => {
       await page.goto(path);
+      // CSS entrance animations still run without JS; wait for them to end.
+      await page.evaluate(() => Promise.all(document.getAnimations().map((a) => a.finished)));
       const hidden = await page.evaluate(() =>
         [...document.querySelectorAll('main *')].filter((el) => getComputedStyle(el).opacity === '0').length);
       expect(hidden).toBe(0);

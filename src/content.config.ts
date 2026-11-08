@@ -39,4 +39,28 @@ const work = defineCollection({
   }),
 });
 
-export const collections = { work };
+const color = z.enum(['blue', 'orange', 'yellow']);
+const link = z.object({ label: z.string(), href: z.string() });
+
+const home = defineCollection({
+  loader: glob({ pattern: 'home.yaml', base: './src/content/pages' }),
+  schema: ({ image }) => {
+    const tile = z.object({ name: z.string(), line: z.string(), image: image().optional(), href: z.string().optional() });
+    return z.object({
+      title: z.string(),
+      description: z.string(),
+      hero: z.object({ title: z.string(), lead: z.string(), doors: z.array(z.object({ n: z.string(), href: z.string(), color, title: z.string(), text: z.string() })) }),
+      areas: z.array(z.object({
+        id: z.string(), n: z.string(), color, title: z.string(), lead: z.string(),
+        facts: z.array(z.string()), papersLink: link.optional(),
+        offers: z.array(z.object({ title: z.string(), body: z.string(), link: link.optional() })),
+        cta: link.optional(), secondary: link.optional(),
+        workTitle: z.string(), work: z.array(tile), more: z.array(tile),
+      })),
+      principles: z.object({ title: z.string(), lead: z.string(), items: z.array(z.object({ color, title: z.string(), text: z.string() })) }),
+      contact: z.object({ title: z.string(), body: z.string(), button: z.string() }),
+    });
+  },
+});
+
+export const collections = { work, home };

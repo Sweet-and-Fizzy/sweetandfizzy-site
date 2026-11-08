@@ -1,0 +1,99 @@
+# Homepage copy, from the "Home page (was the Services page)" board.
+# Edit text freely; bracketed [PLACEHOLDERS] block launch.
+title: Sweet & Fizzy Digital
+description: Community platforms and AI agents for research computing programs, plus product builds for startups and websites for organizations with a story to tell.
+hero:
+  title: We can help you
+  lead: Whatever your development need, we can help you!
+  doors:
+    - { n: "01", href: "#research", color: blue, title: Research computing, text: "Community platforms and AI tools that connect researchers to people, answers and computing." }
+    - { n: "02", href: "#startups", color: orange, title: Quickstart your Startup, text: "Prototypes, strategy, branding and custom software to get your business off the ground." }
+    - { n: "03", href: "#websites", color: yellow, title: Websites & branding, text: "Websites, logos and brands for organizations with a story to tell, kept fast and safe after launch." }
+areas:
+  - id: research
+    n: "01"
+    color: blue
+    title: Research computing
+    lead: Community platforms and AI tools that connect researchers to people, answers and computing.
+    facts:
+      - "74,000 researchers on our platforms"
+      - "13 communities share Connect.CI"
+      - "7 NSF awards since 2017"
+    papersLink: { label: 5 papers published, href: /publications/ }
+    offers:
+      - title: AI agents and integrations
+        body: Assistants answer from your docs and live systems and act with user’s permissions, like the ACCESS support agent and its 11 MCP servers. Our OOD API, now in early release, brings the same power to Open OnDemand. Agents are graded on questions your staff write.
+        link: { label: AI agents, href: /services/ai-agents/ }
+      - title: Connect.CI platform
+        body: Start with features many research computing communities already share, like events and community directories, mentorship, and single sign-on, and fund new features you want. Hosted membership starts at $5,000 a year, and improvements are shared with the community.
+        link: { label: Connect.CI, href: /connect-ci/ }
+      - title: Curated catalogs
+        body: "Catalogs that run themselves: anyone can submit software, tools or other resources from GitHub, submissions sync on a schedule, and moderators review, rate and flag issues before they are published. Our Open OnDemand Appverse lists 81 apps from 16 organizations. Best paper, PEARC 2026."
+        link: { label: Explore the Appverse, href: /work/open-ondemand/#the-appverse }
+    cta: { label: Tell us about your program, href: /contact/?audience=program }
+    secondary: { label: Planning a proposal?, href: /planning-a-proposal/ }
+    workTitle: Some of our research computing work
+    work:
+      - { name: ACCESS Support, line: "The support hub for the NSF ACCESS program: knowledge base, directory, affinity groups and matching services.", image: ../../assets/home/access-support.jpg, href: /work/access-support/ }
+      - { name: ACCESS AI Assistant, line: An AI support agent that answers researchers from the ACCESS documentation and live system data in one conversation., image: ../../assets/home/access-ai.jpg, href: /work/access-ai-assistant/ }
+    more:
+      - { name: Open OnDemand, line: A refreshed openondemand.org and a Community Hub with a Contributor Wall, image: ../../assets/home/ood.jpg, href: /work/open-ondemand/ }
+      - { name: Open OnDemand Appverse, line: "A shared catalog of 81 apps from 16 organizations. Best paper, PEARC 2026", image: ../../assets/home/appverse.jpg, href: /work/open-ondemand/#the-appverse }
+      - { name: Open OnDemand job submission, line: AI assistants that run computing jobs with the researcher’s own permissions, href: /services/ai-agents/ }
+      - { name: MGHPCC, line: "The mghpcc.org website, plus SC booths, a kiosk and a showcase of research projects", image: ../../assets/home/mghpcc.jpg, href: /work/mghpcc/ }
+  - id: startups
+    n: "02"
+    color: orange
+    title: Startups
+    lead: Founders bring us ideas in fintech, education and beyond, and we help them ship.
+    facts:
+      - "Discovery sprints from $3,500"
+      - "From a first sketch to launch"
+      - "Technical leadership"
+    offers:
+      - { title: One or three week discovery sprint, body: "Hands-on sessions sharpen your idea into an MVP scope, so you know what to build first. You leave with a plan, designs, and a budget and timeline you can show investors." }
+      - { title: Software design and development, body: "We design and build your web and mobile apps, with AI features where they help, from the first version to launch. After launch, we stay on for support and improvements." }
+      - { title: Technical and product leadership, body: "We can help with your business decisions, from roadmaps and hiring to investor and board updates. [Engagement length and price.]" }
+    cta: { label: Tell us about your startup, href: /contact/?audience=startup }
+    workTitle: Some of our startup work
+    work:
+      - { name: Eggz, line: "A social investing app we designed, built and helped lead.", image: ../../assets/home/eggz.jpg }
+      - { name: Jemurai, line: "A friendly, developer-focused brand for a cybersecurity firm: content strategy, a WordPress site, marketing campaigns and product work." }
+    more:
+      - { name: BankTell, line: A bank finder that maps and compares nearby banks, image: ../../assets/home/banktell.jpg }
+      - { name: Corvid Partners, line: Bond yield calculations matched to Bloomberg conventions, image: ../../assets/home/corvid.jpg }
+      - { name: Reading Success Lab, line: Online reading screening for schools and families, image: ../../assets/home/rsl.jpg }
+  - id: websites
+    n: "03"
+    color: yellow
+    title: Websites & branding
+    lead: Websites, logos and brands for organizations with a story to tell, from museums to authors and bands.
+    facts:
+      - "Projects from about $2,500"
+      - "Accessible from the first sketch"
+      - "Care plans keep sites fast and safe"
+    offers:
+      - { title: Websites, body: "Fast sites that tell your story well and are easy for your team to update, accessible from the first sketch. Projects start at about $2,500." }
+      - { title: Logos and brand identities, body: "Names, logos and visual identities that make your organization easy to recognize and remember, for programs like Campus Champions and Ask.CI, small businesses, authors and artists. [What a brand project includes.]" }
+      - { title: Care plans, body: "Hosting, updates, backups and small fixes, so your site stays fast and safe, whether we built it or not. [Plan names, prices and what each includes.]" }
+    cta: { label: Tell us about your website, href: /contact/?audience=website }
+    workTitle: Website and branding work
+    work:
+      - { name: Emily Dickinson Virtual Tour, line: "An interactive walkthrough of the Dickinson Homestead, room by room, with its objects and stories.", image: ../../assets/home/dickinson.jpg }
+      - { name: PDMcBride, line: An artist’s portfolio with an online shop., image: ../../assets/home/pdmcbride.jpg }
+    more:
+      - { name: Molly B. Burnham, line: A playful site for a children’s book author, image: ../../assets/home/burnham.jpg }
+      - { name: The Bromantics, line: "A band site with tour dates, press and merch", image: ../../assets/home/bromantics.jpg }
+      - { name: Museums, line: "Ziibiwing Center, Chicago History Museum, Sioux City museum, horse museum project" }
+principles:
+  title: How we build
+  lead: We use AI thoughtfully, with every change reviewed by a person.
+  items:
+    - { color: blue, title: Tests first, text: "Every feature starts with a test, and every change is reviewed before it ships." }
+    - { color: orange, title: Open by default, text: "Our platforms and agents are open source, so your work does not depend on us." }
+    - { color: yellow, title: Accessible from the start, text: Accessibility is part of design and review. }
+    - { color: blue, title: "One team, start to finish", text: The same people scope your project and build it. }
+contact:
+  title: Tell us what you are working on
+  body: A program, a product, a proposal or a website. Lissie or Andrew will reply within two days.
+  button: Contact us

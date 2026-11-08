@@ -6,6 +6,7 @@ import Story from '../../components/case/Story.astro';
 import CtaBand from '../../components/sections/CtaBand.astro';
 import '../../styles/case.css';
 import { getPhase1Work, type Work } from '../../data/work';
+import { slugify } from '../../lib/slug';
 
 export async function getStaticPaths() {
   const work = await getPhase1Work();
@@ -72,7 +73,7 @@ const description = d.description || `${d.name}: ${d.title}. A Sweet & Fizzy Dig
     <div class="wrap" style="padding-top: 96px; padding-bottom: 40px; display: flex; flex-direction: column; gap: 64px">
       {d.chapters.map((c) => (
         <div class="ch-row">
-          <article class="story"><Story level={c.level} icon={c.icon} title={c.title} body={c.body} /></article>
+          <article class="story"><Story level={c.level} id={slugify(c.title)} icon={c.icon} title={c.title} body={c.body} /></article>
           {c.figures.length > 0 && <div>{c.figures.map((f) => <Figure fig={f} />)}</div>}
         </div>
       ))}

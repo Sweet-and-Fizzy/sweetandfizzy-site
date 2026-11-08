@@ -1,8 +1,155 @@
 ---
+import { getEntry } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Pic from '../components/Pic.astro';
+import { brand } from '../data/colors';
+
+const home = (await getEntry('home', 'home'))!.data;
+const d = (i: number) => `${(i * 0.1).toFixed(1)}s`;
+// Text on a brand fill is always ink: white on orange fails contrast at this size.
 ---
-<Base title="Sweet & Fizzy Digital" description="Community platforms, AI agents and websites for research computing programs, startups and organizations with a story to tell.">
-  <section class="wrap" style="padding-top: 80px; padding-bottom: 80px">
-    <h1 class="rv" style="margin: 0">Sweet &amp; Fizzy Digital</h1>
+<Base title={home.title} description={home.description}>
+  <section id="top" aria-labelledby="hero-title" style="background: #111111; color: #ffffff">
+    <div class="wrap hero-in" style="padding-top: 80px; padding-bottom: 88px; display: flex; flex-direction: column; gap: 20px">
+      <h1 id="hero-title" class="home-h1" style="--i: 1">{home.hero.title}</h1>
+      <p class="home-lead" style="--i: 2">{home.hero.lead}</p>
+      <div style="margin-top: 36px; --i: 3">
+        <ul class="doors" style="margin: 0; padding: 0; list-style: none">
+          {home.hero.doors.map((door, i) => (
+            <li style={`display: flex; --i: ${i + 3}`}>
+              <a class="door" href={door.href} style={`flex: 1; --accent: ${brand[door.color]}`}>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="num">{door.n}</span>
+                <span class="door-title">{door.title}</span>
+                <span style="color: #c8c8c8">{door.text}</span>
+                <span class="go"><span class="circ" aria-hidden="true"><Icon name="arrow-down" /></span>Jump to it</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {home.areas.map((a) => {
+    const c = brand[a.color];
+    return (
+      <section id={a.id} aria-labelledby={`${a.id}-title`} style={`background: #ffffff; --accent: ${c}; scroll-margin-top: 16px`}>
+        <div class="wrap" style="padding-top: 72px; display: flex; flex-direction: column; gap: 64px">
+          <div class="op rv">
+            <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+              <span class="n">{a.n}<span class="grow" aria-hidden="true" style={`background: ${c}`}></span></span>
+              <h2 id={`${a.id}-title`} class="op-title">{a.title}</h2>
+              <p style="margin: 0; color: #c8c8c8; font-size: 18px; line-height: 1.45">{a.lead}</p>
+            </div>
+            <ul aria-label="At a glance">
+              {a.facts.map((f) => <li>{f}</li>)}
+              {a.papersLink && <li><a class="op-lk" href={a.papersLink.href}>{a.papersLink.label}</a></li>}
+            </ul>
+          </div>
+
+          <div class="three">
+            {a.offers.map((o, i) => (
+              <article class="rv" style={`display: flex; flex-direction: column; gap: 12px; min-width: 0; --d: ${d(i)}`}>
+                <span class="grow" aria-hidden="true" style={`display: block; width: 48px; height: 6px; margin-bottom: 4px; background: ${c}; --d: ${d(i)}`}></span>
+                <h3 class="offer-title">{o.title}</h3>
+                <p style="margin: 0; color: #595959">{o.body}</p>
+                {o.link && (
+                  <a class="go-lk" href={o.link.href} style={`margin-top: auto; padding-top: 4px; --accent: ${c}`}><span class="circ" aria-hidden="true"><Icon name="arrow-right" stroke={1.5} /></span><span class="x">{o.link.label}</span></a>
+                )}
+              </article>
+            ))}
+          </div>
+
+          {(a.cta || a.secondary) && (
+            <div class="rv" style="display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center">
+              {a.cta && <a class="btn" href={a.cta.href} style={`--accent: ${c}`}><span>{a.cta.label}</span><Icon name="arrow-right" class="ar" size={20} stroke={2} /></a>}
+              {a.secondary && <a class="ul-lk cta-lk" href={a.secondary.href}>{a.secondary.label}</a>}
+            </div>
+          )}
+
+          <div style="display: flex; flex-direction: column; gap: 40px; padding-bottom: 24px">
+            <div class="wk-head rv"><h3 style={`color: #111111; background: ${c}`}>{a.workTitle}</h3><span class="rule" aria-hidden="true" style={`background: ${c}`}></span></div>
+            <div class="two">
+              {a.work.map((w, i) => {
+                const inner = (
+                  <>
+                    <span style="display: flex; flex-direction: column">
+                      <span class="shot">{w.image ? <Pic src={w.image} alt="" sizes="(max-width: 900px) 100vw, 580px" widths={[580, 1160]} /> : <span class="ph-tile">[SCREENSHOT]</span>}</span>
+                      <span class="name"><span class="tile-name">{w.name}</span>{w.href && <span class="go-lk"><span class="circ" aria-hidden="true"><Icon name="arrow-right" stroke={1.5} /></span></span>}</span>
+                    </span>
+                    <span style="color: #595959">{w.line}</span>
+                  </>
+                );
+                return w.href
+                  ? <a class="cs rv" href={w.href} style={`--d: ${d(i)}`}>{inner}</a>
+                  : <div class="cs rv" style={`--d: ${d(i)}`}>{inner}</div>;
+              })}
+            </div>
+            <ul class="mini" aria-label={`More ${a.title} projects`} style={`grid-template-columns: repeat(${a.more.length}, minmax(0, 1fr))`}>
+              {a.more.map((m, i) => {
+                const thumb = <span class="th">{m.image ? <Pic src={m.image} alt="" sizes="(max-width: 900px) 50vw, 280px" widths={[280, 560]} /> : <span class="ph-tile">[SCREENSHOT]</span>}</span>;
+                return (
+                  <li class="rv" style={`--d: ${d(i)}`}>
+                    {m.href
+                      ? <a class="mc" href={m.href}>{thumb}<span class="row"><span class="nm">{m.name}</span><span class="ar2" aria-hidden="true"><Icon name="arrow-right" size={16} /></span></span><span class="wh">{m.line}</span></a>
+                      : <div class="mc">{thumb}<span class="nm">{m.name}</span><span class="wh">{m.line}</span></div>}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <section aria-labelledby="build" style="background: #f4f4f4">
+    <div class="wrap" style="padding-top: 88px; padding-bottom: 96px; display: flex; flex-direction: column; gap: 40px">
+      <div class="rv" style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+        <h2 id="build" class="sec-title">{home.principles.title}</h2>
+        <p style="margin: 0; color: #595959">{home.principles.lead}</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px">
+        {home.principles.items.map((p, i) => (
+          <div class="rv" style={`display: flex; flex-direction: column; gap: 8px; --d: ${d(i)}`}>
+            <span class="grow" aria-hidden="true" style={`display: block; width: 48px; height: 6px; margin-bottom: 8px; background: ${brand[p.color]}; --d: ${d(i)}`}></span>
+            <h3 class="offer-title">{p.title}</h3>
+            <p style="margin: 0; color: #595959">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title" style="background: #111111; color: #ffffff">
+    <div class="wrap rv" style="padding-top: 88px; padding-bottom: 88px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 620px">
+        <h2 id="contact-title" class="sec-title">{home.contact.title}</h2>
+        <p style="margin: 0; color: #c8c8c8">{home.contact.body}</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center">
+        <a class="btn btn-light" href="/contact/">{home.contact.button}<Icon name="arrow-right" class="ar" size={20} stroke={2} /></a>
+        <a class="lk lk-light cta-lk" href="/planning-a-proposal/">Planning a proposal?</a>
+      </div>
+    </div>
   </section>
 </Base>
+
+<style is:global>
+  .home-h1{margin:0;font-weight:700;font-size:clamp(40px,6vw,62px);line-height:1.05;text-wrap:balance;max-width:900px}
+  .home-lead{margin:0;color:#c8c8c8;max-width:760px;font-size:clamp(20px,2.4vw,24px);line-height:1.45}
+  .door-title{font-weight:700;font-size:clamp(28px,3vw,36px);line-height:1.12}
+  .op-title,.sec-title{margin:0;font-weight:700;font-size:clamp(28px,4vw,36px);line-height:1.15}
+  .op-title{color:#ffffff}
+  .op-lk{color:#ffffff;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px}
+  .op-lk{display:inline-flex;align-items:center;min-height:44px}
+  .op-lk:hover{color:#c8c8c8}
+  @media (max-width:600px){.wk-head h3{flex:0 1 auto;padding-right:32px}}
+  .offer-title{margin:0;font-weight:700;font-size:26px;line-height:1.2}
+  .tile-name{font-weight:700;font-size:26px;line-height:1.15}
+  .ph-tile{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:14px;color:#595959}
+  .cs .shot img,.mc .th img{width:100%;height:100%}
+  @media (max-width:600px){.mini{grid-template-columns:1fr!important}}
+</style>
