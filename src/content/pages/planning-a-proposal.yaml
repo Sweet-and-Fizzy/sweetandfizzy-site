@@ -31,9 +31,16 @@ sections:
       - { title: A sustainability story, text: "Building on Connect.CI or shared open source means your investment outlives the award, and your improvements serve other communities too." }
       - { title: "A small, named team", text: "The people in the proposal are the people who do the work." }
       - { title: Writing reviewers can follow, text: "Plain language, specific numbers and no buzzwords." }
-  - kind: prose
+  - kind: logos
     title: Programs we have worked with
     body: "Our work has been funded through ACCESS (NSF), MGHPCC, CU Boulder and the Ohio Supercomputer Center, among others. [Add other funders or programs we can name.]"
+    # logo: a file name in src/assets/logos/ (leave it out to show the name as text).
+    # award: the public NSF award number only, never our contract numbers with awardees.
+    items:
+      - { name: ACCESS (NSF), award: NSF 2138286 }
+      - { name: MGHPCC }
+      - { name: CU Boulder }
+      - { name: Ohio Supercomputer Center }
   - kind: prose
     title: When to reach out
     body: "The earlier the better. Six to eight weeks before the deadline for co-writing or full drafting, two to three weeks for our sections. If your deadline is close, contact us anyway and we will tell you what is realistic."

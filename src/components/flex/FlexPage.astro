@@ -7,7 +7,12 @@ import CtaBand from '../sections/CtaBand.astro';
 import { brand } from '../../data/colors';
 import { md, mdInline } from '../../lib/md';
 import { slugify } from '../../lib/slug';
+import Pic from '../Pic.astro';
 import type { CollectionEntry } from 'astro:content';
+import type { ImageMetadata } from 'astro';
+
+const logos = import.meta.glob<{ default: ImageMetadata }>('/src/assets/logos/*', { eager: true });
+const logoFor = (file?: string) => (file ? logos[`/src/assets/logos/${file}`]?.default : undefined);
 
 interface Props { page: CollectionEntry<'flex'>['data'] }
 const { page } = Astro.props;
@@ -87,6 +92,18 @@ const isExternal = (href: string) => /^https?:/.test(href);
 
           {s.kind === 'prose' && <div class="prose-md" style="max-width: 760px" set:html={md(s.body)} />}
 
+          {s.kind === 'logos' && s.body && <div class="prose-md" style="max-width: 760px" set:html={md(s.body)} />}
+          {s.kind === 'logos' && (
+            <ul class="logo-strip">
+              {s.items.map((l) => (
+                <li class="rv">
+                  <span class="logo-tile">{logoFor(l.logo) ? <Pic src={logoFor(l.logo)!} alt={l.name} sizes="200px" widths={[200, 400]} style="max-height: 64px; width: auto; height: auto; max-width: 100%" /> : <span class="logo-name">{l.name}</span>}</span>
+                  {l.award && <span class="logo-award">{l.award}</span>}
+                </li>
+              ))}
+            </ul>
+          )}
+
           {s.kind === 'paper' && <div style="max-width: 760px"><PaperCard paper={s.paper} boxed /></div>}
         </div>
       </section>
@@ -110,5 +127,10 @@ const isExternal = (href: string) => /^https?:/.test(href);
   .flex-list li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;background:var(--accent)}
   .flex-steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:24px}
   .flex-steps li{display:flex;flex-direction:column;gap:8px;padding:28px 28px 32px;border:4px solid var(--accent);background:#ffffff}
+  .logo-strip{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:24px}
+  .logo-strip li{display:flex;flex-direction:column;gap:8px}
+  .logo-tile{height:112px;background:#ffffff;border:1px solid #d6d6d6;display:flex;align-items:center;justify-content:center;padding:16px 20px;text-align:center}
+  .logo-name{font-weight:700;font-size:20px;line-height:1.2}
+  .logo-award{font-size:14px;font-weight:700;letter-spacing:1px;color:#595959}
   .step-n{font-weight:700;font-size:48px;line-height:1}
 </style>

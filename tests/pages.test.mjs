@@ -42,3 +42,11 @@ test('Planning a proposal page ends with a proposal contact call to action', { s
   assert.match(html, /From the first draft to the funded project/);
   assert.match(html, /href="\/contact\/\?audience=proposal"/);
 });
+
+test('proposal page shows a funder strip with every named program', { skip: !built }, () => {
+  const html = read('planning-a-proposal');
+  const strip = html.match(/<ul[^>]*class="logo-strip"[\s\S]*?<\/ul>/);
+  assert.ok(strip, 'no logo strip');
+  for (const name of ['ACCESS (NSF)', 'MGHPCC', 'CU Boulder', 'Ohio Supercomputer Center']) assert.ok(strip[0].includes(name), name);
+  assert.match(strip[0], /NSF 2138286/);
+});

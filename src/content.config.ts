@@ -110,6 +110,8 @@ const section = z.discriminatedUnion('kind', [
   obj({ kind: z.literal('steps'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(item) }),
   obj({ kind: z.literal('prose'), id: z.string().optional(), title: z.string(), body: z.string() }),
   obj({ kind: z.literal('paper'), id: z.string().optional(), title: z.string(), paper }),
+  obj({ kind: z.literal('logos'), id: z.string().optional(), title: z.string(), body: z.string().optional(),
+    items: z.array(obj({ name: z.string(), logo: z.string().optional(), award: z.string().optional(), href: z.string().url().optional() })) }),
 ]);
 
 const flex = defineCollection({
