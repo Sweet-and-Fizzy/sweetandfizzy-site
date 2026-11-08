@@ -27,7 +27,7 @@ facts:
   - k: Client
     v: NSF ACCESS
   - k: Platform
-    v: Drupal, on Connect.CI
+    v: Connect.CI on Drupal
   - k: Years
     v: 2022 to present
 goal:
