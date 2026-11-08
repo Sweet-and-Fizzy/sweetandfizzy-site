@@ -26,7 +26,7 @@ a{color:#111111;text-underline-offset:4px}a:hover{color:#111111}
    Hover: fills with the stroke color, arrow nudges right. Text stays black (readable on all three colors). */
 .btn{--accent:#5abdff;display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:inherit;font-size:18px;font-weight:700;line-height:1.2;text-decoration:none;padding:16px 32px;border:3px solid var(--accent);border-radius:0;cursor:pointer;color:#111111;background:transparent;transition:background-color .15s ease}
 .btn:hover{color:#111111;background:var(--accent)}
-.btn .ar{flex:none;transition:transform .15s ease}
+.btn .ar{flex:none;transition:transform .35s var(--ease-out)}
 .btn:hover .ar{transform:translateX(4px)}
 .btn-sm{padding:9px 20px;font-size:16px;border-width:2px;min-height:44px}
 /* On black: white text, same colored stroke */
@@ -38,7 +38,7 @@ a{color:#111111;text-underline-offset:4px}a:hover{color:#111111}
 .go-lk{--accent:#5abdff;display:inline-flex;align-items:center;gap:14px;font-size:18px;font-weight:700;color:#111111;text-decoration:none}
 .go-lk:hover{color:#111111}
 .go-lk .circ{width:44px;height:44px;border-radius:50%;background:transparent;border:2px solid var(--accent);box-sizing:border-box;color:inherit;display:inline-flex;align-items:center;justify-content:center;flex:none;transition:transform .15s ease}
-.go-lk .x{background:linear-gradient(var(--accent),var(--accent)) no-repeat 0 100%/0 3px;padding-bottom:4px;transition:background-size .25s ease}
+.go-lk .x{background:linear-gradient(var(--accent),var(--accent)) no-repeat 0 100%/0 3px;padding-bottom:4px;transition:background-size .45s var(--ease-out)}
 .go-lk:hover .x{background-size:100% 3px}
 .go-lk:hover .circ{transform:translateX(4px)}
 
@@ -55,13 +55,13 @@ a{color:#111111;text-underline-offset:4px}a:hover{color:#111111}
 
 /* Hero cards. Each one jumps down the page. Full-width color bar on top; the arrow circle fills and drops on hover. */
 .doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.door{position:relative;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box;padding:28px 28px 32px;background:#1c1c1c;color:#ffffff;text-decoration:none;transition:background-color .2s ease,transform .2s ease}
+.door{position:relative;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box;padding:28px 28px 32px;background:#1c1c1c;color:#ffffff;text-decoration:none;transition:background-color .4s var(--ease-out),transform .4s var(--ease-out)}
 .door .bar{position:absolute;left:0;right:0;top:0;height:6px;background:var(--accent)}
 .door .num{font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;letter-spacing:1.5px;color:#a6a6a6}
 .door .go{margin-top:auto;padding-top:20px;display:flex;align-items:center;gap:14px;font-weight:700}
-.door .circ{width:44px;height:44px;border-radius:50%;border:2px solid var(--accent);color:#ffffff;display:inline-flex;align-items:center;justify-content:center;flex:none;transition:background-color .2s ease,color .2s ease,transform .2s ease}
-.door:hover{color:#ffffff;background:#262626;transform:translateY(-4px)}
-.door:hover .circ{background:var(--accent);color:#111111;transform:translateY(4px)}
+.door .circ{width:44px;height:44px;border-radius:50%;border:2px solid var(--accent);color:#ffffff;display:inline-flex;align-items:center;justify-content:center;flex:none;transition:background-color .4s var(--ease-out),color .4s var(--ease-out),transform .4s var(--ease-out)}
+.doors li:hover .door,.door:focus-visible{color:#ffffff;background:#262626;transform:translateY(-4px)}
+.doors li:hover .door .circ,.door:focus-visible .circ{background:var(--accent);color:#111111;transform:translateY(4px)}
 @media (max-width:900px){.doors{grid-template-columns:1fr}}
 
 /* Global: step marker. Short color bar above each item, echoing the hero cards. */
@@ -93,7 +93,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .cs{display:flex;flex-direction:column;gap:14px;color:#111111;text-decoration:none;min-width:0}
 .cs:hover{color:#111111}
 .cs .shot{display:block;overflow:hidden;aspect-ratio:16 / 10;background:#f4f4f4;border:1px solid #d6d6d6;border-bottom:0}
-.cs .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.cs .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .7s var(--ease-out);will-change:transform}
 .cs:hover .shot img{transform:scale(1.04)}
 .cs .name{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;border-top:6px solid var(--accent);color:#111111}
 .cs:hover .go-lk .x{background-size:100% 3px}
@@ -119,7 +119,7 @@ html.mo .grow.in{transform:none}
 }
 
 /* Services page: circle links are strokes; they fill with the section color on hover */
-.go-lk .circ{background:transparent;border:2px solid var(--accent);box-sizing:border-box;transition:transform .15s ease,background-color .2s ease}
+.go-lk .circ{background:transparent;border:2px solid var(--accent);box-sizing:border-box;transition:transform .35s var(--ease-out),background-color .35s var(--ease-out)}
 .go-lk:hover .circ,.cs:hover .go-lk .circ{background:var(--accent)}
 /* Underlined text link in the section color */
 .ul-lk{font-weight:700;color:#111111;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:6px;transition:color .15s ease}
@@ -134,15 +134,15 @@ html.mo .grow.in{transform:none}
 .mc{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0;color:#111111;text-decoration:none}
 .mc:hover{color:#111111}
 .mc .th{display:block;aspect-ratio:16 / 10;overflow:hidden;background:#f4f4f4;border:0;border-bottom:4px solid var(--accent);margin-bottom:8px}
-.mc .th img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.mc .th img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .7s var(--ease-out);will-change:transform}
 a.mc:hover .th img{transform:scale(1.04)}
 .mc .row{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .mc .nm{font-weight:700;line-height:1.3}
 .mc .wh{font-size:16px;color:#595959}
-.mc .ar2{flex:none;width:32px;height:32px;box-sizing:border-box;border-radius:50%;border:2px solid var(--accent);display:inline-flex;align-items:center;justify-content:center;transition:background-color .2s ease,transform .2s ease}
+.mc .ar2{flex:none;width:32px;height:32px;box-sizing:border-box;border-radius:50%;border:2px solid var(--accent);display:inline-flex;align-items:center;justify-content:center;transition:background-color .35s var(--ease-out),transform .35s var(--ease-out)}
 a.mc:hover .ar2{background:var(--accent);transform:translateX(3px)}
 @media (max-width:900px){.mini{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media (prefers-reduced-motion:reduce){.mc .th img,.mc .ar2{transition:none}a.mc:hover .th img{transform:none}}
+@media (prefers-reduced-motion:reduce){.mc .th img,.mc .ar2{transition:background-color .35s var(--ease-out),transform .35s var(--ease-out)}a.mc:hover .th img{transform:none}}
 
 /* Global: Services dropdown in the main nav. Opens on hover or keyboard focus. */
 .dd{position:relative;z-index:50}
