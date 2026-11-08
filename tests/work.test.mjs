@@ -43,3 +43,11 @@ test('case stories landing lists exactly the four Phase 1 case studies in order'
   const hrefs = [...html.matchAll(/<a class="cs[^"]*" href="(\/work\/[^"]+\/)"/g)].map((m) => m[1]);
   assert.deepEqual(hrefs, slugs.map((s) => `/work/${s}/`));
 });
+
+test('case breadcrumbs link both Case stories and Research computing', { skip: !built }, () => {
+  for (const s of slugs) {
+    const crumb = readFileSync(page(s), 'utf8').match(/<nav aria-label="Breadcrumb"[\s\S]*?<\/nav>/)[0];
+    assert.match(crumb, /href="\/work\/"/, s);
+    assert.match(crumb, /<a[^>]*href="\/#research"[^>]*>Research computing<\/a>/, s);
+  }
+});
