@@ -9,7 +9,7 @@ stats:
   - { n: "5", label: peer-reviewed papers we wrote }
   - { n: "1", label: best paper award }
   - { n: "3", label: "venues: SC, PEARC and JOCSE" }
-note: Newest first within each group. Sweet & Fizzy authors are Andrew Pasquale and Lissie Fein.
+note: "Newest first within each group. Sweet & Fizzy authors are Andrew Pasquale, Lissie Fein and Joe Bacal."
 groups:
   - title: AI agents
     color: yellow
