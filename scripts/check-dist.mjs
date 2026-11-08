@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 // A placeholder is a bracket that opens on a capital letter: [CITY], [N%],
 // [Two sentences on the community.]. It may wrap across lines.
-const PLACEHOLDER = /\[[A-Z][^\][<>]{0,200}\]/g;
+const PLACEHOLDER = /\[[A-Z0-9][^\][<>]{0,200}\]/g;
 const tidy = (m) => m.replace(/\s+/g, ' ');
 
 export function findPlaceholders(html) {

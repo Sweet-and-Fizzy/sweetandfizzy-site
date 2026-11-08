@@ -49,3 +49,7 @@ test('findPlaceholders catches a placeholder that wraps across lines', () => {
 test('findPlaceholders catches a placeholder wrapped around inline markup', () => {
   assert.deepEqual(findPlaceholders('<p>[<strong>N</strong>]</p>'), ['[N]']);
 });
+
+test('findPlaceholders catches brackets that start with a digit', () => {
+  assert.deepEqual(findPlaceholders('<dd>[2022 to present]</dd>'), ['[2022 to present]']);
+});
