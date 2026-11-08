@@ -1,0 +1,27 @@
+# Privacy page. A plain-language draft written for the new site; Andrew reviews before launch.
+title: Privacy
+description: What Sweet & Fizzy Digital collects on sweetandfizzy.com, why, who processes it, and how to ask us to delete it.
+accent: blue
+hero:
+  eyebrow: Privacy
+  title: What we collect, and why
+  body: "This site collects as little as it can. Here is what we keep, what our hosting and analytics providers process for us, and how to reach us about it. [Andrew to review before launch.]"
+sections:
+  - kind: list
+    title: What we collect
+    items:
+      - { title: When you contact us., text: "The name, email, organization, deadline and message you type into the contact form. We use them only to reply and to follow up on the work you asked about." }
+      - { title: Analytics., text: "Google Analytics, loaded through Google Tag Manager, records pages visited, the site that sent you, rough location and device type, and whether a contact form was sent. It does not record what you typed." }
+      - { title: Server logs., text: "Netlify, our host, keeps standard request logs such as IP address and browser for security and troubleshooting." }
+  - kind: list
+    title: Who processes it
+    items:
+      - { title: Netlify, text: "hosts the site and receives contact form submissions." }
+      - { title: Google, text: "provides analytics through Google Tag Manager and Google Analytics." }
+      - { title: Google Fonts, text: "serves the site's typefaces, which means your browser requests them from Google." }
+  - kind: prose
+    title: What we do not do
+    body: "We do not sell or share your information for advertising, and we do not add you to a mailing list because you wrote to us."
+  - kind: prose
+    title: Your choices
+    body: "You can block analytics with your browser's privacy settings or an extension and the site still works. To see, correct or delete what you sent us, email [hello@sweetandfizzy.com](mailto:hello@sweetandfizzy.com) and we will take care of it."

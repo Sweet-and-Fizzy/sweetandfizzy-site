@@ -8,7 +8,7 @@ card:
     alt: "The ACCESS Support home page"
 order: 1
 phase: 1
-description: ""
+description: "How we built ACCESS Support, the NSF ACCESS program's help hub: knowledge base, affinity groups, Q&A assistant and tools on Connect.CI."
 link:
   href: https://support.access-ci.org/
   label: Visit support.access-ci.org

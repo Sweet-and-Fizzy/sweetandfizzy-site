@@ -16,6 +16,7 @@
     "check:launch": "astro check && astro build && node scripts/check-dist.mjs --strict && playwright test"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
     "astro": "^5.18.2",
     "marked": "^18.1.3"
   },

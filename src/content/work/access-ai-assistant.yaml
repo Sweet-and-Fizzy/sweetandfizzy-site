@@ -8,7 +8,7 @@ card:
     alt: "The ACCESS AI Assistant answering a question"
 order: 2
 phase: 1
-description: ""
+description: "How we built the ACCESS AI Assistant, an open source support agent that answers from documentation and 11 live MCP data sources."
 link:
   href: https://github.com/connectci-platform/access-agent
   label: See the code on GitHub
