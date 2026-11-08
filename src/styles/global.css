@@ -211,3 +211,4 @@ a.mc:hover .ar2{background:var(--accent);transform:translateX(3px)}
 .tgt{display:inline-flex;align-items:center;min-height:44px}
 .doi-lk{display:block;align-self:flex-start;max-width:100%;padding:10px 0;font-size:16px;overflow-wrap:anywhere}
 .paper-title{overflow-wrap:anywhere;hyphens:auto}@media (max-width:600px){.paper-card.boxed{padding:20px}}
+.go-lk{min-height:44px}

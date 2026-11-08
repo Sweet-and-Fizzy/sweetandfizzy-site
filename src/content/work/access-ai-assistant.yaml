@@ -1,6 +1,11 @@
 # Case study copy. Edit text freely; bracketed [PLACEHOLDERS] block launch. Images: src/assets/work/.
 name: ACCESS AI Assistant
 title: An AI support agent that reads live system data
+card:
+  line: "An AI support agent that answers researchers from the ACCESS documentation and live system data in one conversation."
+  image:
+    src: ../../assets/home/access-ai.jpg
+    alt: "The ACCESS AI Assistant answering a question"
 order: 2
 phase: 1
 description: ""

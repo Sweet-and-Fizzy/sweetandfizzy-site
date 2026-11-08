@@ -1,6 +1,11 @@
 # Case study copy. Edit text freely; bracketed [PLACEHOLDERS] block launch. Images: src/assets/work/.
 name: ACCESS Support
 title: Helping researchers find their way in national computing
+card:
+  line: "The support hub for the NSF ACCESS program: knowledge base, directory, affinity groups and matching services."
+  image:
+    src: ../../assets/home/access-support.jpg
+    alt: "The ACCESS Support home page"
 order: 1
 phase: 1
 description: ""

@@ -1,6 +1,11 @@
 # Case study copy. Edit text freely; bracketed [PLACEHOLDERS] block launch. Images: src/assets/work/.
 name: MGHPCC
 title: Telling the story of a green supercomputing center, online and on the show floor
+card:
+  line: "The mghpcc.org website, plus SC booths, a kiosk and a showcase of research projects."
+  image:
+    src: ../../assets/home/mghpcc.jpg
+    alt: "The MGHPCC website"
 order: 4
 phase: 1
 description: ""

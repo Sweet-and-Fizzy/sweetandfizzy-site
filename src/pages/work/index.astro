@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pic from '../../components/Pic.astro';
+import Icon from '../../components/Icon.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+import { getPhase1Work } from '../../data/work';
+
+const work = await getPhase1Work();
+---
+<Base title="Case stories" description="How Sweet & Fizzy Digital helps research computing communities: ACCESS Support, the ACCESS AI Assistant, Open OnDemand and MGHPCC.">
+  <section class="page-hero" aria-labelledby="st-title">
+    <div class="wrap hero-in" style="padding-top: 80px; padding-bottom: 88px; display: flex; flex-direction: column; gap: 20px">
+      <p class="eyebrow-xl" style="color: #5abdff">Case stories</p>
+      <h1 id="st-title" class="h1-xl" style="max-width: 900px">How we help research computing communities</h1>
+      <p style="margin: 0; color: #c8c8c8; max-width: 760px; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.45">The goal, what we built, and where each project is today.</p>
+    </div>
+  </section>
+  <section aria-label="Case stories" style="background: #ffffff">
+    <div class="wrap st-grid" style="padding-top: 80px; padding-bottom: 96px">
+      {work.map((w, i) => (
+        <a class="cs rv" href={`/work/${w.id}/`} style={`--d: ${((i % 2) * 0.1).toFixed(1)}s; --accent: #5abdff`}>
+          <span style="display: flex; flex-direction: column">
+            <span class="shot" style="aspect-ratio: 16 / 10; border-bottom: 0">
+              {w.data.card?.image ? <Pic src={w.data.card.image.src} alt="" sizes="(max-width: 760px) 100vw, 580px" widths={[580, 1160]} /> : <span class="ph-tile">[SCREENSHOT]</span>}
+            </span>
+            <span class="st-name">
+              <span class="eyebrow-sm" style="color: #a6a6a6">Research computing</span>
+              <span style="font-weight: 700; font-size: 26px; line-height: 1.15">{w.data.name}</span>
+            </span>
+          </span>
+          <span style="color: #595959; max-width: 640px">{w.data.card?.line ?? w.data.title}</span>
+          <span class="go-lk" style="margin-top: 4px"><span class="circ" aria-hidden="true"><Icon name="arrow-right" stroke={1.5} /></span><span class="x">Read the story</span></span>
+        </a>
+      ))}
+    </div>
+  </section>
+  <CtaBand title="Have something like this in mind?" body="Tell us about your program and what your community needs." button="Talk to us" href="/contact/?audience=program" secondary={{ label: 'See what we do', href: '/#research' }} />
+</Base>
+<style is:global>
+  .st-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px 32px}
+  @media (max-width:760px){.st-grid{grid-template-columns:1fr}}
+  .st-name{display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#111111;border-top:6px solid #5abdff;color:#ffffff}
+  .cs .shot img{width:100%;height:100%;object-fit:cover;object-position:top center}
+  .ph-tile{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:14px;color:#595959}
+</style>

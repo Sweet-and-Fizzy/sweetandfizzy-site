@@ -31,3 +31,9 @@ test('every case study image has alt text', { skip: !built }, () => {
     for (const [tag] of html.matchAll(/<img\b[^>]*>/g)) assert.match(tag, /alt="[^"]*"/, `${s}: ${tag}`);
   }
 });
+
+test('case stories landing lists exactly the four Phase 1 case studies in order', { skip: !built }, () => {
+  const html = readFileSync('dist/work/index.html', 'utf8');
+  const hrefs = [...html.matchAll(/<a class="cs[^"]*" href="(\/work\/[^"]+\/)"/g)].map((m) => m[1]);
+  assert.deepEqual(hrefs, slugs.map((s) => `/work/${s}/`));
+});
