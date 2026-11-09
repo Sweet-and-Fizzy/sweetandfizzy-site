@@ -66,8 +66,8 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 32px">
         {c.features.items.map((f) => (
-          <div class="rv" style="border-top: 4px solid #5abdff; padding-top: 20px; display: flex; flex-direction: column; gap: 6px">
-            {featureIcons[f.icon] && <img src={featureIcons[f.icon]} alt="" width="36" height="36" style="display: block; margin-bottom: 8px" />}
+          <div class="rv feat">
+            {featureIcons[f.icon] && <img src={featureIcons[f.icon]} alt="" width="36" height="36" />}
             <h3 class="h3-card">{f.title}</h3>
             <p style="margin: 0; color: #595959">{f.text}</p>
           </div>
@@ -190,4 +190,8 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
   .faq details[open] .pm{transform:rotate(45deg)}
   .faq details p{margin:0;padding:0 24px 24px;max-width:720px}
   @media (prefers-reduced-motion:reduce){.faq .pm{transition:none}}
+  .feat{border-top:4px solid #5abdff;padding-top:20px;display:flex;flex-direction:column;gap:6px}
+  .feat img{display:block;margin-bottom:8px}
+  /* Phones: one column, so the icon sits beside its heading instead of on its own line. */
+  @media (max-width:640px){.feat{display:grid;grid-template-columns:32px minmax(0,1fr);column-gap:12px;align-items:center}.feat img{width:32px;height:32px;margin:0}.feat p{grid-column:1 / -1}}
 </style>
