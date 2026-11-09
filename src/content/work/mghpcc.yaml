@@ -28,7 +28,7 @@ facts:
   - k: Platform
     v: WordPress
   - k: Years
-    v: 2019 to present
+    v: 2020 to present
 goal:
   icon: "?"
   title: The goal
