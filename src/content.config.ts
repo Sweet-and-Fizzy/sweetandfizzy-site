@@ -78,7 +78,7 @@ const connectci = defineCollection({
     title: z.string(), description: z.string(),
     hero: obj({ eyebrow: z.string(), title: z.string(), body: z.string(), primary: link, secondary: link }),
     stats: z.array(obj({ n: z.string(), label: z.string() })),
-    communities: obj({ title: z.string(), lead: z.string(), link, items: z.array(obj({ name: z.string(), logo: image().optional(), text: z.string() })) }),
+    communities: obj({ title: z.string(), lead: z.string(), link, items: z.array(obj({ name: z.string(), logo: image().optional(), href: z.string().url().optional(), text: z.string() })) }),
     features: titled(obj({ icon: z.string(), title: z.string(), text: z.string() })),
     help: titled(obj({ title: z.string(), text: z.string() })),
     budget: obj({ title: z.string(), lead: z.string(), steps: z.array(obj({ n: z.string(), title: z.string(), text: z.string() })) }),

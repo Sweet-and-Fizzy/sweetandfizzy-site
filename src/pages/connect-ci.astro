@@ -47,9 +47,15 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px 32px">
         {c.communities.items.map((cm) => (
           <article class="rv" style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
-            <div class="logo-box">
-              {cm.logo ? <Pic src={cm.logo} alt={`${cm.name} logo`} sizes="240px" widths={[240, 480]} style="display: block; max-width: 100%; max-height: 80px; width: auto; height: auto; object-fit: contain" /> : <span class="logo-name">{cm.name}</span>}
-            </div>
+            {cm.href ? (
+              <a class="logo-box logo-lk" href={cm.href} aria-label={`${cm.name} website`}>
+                {cm.logo ? <Pic src={cm.logo} alt="" sizes="240px" widths={[240, 480]} style="display: block; max-width: 100%; max-height: 80px; width: auto; height: auto; object-fit: contain" /> : <span class="logo-name">{cm.name}</span>}
+              </a>
+            ) : (
+              <div class="logo-box">
+                {cm.logo ? <Pic src={cm.logo} alt={`${cm.name} logo`} sizes="240px" widths={[240, 480]} style="display: block; max-width: 100%; max-height: 80px; width: auto; height: auto; object-fit: contain" /> : <span class="logo-name">{cm.name}</span>}
+              </div>
+            )}
             <h3 class="h3-card" style="margin-top: 8px">{cm.name}</h3>
             <p style="margin: 0; color: #595959">{cm.text}</p>
           </article>
@@ -162,6 +168,9 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
   @media (max-width:700px){.cc-art{display:none}}
   .logo-box{height:112px;background:#ffffff;display:flex;align-items:center;justify-content:center;padding:16px 24px}
   .logo-name{font-weight:700;font-size:20px;text-align:center}
+  .logo-lk{color:#111111;text-decoration:none;outline:4px solid transparent;outline-offset:-4px;transition:outline-color .15s ease}
+  .logo-lk:hover,.logo-lk:focus-visible{outline-color:#fcee21}
+  @media (prefers-reduced-motion:reduce){.logo-lk{transition:none}}
   .help-panel{background:#111111;color:#ffffff;padding:40px;display:flex;flex-direction:column;gap:20px}
   .helprow{margin:8px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
   .helprow li{display:flex;flex-direction:column;gap:8px;padding-left:24px;border-left:1px solid #3a3a3a}

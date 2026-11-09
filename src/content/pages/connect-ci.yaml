@@ -18,12 +18,12 @@ communities:
   lead: "Each community has its own site, name and look. Members keep one profile as they move between them."
   link: { label: Visit connectci.org, href: "https://connectci.org/" }
   items:
-    - { name: ACCESS Support, logo: ../../assets/logos/access-support.png, text: "The support hub for the NSF ACCESS program, with its knowledge base, people directory, affinity groups and the MATCH services." }
-    - { name: Campus Champions, logo: ../../assets/logos/campus-champions.svg, text: "A national network of research computing facilitators, with mentorship and recognition built in." }
-    - { name: CCMNet, logo: ../../assets/logos/ccmnet.jpg, text: "The Cyberinfrastructure Community-wide Mentorship Network, running structured mentor and mentee engagements." }
-    - { name: Open OnDemand Community Hub, logo: ../../assets/logos/ood-hub.png, text: "The home of the Open OnDemand community, including the Appverse app catalog and contributor wall." }
-    - { name: Pennsylvania Science DMZ, logo: ../../assets/logos/pa-science-dmz.png, text: "A regional site for science network engineers across Pennsylvania." }
-    - { name: Regional cyberteams, logo: ../../assets/logos/ne-cyberteam.png, text: "Where Connect.CI started, with project workflows for the Northeast Cyberteam and others." }
+    - { name: ACCESS Support, href: "https://support.access-ci.org/", logo: ../../assets/logos/access-support.png, text: "The support hub for the NSF ACCESS program, with its knowledge base, people directory, affinity groups and the MATCH services." }
+    - { name: Campus Champions, href: "https://campuschampions.cyberinfrastructure.org/", logo: ../../assets/logos/campus-champions.svg, text: "A national network of research computing facilitators, with mentorship and recognition built in." }
+    - { name: CCMNet, href: "https://ccmnet.org/", logo: ../../assets/logos/ccmnet.jpg, text: "The Cyberinfrastructure Community-wide Mentorship Network, running structured mentor and mentee engagements." }
+    - { name: Open OnDemand Community Hub, href: "https://ondemand.connectci.org/", logo: ../../assets/logos/ood-hub.png, text: "The home of the Open OnDemand community, including the Appverse app catalog and contributor wall." }
+    - { name: Pennsylvania Science DMZ, href: "https://pasciencedmz.connectci.org/", logo: ../../assets/logos/pa-science-dmz.png, text: "A regional site for science network engineers across Pennsylvania." }
+    - { name: Regional cyberteams, href: "https://necyberteam.org/", logo: ../../assets/logos/ne-cyberteam.png, text: "Where Connect.CI started, with project workflows for the Northeast Cyberteam and others." }
 features:
   title: What your community gets on day one
   lead: "Turn on the features you need. All of it is hosted, secured and kept current as part of membership."
@@ -46,7 +46,7 @@ help:
     - { title: Onboarding, text: "Content migration, launch planning and outreach to your members." }
     - { title: Engagement reporting, text: "Membership, event and activity numbers ready for your annual reports." }
 budget:
-  title: Your budget goes to what is new
+  title: Your budget goes to features you need
   lead: "Most of what a research community needs is already built and running. You fund the part that is genuinely yours, and every improvement becomes shared infrastructure. That is a sustainability story reviewers recognize."
   steps:
     - { n: "01", title: Join, text: "Launch your site on the shared platform with your name, your look and the features you need." }
