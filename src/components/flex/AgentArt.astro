@@ -1,26 +1,42 @@
 ---
-// Hero drawing for the AI agents page: a researcher's question reaches the
-// agent, which draws on docs, live data and the cluster, then answers.
-// Same language as the Connect.CI mark: white strokes, brand-colored nodes.
+// Hero drawing for the AI agents page: an abstract chat. A question, a row of
+// dots for the sources the assistant checks, and the answer. Flat bubbles with
+// solid offset shadows, like the color offsets behind the logo's ampersand.
+// The dots pulse twice (3.6s) and stop, so no motion runs past 5s (WCAG 2.2.2).
+interface Props { steps?: boolean }
+const { steps = true } = Astro.props;
+const ay = steps ? 0 : -60;
 ---
 <svg viewBox="0 0 400 340" aria-hidden="true" class="agent-art">
-  <g fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M28 52h120a18 18 0 0 1 18 18v52a18 18 0 0 1-18 18H82l-30 26 6-26H28a18 18 0 0 1-18-18V70a18 18 0 0 1 18-18z" />
-    <path d="M166 106 C 210 106, 214 170, 250 170" />
-    <circle cx="282" cy="170" r="32" />
-    <path d="M308 150 L 352 88" />
-    <path d="M314 170 L 360 170" />
-    <path d="M308 190 L 352 252" />
-    <path d="M282 202 C 282 262, 210 290, 150 290" />
-    <path d="M150 290 h-90" />
+  <defs>
+    <path id="aa-q" d="M150 30h230v70h-22l2 26-28-26H150z" />
+    <path id="aa-a" d="M20 196h310v110H74l-36 26 6-26H20z" />
+  </defs>
+  <g transform={`translate(0 ${steps ? 0 : 30})`}>
+    <use href="#aa-q" x="10" y="10" fill="#fcee21" />
+    <use href="#aa-q" fill="#ffffff" />
+    <g fill="#111111"><rect x="172" y="50" width="150" height="10" /><rect x="172" y="70" width="96" height="10" /></g>
   </g>
-  <g fill="#ffffff"><circle cx="58" cy="96" r="7" /><circle cx="88" cy="96" r="7" /><circle cx="118" cy="96" r="7" /></g>
-  <circle cx="282" cy="170" r="14" fill="#f07537" />
-  <circle cx="360" cy="78" r="16" fill="#5abdff" />
-  <circle cx="372" cy="170" r="16" fill="#ffc32c" />
-  <circle cx="360" cy="262" r="16" fill="#ef4326" />
-  <path d="M44 290 l12 12 l22 -24" fill="none" stroke="#ffc32c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  {steps && (
+    <g class="aa-steps">
+      <rect x="20" y="128" width="112" height="44" fill="none" stroke="#ffffff" stroke-width="3" />
+      <circle cx="48" cy="150" r="8" fill="#5abdff" />
+      <circle cx="76" cy="150" r="8" fill="#fcee21" />
+      <circle cx="104" cy="150" r="8" fill="#ef4326" />
+    </g>
+  )}
+  <g transform={`translate(0 ${ay})`}>
+    <use href="#aa-a" x="10" y="10" fill="#5abdff" />
+    <use href="#aa-a" fill="#ffffff" />
+    <g fill="#111111"><rect x="44" y="220" width="250" height="10" /><rect x="44" y="242" width="222" height="10" /><rect x="44" y="264" width="150" height="10" /></g>
+  </g>
 </svg>
 <style is:global>
   .agent-art{width:min(380px,100%);height:auto;display:block}
+  @media (prefers-reduced-motion:no-preference){
+    .aa-steps circle{animation:aa-pulse 1.8s ease-in-out 2}
+    .aa-steps circle:nth-of-type(2){animation-delay:.3s}
+    .aa-steps circle:nth-of-type(3){animation-delay:.6s}
+  }
+  @keyframes aa-pulse{0%,60%,100%{opacity:1}30%{opacity:.35}}
 </style>

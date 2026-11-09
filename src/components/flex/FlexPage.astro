@@ -68,7 +68,7 @@ const isExternal = (href: string) => /^https?:/.test(href);
                     <p style="margin: 0" set:html={mdInline(it.text)} />
                     {it.link && <a class="go-lk" href={it.link.href}><span class="circ" aria-hidden="true"><Icon name="arrow-right" stroke={1.5} /></span><span class="x">{it.link.label}{isExternal(it.link.href) && <span class="sr-only"> (external site)</span>}</span></a>}
                   </div>
-                  {it.image && <div class="row-shot"><Pic src={it.image.src} alt={it.image.alt} sizes="(max-width: 900px) 100vw, 420px" widths={[420, 840]} /></div>}
+                  {it.image && <a class="row-shot zoom" href={it.image.src.src}><Pic src={it.image.src} alt={it.image.alt} sizes={it.image.crop ? `${Math.round(84000 / it.image.crop.w)}px` : "(max-width: 900px) 100vw, 420px"} widths={[420, 840, 1260, 1680, 2400]} style={it.image.crop && `position: absolute; left: 0; top: 0; max-width: none; width: ${(10000 / it.image.crop.w).toFixed(2)}%; height: auto; transform: translate(-${it.image.crop.x}%, -${it.image.crop.y}%)`} /><span class="sr-only"> (open full size)</span></a>}
                 </article>
               ))}
             </div>
@@ -114,7 +114,8 @@ const isExternal = (href: string) => /^https?:/.test(href);
   .flex-rows{display:flex;flex-direction:column}
   .flex-rows article{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:12px 48px;padding:32px 0;border-top:1px solid #d6d6d6}
   .flex-rows article.has-img{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) minmax(0,1.2fr);align-items:start}
-  .row-shot{aspect-ratio:16/10;overflow:hidden;border:1px solid #5abdff;background:#f4f4f4}
+  .row-shot{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;border:1px solid #5abdff;background:#f4f4f4;cursor:zoom-in}
+  .row-shot:focus-visible{outline:3px solid #111111;outline-offset:3px}
   .row-shot img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
   .hero-art{flex:0 1 380px;display:flex;justify-content:center}
   @media (max-width:900px){.hero-art{display:none}}

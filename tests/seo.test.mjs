@@ -28,5 +28,5 @@ test('page titles are unique', { skip: !built }, () => {
 });
 
 test('privacy, 404 and sitemap are built', { skip: !built }, () => {
-  for (const f of ['dist/privacy/index.html', 'dist/404.html', 'dist/sitemap-index.xml']) assert.ok(existsSync(f), f);
+  for (const f of ['dist/privacy/index.html', 'dist/accessibility/index.html', 'dist/404.html', 'dist/sitemap-index.xml']) assert.ok(existsSync(f), f);
 });

@@ -38,7 +38,7 @@ features:
     - { icon: AI layer, title: AI tools, text: "A support assistant, plus MCP servers (Model Context Protocol, the standard way AI tools read live data) for platform content." }
     - { icon: Single sign-on, title: Single sign-on, text: "CILogon across every community, so members log in with their own institution's account." }
 help:
-  title: Help running your community, not just the software
+  title: Help running the community, too
   lead: "Platforms succeed when coordinators feel confident and members stay engaged. We help with both."
   items:
     - { title: Coordinator training, text: "We get affinity group coordinators comfortable running their groups on the platform." }
@@ -87,6 +87,8 @@ faq:
       a: "Yes. Each community has its own domain, name, theme and navigation, while sharing members and knowledge with the rest of the platform."
     - q: Who owns our content and member data?
       a: "Your content is yours: pages, events, groups, knowledge base articles and engagement records, and we help you export them at any time. Each member's account belongs to that person, because one account works across every community they join. If your community moves off the platform, you take your member list and their activity in your community. Each person's wider profile stays theirs."
+    - q: Is the platform accessible?
+      a: "We build new features to WCAG 2.2 Level AA and check them with automated accessibility tests before release."
     - q: How long does onboarding take?
       a: "A few weeks for a site built from the platform's existing features. The Pennsylvania Science DMZ portal was stood up in a few weeks. New features take longer, and we scope them with you."
     - q: Can Connect.CI be written into our proposal budget?

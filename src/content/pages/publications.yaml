@@ -6,7 +6,7 @@ hero:
   title: Papers and writing
   body: "We publish what we build with the research computing community, so programs can see how the work holds up. These papers cover the platforms, catalogs and AI tools we build and run with our partners."
 stats:
-  - { n: "5", label: peer-reviewed papers we co-authored }
+  - { n: "5", label: co-authored peer-reviewed papers }
   - { n: "1", label: best paper award }
   - { n: "3", label: "venues: SC, PEARC and JOCSE" }
 note: "Newest first within each group. Sweet & Fizzy authors are Andrew Pasquale, Lissie Fein, Joe Bacal and Miles France."

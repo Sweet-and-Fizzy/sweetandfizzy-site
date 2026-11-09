@@ -1,0 +1,24 @@
+# Accessibility statement. Kept short on purpose: what standard we build to,
+# how we check it, what is still open, and how to report a problem.
+title: Accessibility
+description: How Sweet & Fizzy Digital builds sweetandfizzy.com to WCAG 2.2 Level AA, how we check it, and how to report a problem.
+accent: yellow
+hero:
+  eyebrow: Accessibility
+  title: Built to WCAG 2.2 AA
+  body: "We build this site, and the sites and platforms we make for our clients, to meet WCAG 2.2 Level AA. Here is how we check this site, what is still open, and how to tell us about a problem."
+sections:
+  - kind: list
+    title: How we check this site
+    items:
+      - { title: Automated tests., text: "Before each launch, axe checks every page at phone and desktop widths against the WCAG 2.2 A and AA rules." }
+      - { title: Layout and keyboard., text: "Every page is tested at 320 pixels wide, with JavaScript off and with motion turned off, and every control is at least 44 pixels." }
+      - { title: Review., text: "Alt text, link text and form messages are reviewed with every change." }
+  - kind: list
+    title: Known limitations
+    items:
+      - { title: Images of text., text: "Some illustrations show text as part of the image. Each has alt text with the same words." }
+      - { title: Screen readers., text: "We have not yet tested the site with VoiceOver or NVDA." }
+  - kind: prose
+    title: Report a problem
+    body: "If something on this site does not work for you, email [hello@sweetandfizzy.com](mailto:hello@sweetandfizzy.com) with the page and what happened, and we will reply within two days. If your institution needs our accessibility conformance report, ask and we will send it.\n\nLast reviewed November 2026."

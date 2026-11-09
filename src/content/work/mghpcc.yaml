@@ -5,7 +5,7 @@ card:
   line: "The mghpcc.org website, plus SC booths, a kiosk and a showcase of research projects."
   image:
     src: ../../assets/home/mghpcc.jpg
-    alt: "The MGHPCC website"
+    alt: "An MGHPCC booth panel and research kiosk designed for SC"
 order: 4
 phase: 1
 description: "How we tell the MGHPCC's story online and at SC: the mghpcc.org website, booth design, interactive kiosks and research showcases."
@@ -33,10 +33,10 @@ goal:
   icon: "?"
   title: The goal
   body: |-
-    **Show the research, not just the racks.** The MGHPCC in Holyoke, Massachusetts is a shared research computing center for Boston University, Harvard, MIT, Northeastern and the University of Massachusetts. It was the first university research data center to earn LEED Platinum.
+    **A shared home for university research computing.** The MGHPCC in Holyoke, Massachusetts is a research computing center run by a consortium of universities, including Boston University, Harvard, MIT, Northeastern, the University of Massachusetts and Yale. It was the first university research data center to earn LEED Platinum.
 
     It needed a website that explains what the center does and who it serves, and a presence at SC, the largest supercomputing conference in the world, that pulls people across a crowded floor and into the booth.
-  pull: "{ A data center is a building. The research inside it is the story. }"
+  pull: "{ The first university research data center to earn LEED Platinum. }"
 chapters:
   - level: 2
     title: Our approach
@@ -72,7 +72,7 @@ chapters:
   - level: 3
     title: Research projects
     body: |-
-      **Every project gets a video and a face.** A custom content type gives each research project its own page:
+      **A page and a video for every project.** A custom content type gives each research project its own page:
 
       - A video about the project
       - A short summary of the research

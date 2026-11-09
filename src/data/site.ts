@@ -17,6 +17,7 @@ export const site = {
     { label: 'Case stories', href: '/work/' },
     { label: 'Publications', href: '/publications/' },
     { label: 'Privacy', href: '/privacy/' },
+    { label: 'Accessibility', href: '/accessibility/' },
   ],
   social: {
     github: 'https://github.com/Sweet-and-Fizzy',

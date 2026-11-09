@@ -18,7 +18,6 @@ sections:
     items:
       - { title: Netlify, text: "hosts the site and receives contact form submissions." }
       - { title: Google, text: "provides analytics through Google Tag Manager and Google Analytics." }
-      - { title: Google Fonts, text: "serves the site's typefaces, which means your browser requests them from Google." }
   - kind: prose
     title: What we do not do
     body: "We do not sell or share your information for advertising, and we do not add you to a mailing list because you wrote to us."

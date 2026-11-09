@@ -8,6 +8,9 @@ card:
     alt: "The Open OnDemand home page"
 order: 3
 phase: 1
+heroImage:
+  src: ../../assets/work/open-ondemand-logo.svg
+  alt: The Open OnDemand logo
 description: "How we refreshed openondemand.org and built the Open OnDemand Community Hub, Appverse app catalog and Contributor Wall."
 link:
   href: https://openondemand.org/
@@ -33,7 +36,7 @@ goal:
     **A website as easy to use as the software.** Open OnDemand lets researchers use a supercomputer from a web browser, with nothing to install and no command line to learn. The Ohio Supercomputer Center has built it since 2015 with NSF support, and by 2022 it had more than 250 known installations.
 
     The website needed to catch up: line up with the Open OnDemand brand, make the key paths easy to find for people who run it, administer it and contribute to it, and give a growing community somewhere to gather.
-  pull: "{ Software that makes supercomputers easy deserves a website that does too. }"
+  pull: "{ More than 2,100 organizations run Open OnDemand. Its website has to work for all of them. }"
 chapters:
   - level: 2
     title: Our approach
@@ -93,7 +96,7 @@ chapters:
   - level: 3
     title: Contributor Wall
     body: |-
-      **Contributors get the credit they deserve.** On the Open OnDemand Community Hub, built on Connect.CI, the Contributor Wall shows code, documentation, forum and Appverse contributions across the year, with a rotating Community Spotlight.
+      **Credit for every kind of contribution.** On the Open OnDemand Community Hub, built on Connect.CI, the Contributor Wall shows code, documentation, forum and Appverse contributions across the year, with a rotating Community Spotlight.
 
       - Automated badging from contribution activity
       - Manual badging for work that does not show up in the data

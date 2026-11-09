@@ -21,8 +21,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .chips-dark li{color:#ffffff;flex:1 1 auto;text-align:center}
 .story{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
 .story p{margin:0}
-.chap{display:flex;align-items:center;gap:16px;margin:0 0 4px!important;font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;line-height:1.1;letter-spacing:1px;text-transform:uppercase;color:#111111}
-.chap b{flex:none;width:58px;height:58px;border-radius:50%;background:transparent;border:5px solid #5abdff;box-sizing:border-box;color:#111111;display:inline-flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-weight:700;font-size:26px;line-height:1;letter-spacing:0}
+.chap{display:flex;align-items:center;gap:16px;margin:0 0 4px!important;font-family:'DM Sans Variable',sans-serif;font-size:32px;font-weight:700;line-height:1.1;letter-spacing:1px;text-transform:uppercase;color:#111111}
+.chap b{flex:none;width:58px;height:58px;border-radius:50%;background:transparent;border:5px solid #5abdff;box-sizing:border-box;color:#111111;display:inline-flex;align-items:center;justify-content:center;font-family:'DM Sans Variable',sans-serif;font-weight:700;font-size:26px;line-height:1;letter-spacing:0}
 .ch-row{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:center}
 .ch-row.flip .story{order:2}
 .bul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
@@ -34,8 +34,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .ch-row+.ch-row{position:relative;padding-top:64px}
 .ch-row+.ch-row::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:repeating-linear-gradient(90deg,#5abdff 0 6px,transparent 6px 18px)}
 /* Heading levels: H2 = The goal, Our approach, Where it is today. H3 = items under Our approach. */
-h2.chap,.story h2.chap{font-family:'DM Sans',sans-serif;font-size:40px;font-weight:700;line-height:1.1}
-h3.chap,.story h3.chap{font-family:'DM Sans',sans-serif;font-size:36px;font-weight:700;line-height:1.15;letter-spacing:0;text-transform:none}
+h2.chap,.story h2.chap{font-family:'DM Sans Variable',sans-serif;font-size:40px;font-weight:700;line-height:1.1}
+h3.chap,.story h3.chap{font-family:'DM Sans Variable',sans-serif;font-size:36px;font-weight:700;line-height:1.15;letter-spacing:0;text-transform:none}
+@media (max-width:420px){h2.chap,.story h2.chap{font-size:30px}h3.chap,.story h3.chap{font-size:28px}.chap b{width:48px;height:48px;font-size:22px}}
 .story strong{font-weight:700}
 .ch-row .story{max-width:none;margin:0}
 .ch-fig{margin:0;display:flex;flex-direction:column;gap:10px;font-size:16px;color:#595959}
@@ -43,13 +44,13 @@ h3.chap,.story h3.chap{font-family:'DM Sans',sans-serif;font-size:36px;font-weig
 /* Blue band: black ring and rule on blue */
 .goal .chap b{border-color:#111111}
 .goal .pull{border-left-color:#111111}
-@media (max-width:860px){.ch-row{grid-template-columns:1fr;gap:28px}.ch-row.flip .story{order:0}}
-.story h2{margin:0;font-family:'DM Sans',sans-serif;font-weight:700;font-size:36px;line-height:1.15}
+@media (max-width:860px){.ch-row{grid-template-columns:minmax(0,1fr);gap:28px}.ch-row.flip .story{order:0}}
+.story h2{margin:0;font-family:'DM Sans Variable',sans-serif;font-weight:700;font-size:36px;line-height:1.15}
 .wide{max-width:1200px;margin:16px auto 0;display:flex;flex-direction:column;gap:10px}
 .wide figcaption,.pair figcaption{font-size:16px;color:#595959}
 .pair{max-width:1200px;margin:16px auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
 .pair figure{margin:0;display:flex;flex-direction:column;gap:10px}
-.pull{max-width:960px;margin:24px auto;border-left:8px solid #5abdff;padding:4px 0 4px 32px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:40px;line-height:1.2;text-wrap:pretty}
+.pull{max-width:960px;margin:24px auto;border-left:8px solid #5abdff;padding:4px 0 4px 32px;font-family:'DM Sans Variable',sans-serif;font-weight:700;font-size:40px;line-height:1.2;text-wrap:pretty}
 @media (max-width:800px){.pair{grid-template-columns:1fr}.pull{font-size:28px}}
 @media (max-width:800px){.cs-row{grid-template-columns:1fr;gap:24px}.cs-row .im{order:0}}
 
@@ -80,7 +81,7 @@ h3.chap,.story h3.chap{font-family:'DM Sans',sans-serif;font-size:36px;font-weig
 .ch-fig .shotx img{height:100%}
 @media (max-width:700px){.kicker{font-size:28px}.cs-name{font-size:40px}.cs-h1{font-size:36px}.res-n{font-size:44px}.tq-text{font-size:28px}}
 /* Wide figures (diagrams): full width under the story, natural aspect ratio */
-.ch-row.ch-wide{grid-template-columns:1fr}
+.ch-row.ch-wide{grid-template-columns:minmax(0,1fr)}
 .ch-row.ch-wide .story{max-width:760px}
 .shotx.shot-wide{aspect-ratio:auto;background:#ffffff;border-color:#d6d6d6;padding:16px}
 .shotx.shot-wide img{height:auto;object-fit:contain}

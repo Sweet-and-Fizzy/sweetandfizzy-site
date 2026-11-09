@@ -1,0 +1,31 @@
+---
+// Opens any a.zoom link's image full size in a dialog. Without JS the link
+// still opens the image on its own.
+---
+<dialog class="lb" aria-label="Full size image">
+  <button type="button" class="lb-x" aria-label="Close">×</button>
+  <img alt="" />
+</dialog>
+<script>
+  const dlg = document.querySelector<HTMLDialogElement>('dialog.lb')!;
+  const img = dlg.querySelector('img')!;
+  document.addEventListener('click', (e) => {
+    const a = (e.target as Element).closest<HTMLAnchorElement>('a.zoom');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    img.src = a.href;
+    img.alt = a.querySelector('img')?.alt ?? '';
+    dlg.showModal();
+  });
+  // Close on the button or a click anywhere outside the image.
+  dlg.addEventListener('click', (e) => { if (e.target !== img) dlg.close(); });
+  dlg.addEventListener('close', () => { img.removeAttribute('src'); });
+</script>
+<style is:global>
+  .lb{max-width:none;max-height:none;width:100vw;height:100vh;margin:0;padding:24px;border:0;background:transparent;cursor:zoom-out}
+  .lb[open]{display:flex;align-items:center;justify-content:center}
+  .lb::backdrop{background:rgba(17,17,17,.88)}
+  .lb img{max-width:min(100%,1600px);max-height:100%;width:auto;height:auto;background:#ffffff;box-shadow:0 12px 40px rgba(0,0,0,.4);cursor:default}
+  .lb-x{position:fixed;top:12px;right:16px;width:44px;height:44px;border:0;background:transparent;color:#ffffff;font-size:36px;line-height:1;cursor:pointer}
+  .lb-x:focus-visible{outline:3px solid #fcee21}
+</style>

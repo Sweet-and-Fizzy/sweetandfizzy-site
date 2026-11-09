@@ -47,11 +47,21 @@ for (const path of builtPages()) {
     });
   }
 
+  test.describe(`${path} at 320px`, () => {
+    test.use({ viewport: { width: 320, height: 640 } });
+    test('reflows without sideways scrolling (WCAG 1.4.10)', async ({ page }) => {
+      await page.goto(path);
+      const [scroll, inner] = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
+      expect(scroll).toBeLessThanOrEqual(inner);
+    });
+  });
+
   test.describe(`${path} without JavaScript`, () => {
     test.use({ javaScriptEnabled: false });
     test('keeps all main content visible', async ({ page }) => {
       await page.goto(path);
       // CSS entrance animations still run without JS; wait for them to end.
+      // This also fails if any animation loops forever (WCAG 2.2.2).
       await page.evaluate(() => Promise.all(document.getAnimations().map((a) => a.finished)));
       const hidden = await page.evaluate(() =>
         [...document.querySelectorAll('main *')].filter((el) => getComputedStyle(el).opacity === '0').length);

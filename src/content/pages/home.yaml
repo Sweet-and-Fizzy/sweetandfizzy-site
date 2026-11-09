@@ -39,7 +39,7 @@ areas:
     more:
       - { name: Open OnDemand, line: A refreshed openondemand.org and a Community Hub with a Contributor Wall, image: ../../assets/home/ood.jpg, href: /work/open-ondemand/ }
       - { name: Open OnDemand Appverse, line: "A shared catalog of Open OnDemand apps. Best paper, PEARC 2026", image: ../../assets/home/appverse.jpg, href: /work/open-ondemand/#the-appverse }
-      - { name: Open OnDemand job submission, line: AI assistants that run computing jobs with the researcher’s own permissions, image: ../../assets/home/ood-api.jpg, href: /services/ai-agents/ }
+      - { name: Open OnDemand job submission, line: AI assistants that run computing jobs with the researcher’s own permissions, image: ../../assets/work/ood-api-exchange.png, href: /services/ai-agents/ }
       - { name: MGHPCC, line: "The mghpcc.org website, plus SC booths, a kiosk and a showcase of research projects", image: ../../assets/home/mghpcc.jpg, href: /work/mghpcc/ }
   - id: startups
     n: "02"
@@ -82,16 +82,16 @@ areas:
       - { name: Emily Dickinson Virtual Tour, line: "An interactive walkthrough of the Dickinson Homestead, room by room, with its objects and stories.", image: ../../assets/home/dickinson.jpg, href: "https://www.emilydickinsonmuseum.org/homestead-parlors/" }
       - { name: PDMcBride, line: An artist’s portfolio with an online shop., image: ../../assets/home/pdmcbride.jpg }
     more:
-      - { name: Molly B. Burnham, line: A playful site for a children’s book author, image: ../../assets/home/burnham.jpg, href: "https://mollybburnham.com" }
-      - { name: AroundHere.Live, line: "Live music listings for the Pioneer Valley, where fans follow artists and venues and get notified about shows", image: ../../assets/home/aroundhere.jpg, href: "https://aroundhere.live" }
+      - { name: Molly B. Burnham, line: "A playful site for a children’s book author, built around the books", image: ../../assets/home/burnham.jpg, href: "https://mollybburnham.com" }
+      - { name: AroundHere.Live, line: "Live music listings for the Pioneer Valley, with alerts for favorite artists and venues", image: ../../assets/home/aroundhere.jpg, href: "https://aroundhere.live" }
       - { name: Museums, line: "Work for museums including the Ziibiwing Center and the Chicago History Museum", image: ../../assets/home/museums.jpg }
 principles:
   title: How we build
-  lead: We use AI thoughtfully, with every change reviewed by a person.
+  lead: The same practices on every project, from a one-page site to a national platform.
   items:
     - { color: blue, title: Tests first, text: "Every feature starts with a test, and every change is reviewed before it ships." }
     - { color: orange, title: Open by default, text: "Our platforms and agents are open source, so your work does not depend on us." }
-    - { color: yellow, title: Accessible from the start, text: Accessibility is part of design and review. }
+    - { color: yellow, title: Accessible from the start, text: "We build to WCAG 2.2 AA and test every page before launch." }
     - { color: blue, title: "One team, start to finish", text: The same people scope your project and build it. }
 contact:
   title: Tell us what you are working on

@@ -104,7 +104,10 @@ const publications = defineCollection({
   }),
 });
 
-const flexItem = (image: any) => obj({ title: z.string(), text: z.string(), link: link.optional(), image: obj({ src: image(), alt: z.string() }).optional() });
+// crop shows only part of the image in the thumbnail: the left and top edge and the width
+// of the region, in percent of the image. The tile's 16:10 shape sets the region's height.
+const crop = obj({ x: z.number().min(0).max(100), y: z.number().min(0).max(100), w: z.number().min(10).max(100) });
+const flexItem = (image: any) => obj({ title: z.string(), text: z.string(), link: link.optional(), image: obj({ src: image(), alt: z.string(), crop: crop.optional() }).optional() });
 const flexSection = (image: any) => z.discriminatedUnion('kind', [
   obj({ kind: z.literal('cards'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(flexItem(image)) }),
   obj({ kind: z.literal('rows'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(flexItem(image)) }),
@@ -117,7 +120,7 @@ const flexSection = (image: any) => z.discriminatedUnion('kind', [
 ]);
 
 const flex = defineCollection({
-  loader: glob({ pattern: ['ai-agents.yaml', 'planning-a-proposal.yaml', 'privacy.yaml'], base: './src/content/pages' }),
+  loader: glob({ pattern: ['ai-agents.yaml', 'planning-a-proposal.yaml', 'privacy.yaml', 'accessibility.yaml'], base: './src/content/pages' }),
   schema: ({ image }) => obj({
     title: z.string(), description: z.string(), accent: color,
     hero: obj({ eyebrow: z.string(), title: z.string(), body: z.string(), primary: link.optional(), secondary: link.optional(), art: z.enum(['agents']).optional() }),

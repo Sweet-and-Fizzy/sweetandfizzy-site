@@ -5,13 +5,15 @@
   --ink:#111111;--ink-muted:#595959;--ink-on-dark:#ffffff;--muted-on-dark:#c8c8c8;
   --panel:#1c1c1c;--ground-alt:#f4f4f4;--hairline:#d6d6d6;
   --link-research:#004e73;--link-startup:#b4400f;
-  --font:'DM Sans','Helvetica Neue',Arial,sans-serif;
+  --font:'DM Sans Variable','Helvetica Neue',Arial,sans-serif;
   --container:1200px;--gutter:24px;--measure:720px;
 }
 /* Base */
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;font-family:var(--font);color:var(--ink);background:#ffffff;font-size:18px;line-height:1.55}
+/* Long words (MGHPCC, URLs) may break rather than push the page sideways at 320px (WCAG 1.4.10). */
+h1,h2,h3,h4,p,li,dd,figcaption{overflow-wrap:break-word}
 img{max-width:100%;height:auto}
 .wrap{max-width:var(--container);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -57,7 +59,7 @@ a{color:#111111;text-underline-offset:4px}a:hover{color:#111111}
 .doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .door{position:relative;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box;padding:28px 28px 32px;background:#1c1c1c;color:#ffffff;text-decoration:none;transition:background-color .4s var(--ease-out),transform .4s var(--ease-out)}
 .door .bar{position:absolute;left:0;right:0;top:0;height:6px;background:var(--accent);transform-origin:top;transition:transform .4s var(--ease-out)}
-.door .num{font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;letter-spacing:1.5px;color:#a6a6a6}
+.door .num{font-family:'DM Sans Variable',sans-serif;font-weight:700;font-size:16px;letter-spacing:1.5px;color:#a6a6a6}
 .door .go{margin-top:auto;padding-top:20px;display:flex;align-items:center;gap:14px;font-weight:700}
 .door .circ{width:44px;height:44px;border-radius:50%;border:2px solid var(--accent);color:#ffffff;display:inline-flex;align-items:center;justify-content:center;flex:none;transition:background-color .4s var(--ease-out),color .4s var(--ease-out),transform .4s var(--ease-out)}
 /* Hover stays in place: the card lightens, its color bar thickens and the arrow circle fills. */
@@ -85,7 +87,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 /* Section opener: black panel with one notched corner, big section number and the section color */
 .op{position:relative;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:32px 56px;align-items:end;padding:48px 56px 52px;background:#111111;color:#ffffff;clip-path:polygon(0 0,calc(100% - 48px) 0,100% 48px,100% 100%,0 100%)}
-.op .n{display:flex;align-items:center;gap:20px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:56px;line-height:1}
+.op .n{display:flex;align-items:center;gap:20px;font-family:'DM Sans Variable',sans-serif;font-weight:700;font-size:56px;line-height:1}
 .op .n .grow{display:block;width:96px;height:8px}
 .op ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px}
 .op li{display:flex;gap:14px;align-items:baseline;color:#ffffff;font-weight:700}
@@ -130,7 +132,7 @@ html.mo .grow.in{transform:none}
 .ul-lk:hover{color:#595959}
 /* Work heading: notched color tag sitting on a rule of the same color */
 .wk-head{display:flex;align-items:flex-end}
-.wk-head h3{margin:0;flex:none;padding:10px 48px 10px 20px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:18px;line-height:1.3;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%)}
+.wk-head h3{margin:0;flex:none;padding:10px 48px 10px 20px;font-family:'DM Sans Variable',sans-serif;font-weight:700;font-size:18px;line-height:1.3;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%)}
 .wk-head .rule{flex:1;height:4px}
 /* More projects: small thumbnails */
 .mini{margin:0;padding:0;list-style:none;display:grid;gap:32px}
@@ -155,11 +157,14 @@ a.mc:hover .ar2{background:var(--accent);transform:translateX(3px)}
 .dd-t svg{transition:transform .15s ease}
 .dd:not(.esc):hover .dd-t,.dd-t[aria-expanded=true],.dd-t.on{border-bottom-color:#fcee21}
 .dd:not(.esc):hover .dd-t svg,.dd-t[aria-expanded=true] svg{transform:rotate(180deg)}
-.dd-m{display:none;position:absolute;top:100%;left:-20px;min-width:280px;padding:8px 0;background:#ffffff;border:1px solid #d6d6d6;border-top:4px solid #5abdff;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.dd-m{display:none;position:absolute;top:calc(100% + 8px);left:-20px;min-width:280px;padding:8px 0;background:#ffffff;border:1px solid #d6d6d6;border-top:0;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+/* Invisible bridge over the gap so hover survives the move from button to menu. */
+.dd-m::before{content:"";position:absolute;left:0;right:0;top:-9px;height:9px}
 /* Shown by mouse hover or by the button's aria-expanded; Escape suppresses hover until the pointer leaves. */
 .dd:not(.esc):hover .dd-m{display:flex;flex-direction:column}
 .nav .dd-m a:not(.btn){padding:12px 20px;border-bottom:0;border-left:4px solid transparent}
-.nav .dd-m a:not(.btn):hover,.nav .dd-m a[aria-current=page]{border-left-color:#fcee21;background:#f4f4f4}
+.nav .dd-m a:not(.btn):hover{background:#f4f4f4}
+.nav .dd-m a[aria-current=page]{border-left-color:#fcee21}
 @media (prefers-reduced-motion:reduce){.dd-t svg{transition:none}}
 
 /* Header */

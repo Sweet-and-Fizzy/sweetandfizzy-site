@@ -35,7 +35,7 @@ goal:
     **Good answers need the docs and the live system at once.** ACCESS researchers ask questions that mix the two: how to request a GPU allocation, and which GPU systems are up today. Documentation answers the first half. The second lives in allocation, status and resource systems that a documentation chatbot cannot see.
 
     When an assistant cannot see live data, it either guesses or sends people to file a ticket. ACCESS support handles more than 10,000 tickets a year.
-  pull: "{ The docs know how. The live systems know right now. Researchers need both. }"
+  pull: "{ Which GPU systems can I get time on, and which are up today? }"
 chapters:
   - level: 2
     title: Our approach
@@ -88,7 +88,7 @@ chapters:
           alt: "The ACCESS AI Assistant listing an upcoming GPU programming course on November 10, 2026, with speaker, description and registration link"
   - level: 3
     title: From answering to acting
-    body: "**It can act for the researcher, carefully.** Asked to sign someone up for a training, the agent finds the event, checks the seats and shows exactly what would happen. Nothing is submitted until the researcher confirms, and the registration is made under their own signed-in identity, just as if they had used the events portal themselves."
+    body: "**It can register a researcher for a training.** Asked to sign someone up for a training, the agent finds the event, checks the seats and shows exactly what would happen. Nothing is submitted until the researcher confirms, and the registration is made under their own signed-in identity, just as if they had used the events portal themselves."
     figures:
       - caption: "Example from our test environment: the agent explains, and the researcher confirms in the side pane."
         image:
@@ -97,9 +97,9 @@ chapters:
   - level: 3
     title: Evaluation battery
     body: |-
-      **Measured, not demoed.** An answer can sound right and still be wrong. A researcher asked whether a system would be up next week. The documentation-only assistant said it was fully operational, but its maintenance had just been postponed. The agent read the live status feed and said so.
+      **Tested against questions experts write.** An answer can sound right and still be wrong. A researcher asked whether a system would be up next week. The documentation-only assistant said it was fully operational, but its maintenance had just been postponed. The agent read the live status feed and said so.
 
-      So we check answers against facts, not tone. Domain reviewers write the test questions and the facts a good answer must include. An automated judge grades every answer fact by fact, and human reviewers who never see its scores keep the judge honest. Checking the facts also catches errors in the documentation itself, which go back to the team that owns the page. The full method and results are in the paper.
+      So we grade each answer on the facts it contains. Domain reviewers write the test questions and the facts a good answer must include. An automated judge grades every answer fact by fact, and human reviewers who never see its scores keep the judge honest. Checking the facts also catches errors in the documentation itself, which go back to the team that owns the page. The full method and results are in the paper.
     figures:
       - wide: true
         process:
@@ -113,7 +113,7 @@ today:
   icon: "!"
   title: Where it is today
   body: |-
-    **In production, and open for other programs.** The agent answers ACCESS researchers today, full screen at qa.access-ci.org and in the Q&A widget on support.access-ci.org. For ACCESS it runs on an open model hosted by the University of Kentucky, so researchers' questions never go to a commercial AI provider.
+    **In use at ACCESS, and ready for other programs.** The agent answers ACCESS researchers today, full screen at qa.access-ci.org and in the Q&A widget on support.access-ci.org. For ACCESS it runs on an open model hosted by the University of Kentucky, so researchers' questions never go to a commercial AI provider.
 
     The agent and its MCP servers are open source. A program with its own documentation and systems can start from the same code, and the same evaluation keeps the answers honest as it grows.
   figures:
