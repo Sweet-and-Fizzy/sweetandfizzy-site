@@ -4,6 +4,8 @@ import Icon from './Icon.astro';
 ---
 <form name="contact" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company_url" class="cf">
   <input type="hidden" name="form-name" value="contact" />
+  <!-- Netlify uses this as the notification email subject; the script fills in type and sender. -->
+  <input type="hidden" name="subject" value="Website inquiry from %{siteName}" />
   <p class="hp" aria-hidden="true"><label for="cf-hp">Leave this empty</label><input id="cf-hp" name="company_url" tabindex="-1" autocomplete="off" /></p>
 
   <div role="alert" class="cf-error" id="cf-error" tabindex="-1" hidden>{contact.error}</div>
@@ -51,7 +53,7 @@ import Icon from './Icon.astro';
 </div>
 
 <script>
-  import { audienceFromQuery, onSubmitResult } from '../lib/contact';
+  import { audienceFromQuery, onSubmitResult, emailSubject } from '../lib/contact';
   const form = document.querySelector<HTMLFormElement>('form[name="contact"]')!;
   const select = form.querySelector<HTMLSelectElement>('#cf-audience')!;
   const deadline = form.querySelector<HTMLElement>('[data-deadline]')!;
@@ -91,6 +93,8 @@ import Icon from './Icon.astro';
     if (submit.disabled) return;
     error.hidden = true;
     if (!check()) return;
+    const val = (n: string) => form.querySelector<HTMLInputElement>(`[name="${n}"]`)?.value ?? '';
+    form.querySelector<HTMLInputElement>('input[name="subject"]')!.value = emailSubject(select.value, val('name'), val('organization'));
     submit.disabled = true;
     submit.textContent = 'Sending…';
     const w = window as unknown as { dataLayer: unknown[] };

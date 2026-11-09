@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
-import { onSubmitResult, audienceFromQuery } from '../src/lib/contact.ts';
+import { onSubmitResult, audienceFromQuery, emailSubject } from '../src/lib/contact.ts';
 
 test('generate_lead fires once with the audience after a successful send', () => {
   const dl = [];
@@ -47,4 +47,11 @@ test('the form keeps native validation for visitors without JavaScript', { skip:
   const form = html().match(/<form[^>]*name="contact"[^>]*>/)[0];
   assert.equal(/novalidate/i.test(form), false);
   assert.match(html(), /<input[^>]*name="email"[^>]*required|<input[^>]*required[^>]*name="email"/);
+});
+
+test('email subject names the request type, the person and their organization', () => {
+  assert.equal(emailSubject('proposal', 'Jane Doe', 'UMass Amherst'), 'Website inquiry: Proposal from Jane Doe, UMass Amherst');
+  assert.equal(emailSubject('startup', ' Jane Doe ', ''), 'Website inquiry: Startup from Jane Doe');
+  assert.equal(emailSubject('', 'Jane Doe', ''), 'Website inquiry from Jane Doe');
+  assert.equal(emailSubject('other', 'Jane Doe', ''), 'Website inquiry from Jane Doe');
 });

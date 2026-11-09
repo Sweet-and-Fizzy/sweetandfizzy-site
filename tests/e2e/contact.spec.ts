@@ -10,7 +10,8 @@ test('audience from the link is preselected and proposal shows the deadline fiel
 });
 
 test('a successful send shows thanks and pushes one lead event', async ({ page }) => {
-  await page.route('**/', (route) => route.request().method() === 'POST' ? route.fulfill({ status: 200, body: 'ok' }) : route.continue());
+  let posted = '';
+  await page.route('**/', (route) => { if (route.request().method() !== 'POST') return route.continue(); posted = route.request().postData() ?? ''; return route.fulfill({ status: 200, body: 'ok' }); });
   await page.goto('/contact/?audience=proposal');
   await page.getByLabel('Name', { exact: true }).fill('Ada');
   await page.getByLabel('Email', { exact: true }).fill('ada@example.org');
@@ -21,6 +22,7 @@ test('a successful send shows thanks and pushes one lead event', async ({ page }
   await expect(page.getByRole('link', { name: /book a call/i })).toHaveCount(0);
   const leads = await page.evaluate(() => (window as any).dataLayer.filter((e: any) => e.event === 'generate_lead'));
   expect(leads).toEqual([{ event: 'generate_lead', lead_source: 'proposal' }]);
+  expect(new URLSearchParams(posted).get('subject')).toBe('Website inquiry: Proposal from Ada, Example U');
 });
 
 test('a failed send shows the error and moves focus to it', async ({ page }) => {
