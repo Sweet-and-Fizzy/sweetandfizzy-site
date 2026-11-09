@@ -40,6 +40,11 @@ const description = d.description || `${d.name}: ${d.title}. A Sweet & Fizzy Dig
                 <span class="circ" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span><span class="x">{d.link.label}</span>
               </a>
             )}
+            {d.link2 && (
+              <a class="go-lk" href={d.link2.href} style="color: #ffffff; align-self: flex-end; flex-direction: row-reverse">
+                <span class="circ" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span><span class="x">{d.link2.label}</span>
+              </a>
+            )}
             {d.heroImage && (
               <div style="display: flex; align-items: center; justify-content: center; padding-top: 8px">
                 <Pic src={d.heroImage.src} alt={d.heroImage.alt} loading="eager" sizes="420px" widths={[420, 840]} style="display: block; width: 100%; max-width: 420px; height: auto" />

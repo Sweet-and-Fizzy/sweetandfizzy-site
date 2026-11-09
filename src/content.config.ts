@@ -22,6 +22,7 @@ const work = defineCollection({
     phase: z.union([z.literal(1), z.literal(2)]),
     card: obj({ line: z.string(), image: obj({ src: image(), alt: z.string() }).optional() }).optional(),
     link: obj({ href: z.string().url(), label: z.string() }).optional(),
+    link2: obj({ href: z.string().url(), label: z.string() }).optional(),
     heroImage: obj({ src: image(), alt: z.string() }).optional(),
     did: z.array(z.string()),
     facts: z.array(obj({ k: z.string(), v: z.string() })),

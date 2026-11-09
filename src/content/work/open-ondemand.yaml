@@ -15,6 +15,9 @@ description: "How we refreshed openondemand.org and built the Open OnDemand Comm
 link:
   href: https://openondemand.org/
   label: Visit openondemand.org
+link2:
+  href: https://openondemand.connectci.org/
+  label: Visit the Community Hub
 did:
   - Content strategy
   - Web development
