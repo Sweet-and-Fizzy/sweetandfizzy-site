@@ -4,7 +4,7 @@ title: Sweet & Fizzy Digital
 description: Community platforms and AI agents for research computing programs, plus product builds for startups and websites for organizations with a story to tell.
 hero:
   title: We build community platforms and AI tools for research computing
-  lead: "And we bring the same care to startups, and to museums, authors and nonprofits with a story to tell."
+  lead: "And we bring the same care to startups, and to museums, nonprofits and other businesses with a story to tell."
   doors:
     - { n: "01", href: "#research", color: blue, title: Research computing, text: "Community platforms and AI tools that connect researchers to people, answers and computing." }
     - { n: "02", href: "#startups", color: orange, title: Startups, text: "Discovery sprints, product design and software to get your idea off the ground." }
