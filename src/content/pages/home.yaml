@@ -79,7 +79,7 @@ areas:
     cta: { label: Tell us about your website, href: /contact/?audience=website }
     workTitle: Website and branding work
     work:
-      - { name: Emily Dickinson Virtual Tour, line: "An interactive walkthrough of the Dickinson Homestead, room by room, with its objects and stories.", image: ../../assets/home/dickinson.jpg, href: "https://www.emilydickinsonmuseum.org/homestead-parlors/" }
+      - { name: Emily Dickinson Virtual Tour, line: "An interactive tour of both Dickinson houses, the Homestead and the Evergreens, room by room.", image: ../../assets/home/dickinson.jpg, href: "https://www.emilydickinsonmuseum.org/homestead-parlors/" }
       - { name: PDMcBride, line: An artist’s portfolio with an online shop., image: ../../assets/home/pdmcbride.jpg }
     more:
       - { name: Molly B. Burnham, line: "A playful site for a children’s book author, built around the books", image: ../../assets/home/burnham.jpg, href: "https://mollybburnham.com" }
