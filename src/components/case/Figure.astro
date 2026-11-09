@@ -3,6 +3,8 @@ import Pic from '../Pic.astro';
 import { mdInline } from '../../lib/md';
 interface Props { fig: { caption: string; wide?: boolean; image?: { src?: any; alt: string }; placeholder?: string; process?: { steps: string[]; loop?: string } } }
 const { fig } = Astro.props;
+// Wide images (16:10 or wider) show whole; only taller screenshots are cropped to the frame, from the top.
+const whole = !!fig.image?.src?.width && fig.image.src.width / fig.image.src.height >= 1.59;
 ---
 <figure class="ch-fig">
   {fig.process ? (
@@ -11,7 +13,7 @@ const { fig } = Astro.props;
       {fig.process.loop && <p class="process-loop"><span aria-hidden="true">↺</span> {fig.process.loop}</p>}
     </div>
   ) : fig.image?.src
-    ? <a class:list={['shotx', 'fig-link', 'zoom', { 'shot-wide': fig.wide }]} href={fig.image.src.src}><Pic src={fig.image.src} alt={fig.image.alt} sizes={fig.wide ? '(max-width: 1200px) 100vw, 1152px' : undefined} widths={fig.wide ? [800, 1600, 2160] : undefined} /><span class="sr-only"> (open full size)</span></a>
+    ? <a class:list={['shotx', 'fig-link', 'zoom', { 'shot-wide': fig.wide, 'shot-whole': whole && !fig.wide }]} href={fig.image.src.src}><Pic src={fig.image.src} alt={fig.image.alt} sizes={fig.wide ? '(max-width: 1200px) 100vw, 1152px' : undefined} widths={fig.wide ? [800, 1600, 2160] : undefined} /><span class="sr-only"> (open full size)</span></a>
     : <div class="ph">{fig.placeholder ?? '[SCREENSHOT]'}</div>}
   {fig.caption && <figcaption set:html={mdInline(fig.caption)} />}
 </figure>

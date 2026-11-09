@@ -85,6 +85,8 @@ h3.chap,.story h3.chap{font-family:'DM Sans Variable',sans-serif;font-size:36px;
 .ch-row.ch-wide .story{max-width:760px}
 .shotx.shot-wide{aspect-ratio:auto;background:#ffffff;border-color:#d6d6d6;padding:16px}
 .shotx.shot-wide img{height:auto;object-fit:contain}
+.shotx.shot-whole{aspect-ratio:auto}
+.ch-fig .shotx.shot-whole img{height:auto}
 /* Process strip: numbered steps that read left to right, stacking on phones */
 .process-wrap{display:flex;flex-direction:column;gap:12px}
 .process{margin:0;padding:0;list-style:none;counter-reset:step;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:12px}
