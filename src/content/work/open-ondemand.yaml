@@ -64,19 +64,11 @@ chapters:
   - level: 3
     title: Affinity groups
     body: |-
-      **Find your people.** Affinity groups let members share tools, code and expertise around a topic. We designed the postcard that invited people at PEARC26 to join one of the 11 groups:
+      **Find your people.** Affinity groups bring people from different institutions together around a shared topic, so they can collaborate and learn from each other's experience. Each group has:
 
-      - Containers
-      - The Appverse
-      - Affinity Group Coordinators
-      - Multilingual Community
-      - Project Design
-      - Customizing the OOD Backend
-      - OOD on Azure
-      - Open OnDemand Security Best Practices
-      - LLMs and OOD
-      - OOD in the Classroom
-      - Structural Biology OOD Apps
+      - A central place for resources the community recommends
+      - Meeting notes, so anyone can catch up
+      - Links to the group's communication channels
     link:
       href: https://openondemand.connectci.org/affinity-groups
       label: See the affinity groups
