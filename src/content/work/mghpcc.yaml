@@ -33,10 +33,10 @@ goal:
   icon: "?"
   title: The goal
   body: |-
-    **A shared home for university research computing.** The MGHPCC in Holyoke, Massachusetts is a research computing center run by a consortium of universities, including Boston University, Harvard, MIT, Northeastern, the University of Massachusetts and Yale. It was the first university research data center to earn LEED Platinum.
+    **Show what a shared research computing center makes possible.** The MGHPCC in Holyoke, Massachusetts is a data center run by a consortium of universities, including Boston University, Harvard, MIT, Northeastern, the University of Massachusetts and Yale. It was the first university research data center to earn LEED Platinum.
 
-    It needed a website that explains what the center does and who it serves, and a presence at SC, the largest supercomputing conference in the world, that pulls people across a crowded floor and into the booth.
-  pull: "{ The first university research data center to earn LEED Platinum. }"
+    Researchers from the member universities and many other organizations run their work there, from climate models to medicine. The center needed to explain what it is in plain terms, showcase the research those institutions do on its systems, and introduce the community partners it works with. That story had to work on mghpcc.org all year, and at SC, the largest supercomputing conference in the world.
+  pull: The MGHPCC is the building. Its members and partners are the story.
 chapters:
   - level: 2
     title: Our approach

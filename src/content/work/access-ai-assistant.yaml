@@ -35,7 +35,7 @@ goal:
     **Good answers need the docs and the live system at once.** ACCESS researchers ask questions that mix the two: how to request a GPU allocation, and which GPU systems are up today. Documentation answers the first half. The second lives in allocation, status and resource systems that a documentation chatbot cannot see.
 
     When an assistant cannot see live data, it either guesses or sends people to file a ticket. ACCESS support handles more than 10,000 tickets a year.
-  pull: "{ Which GPU systems can I get time on, and which are up today? }"
+  pull: "Which GPU systems can I get time on, and which are up today?"
 chapters:
   - level: 2
     title: Our approach
