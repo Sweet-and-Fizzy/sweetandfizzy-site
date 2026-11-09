@@ -30,3 +30,10 @@ test('page titles are unique', { skip: !built }, () => {
 test('privacy, 404 and sitemap are built', { skip: !built }, () => {
   for (const f of ['dist/privacy/index.html', 'dist/accessibility/index.html', 'dist/404.html', 'dist/sitemap-index.xml']) assert.ok(existsSync(f), f);
 });
+
+test('hashed build assets are cached for a year; HTML is not', () => {
+  const toml = readFileSync('netlify.toml', 'utf8');
+  assert.match(toml, /for = "\/_astro\/\*"[\s\S]*?Cache-Control = "public, max-age=31536000, immutable"/);
+  // The site-wide "/*" block must not set Cache-Control (look only inside that block).
+  assert.doesNotMatch(toml, /for = "\/\*"(?:(?!\[\[headers\]\])[\s\S])*Cache-Control/);
+});
