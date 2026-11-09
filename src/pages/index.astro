@@ -1,4 +1,5 @@
 ---
+import AmpArt from '../components/AmpArt.astro';
 import { getEntry } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
@@ -12,8 +13,13 @@ const d = (i: number) => `${(i * 0.1).toFixed(1)}s`;
 <Base title={home.title} description={home.description}>
   <section id="top" aria-labelledby="hero-title" style="background: #111111; color: #ffffff">
     <div class="wrap hero-in" style="padding-top: 80px; padding-bottom: 88px; display: flex; flex-direction: column; gap: 20px">
-      <h1 id="hero-title" class="home-h1" style="--i: 1">{home.hero.title}</h1>
-      <p class="home-lead" style="--i: 2">{home.hero.lead}</p>
+      <div class="home-top">
+        <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+          <h1 id="hero-title" class="home-h1" style="--i: 1">{home.hero.title}</h1>
+          <p class="home-lead" style="--i: 2">{home.hero.lead}</p>
+        </div>
+        <div class="home-art" style="--i: 2"><AmpArt /></div>
+      </div>
       <div style="margin-top: 36px; --i: 3">
         <ul class="doors" style="margin: 0; padding: 0; list-style: none">
           {home.hero.doors.map((door, i) => (
@@ -138,6 +144,9 @@ const d = (i: number) => `${(i * 0.1).toFixed(1)}s`;
 </Base>
 
 <style is:global>
+  .home-top{display:flex;align-items:center;justify-content:space-between;gap:48px}
+  .home-art{flex:0 0 260px;display:flex;justify-content:flex-end}
+  @media (max-width:900px){.home-art{display:none}}
   .home-h1{margin:0;font-weight:700;font-size:clamp(40px,6vw,62px);line-height:1.05;text-wrap:balance;max-width:900px}
   .home-lead{margin:0;color:#c8c8c8;max-width:760px;font-size:clamp(20px,2.4vw,24px);line-height:1.45}
   .door-title{font-weight:700;font-size:clamp(28px,3vw,36px);line-height:1.12}
