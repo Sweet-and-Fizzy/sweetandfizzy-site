@@ -57,12 +57,12 @@ areas:
     cta: { label: Tell us about your startup, href: /contact/?audience=startup }
     workTitle: Some of our startup work
     work:
-      - { name: Eggz, line: "A social investing app we designed, built and helped lead.", image: ../../assets/home/eggz.jpg }
-      - { name: Jemurai, line: "A friendly, developer-focused brand for a cybersecurity firm: content strategy, a WordPress site, marketing campaigns and product work.", image: ../../assets/home/jemurai.jpg }
+      - { name: Eggz, line: "A social investing app for everyday investors. We designed and built it, and helped lead the company.", image: ../../assets/home/eggz.jpg }
+      - { name: Jemurai, line: "A friendly brand for a developer-focused cybersecurity firm, with content strategy, a WordPress site, campaigns and product work.", image: ../../assets/home/jemurai.jpg }
     more:
-      - { name: BankTell, line: A bank finder that maps and compares nearby banks, image: ../../assets/home/banktell.jpg }
-      - { name: Corvid Partners, line: Bond yield calculations matched to Bloomberg conventions, image: ../../assets/home/corvid.jpg }
-      - { name: Reading Success Lab, line: Online reading screening for schools and families, image: ../../assets/home/rsl.jpg, href: "https://readingsuccesslab.com" }
+      - { name: BankTell, line: "A bank finder for businesses that maps nearby banks and requests quotes", image: ../../assets/home/banktell.jpg }
+      - { name: Corvid Partners, line: "Bond yield calculations on QuantLib, checked against Bloomberg conventions", image: ../../assets/home/corvid.jpg }
+      - { name: Reading Success Lab, line: "Online reading screening and practice from 17 years of UMass research", image: ../../assets/home/rsl.jpg, href: "https://readingsuccesslab.com" }
   - id: websites
     n: "03"
     color: yellow
