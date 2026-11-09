@@ -89,10 +89,10 @@ principles:
   title: How we build
   lead: The same practices on every project, from a one-page site to a national platform.
   items:
-    - { color: blue, title: Tests first, text: "Every feature starts with a test, and every change is reviewed before it ships." }
-    - { color: orange, title: Open by default, text: "Our platforms and agents are open source, so your work does not depend on us." }
-    - { color: yellow, title: Accessible from the start, text: "We build to WCAG 2.2 AA and test every page before launch." }
-    - { color: blue, title: "One team, start to finish", text: The same people scope your project and build it. }
+    - { color: blue, title: Fully tested, text: "Every feature starts with a test, and every change is reviewed before it ships." }
+    - { color: orange, title: Not locked in, text: "Our platforms and agents are open source, so your work does not depend on us." }
+    - { color: yellow, title: Built accessible, text: "We build to WCAG 2.2 AA and test every page before launch." }
+    - { color: blue, title: One team, text: The same people scope your project and build it. }
 contact:
   title: Tell us what you are working on
   body: A program, a product, a proposal or a website. Lissie or Andrew will reply within two days.
