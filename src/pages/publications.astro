@@ -20,22 +20,22 @@ const statColors = [brand.yellow, brand.blue, brand.orange];
           <p style="margin: 0; color: #c8c8c8">{p.hero.body}</p>
         </div>
         <svg class="pb-icon" aria-hidden="true" width="300" height="320" viewBox="0 0 300 320">
-          <!-- A paper with an earlier one behind it and an award medal, drawn like the agents hero: flat shapes, solid offset shadows. -->
-          <rect x="74" y="6" width="190" height="240" fill="none" stroke="#ffffff" stroke-width="4"></rect>
-          <path fill="#fcee21" d="M30 64h140l50 50v196H30z"></path>
-          <path fill="#ffffff" d="M18 52h140l50 50v196H18z"></path>
-          <path fill="#111111" d="M158 52v50h50z" opacity=".15"></path>
-          <path fill="none" stroke="#111111" stroke-width="5" d="M158 52v50h50"></path>
-          <rect x="44" y="120" width="136" height="14" fill="#111111"></rect>
-          <rect x="44" y="144" width="96" height="14" fill="#111111"></rect>
-          <rect x="44" y="184" width="136" height="6" fill="#8a8a8a"></rect>
-          <rect x="44" y="200" width="136" height="6" fill="#8a8a8a"></rect>
-          <rect x="44" y="216" width="112" height="6" fill="#8a8a8a"></rect>
-          <rect x="44" y="232" width="128" height="6" fill="#8a8a8a"></rect>
-          <path fill="#ef4326" d="M206 266l-16 50 18-10 10 18 12-48z"></path>
-          <path fill="#ef4326" d="M254 266l16 50-18-10-10 18-12-48z"></path>
-          <circle cx="230" cy="252" r="40" fill="#5abdff"></circle>
-          <circle cx="230" cy="252" r="26" fill="none" stroke="#ffffff" stroke-width="5"></circle>
+          <!-- A paper and an award medal, drawn like the agents hero: flat shapes, solid offset shadows.
+               The text bars draw in, then the medal pops in. Plays once, under 2s; off with reduced motion. -->
+          <path fill="#fcee21" d="M44 44h146l52 52v204H44z"></path>
+          <path fill="#ffffff" d="M30 30h146l52 52v204H30z"></path>
+          <path fill="#d6d6d6" d="M176 30v52h52z"></path>
+          <g class="pb-bars" fill="#111111">
+            <rect x="60" y="112" width="136" height="12"></rect>
+            <rect x="60" y="136" width="112" height="12"></rect>
+            <rect x="60" y="160" width="72" height="12"></rect>
+          </g>
+          <g class="pb-medal">
+            <path fill="#ef4326" d="M200 262l-14 46 16-8 9 16 11-44z"></path>
+            <path fill="#ef4326" d="M244 262l14 46-16-8-9 16-11-44z"></path>
+            <circle cx="222" cy="244" r="38" fill="#5abdff"></circle>
+            <circle cx="222" cy="244" r="24" fill="none" stroke="#ffffff" stroke-width="5"></circle>
+          </g>
         </svg>
       </div>
       <dl class="stats">
@@ -71,6 +71,14 @@ const statColors = [brand.yellow, brand.blue, brand.orange];
 <style is:global>
   .pb-top{display:flex;align-items:center;justify-content:space-between;gap:64px}
   .pb-icon{display:block;flex:none}
+  @media (prefers-reduced-motion:no-preference){
+    .pb-bars rect{transform-box:fill-box;transform-origin:left center;animation:pb-draw .45s ease-out both}
+    .pb-bars rect:nth-child(2){animation-delay:.2s}
+    .pb-bars rect:nth-child(3){animation-delay:.4s}
+    .pb-medal{transform-box:fill-box;transform-origin:center;animation:pb-pop .5s cubic-bezier(.3,1.6,.6,1) .9s both}
+  }
+  @keyframes pb-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes pb-pop{from{transform:scale(0) rotate(-20deg)}to{transform:scale(1) rotate(0)}}
   @media (max-width:760px){.pb-top{flex-direction:column;align-items:flex-start}.pb-icon{width:150px;height:160px}}
   .pb-group{display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-start;padding-top:32px;padding-bottom:48px}
   .pb-side{flex:1 1 280px;display:flex;flex-direction:column;gap:12px;min-width:0}
