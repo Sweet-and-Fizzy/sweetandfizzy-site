@@ -74,6 +74,9 @@ chapters:
       - LLMs and OOD
       - OOD in the Classroom
       - Structural Biology OOD Apps
+    link:
+      href: https://openondemand.connectci.org/affinity-groups
+      label: See the affinity groups
     figures:
       - caption: The affinity groups postcard for PEARC26
         image:
@@ -88,6 +91,9 @@ chapters:
       - Submissions sync on a schedule
       - Moderators review, rate and flag issues before they are published
       - More than 100 apps, and a best paper award at PEARC 2026
+    link:
+      href: https://openondemand.connectci.org/appverse
+      label: Browse the Appverse
     figures:
       - caption: The Appverse
         image:
@@ -101,6 +107,9 @@ chapters:
       - Automated badging from contribution activity
       - Manual badging for work that does not show up in the data
       - Spreadsheet upload to add many contributions at once
+    link:
+      href: https://openondemand.connectci.org/contributor-wall
+      label: See the Contributor Wall
     figures:
       - caption: The Contributor Wall
         image:

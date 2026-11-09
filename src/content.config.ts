@@ -31,6 +31,7 @@ const work = defineCollection({
       icon: z.string().optional(),
       title: z.string(),
       body: z.string(),
+      link: obj({ href: z.string().url(), label: z.string() }).optional(),
       figures: z.array(figure(image)).default([]),
     })),
     quote: obj({ text: z.string(), name: z.string(), role: z.string() }).optional(),
