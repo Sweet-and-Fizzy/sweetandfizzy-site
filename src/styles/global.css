@@ -173,7 +173,7 @@ a.mc:hover .ar2{background:var(--accent);transform:translateX(3px)}
 /* Header */
 .site-header{background:#fff;border-bottom:1px solid var(--hairline);position:relative;z-index:40}
 .site-header .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
-.site-header .brand{display:flex;align-items:center;min-height:44px;min-width:0;flex:0 1 auto}
+.site-header .brand{display:flex;align-items:center;min-height:44px}
 .site-header .brand img{height:40px;width:auto;display:block}
 .nav{display:flex;flex-wrap:wrap;align-items:center;gap:36px}
 .nav a:not(.btn),.dd-t{min-height:44px;display:inline-flex;align-items:center}
@@ -185,7 +185,7 @@ a.mc:hover .ar2{background:var(--accent);transform:translateX(3px)}
    the links wrap under the logo instead, so nothing is unreachable. */
 @media (max-width:900px){
   .site-header .bar{flex-wrap:wrap}
-  .site-header .brand img{height:auto;width:100%;max-width:281px}
+  .site-header .brand img{height:32px}
   .nav{gap:8px 24px}
   .nav .dd-m{display:flex;flex-direction:column;position:static;border:0;box-shadow:none;padding:0;min-width:0}
   .nav .dd-t{display:none}
@@ -229,8 +229,3 @@ a.mc:hover .ar2{background:var(--accent);transform:translateX(3px)}
 .doi-lk{display:block;align-self:flex-start;max-width:100%;padding:10px 0;font-size:16px;overflow-wrap:anywhere}
 .paper-title{overflow-wrap:anywhere;hyphens:auto}@media (max-width:600px){.paper-card.boxed{padding:20px}}
 .go-lk{min-height:44px}
-
-/* Phones: the full logo needs the room, so the header Contact button moves into the menu. */
-@media (max-width:560px){
-  html.js .nav-cta-mobile{display:none}
-}
