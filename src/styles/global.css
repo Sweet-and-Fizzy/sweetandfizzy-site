@@ -82,6 +82,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .fl li{padding:0 18px;line-height:1.1}
 .fl li+li{border-left:2px solid #ef4326}
 .fl a{color:#ffffff;font-size:16px;text-decoration:none}
+/* Below 900px: a centered two-column grid, no dividers (they landed at the start of wrapped lines); email on its own line. */
+@media (max-width:900px){.fl{display:grid!important;grid-template-columns:repeat(2,auto);justify-content:center;column-gap:8px}.fl li{text-align:center}.fl li+li{border-left:0}.ft-sep{display:none}.ft-mail{display:flex;justify-content:center;align-items:center;min-height:44px}}
 .fl a:hover{color:#ffffff;text-decoration:underline;text-decoration-color:#ef4326;text-decoration-thickness:2px;text-underline-offset:6px}
 @media (prefers-reduced-motion:reduce){.soc a{transition:none}}
 

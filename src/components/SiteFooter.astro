@@ -11,6 +11,6 @@ import { site } from '../data/site';
     <nav aria-label="Footer"><ul class="fl" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: center; row-gap: 4px">
       {site.footer.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
     </ul></nav>
-    <p style="margin: 0; font-size: 16px; color: #a6a6a6; text-align: center">© {new Date().getFullYear()} {site.name} · {site.city} · <a href={`mailto:${site.email}`} style="color: #c8c8c8">{site.email}</a></p>
+    <p style="margin: 0; font-size: 16px; color: #a6a6a6; text-align: center">© {new Date().getFullYear()} {site.name} · {site.city}<span class="ft-sep"> · </span><a class="ft-mail" href={`mailto:${site.email}`} style="color: #c8c8c8">{site.email}</a></p>
   </div>
 </footer>
