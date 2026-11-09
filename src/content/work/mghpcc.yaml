@@ -108,8 +108,8 @@ results:
     label: "SC conference booths, SC20 to SC26"
   - n: "133"
     label: research projects in the mghpcc.org catalog
-  - n: "32"
-    label: research projects shown with video
+  - n: "17"
+    label: colleges and universities represented
 prev:
   href: /#research
   label: Research computing work
