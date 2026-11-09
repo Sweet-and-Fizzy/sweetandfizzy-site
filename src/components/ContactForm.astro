@@ -131,6 +131,9 @@ import Icon from './Icon.astro';
   .cf-field[hidden]{display:none}
   .cf-field label{font-weight:700}
   .cf-field input,.cf-field select,.cf-field textarea{min-height:48px;width:100%;box-sizing:border-box}
+  /* Same height for text fields and the menu in every browser; the menu draws its own arrow. */
+  .cf-field input,.cf-field select{height:54px}
+  .cf-field select{appearance:none;-webkit-appearance:none;padding-right:44px;background:#ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center}
   .cf-field [aria-invalid=true]{border:2px solid #b4400f}
   .cf-msg{color:#b4400f;font-size:16px;font-weight:700}
   .cf-hint{color:#595959;font-size:16px}
