@@ -101,6 +101,7 @@ h3.chap,.story h3.chap{font-family:'DM Sans Variable',sans-serif;font-size:36px;
 a.fig-link{display:block;cursor:zoom-in}
 a.fig-link:focus-visible{outline:3px solid #111111;outline-offset:3px}
 .chk-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:20px}
-.chk-list li{display:flex;flex-direction:column;gap:2px}
-.chk-list .go-lk{overflow-wrap:anywhere}
-.chk-note{padding-left:58px;margin-top:-10px;color:#595959}
+.chk-list li{display:flex;flex-direction:column;gap:8px}
+.chk-lk{font-size:20px;text-decoration-thickness:4px;overflow-wrap:anywhere;align-self:flex-start}
+.chk-lk:hover{text-decoration-thickness:7px;color:#111111}
+.chk-note{color:#595959}
