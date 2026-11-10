@@ -7,7 +7,7 @@ import PaperCard from '../components/sections/PaperCard.astro';
 import CtaBand from '../components/sections/CtaBand.astro';
 import LogoStrip from '../components/sections/LogoStrip.astro';
 import { featureIcons } from '../data/icons';
-import { md } from '../lib/md';
+import { md, mdInline } from '../lib/md';
 import connectCiMark from '../assets/logos/connect-ci-mark-light.svg';
 
 const c = (await getEntry('connectci', 'connect-ci'))!.data;
@@ -129,7 +129,7 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
     <div class="wrap" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 40px">
       <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
         <h2 id="member" class="h2-sec">{c.membership.title}</h2>
-        <p style="margin: 0; color: #595959">{c.membership.lead}</p>
+        <p style="margin: 0; color: #595959" set:html={mdInline(c.membership.lead)} />
       </div>
       <div class="tiers">
         {c.membership.tiers.map((t) => (
