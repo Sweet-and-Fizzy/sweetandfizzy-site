@@ -37,12 +37,12 @@ const isExternal = (href: string) => /^https?:/.test(href);
 
   {page.sections.map((s, si) => {
     const id = s.id ?? slugify(s.title);
-    const dark = s.kind === 'list' && s.dark;
+    const dark = (s.kind === 'list' && s.dark) || s.kind === 'quote';
     const bg = dark ? '#111111' : si % 2 ? '#f4f4f4' : '#ffffff';
     return (
       <section id={id} aria-labelledby={`${id}-h`} class:list={['flex-sec', { dark }]} style={`background: ${bg}; --accent: ${accent}`}>
         <div class="wrap" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 40px">
-          <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+          <div class:list={{ 'sr-only': s.kind === 'quote' }} style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
             <h2 id={`${id}-h`} class="h2-sec">{s.title}</h2>
             {'lead' in s && s.lead && <p class="flex-lead" style="margin: 0">{s.lead}</p>}
           </div>
@@ -92,6 +92,8 @@ const isExternal = (href: string) => /^https?:/.test(href);
             </ol>
           )}
 
+          {s.kind === 'quote' && <blockquote class="flex-pull rv">{s.text}</blockquote>}
+
           {s.kind === 'prose' && <div class="prose-md" style="max-width: 760px" set:html={md(s.body)} />}
 
           {s.kind === 'logos' && s.body && <div class="prose-md" style="max-width: 760px" set:html={md(s.body)} />}
@@ -108,6 +110,8 @@ const isExternal = (href: string) => /^https?:/.test(href);
 
 <style is:global>
   .flex-lead{color:#595959}
+  .flex-pull{margin:0;max-width:960px;border-left:8px solid var(--accent);padding:4px 0 4px 32px;color:#ffffff;font-family:'DM Sans Variable',sans-serif;font-weight:700;font-size:40px;line-height:1.2;text-wrap:pretty}
+  @media (max-width:800px){.flex-pull{font-size:28px}}
   .flex-sec.dark{color:#ffffff}
   .flex-sec.dark .flex-lead{color:#c8c8c8}
   .flex-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:40px 32px}

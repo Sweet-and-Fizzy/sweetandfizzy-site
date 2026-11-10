@@ -115,6 +115,7 @@ const flexSection = (image: any) => z.discriminatedUnion('kind', [
   obj({ kind: z.literal('rows'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(flexItem(image)) }),
   obj({ kind: z.literal('list'), id: z.string().optional(), dark: z.boolean().optional(), title: z.string(), lead: z.string().optional(), items: z.array(flexItem(image)) }),
   obj({ kind: z.literal('steps'), id: z.string().optional(), title: z.string(), lead: z.string().optional(), items: z.array(flexItem(image)) }),
+  obj({ kind: z.literal('quote'), id: z.string().optional(), title: z.string(), text: z.string() }),
   obj({ kind: z.literal('prose'), id: z.string().optional(), title: z.string(), body: z.string() }),
   obj({ kind: z.literal('paper'), id: z.string().optional(), title: z.string(), paper }),
   obj({ kind: z.literal('logos'), id: z.string().optional(), title: z.string(), body: z.string().optional(),
