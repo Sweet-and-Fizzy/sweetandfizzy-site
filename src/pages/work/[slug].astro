@@ -135,8 +135,13 @@ const description = d.description || `${d.name}: ${d.title}. A Sweet & Fizzy Dig
           {d.links && (
             <div style="display: flex; flex-direction: column; gap: 16px">
               <p class="eyebrow">{d.links.title}</p>
-              <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px">
-                {d.links.items.map((l) => <li><a class="lk tgt" href={l.href}>{l.label}</a> <span style="color: #595959">· {l.note}</span></li>)}
+              <ul class="chk-list">
+                {d.links.items.map((l) => (
+                  <li>
+                    <a class="go-lk" href={l.href}><span class="circ" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></span><span class="x">{l.label}<span class="sr-only"> (external site)</span></span></a>
+                    <span class="chk-note">{l.note}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           )}
