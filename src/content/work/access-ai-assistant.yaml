@@ -13,8 +13,8 @@ link:
   href: https://github.com/connectci-platform/access-agent
   label: See the code on GitHub
 heroImage:
-  src: ../../assets/work/access-ai-assistant-14e51022.png
-  alt: The ACCESS arrow mark
+  src: ../../assets/work/access-ai-launcher.svg
+  alt: "The ACCESS AI Assistant launcher: a speech bubble that says Ask me about ACCESS! next to the round button with the ACCESS arrow"
 did:
   - AI agents
   - MCP servers
