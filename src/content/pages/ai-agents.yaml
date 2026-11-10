@@ -14,7 +14,7 @@ sections:
     title: What we build
     items:
       - { title: Support agents, text: "Assistants that answer from documentation and live system data, and open a ticket for staff when a question needs a person. The ACCESS AI Assistant works this way." }
-      - { title: MCP servers for your data, text: "MCP (Model Context Protocol) is an open protocol for connecting AI tools to outside data. We wrap existing APIs so assistants can read allocations, system status, events or software listings. We run 11 for ACCESS." }
+      - { title: MCP servers for your data, text: "MCP (Model Context Protocol) is an open protocol for connecting AI tools to outside data. We wrap existing APIs so assistants can read allocations, system status, events or software listings." }
       - { title: Agent access to HPC, text: "An Open OnDemand app that lets an assistant submit jobs, read output and manage files, running as the signed-in user under your site's existing policies." }
       - { title: Review assistants, text: "Tools that check submissions against a rubric and draft feedback for a reviewer to approve. We use one for Open OnDemand Appverse submissions." }
   - kind: rows
