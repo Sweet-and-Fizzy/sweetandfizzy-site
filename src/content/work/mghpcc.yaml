@@ -2,7 +2,7 @@
 name: MGHPCC
 title: Telling the story of a research computing center and the work it makes possible
 card:
-  line: "The mghpcc.org website, plus SC booths, a kiosk and a showcase of research projects."
+  line: "A website and SC booth that show the breadth of research happening at the MGHPCC."
   image:
     src: ../../assets/home/mghpcc.jpg
     alt: "An MGHPCC booth panel and research kiosk designed for SC"
