@@ -85,7 +85,7 @@ const connectci = defineCollection({
     help: titled(obj({ title: z.string(), text: z.string() })),
     budget: obj({ title: z.string(), lead: z.string(), steps: z.array(obj({ n: z.string(), title: z.string(), text: z.string() })) }),
     owners: obj({ title: z.string(), body: z.string() }),
-    membership: obj({ title: z.string(), lead: z.string(), tiers: z.array(obj({ name: z.string(), who: z.string(), pre: z.string().optional(), price: z.string(), per: z.string(), items: z.array(z.string()), cta: link })) }),
+    membership: obj({ hidden: z.boolean().optional(), title: z.string(), lead: z.string(), tiers: z.array(obj({ name: z.string(), who: z.string(), pre: z.string().optional(), price: z.string(), per: z.string(), items: z.array(z.string()), cta: link })) }),
     faq: titled(obj({ q: z.string(), a: z.string() })),
     papers: titled(paper),
     supporters: obj({ title: z.string(), items: z.array(obj({ name: z.string(), logo: z.string().optional(), award: z.string().optional() })) }),

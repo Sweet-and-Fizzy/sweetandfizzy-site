@@ -59,6 +59,8 @@ owners:
 
     The platform code is open source under GPL-2.0, on GitHub at [connectci-platform/portal](https://github.com/connectci-platform/portal), so it does not depend on any one funder, or on us. Each community owns its content and can export it; each member owns their own account. We are forming a roadmap group of the programs that fund the platform, meeting twice a year to set priorities together.
 membership:
+  # true hides the heading, intro and price tiers; the FAQ below them still shows
+  hidden: true
   title: Membership
   lead: "Membership includes hosting, security patches and Drupal version upgrades.<br>**Onboarding starts at $8,000.** Development for your program is scoped separately and can be written into your proposal."
   tiers:

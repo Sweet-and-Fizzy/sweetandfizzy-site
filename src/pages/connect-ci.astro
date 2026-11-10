@@ -11,6 +11,7 @@ import { md, mdInline } from '../lib/md';
 import connectCiMark from '../assets/logos/connect-ci-mark-light.svg';
 
 const c = (await getEntry('connectci', 'connect-ci'))!.data;
+const FaqH = c.membership.hidden ? 'h2' : 'h3';
 ---
 <Base title={c.title} description={c.description}>
   <section class="page-hero" aria-labelledby="cc-title">
@@ -125,8 +126,9 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
     </div>
   </section>
 
-  <section id="membership" aria-labelledby="member" style="background: #ffffff">
+  <section id="membership" aria-labelledby={c.membership.hidden ? 'faq-h' : 'member'} style="background: #ffffff">
     <div class="wrap" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 40px">
+      {!c.membership.hidden && <>
       <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
         <h2 id="member" class="h2-sec">{c.membership.title}</h2>
         <p style="margin: 0; color: #595959" set:html={mdInline(c.membership.lead)} />
@@ -144,8 +146,9 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
           </article>
         ))}
       </div>
-      <div class="faq" style="display: flex; flex-direction: column; gap: 12px; padding-top: 24px">
-        <h3 style="margin: 0 0 12px; font-weight: 700; line-height: 1.2; font-size: clamp(28px, 4vw, 36px)">{c.faq.title}</h3>
+      </>}
+      <div class="faq" style={`display: flex; flex-direction: column; gap: 12px; padding-top: ${c.membership.hidden ? 0 : 24}px`}>
+        <FaqH id="faq-h" style="margin: 0 0 12px; font-weight: 700; line-height: 1.2; font-size: clamp(28px, 4vw, 36px)">{c.faq.title}</FaqH>
         {c.faq.items.map((q) => (
           <details>
             <summary>{q.q}<span class="pm" aria-hidden="true"></span></summary>
