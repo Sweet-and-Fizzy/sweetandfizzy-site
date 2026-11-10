@@ -24,12 +24,18 @@ sections:
       - { title: ACCESS MCP servers, text: "Public MCP servers for the ACCESS program, hosted at mcp.access-ci.org. Anyone can add one to Claude and ask about ACCESS resources in plain language.", link: { label: See the setup guide, href: "https://mcp.access-ci.org/docs/getting-started" }, image: { src: ../../assets/work/access-mcp-exchange.png, alt: "Illustration: a researcher in Claude asks what GPU programming workshops are coming up, and Claude, using the ACCESS MCP servers, names Modern GPU Programming on November 10, online, with the registration link. Labels: live ACCESS data, any MCP client, public." } }
       - { title: OOD API for Open OnDemand, text: "An Open OnDemand app that lets researchers and their AI assistants submit jobs, manage files and check on their cluster without a terminal. Every request runs as the signed-in user, inside the permission model Open OnDemand already has. Site operators set local policy in a plain text file that every AI client reads before acting. It is early software.", link: { label: See the OOD API code, href: "https://github.com/Sweet-and-Fizzy/ood-api" }, image: { src: ../../assets/work/ood-api-exchange.png, alt: "Illustration: a researcher asks an AI assistant to rerun an analysis on the GPU queue with 4 hours, and it replies that it submitted job 48213 as jsmith to the gpu partition. Labels underneath: your permissions, follows site policy, logged." } }
       - { title: Appverse review assistant, text: "A Claude Code plugin that reviews app submissions to the Open OnDemand Appverse for structure, security, quality and maintenance. It produces an evidence-backed report and a draft reply, and a human reviewer decides.", link: { label: See the review assistant code, href: "https://github.com/Sweet-and-Fizzy/appverse-review" }, image: { src: ../../assets/work/appverse-review-page.jpg, alt: "An Appverse review page for the PyMOL app, recommending Accept, with results for structure, security, portability, documentation and code quality" } }
-  - kind: quote
+  - kind: list
+    dark: true
     title: Tested, safe and in your control
-    text: "Every agent is tested on your questions, works only with each user's own permissions, and asks a person before it changes anything that matters."
-  - kind: prose
+    items:
+      - { title: "Tested against your questions.", text: "Graded fact by fact on questions your staff write, before launch and every release." }
+      - { title: "The user's own permissions.", text: "Agents can only reach what the signed-in person can." }
+      - { title: "Guardrails on anything risky.", text: "Only the access a task needs, sensitive files blocked, every action logged, and a warning before anything permanent." }
+      - { title: "People make the call.", text: "Agents explain what they will do and wait for a person to confirm." }
+      - { title: "Open, with your choice of model.", text: "The code is public, and agents run on open or commercial models." }
+  - kind: quote
     title: Why not build it yourself?
-    body: "A first agent is quick to build with today's AI tools. Making it reliable is the slow part: testing answers against questions experts write, keeping up as models and systems change, and running it every day. We have done that work for ACCESS, so your program starts from an agent researchers already use, run by a team that has operated research computing platforms since 2017."
+    text: "A first agent is quick to build. Making it reliable is the slow part, and we have already done that work for ACCESS."
   - kind: steps
     title: How an engagement runs
     lead: "Most programs write the work into a proposal, or bring us on as a contractor once they are funded. If you have budget now, a one or three week discovery sprint can map the work first."
