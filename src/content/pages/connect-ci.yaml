@@ -39,7 +39,7 @@ features:
     - { icon: Single sign-on, title: Single sign-on, text: "CILogon across every community, so members log in with their own institution's account." }
 help:
   title: Help running the community, too
-  lead: "Platforms succeed when coordinators feel confident and members stay engaged. We help with both."
+  lead: "Platforms succeed when content gets updated, coordinators feel confident, and members stay engaged. We can help."
   items:
     - { title: Coordinator training, text: "We get affinity group coordinators comfortable running their groups on the platform." }
     - { title: Moderation help, text: "Clear policies, the right tools and a hand when something needs attention." }
