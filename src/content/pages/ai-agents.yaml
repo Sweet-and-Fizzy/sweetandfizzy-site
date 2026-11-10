@@ -35,7 +35,7 @@ sections:
       - { title: "Open, with your choice of model.", text: "The code is public, and agents run on open or commercial models." }
   - kind: quote
     title: Why not build it yourself?
-    text: "We build on our work for NSF ACCESS, the national cyberinfrastructure program, to quickly set up the backend that informs your AI assistant."
+    text: "We can build on our work for NSF ACCESS, the national cyberinfrastructure program, to quickly set up the backend that informs your AI assistant."
   - kind: steps
     title: How an engagement runs
     lead: "Most programs write the work into a proposal, or bring us on as a contractor once they are funded. If you have budget now, a one or three week discovery sprint can map the work first."
