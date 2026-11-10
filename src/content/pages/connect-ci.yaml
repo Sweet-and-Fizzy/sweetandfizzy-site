@@ -64,6 +64,7 @@ membership:
   tiers:
     - name: Community
       who: User groups, cyberteams and affinity networks
+      pre: Starting at
       price: "$5,000"
       per: a year
       items: [Your site on the shared platform, "Your domain, name and theme", "Directory, events, groups, knowledge base and single sign-on", "Hosting, security and upgrades"]

@@ -138,7 +138,7 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
               <h3 class="h3-card" style="text-transform: uppercase; letter-spacing: 1px">{t.name}</h3>
               <span class="tier-who">{t.who}</span>
             </div>
-            <p class="tier-price"><span class="amt">{t.price}</span> <span class="per">{t.per}</span></p>
+            <p class="tier-price">{t.pre && <span class="per">{t.pre} </span>}<span class="amt">{t.price}</span> <span class="per">{t.per}</span></p>
             <ul class="tier-list">{t.items.map((i) => <li>{i}</li>)}</ul>
             <a class="ul-lk tgt" href={t.cta.href}>{t.cta.label} →</a>
           </article>
