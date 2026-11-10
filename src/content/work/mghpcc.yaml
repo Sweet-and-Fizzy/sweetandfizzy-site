@@ -106,9 +106,9 @@ today:
 results:
   - n: "6"
     label: "SC conference booths, SC20 to SC26"
-  - n: "284"
-    label: research projects in the mghpcc.org catalog
-  - n: "17"
+  - n: "275+"
+    label: research projects over the years
+  - n: "~17"
     label: colleges and universities represented
 prev:
   href: /#research
