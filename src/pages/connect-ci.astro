@@ -80,8 +80,21 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
         ))}
       </div>
       <div class="help-panel rv">
-        <h3 class="h3-card" style="color: #ffffff">{c.help.title}</h3>
-        <p style="margin: 0; color: #c8c8c8; max-width: 720px">{c.help.lead}</p>
+        <div class="help-top">
+          <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+            <h3 class="h3-card" style="color: #ffffff">{c.help.title}</h3>
+            <p style="margin: 0; color: #c8c8c8; max-width: 720px">{c.help.lead}</p>
+          </div>
+          <pre class="help-art" aria-hidden="true">{`.-----------------.
+|                 |
+|    `}<span class="d b">*</span>{`   `}<span class="d y">*</span>{`   `}<span class="d r">*</span>{`    |
+|                 |
+'-------. .-------'
+        |/
+    `}<span class="b">o</span>{`   `}<span class="y">\o/</span>{`   `}<span class="r">o</span>{`
+   `}<span class="b">/|\</span>{`   `}<span class="y">|</span>{`   `}<span class="r">/|\</span>{`
+   `}<span class="b">/ \</span>{`  `}<span class="y">/ \</span>{`  `}<span class="r">/ \</span>{``}</pre>
+        </div>
         <ul class="helprow">
           {c.help.items.map((h) => <li><h4 style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1.2">{h.title}</h4><span style="color: #c8c8c8">{h.text}</span></li>)}
         </ul>
@@ -175,6 +188,16 @@ const c = (await getEntry('connectci', 'connect-ci'))!.data;
   .logo-lk:hover,.logo-lk:focus-visible{outline-color:#fcee21}
   @media (prefers-reduced-motion:reduce){.logo-lk{transition:none}}
   .help-panel{background:#111111;color:#ffffff;padding:40px;display:flex;flex-direction:column;gap:20px}
+  .help-top{display:flex;align-items:center;justify-content:space-between;gap:40px}
+  .help-art{display:block;flex:none;margin:0;color:#ffffff;font:700 19px/1.15 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre}
+  .help-art .b{color:#5abdff}.help-art .y{color:#fcee21}.help-art .r{color:#ef4326}
+  @media (prefers-reduced-motion:no-preference){
+    .help-panel.in .help-art .d{animation:ha-pulse 1.2s ease-in-out .6s 3}
+    .help-panel.in .help-art .d.y{animation-delay:.8s}
+    .help-panel.in .help-art .d.r{animation-delay:1s}
+  }
+  @keyframes ha-pulse{0%,60%,100%{opacity:1}30%{opacity:.2}}
+  @media (max-width:760px){.help-top{flex-direction:column;align-items:flex-start;gap:20px}.help-art{font-size:15px}}
   .helprow{margin:8px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
   .helprow li{display:flex;flex-direction:column;gap:8px;padding-left:24px;border-left:1px solid #3a3a3a}
   .helprow li:first-child{border-left:0;padding-left:0}
