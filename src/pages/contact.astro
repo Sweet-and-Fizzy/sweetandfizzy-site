@@ -6,9 +6,33 @@ import { site } from '../data/site';
 ---
 <Base title="Contact" description="Tell Sweet & Fizzy Digital about your research computing program, proposal, product or website. Lissie or Andrew reply within two days.">
   <section class="page-hero" aria-labelledby="ct-title">
-    <div class="wrap hero-in" style="padding-top: 72px; padding-bottom: 64px; display: flex; flex-direction: column; gap: 16px">
-      <h1 id="ct-title" class="h1-xl" style="max-width: 900px">{contact.title}</h1>
-      <p style="margin: 0; color: #c8c8c8; max-width: 760px; font-size: clamp(19px, 2vw, 22px)">{contact.body}</p>
+    <div class="wrap hero-in ct-top" style="padding-top: 72px; padding-bottom: 64px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 900px; min-width: 0">
+        <h1 id="ct-title" class="h1-xl">{contact.title}</h1>
+        <p style="margin: 0; color: #c8c8c8; max-width: 760px; font-size: clamp(19px, 2vw, 22px)">{contact.body}</p>
+      </div>
+      <svg class="ct-icon" aria-hidden="true" width="300" height="300" viewBox="0 0 300 300">
+        <!-- An open envelope, drawn like the agents and publications heroes: flat shapes, solid offset shadow.
+             The letter slides up, then three fizz bubbles pop in. Plays once, under 2s; off with reduced motion. -->
+        <path fill="#fcee21" d="M44 164h220v120H44z"></path>
+        <path fill="#d6d6d6" d="M30 150h220v120H30z"></path>
+        <path fill="#d6d6d6" d="M30 150L140 86l110 64z"></path>
+        <g class="ct-letter">
+          <path fill="#ffffff" d="M54 64h172v190H54z"></path>
+          <g fill="#111111">
+            <rect x="76" y="90" width="120" height="12"></rect>
+            <rect x="76" y="114" width="96" height="12"></rect>
+            <rect x="76" y="138" width="60" height="12"></rect>
+          </g>
+        </g>
+        <path fill="#ffffff" d="M30 186l110 58 110-58v84H30z"></path>
+        <path fill="none" stroke="#c8c8c8" stroke-width="4" d="M30 186l110 58 110-58"></path>
+        <g class="ct-fizz">
+          <circle cx="250" cy="58" r="16" fill="#5abdff"></circle>
+          <circle cx="276" cy="100" r="10" fill="#ef4326"></circle>
+          <circle cx="244" cy="20" r="8" fill="#fcee21"></circle>
+        </g>
+      </svg>
     </div>
   </section>
   <section aria-label="Contact form" style="background: #ffffff">
@@ -27,6 +51,18 @@ import { site } from '../data/site';
   </section>
 </Base>
 <style is:global>
+  .ct-top{display:flex;align-items:center;justify-content:space-between;gap:64px}
+  .ct-icon{display:block;flex:none}
+  @media (prefers-reduced-motion:no-preference){
+    .ct-letter{animation:ct-rise .6s cubic-bezier(.2,.8,.3,1) .2s both}
+    .ct-fizz circle{transform-box:fill-box;transform-origin:center;animation:ct-pop .45s cubic-bezier(.3,1.6,.6,1) both}
+    .ct-fizz circle:nth-child(1){animation-delay:.8s}
+    .ct-fizz circle:nth-child(2){animation-delay:1s}
+    .ct-fizz circle:nth-child(3){animation-delay:1.2s}
+  }
+  @keyframes ct-rise{from{transform:translateY(80px)}to{transform:translateY(0)}}
+  @keyframes ct-pop{from{transform:translateY(24px) scale(0)}to{transform:translateY(0) scale(1)}}
+  @media (max-width:760px){.ct-top{flex-direction:column;align-items:flex-start}.ct-icon{width:150px;height:150px}}
   .ct-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:48px 64px;align-items:start}
   .ct-side{display:flex;flex-direction:column;gap:20px;padding:28px;border:4px solid #5abdff}
   @media (max-width:900px){.ct-grid{grid-template-columns:1fr}}
