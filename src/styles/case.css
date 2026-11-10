@@ -103,9 +103,9 @@ a.fig-link:focus-visible{outline:3px solid #111111;outline-offset:3px}
 .chk-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:20px}
 .chk-list li{display:flex;flex-direction:column;gap:8px}
 .chk-lk{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;font-size:20px;font-weight:700;color:#111111;text-decoration:none;overflow-wrap:anywhere}
-.chk-lk svg{flex:none;padding:6px;box-sizing:content-box;background:var(--accent);color:#111111}
+.chk-lk svg{flex:none;padding:8px;box-sizing:content-box;border-radius:50%;background:var(--accent);color:#111111}
 .chk-lk .x{background:linear-gradient(var(--accent),var(--accent)) no-repeat 0 100%/0 4px;padding-bottom:4px;transition:background-size .45s var(--ease-out)}
 .chk-lk:hover,.chk-lk:focus-visible{color:#111111}
 .chk-lk:hover .x,.chk-lk:focus-visible .x{background-size:100% 4px}
 @media (prefers-reduced-motion:reduce){.chk-lk .x{transition:none}}
-.chk-note{padding-left:50px;margin-top:-6px;color:#595959}
+.chk-note{padding-left:54px;margin-top:-6px;color:#595959}
