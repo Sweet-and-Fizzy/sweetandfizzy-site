@@ -38,12 +38,12 @@ sections:
     text: "We can build on our work for NSF ACCESS, the national cyberinfrastructure program, to quickly set up the backend that informs your AI assistant."
   - kind: steps
     title: How an engagement runs
-    lead: "Most programs write the work into a proposal, or bring us on as a contractor once they are funded. If you have budget now, a one or three week discovery sprint can map the work first."
+    lead: "Have budget now? A one or three week discovery sprint can map the work first."
     items:
       - { title: Plan it into your award, text: "For a new proposal we provide budget text and a statement of work. Funded programs bring us on as a contractor." }
       - { title: Build with your team, text: "We connect your documentation and systems, and release early to a pilot group of your users." }
-      - { title: Evaluate and report, text: "Your staff write the test questions, and the results become numbers for your annual reports." }
-      - { title: Run it for the award, text: "Hosting, updates and tuning each year. The code is open, so the work outlives the award." }
+      - { title: Evaluate and report, text: "Test results become numbers for your annual reports." }
+      - { title: Run it for the award, text: "Hosting, updates and tuning, every year." }
   - kind: paper
     id: paper
     title: Paper
