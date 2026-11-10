@@ -64,7 +64,7 @@ chapters:
         wide: true
         image:
           src: ../../assets/work/access-ai-architecture.png
-          alt: "Architecture diagram. A user signs in with CILogon; a verified identity token passes to the agent, which uses an open model hosted at the University of Kentucky, retrieval over curated documentation, read tools for status, hardware, software, events and allocations, and write tools for tickets, events and announcements gated by the acting user's identity. Everything sits inside an institutional boundary, with only metadata telemetry leaving it."
+          alt: "Architecture diagram. A user signs in with CILogon in the browser or chat, and a verified identity token (JWT) passes to the agent: a single tool-calling loop that manages context and verifies identity. The agent uses an open model, Qwen on the University of Kentucky's vLLM; retrieval over a curated documentation corpus; read tools for status, hardware, software, events, allocations and XDMoD; and write tools for tickets, events and announcements, gated by the acting user's identity token. Sessions, evaluations and reviews go to data stores. Everything sits inside an institutional boundary, and only metadata telemetry leaves it. Verified identity end to end."
   - level: 3
     title: 11 MCP servers
     body: |-
