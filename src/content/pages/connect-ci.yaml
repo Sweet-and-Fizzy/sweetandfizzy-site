@@ -63,8 +63,7 @@ membership:
   lead: "Membership includes hosting, security patches and Drupal version upgrades.<br>**Onboarding starts at $8,000.** Development for your program is scoped separately and can be written into your proposal."
   tiers:
     - name: Community
-      who: User groups, cyberteams and affinity networks
-      pre: Starting at
+      who: User groups and cyberteams
       price: "$5,000"
       per: a year
       items: [Your site on the shared platform, "Your domain, name and theme", "Directory, events, groups, knowledge base and single sign-on", "Hosting, security and upgrades"]
