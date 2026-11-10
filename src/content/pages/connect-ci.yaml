@@ -10,8 +10,8 @@ hero:
   secondary: { label: Read the papers, href: "#papers" }
 stats:
   - { n: "13", label: communities on one platform }
-  - { n: "74,000", label: members with one shared profile }
-  - { n: "7", label: NSF awards since 2017 }
+  - { n: "74,000", label: "members, each with one profile across communities" }
+  - { n: "6", label: NSF-funded projects since 2020 }
   - { n: "628", label: events hosted in the last year }
 communities:
   title: Communities on Connect.CI
