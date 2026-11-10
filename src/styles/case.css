@@ -71,8 +71,8 @@ h3.chap,.story h3.chap{font-family:'DM Sans Variable',sans-serif;font-size:36px;
 .paper-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:48px;margin-top:8px}
 .paper{border:2px solid #5abdff;padding:32px;display:flex;flex-direction:column;gap:10px}
 .eyebrow{margin:0;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#595959}
-.pn{border-top:1px solid #c8c8c8;padding-top:16px;margin-top:16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-weight:700}
-.pn a{text-decoration:none}
+nav.pn{border-top:1px solid #c8c8c8;padding-top:16px;margin-top:16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-weight:700}
+nav.pn a{text-decoration:none}
 .tgt{display:inline-flex;align-items:center;min-height:44px}
 /* Links inside story copy: underlined so they never rely on color alone */
 .story a{font-weight:700;color:#111111;text-decoration:underline;text-decoration-color:#5abdff;text-decoration-thickness:3px;text-underline-offset:5px}
