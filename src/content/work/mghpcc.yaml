@@ -33,9 +33,9 @@ goal:
   icon: "?"
   title: The goal
   body: |-
-    **Show what a shared research computing center makes possible.** The MGHPCC in Holyoke, Massachusetts is a data center run by a consortium of universities, including Boston University, Harvard, MIT, Northeastern, the University of Massachusetts and Yale. It was the first university research data center to earn LEED Platinum.
+    **Show what a shared research computing center makes possible.** For more than a decade, the MGHPCC in Holyoke, Massachusetts has served researchers, educators and students across New England. It's a partnership of universities, including Boston University, Harvard, MIT, Northeastern, the University of Massachusetts and Yale, with the Commonwealth of Massachusetts and the city of Holyoke. It was the first university research data center to earn LEED Platinum.
 
-    Researchers from the member universities and many other organizations run their work there, from climate models to medicine. The center needed to explain what it is in plain terms, showcase the research those institutions do on its systems, and introduce the community partners it works with. That story had to work on mghpcc.org all year, and at SC, the largest supercomputing conference in the world.
+    It exists for research and education, not commercial services. Researchers from member universities and partner organizations use it to study health, clean energy, public safety, the environment and the universe. The center needed to explain what it is in plain terms, showcase the research those institutions do on its systems, and introduce the community partners it works with. That story had to work on mghpcc.org all year, and at SC, the largest supercomputing conference in the world.
   pull: The MGHPCC is the building. Its members and partners are the story.
 chapters:
   - level: 2
@@ -52,7 +52,7 @@ chapters:
     body: |-
       **Everything the center does, in one place.** We design and build mghpcc.org on WordPress, so researchers, partners and the public can see what runs in Holyoke and who it serves:
 
-      - A catalog of research projects, from climate to medicine
+      - A catalog of research projects, from health to clean energy
       - Collaborative projects with regional and national networks
       - Outreach and education, internships and scholarships
       - News, events and monthly publications
@@ -107,7 +107,7 @@ results:
   - n: "6"
     label: "SC conference booths, SC20 to SC26"
   - n: "275+"
-    label: research projects over the years
+    label: research projects featured over the years
   - n: "~17"
     label: colleges and universities represented
 prev:
