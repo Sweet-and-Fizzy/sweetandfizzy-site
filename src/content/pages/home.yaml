@@ -18,7 +18,7 @@ areas:
     facts:
       - "74,000 researchers on our platform"
       - "13 communities share Connect.CI"
-      - "7 NSF awards since 2017"
+      - "6 NSF-funded projects since 2020"
     papersLink: { label: 5 papers published, href: /publications/ }
     offers:
       - title: AI agents and integrations
@@ -80,7 +80,7 @@ areas:
     workTitle: Website and branding work
     work:
       - { name: Emily Dickinson Virtual Tour, line: "An interactive tour of both Dickinson houses, the Homestead and the Evergreens, room by room.", image: ../../assets/home/dickinson.jpg, href: "https://www.emilydickinsonmuseum.org/homestead-parlors/" }
-      - { name: PDMcBride, line: An artist’s portfolio with an online shop., image: ../../assets/home/pdmcbride.jpg }
+      - { name: PDMcBride, line: "A portfolio and online shop for a sculptor who finds the stories in everyday objects and builds new ones from them.", image: ../../assets/home/pdmcbride.jpg }
     more:
       - { name: Molly B. Burnham, line: "A playful site for a children’s book author, built around the books", image: ../../assets/home/burnham.jpg, href: "https://mollybburnham.com" }
       - { name: AroundHere.Live, line: "Live music listings for the Pioneer Valley, with alerts for favorite artists and venues", image: ../../assets/home/aroundhere.jpg, href: "https://aroundhere.live" }

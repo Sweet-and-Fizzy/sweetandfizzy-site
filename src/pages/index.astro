@@ -83,7 +83,7 @@ const d = (i: number) => `${(i * 0.1).toFixed(1)}s`;
                   <>
                     <span style="display: flex; flex-direction: column">
                       <span class="shot">{w.image ? <Pic src={w.image} alt="" sizes="(max-width: 900px) 100vw, 580px" widths={[580, 1160]} /> : <span class="ph-tile">[SCREENSHOT]</span>}</span>
-                      <span class="name"><span class="tile-name">{w.name}{w.href?.startsWith('http') && <span class="sr-only"> (external site)</span>}</span>{w.href && <span class="go-lk"><span class="circ" aria-hidden="true"><Icon name="arrow-right" stroke={1.5} /></span></span>}</span>
+                      <span class="name"><span class="tile-name">{w.name}{w.href?.startsWith('http') && <span class="sr-only"> (external site)</span>}</span>{w.href && <span class="go-lk" style={`--accent: ${c}`}><span class="circ" aria-hidden="true"><Icon name="arrow-right" stroke={1.5} /></span></span>}</span>
                     </span>
                     <span style="color: #595959">{w.line}</span>
                   </>
