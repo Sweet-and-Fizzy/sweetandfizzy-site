@@ -22,7 +22,7 @@ did:
   - Web development
 facts:
   - k: Client
-    v: Massachusetts Green High Performance Computing Center
+    v: MGHPCC
   - k: Platform
     v: WordPress
   - k: Years
