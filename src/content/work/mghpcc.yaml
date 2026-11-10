@@ -16,12 +16,12 @@ heroImage:
   src: ../../assets/work/mghpcc-logo.svg
   alt: MGHPCC, Massachusetts Green High Performance Computing Center
 did:
-  - Design
-  - Booth printwork
-  - Interactive kiosks
-  - WordPress
-  - Web development
   - Analytics
+  - Booth graphics
+  - Design
+  - Interactive kiosks
+  - Web development
+  - WordPress
 facts:
   - k: Client
     v: Massachusetts Green High Performance Computing Center
