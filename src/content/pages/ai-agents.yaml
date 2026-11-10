@@ -26,13 +26,13 @@ sections:
       - { title: Appverse review assistant, text: "A Claude Code plugin that reviews app submissions to the Open OnDemand Appverse for structure, security, quality and maintenance. It produces an evidence-backed report and a draft reply, and a human reviewer decides.", link: { label: See the review assistant code, href: "https://github.com/Sweet-and-Fizzy/appverse-review" }, image: { src: ../../assets/work/appverse-review-page.jpg, alt: "An Appverse review page for the PyMOL app, recommending Accept, with results for structure, security, portability, documentation and code quality" } }
   - kind: list
     dark: true
-    title: How we keep it trustworthy
+    title: Tested, safe and in your control
     items:
-      - { title: "Tested against your questions.", text: "Before an agent ships, it is graded on questions your staff write, fact by fact, and checked again before each release." }
-      - { title: "The user's own permissions.", text: "Agents work with the signed-in person's own permissions, so they cannot reach anything that person cannot." }
-      - { title: "Guardrails on anything risky.", text: "Access limited to what the task needs, sensitive files blocked, every action logged, and a clear warning before anything that cannot be undone." }
-      - { title: "People make the call.", text: "Before an agent changes something that matters, it explains what it will do and waits for a person to confirm. Reviews and recommendations go to a person to decide." }
-      - { title: "Open, with your choice of model.", text: "The code is public, so your program does not depend on us, and agents can run on open models hosted by a partner institution or on commercial models." }
+      - { title: "Tested against your questions.", text: "Graded fact by fact on questions your staff write, before launch and every release." }
+      - { title: "The user's own permissions.", text: "Agents can only reach what the signed-in person can." }
+      - { title: "Guardrails on anything risky.", text: "Only the access a task needs, sensitive files blocked, every action logged, and a warning before anything permanent." }
+      - { title: "People make the call.", text: "Agents explain what they will do and wait for a person to confirm." }
+      - { title: "Open, with your choice of model.", text: "The code is public, and agents run on open or commercial models." }
   - kind: prose
     title: Why not build it yourself?
     body: "A first agent is quick to build with today's AI tools. Making it reliable is the slow part: testing answers against questions experts write, keeping up as models and systems change, and running it every day. We have done that work for ACCESS, so your program starts from an agent researchers already use, run by a team that has operated research computing platforms since 2017."
