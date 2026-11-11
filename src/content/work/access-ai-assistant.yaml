@@ -97,7 +97,7 @@ chapters:
   - level: 3
     title: How we test it
     body: |-
-      **Tested against questions experts write.** An answer can sound right and still be wrong. A researcher asked whether a system would be up next week. An assistant that only read the documentation said it was fully operational, but maintenance had just been postponed. Our agent checked the live status feed and got it right.
+      **Tested on real questions, checked by experts.** An answer can sound right and still be wrong. A researcher asked whether a system would be up next week. An assistant that only read the documentation said it was fully operational, but maintenance had just been postponed. Our agent checked the live status feed and got it right.
 
       We grade every answer on the facts it contains, and the process also catches errors in the documentation itself, which go back to the team that owns the page. The full method and results are in the paper below.
     figures:
