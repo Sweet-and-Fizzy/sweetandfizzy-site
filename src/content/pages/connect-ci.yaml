@@ -55,7 +55,7 @@ budget:
 owners:
   title: Who builds and runs Connect.CI
   body: |-
-    Sweet & Fizzy Digital develops and maintains Connect.CI. The work is paid for by the programs that rely on it: ACCESS through the University of Colorado Boulder, Open OnDemand through the Ohio Supercomputer Center by way of an MGHPCC subaward, Texas A&M, and smaller contributions from Campus Champions and the Pennsylvania Science DMZ. Seven NSF awards have supported the platform since 2017.
+    Sweet & Fizzy Digital develops and maintains Connect.CI. The work is paid for by the programs that rely on it: ACCESS through the University of Colorado Boulder, Open OnDemand through the Ohio Supercomputer Center by way of an MGHPCC subaward, Texas A&M, and smaller contributions from Campus Champions and the Pennsylvania Science DMZ. Six NSF awards have supported the platform since 2020.
 
     The platform code is open source under GPL-2.0, on GitHub at [connectci-platform/portal](https://github.com/connectci-platform/portal). It does not depend on any one funder, or on us. Each community owns its content and can export it; each member owns their own account. We are forming a roadmap group of the programs that fund the platform, meeting twice a year to set priorities together.
 membership:
