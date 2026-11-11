@@ -19,7 +19,7 @@ communities:
   link: { label: Visit connectci.org, href: "https://connectci.org/" }
   items:
     - { name: ACCESS Support, href: "https://support.access-ci.org/", logo: ../../assets/logos/access-support.png, text: "Tools, answers and community for researchers in the NSF ACCESS program: a knowledge base, events, video learning, people directory, affinity groups and MATCH services." }
-    - { name: Campus Champions, href: "https://campuschampions.cyberinfrastructure.org/", logo: ../../assets/logos/campus-champions.svg, text: "A national network of research computing facilitators, with mentorship and recognition built in." }
+    - { name: Campus Champions, href: "https://campuschampions.cyberinfrastructure.org/", logo: ../../assets/logos/campus-champions.svg, text: "The home of a national network of research computing facilitators: how to join, a community directory and mentorship." }
     - { name: CCMNet, href: "https://ccmnet.org/", logo: ../../assets/logos/ccmnet.jpg, text: "The Cyberinfrastructure Community-wide Mentorship Network, running structured mentor and mentee engagements." }
     - { name: Open OnDemand Community Hub, href: "https://ondemand.connectci.org/", logo: ../../assets/logos/ood-hub.svg, text: "The home of the Open OnDemand community, including the Appverse app catalog and contributor wall." }
     - { name: Pennsylvania Science DMZ, href: "https://pasciencedmz.connectci.org/", logo: ../../assets/logos/pa-science-dmz.png, text: "A regional site for science network engineers across Pennsylvania." }
