@@ -103,7 +103,7 @@ chapters:
 today:
   icon: "!"
   title: Where it is today
-  body: "**The portal has received excellent reviews from the community.** Tens of thousands of researchers use it every quarter, and help desk tickets are typically resolved within a few days. Logged-in researchers now see their own account details, so the portal can tell them plainly when an account is not ready yet."
+  body: "**The portal has received positive reviews from the community.** Tens of thousands of researchers use it every quarter, and help desk tickets are typically resolved within a few days. Logged-in researchers now see their own account details, so the portal can tell them plainly when an account is not ready yet."
   figures: []
 results:
   - n: "40,000+"
