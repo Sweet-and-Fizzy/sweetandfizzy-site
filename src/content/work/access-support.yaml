@@ -108,8 +108,8 @@ today:
 results:
   - n: "40,000+"
     label: researchers using the portal each quarter
-  - n: "22"
-    label: MATCH engagements run through the platform (June 2026)
+  - n: "1,486"
+    label: events and trainings created
   - n: "11,000"
     label: questions to the Q&A assistant, about 75% rated fully correct by reviewers
 prev:
