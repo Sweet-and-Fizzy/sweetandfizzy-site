@@ -47,7 +47,7 @@ help:
     - { title: Engagement reporting, text: "Membership, event and activity numbers ready for your annual reports." }
 budget:
   title: Your budget goes to features you need
-  lead: "Most of what a research community needs is already built. You fund what is unique to your program, and every improvement is shared."
+  lead: "Our platform already has most of what a community needs. You fund what is unique to your program, and every improvement is shared."
   steps:
     - { n: "01", title: Start with what's built, text: "Launch your site on the shared platform with your name, your look and the features you need." }
     - { n: "02", title: Build what is new, text: "Fund development for the part of your program nobody has built yet." }
