@@ -18,7 +18,7 @@ communities:
   lead: "Each community has its own site, name and look. Members keep one profile as they move between them."
   link: { label: Visit connectci.org, href: "https://connectci.org/" }
   items:
-    - { name: ACCESS Support, href: "https://support.access-ci.org/", logo: ../../assets/logos/access-support.png, text: "The support hub for the NSF ACCESS program, with its knowledge base, people directory, affinity groups and the MATCH services." }
+    - { name: ACCESS Support, href: "https://support.access-ci.org/", logo: ../../assets/logos/access-support.png, text: "Tools, answers and community for researchers in the NSF ACCESS program: a knowledge base, people directory, affinity groups and MATCH services." }
     - { name: Campus Champions, href: "https://campuschampions.cyberinfrastructure.org/", logo: ../../assets/logos/campus-champions.svg, text: "A national network of research computing facilitators, with mentorship and recognition built in." }
     - { name: CCMNet, href: "https://ccmnet.org/", logo: ../../assets/logos/ccmnet.jpg, text: "The Cyberinfrastructure Community-wide Mentorship Network, running structured mentor and mentee engagements." }
     - { name: Open OnDemand Community Hub, href: "https://ondemand.connectci.org/", logo: ../../assets/logos/ood-hub.svg, text: "The home of the Open OnDemand community, including the Appverse app catalog and contributor wall." }
