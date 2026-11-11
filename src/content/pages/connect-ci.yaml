@@ -49,7 +49,7 @@ budget:
   title: Your budget goes to features you need
   lead: "Most of what a research community needs is already built and running. You fund the part that is genuinely yours, and every improvement becomes shared infrastructure. That is a sustainability story reviewers recognize."
   steps:
-    - { n: "01", title: Join, text: "Launch your site on the shared platform with your name, your look and the features you need." }
+    - { n: "01", title: Start with what's built, text: "Launch your site on the shared platform with your name, your look and the features you need." }
     - { n: "02", title: Build what is new, text: "Fund development for the part of your program nobody has built yet." }
     - { n: "03", title: Everyone benefits, text: "What you build, others can use. What they build, you can use." }
 owners:
