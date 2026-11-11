@@ -57,7 +57,7 @@ const FaqH = c.membership.hidden ? 'h2' : 'h3';
                 {cm.logo ? <Pic src={cm.logo} alt={`${cm.name} logo`} sizes="240px" widths={[240, 480]} style="display: block; max-width: 100%; max-height: 80px; width: auto; height: auto; object-fit: contain" /> : <span class="logo-name">{cm.name}</span>}
               </div>
             )}
-            <h3 class="h3-card" style="margin-top: 8px">{cm.name}</h3>
+            <h3 class="sr-only">{cm.name}</h3>
             <p style="margin: 0; color: #595959">{cm.text}</p>
           </article>
         ))}
