@@ -34,7 +34,7 @@ goal:
   icon: "?"
   title: The goal
   body: |-
-    **A new program, and a lot of people with questions.** In 2022, ACCESS took over from XSEDE as the NSF program that gives researchers time on national computing systems. Many of the people it serves are scientists, economists and engineers with a research question and a deadline, not computing experts. They needed somewhere to start: how to get an allocation, which system to use, where to find software, and who to ask when they get stuck.
+    **A new program, and a lot of people with questions.** In 2022, ACCESS took over from XSEDE as the NSF program that gives researchers time on national computing systems. Many of the people it serves are scientists, economists and engineers with a research question and a deadline, not computing experts. They needed to know which system to use, where to get trainings, and a place to ask when they get stuck.
   pull: Asking for help with a supercomputer should feel as easy as asking a colleague.
 chapters:
   - level: 2
