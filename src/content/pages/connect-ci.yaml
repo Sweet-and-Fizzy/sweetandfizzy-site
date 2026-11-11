@@ -47,7 +47,7 @@ help:
     - { title: Engagement reporting, text: "Membership, event and activity numbers ready for your annual reports." }
 budget:
   title: Your budget goes to features you need
-  lead: "The Connect.CI platform has most of what a community needs. Your budget can add features to the platform that would be helpful for your program."
+  lead: "The Connect.CI platform has most of what a community needs. You fund the extras that would help your program."
   steps:
     - { n: "01", title: Start with what's built, text: "Launch your site on the shared platform with your name, your look and the features you need." }
     - { n: "02", title: Build what is new, text: "Fund development for the part of your program nobody has built yet." }
