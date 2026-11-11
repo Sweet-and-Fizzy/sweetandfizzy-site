@@ -92,7 +92,7 @@ chapters:
           alt: MGHPCC SC23 display panels
   - level: 3
     title: Animations & interactive kiosk
-    body: "**Drawing people in.** The kiosk runs an animated attract loop of researchers and their work, which entices people to step into the booth and explore the projects."
+    body: "**Drawing people in.** An animation of flipping squares shows researchers and their work, giving a sense of the range of featured projects."
     figures:
       - caption: The kiosk and its attract loop
         image:
