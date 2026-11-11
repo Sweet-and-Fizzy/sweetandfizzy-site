@@ -126,6 +126,8 @@ results:
     label: MCP servers for live ACCESS data, public at mcp.access-ci.org
   - n: "2"
     label: "model options: commercial or university-hosted open models"
+  - n: "11,000"
+    label: questions to the Q&A assistant, about 75% rated fully correct by reviewers
 prev:
   href: /work/
   label: All case stories
