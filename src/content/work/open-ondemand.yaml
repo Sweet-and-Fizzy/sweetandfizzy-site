@@ -97,9 +97,9 @@ chapters:
     body: |-
       **Credit for contributions from the community.** On the Open OnDemand Community Hub, built on Connect.CI, the Contributor Wall shows code, documentation, forum and Appverse contributions across the year, with a rotating Community Spotlight.
 
+      - A daily grid of GitHub and Discourse activity, shown for the whole community and on each member's profile
       - Custom badges, awarded automatically from contribution activity, or by hand for work that doesn't show up in the data
       - Spreadsheet upload to add many contributions at once
-      - A daily grid of GitHub and Discourse activity, shown for the whole community and on each member's profile
     link:
       href: https://openondemand.connectci.org/contributor-wall
       label: See the Contributor Wall
