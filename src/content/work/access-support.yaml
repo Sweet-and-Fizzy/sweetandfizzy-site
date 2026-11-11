@@ -40,7 +40,7 @@ chapters:
   - level: 2
     title: Our approach
     body: |-
-      **We started with what researchers need first.** We worked side by side with the ACCESS support team to decide what researchers need first: a knowledge base, a place to meet others doing similar work, and a clear way to reach a person. We built the portal on Drupal with custom modules, as part of Connect.CI, so it shares profiles and features with other research computing communities.
+      **We started with what researchers need first.** We worked with the ACCESS support team to decide what researchers need first: a knowledge base, a place to meet others doing similar work, and a clear way to reach a person. We built the portal on Drupal with custom modules, as part of Connect.CI, so it shares profiles and features with other research computing communities.
 
       The design is professional with a touch of whimsy. Bright shapes and plain language make a technical subject feel welcoming.
     figures:
