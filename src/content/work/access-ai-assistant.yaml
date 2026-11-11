@@ -95,11 +95,11 @@ chapters:
           src: ../../assets/work/access-ai-registration.jpg
           alt: "The ACCESS AI Assistant with an Event registration side pane for Introduction to GPU Programming: not registered yet, 40 seats left, and a Confirm registration button with the note Nothing is submitted until you confirm"
   - level: 3
-    title: Evaluation battery
+    title: How we test it
     body: |-
-      **Tested against questions experts write.** An answer can sound right and still be wrong. A researcher asked whether a system would be up next week. The documentation-only assistant said it was fully operational, but its maintenance had just been postponed. The agent read the live status feed and said so.
+      **Tested against questions experts write.** An answer can sound right and still be wrong. A researcher asked whether a system would be up next week. An assistant that only read the documentation said it was fully operational, but maintenance had just been postponed. Our agent checked the live status feed and got it right.
 
-      So we grade each answer on the facts it contains. Domain reviewers write the test questions and the facts a good answer must include. An automated judge grades every answer fact by fact, and human reviewers who never see its scores keep the judge honest. Checking the facts also catches errors in the documentation itself, which go back to the team that owns the page. The full method and results are in the paper.
+      We grade every answer on the facts it contains, and the process also catches errors in the documentation itself, which go back to the team that owns the page. The full method and results are in the paper below.
     figures:
       - wide: true
         process:
