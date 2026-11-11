@@ -36,7 +36,7 @@ goal:
   icon: "?"
   title: The goal
   body: |-
-    **A website as easy to use as the software.** Open OnDemand lets researchers use a supercomputer from a web browser, with nothing to install and no command line to learn. The Ohio Supercomputer Center has built it since 2015 with NSF support, and its community now spans the country and the world. The website needed to match the Open OnDemand brand, help each audience find what they need, and let institutions share what they know with each other.
+    **A front door for a growing community.** Open OnDemand lets researchers use a supercomputer from a web browser, with nothing to install and no command line to learn. The Ohio Supercomputer Center has built it since 2015 with NSF support, and its community now spans the country and the world. The website needed to match the Open OnDemand brand, help each audience find what they need, and let institutions share what they know with each other.
   pull: "More than 2,100 organizations run Open OnDemand. Its website has to work for all of them."
 chapters:
   - level: 2
