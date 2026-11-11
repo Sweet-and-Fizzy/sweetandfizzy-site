@@ -51,7 +51,7 @@ budget:
   steps:
     - { n: "01", title: Join, text: "Launch your site on the shared platform with your name, your look and the features you need." }
     - { n: "02", title: Build what is new, text: "Fund development for the part of your program nobody has built yet." }
-    - { n: "03", title: Everyone benefits, text: "Your improvements are available to the other communities on the platform, and you can use the new features others have built." }
+    - { n: "03", title: Everyone benefits, text: "What you build, others can use. What they build, you can use." }
 owners:
   title: Who builds and runs Connect.CI
   body: |-
