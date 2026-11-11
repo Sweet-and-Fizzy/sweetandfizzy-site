@@ -72,11 +72,11 @@ chapters:
   - level: 3
     title: Research projects
     body: |-
-      **A page and a video for every project.** A custom content type gives each research project its own page:
+      **A page for every project.** A custom content type gives each research project its own page:
 
-      - A video about the project
       - A short summary of the research
       - The researchers involved, with photos
+      - A video about the project, where there is one
     figures:
       - caption: A research project page
         image:
