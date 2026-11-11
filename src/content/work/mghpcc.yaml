@@ -101,7 +101,7 @@ chapters:
 today:
   icon: "!"
   title: Where it is today
-  body: "The first virtual booth went online in 2020, with a Minecraft model of the center and its five member universities, and kiosks featuring research projects. Each year since, the booth has highlighted new research."
+  body: "The first virtual booth went online in 2020, with a Minecraft model of the center and its five member universities, and kiosks featuring research projects. Each year the booth highlights new research."
   figures: []
 results:
   - n: "6"
