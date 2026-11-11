@@ -82,7 +82,7 @@ chapters:
   - level: 3
     title: UI design on the tools
     body: |-
-      **Designing the tools researchers plan with.** We designed the interfaces for ACCESS tools that help researchers plan their work:
+      We designed the interfaces for the ACCESS tools to be user-friendly and on brand, giving them a consistent look across ACCESS:
 
       - ARA, the ACCESS Resource Advisor, which helps researchers find the right resources
       - SDS, the Software Documentation Service, which shows the software installed on each system
