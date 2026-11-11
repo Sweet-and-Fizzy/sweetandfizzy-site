@@ -63,7 +63,7 @@ chapters:
   - level: 3
     title: AI Assistant
     body: |-
-      **Answers at any hour.** A Q&A assistant answers most user questions from the ACCESS documentation, and AI suggests tags for new posts based on what they say.
+      **Answers at any hour.** A Q&A assistant answers most user questions from the ACCESS documentation, and AI offers prompts for follow-up questions.
 
       That work led to our next step: the [ACCESS AI Assistant](/work/access-ai-assistant/), which also reads live system data.
     figures:
