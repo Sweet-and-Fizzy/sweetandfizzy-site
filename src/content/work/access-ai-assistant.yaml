@@ -95,7 +95,7 @@ chapters:
           src: ../../assets/work/access-ai-registration.jpg
           alt: "The ACCESS AI Assistant with an Event registration side pane for Introduction to GPU Programming: not registered yet, 40 seats left, and a Confirm registration button with the note Nothing is submitted until you confirm"
   - level: 3
-    title: How we test it
+    title: Evaluation battery
     body: |-
       **Tested against questions experts write.** An answer can sound right and still be wrong. A researcher asked whether a system would be up next week. An assistant that only read the documentation said it was fully operational, but maintenance had just been postponed. Our agent checked the live status feed and got it right.
 
