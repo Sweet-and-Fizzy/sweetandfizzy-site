@@ -94,7 +94,7 @@ chapters:
           alt: The Software Documentation Service
   - level: 3
     title: Researcher stories
-    body: "**Showing what researchers do with ACCESS.** Tools in Practice: Researcher Stories record each researcher's institution, research topic, the ACCESS tools and software they used, and the allocation behind the work, so other researchers can see what is possible. The same format now runs on the Open OnDemand Community Hub as Classroom Stories."
+    body: "**Showing what researchers do with ACCESS.** Tools in Practice: Researcher Stories let new researchers see ACCESS tools and industry software used in context. They can also read about the ACCESS allocations behind the work. The same format now runs on the Open OnDemand Community Hub as Classroom Stories."
     figures:
       - caption: Tools in Practice, the ACCESS researcher stories
         image:
