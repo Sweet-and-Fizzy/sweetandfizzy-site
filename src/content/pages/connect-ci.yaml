@@ -22,7 +22,7 @@ communities:
     - { name: Campus Champions, href: "https://campuschampions.cyberinfrastructure.org/", logo: ../../assets/logos/campus-champions.svg, text: "The home of a national network of research computing facilitators: how to join, a community directory and mentorship." }
     - { name: CCMNet, href: "https://ccmnet.org/", logo: ../../assets/logos/ccmnet.jpg, text: "The Cyberinfrastructure Community-wide Mentorship Network, running structured mentor and mentee engagements." }
     - { name: Open OnDemand Community Hub, href: "https://ondemand.connectci.org/", logo: ../../assets/logos/ood-hub.svg, text: "The home of the Open OnDemand community, including the Appverse app catalog and contributor wall." }
-    - { name: Pennsylvania Science DMZ, href: "https://pasciencedmz.connectci.org/", logo: ../../assets/logos/pa-science-dmz.png, text: "A projects portal that pairs faculty research across Pennsylvania with student researchers and IT expertise, using the PA Science DMZ network." }
+    - { name: Pennsylvania Science DMZ, href: "https://pasciencedmz.connectci.org/", logo: ../../assets/logos/pa-science-dmz.png, text: "A portal that pairs faculty research across PA with student researchers and IT expertise, using the PA Science DMZ network." }
     - { name: Regional cyberteams, href: "https://necyberteam.org/", logo: ../../assets/logos/ne-cyberteam.png, text: "Where Connect.CI started: project workflows for regional cyberteams, beginning with the Northeast Cyberteam." }
 features:
   title: What your community gets on day one
