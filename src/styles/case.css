@@ -81,7 +81,7 @@ nav.pn a{text-decoration:none}
 .ch-fig .shotx img{height:100%}
 @media (max-width:700px){.kicker{font-size:28px}.cs-name{font-size:40px}.cs-h1{font-size:36px}.res-n{font-size:44px}.tq-text{font-size:28px}}
 /* Wide figures (diagrams): full width under the story, natural aspect ratio */
-.ch-row.ch-wide{grid-template-columns:minmax(0,1fr)}
+.ch-row.ch-wide{grid-template-columns:minmax(0,1fr);gap:28px}
 .ch-row.ch-wide .story{max-width:760px}
 .shotx.shot-wide{aspect-ratio:auto;background:#ffffff;border-color:#d6d6d6;padding:16px}
 .shotx.shot-wide img{height:auto;object-fit:contain}
