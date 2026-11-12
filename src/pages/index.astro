@@ -76,7 +76,7 @@ const d = (i: number) => `${(i * 0.1).toFixed(1)}s`;
           )}
 
           <div style="display: flex; flex-direction: column; gap: 40px; padding-bottom: 24px">
-            <div class="wk-head rv"><h3 style={`color: #111111; background: ${c}`}>{a.workTitle}</h3><span class="rule" aria-hidden="true" style={`background: ${c}`}></span></div>
+            <div class="wk-head rv"><h3 style={`color: #111111; background: ${a.color === 'orange' ? '#f3604a' : c}`}>{a.workTitle}</h3><span class="rule" aria-hidden="true" style={`background: ${a.color === 'orange' ? '#f3604a' : c}`}></span></div>
             <div class="two">
               {a.work.map((w, i) => {
                 const inner = (
