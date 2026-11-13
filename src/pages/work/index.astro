@@ -4,6 +4,7 @@ import Pic from '../../components/Pic.astro';
 import Icon from '../../components/Icon.astro';
 import CtaBand from '../../components/sections/CtaBand.astro';
 import { getPhase1Work } from '../../data/work';
+import '@fontsource/space-mono/latin-700.css';
 
 const work = await getPhase1Work();
 ---
@@ -15,16 +16,10 @@ const work = await getPhase1Work();
         <h1 id="st-title" class="h1-xl" style="max-width: 900px">How we help research computing communities</h1>
         <p style="margin: 0; color: #c8c8c8; max-width: 760px; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.45">The goal, what we built, and where each project is today.</p>
       </div>
-      <svg class="st-icon" aria-hidden="true" width="300" height="300" viewBox="0 0 300 300">
-        <!-- Three people, drawn like the logo's ampersand: white shapes with blue, yellow and red
-             offset shadows. The shadows slide out once, under 2s; off with reduced motion. -->
-        <g class="st-sh st-sh1"><circle cx="78" cy="126" r="26" fill="#5abdff"></circle><path d="M28 250a50 50 0 0 1 100 0z" fill="#5abdff"></path></g>
-        <g><circle cx="66" cy="114" r="26" fill="#ffffff"></circle><path d="M16 238a50 50 0 0 1 100 0z" fill="#ffffff"></path></g>
-        <g class="st-sh st-sh2"><circle cx="234" cy="126" r="26" fill="#fcee21"></circle><path d="M184 250a50 50 0 0 1 100 0z" fill="#fcee21"></path></g>
-        <g><circle cx="222" cy="114" r="26" fill="#ffffff"></circle><path d="M172 238a50 50 0 0 1 100 0z" fill="#ffffff"></path></g>
-        <g class="st-sh st-sh3"><circle cx="156" cy="108" r="32" fill="#ef4326"></circle><path d="M94 272a62 62 0 0 1 124 0z" fill="#ef4326"></path></g>
-        <g><circle cx="144" cy="96" r="32" fill="#ffffff" stroke="#111111" stroke-width="10" paint-order="stroke"></circle><path d="M82 260a62 62 0 0 1 124 0z" fill="#ffffff" stroke="#111111" stroke-width="10" paint-order="stroke"></path></g>
-      </svg>
+      <!-- Keyboard characters set large in Space Mono: quote marks around a smiley, for the people
+           behind each story. White glyphs with the logo's blue, red and yellow offsets. The smiley winks
+           once (under 2s); off with reduced motion. -->
+      <p class="st-ascii" aria-hidden="true"><span class="sa-q" style="--c: #5abdff">“</span><span class="sa-eye" style="--c: #ef4326"><span class="sa-e1">:</span><span class="sa-e2">;</span></span><span style="--c: #ef4326">)</span><span class="sa-q" style="--c: #fcee21">”</span></p>
     </div>
   </section>
   <section aria-label="Case stories" style="background: #ffffff">
@@ -50,13 +45,18 @@ const work = await getPhase1Work();
 </Base>
 <style is:global>
   .st-top{display:flex;align-items:center;justify-content:space-between;gap:64px}
-  .st-icon{display:block;flex:none}
+  .st-ascii{margin:0;flex:none;display:flex;align-items:center;font-family:'Space Mono',monospace;font-weight:700;font-size:150px;line-height:1;letter-spacing:-.08em;color:#ffffff;user-select:none}
+  .st-ascii>span{text-shadow:10px 10px 0 var(--c)}
+  .st-ascii .sa-q{font-size:1.15em}
+  .sa-eye{position:relative;display:inline-block}
+  .sa-e2{position:absolute;left:0;top:0;opacity:0}
   @media (prefers-reduced-motion:no-preference){
-    .st-sh{animation:st-slide .7s cubic-bezier(.2,.8,.3,1) both}
-    .st-sh1{animation-delay:.2s}.st-sh2{animation-delay:.35s}.st-sh3{animation-delay:.5s}
+    .sa-e1{animation:sa-wink1 .45s steps(1) 1.2s 1}
+    .sa-e2{animation:sa-wink2 .45s steps(1) 1.2s 1}
   }
-  @keyframes st-slide{from{transform:translate(-12px,-12px)}to{transform:translate(0,0)}}
-  @media (max-width:760px){.st-top{flex-direction:column;align-items:flex-start}.st-icon{width:150px;height:150px}}
+  @keyframes sa-wink1{0%,100%{opacity:0}}
+  @keyframes sa-wink2{0%,100%{opacity:1}}
+  @media (max-width:760px){.st-top{flex-direction:column;align-items:flex-start}.st-ascii{font-size:88px}}
   .st-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px 32px}
   @media (max-width:760px){.st-grid{grid-template-columns:1fr}}
   .st-name{display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#111111;border-top:6px solid #5abdff;color:#ffffff}
