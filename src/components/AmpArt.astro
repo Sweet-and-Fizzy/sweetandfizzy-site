@@ -9,8 +9,12 @@
 // direction of the 3D offset) joins them: each amp-cut mask trims the color past
 // that line and the small polygons fill the gap inside it. The yellow's bottom
 // and right edges follow the curl's own outline, shifted by the 3D offset.
+// Pass size (and x, y) to draw it inside another SVG, as the case stories hero does.
+interface Props { x?: number; y?: number; size?: number }
+const { x, y, size } = Astro.props;
+const nested = size !== undefined;
 ---
-<svg viewBox="204 5 70 70" aria-hidden="true" class="amp-art">
+<svg viewBox="204 5 70 70" aria-hidden="true" class={nested ? undefined : 'amp-art'} x={nested ? x ?? 0 : undefined} y={nested ? y ?? 0 : undefined} width={nested ? size : undefined} height={nested ? size : undefined}>
   <defs>
       <mask id="amp-cut-blue" maskUnits="userSpaceOnUse" x="-10" y="-10" width="90" height="90"><rect x="-10" y="-10" width="90" height="90" fill="#fff"/><polygon fill="#000" points="33.96,56.11 31.49,55.08 32.07,53.7 34.54,54.73"/></mask>
       <mask id="amp-cut-blue-top" maskUnits="userSpaceOnUse" x="-10" y="-10" width="90" height="90"><rect x="-10" y="-10" width="90" height="90" fill="#fff"/><polygon fill="#000" points="29.34,9.53 36.15,9.78 36.22,7.78 29.41,7.54"/><polygon fill="#000" points="35.39,18.6 39.66,19.54 39.23,21.49 34.96,20.56"/></mask>

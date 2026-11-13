@@ -4,7 +4,7 @@ import Pic from '../../components/Pic.astro';
 import Icon from '../../components/Icon.astro';
 import CtaBand from '../../components/sections/CtaBand.astro';
 import { getPhase1Work } from '../../data/work';
-import '@fontsource/space-mono/latin-700.css';
+import AmpArt from '../../components/AmpArt.astro';
 
 const work = await getPhase1Work();
 ---
@@ -16,10 +16,21 @@ const work = await getPhase1Work();
         <h1 id="st-title" class="h1-xl" style="max-width: 900px">How we help research computing communities</h1>
         <p style="margin: 0; color: #c8c8c8; max-width: 760px; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.45">The goal, what we built, and where each project is today.</p>
       </div>
-      <!-- Keyboard characters set large in Space Mono: quote marks around a smiley, for the people
-           behind each story. White glyphs with the logo's blue, red and yellow offsets. The smiley winks
-           once (under 2s); off with reduced motion. -->
-      <p class="st-ascii" aria-hidden="true"><span class="sa-q" style="--c: #5abdff">“</span><span class="sa-eye" style="--c: #ef4326"><span class="sa-e1">:</span><span class="sa-e2">;</span></span><span style="--c: #ef4326">)</span><span class="sa-q" style="--c: #fcee21">”</span></p>
+      <svg class="st-icon" aria-hidden="true" width="300" height="300" viewBox="0 0 300 300">
+        <!-- The logo's ampersand in a speech bubble. The bubble's white outline gets the logo's 3D color
+             offset: blue along the top and left, red along the right and bottom, yellow on the tail. -->
+        <defs>
+          <path id="st-b" d="M150 44 C 222 44 270 84 270 132 C 270 180 222 218 150 218 C 136 218 122 216 110 213 C 96 234 76 248 50 254 C 66 238 74 222 76 204 C 46 188 30 162 30 132 C 30 84 78 44 150 44 Z" fill="none" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"></path>
+          <clipPath id="st-cb"><polygon points="0,0 300,0 300,40 40,230 0,230"></polygon></clipPath>
+          <clipPath id="st-cr"><polygon points="300,40 300,300 140,300 140,210 40,230"></polygon></clipPath>
+          <clipPath id="st-cy"><polygon points="0,205 140,205 140,300 0,300"></polygon></clipPath>
+        </defs>
+        <g stroke="#5abdff" clip-path="url(#st-cb)"><use href="#st-b" transform="translate(0.8 0.8)"></use><use href="#st-b" transform="translate(1.6 1.6)"></use><use href="#st-b" transform="translate(2.4 2.4)"></use><use href="#st-b" transform="translate(3.2 3.2)"></use><use href="#st-b" transform="translate(4.0 4.0)"></use><use href="#st-b" transform="translate(4.8 4.8)"></use></g>
+        <g stroke="#ef4326" clip-path="url(#st-cr)"><use href="#st-b" transform="translate(0.8 0.8)"></use><use href="#st-b" transform="translate(1.6 1.6)"></use><use href="#st-b" transform="translate(2.4 2.4)"></use><use href="#st-b" transform="translate(3.2 3.2)"></use><use href="#st-b" transform="translate(4.0 4.0)"></use><use href="#st-b" transform="translate(4.8 4.8)"></use></g>
+        <g stroke="#fcee21" clip-path="url(#st-cy)"><use href="#st-b" transform="translate(0.8 0.8)"></use><use href="#st-b" transform="translate(1.6 1.6)"></use><use href="#st-b" transform="translate(2.4 2.4)"></use><use href="#st-b" transform="translate(3.2 3.2)"></use><use href="#st-b" transform="translate(4.0 4.0)"></use><use href="#st-b" transform="translate(4.8 4.8)"></use></g>
+        <use href="#st-b" stroke="#ffffff"></use>
+        <AmpArt x={97} y={80} size={106} />
+      </svg>
     </div>
   </section>
   <section aria-label="Case stories" style="background: #ffffff">
@@ -45,18 +56,8 @@ const work = await getPhase1Work();
 </Base>
 <style is:global>
   .st-top{display:flex;align-items:center;justify-content:space-between;gap:64px}
-  .st-ascii{margin:0;flex:none;display:flex;align-items:center;font-family:'Space Mono',monospace;font-weight:700;font-size:150px;line-height:1;letter-spacing:-.08em;color:#ffffff;user-select:none}
-  .st-ascii>span{text-shadow:10px 10px 0 var(--c)}
-  .st-ascii .sa-q{font-size:1.15em}
-  .sa-eye{position:relative;display:inline-block}
-  .sa-e2{position:absolute;left:0;top:0;opacity:0}
-  @media (prefers-reduced-motion:no-preference){
-    .sa-e1{animation:sa-wink1 .45s steps(1) 1.2s 1}
-    .sa-e2{animation:sa-wink2 .45s steps(1) 1.2s 1}
-  }
-  @keyframes sa-wink1{0%,100%{opacity:0}}
-  @keyframes sa-wink2{0%,100%{opacity:1}}
-  @media (max-width:760px){.st-top{flex-direction:column;align-items:flex-start}.st-ascii{font-size:88px}}
+  .st-icon{display:block;flex:none}
+  @media (max-width:760px){.st-top{flex-direction:column;align-items:flex-start}.st-icon{width:170px;height:170px}}
   .st-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px 32px}
   @media (max-width:760px){.st-grid{grid-template-columns:1fr}}
   .st-name{display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#111111;border-top:6px solid #5abdff;color:#ffffff}
