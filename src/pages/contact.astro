@@ -11,7 +11,7 @@ import { site } from '../data/site';
         <h1 id="ct-title" class="h1-xl">{contact.title}</h1>
         <p style="margin: 0; color: #c8c8c8; max-width: 760px; font-size: clamp(19px, 2vw, 22px)">{contact.body}</p>
       </div>
-      <svg class="ct-icon" aria-hidden="true" width="300" height="300" viewBox="0 0 300 300">
+      <svg class="ct-icon" aria-hidden="true" width="225" height="225" viewBox="0 0 300 300">
         <!-- An open envelope, drawn like the agents and publications heroes: flat shapes, solid offset shadow.
              The letter slides up, then three fizz bubbles pop in. Plays once, under 2s; off with reduced motion. -->
         <path fill="#fcee21" d="M44 164h220v120H44z"></path>
@@ -62,7 +62,7 @@ import { site } from '../data/site';
   }
   @keyframes ct-rise{from{transform:translateY(80px)}to{transform:translateY(0)}}
   @keyframes ct-pop{from{transform:translateY(24px) scale(0)}to{transform:translateY(0) scale(1)}}
-  @media (max-width:760px){.ct-top{flex-direction:column;align-items:flex-start}.ct-icon{width:150px;height:150px}}
+  @media (max-width:760px){.ct-top{flex-direction:column;align-items:flex-start}.ct-icon{width:113px;height:113px}}
   .ct-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:48px 64px;align-items:start}
   .ct-side{display:flex;flex-direction:column;gap:20px;padding:28px;border:4px solid #5abdff}
   .ct-side .flex-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px}
