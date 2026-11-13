@@ -9,10 +9,35 @@ const work = await getPhase1Work();
 ---
 <Base title="Case stories" description="How Sweet & Fizzy Digital helps research computing communities: ACCESS Support, the ACCESS AI Assistant, Open OnDemand and MGHPCC.">
   <section class="page-hero" aria-labelledby="st-title">
-    <div class="wrap hero-in" style="padding-top: 80px; padding-bottom: 88px; display: flex; flex-direction: column; gap: 20px">
-      <p class="eyebrow-xl" style="color: #5abdff">Case stories</p>
-      <h1 id="st-title" class="h1-xl" style="max-width: 900px">How we help research computing communities</h1>
-      <p style="margin: 0; color: #c8c8c8; max-width: 760px; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.45">The goal, what we built, and where each project is today.</p>
+    <div class="wrap hero-in st-top" style="padding-top: 80px; padding-bottom: 88px">
+      <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+        <p class="eyebrow-xl" style="color: #5abdff">Case stories</p>
+        <h1 id="st-title" class="h1-xl" style="max-width: 900px">How we help research computing communities</h1>
+        <p style="margin: 0; color: #c8c8c8; max-width: 760px; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.45">The goal, what we built, and where each project is today.</p>
+      </div>
+      <svg class="st-icon" aria-hidden="true" width="300" height="300" viewBox="0 0 300 300">
+        <!-- A browser window with a project page and a small results card, drawn like the other heroes:
+             flat shapes, solid offset shadows. The bars grow in once, under 2s; off with reduced motion. -->
+        <path fill="#5abdff" d="M44 44h226v170H44z"></path>
+        <path fill="#ffffff" d="M30 30h226v170H30z"></path>
+        <path fill="#d6d6d6" d="M30 30h226v28H30z"></path>
+        <g fill="#111111"><circle cx="48" cy="44" r="5"></circle><circle cx="64" cy="44" r="5"></circle><circle cx="80" cy="44" r="5"></circle></g>
+        <path fill="#d6d6d6" d="M48 76h88v66H48z"></path>
+        <g fill="#111111">
+          <rect x="150" y="80" width="88" height="10"></rect>
+          <rect x="150" y="100" width="66" height="10"></rect>
+          <rect x="150" y="120" width="78" height="10"></rect>
+          <rect x="48" y="160" width="110" height="10"></rect>
+        </g>
+        <path fill="#fcee21" d="M164 164h120v120H164z"></path>
+        <path fill="#ffffff" d="M150 150h120v120H150z"></path>
+        <g class="st-bars">
+          <rect x="170" y="210" width="22" height="40" fill="#5abdff"></rect>
+          <rect x="199" y="188" width="22" height="62" fill="#fcee21"></rect>
+          <rect x="228" y="166" width="22" height="84" fill="#ef4326"></rect>
+        </g>
+        <rect x="164" y="250" width="92" height="4" fill="#111111"></rect>
+      </svg>
     </div>
   </section>
   <section aria-label="Case stories" style="background: #ffffff">
@@ -37,6 +62,16 @@ const work = await getPhase1Work();
   <CtaBand title="Have something like this in mind?" body="Tell us about your program and what your community needs." button="Talk to us" href="/contact/?audience=program" secondary={{ label: 'See what we do', href: '/#research' }} />
 </Base>
 <style is:global>
+  .st-top{display:flex;align-items:center;justify-content:space-between;gap:64px}
+  .st-icon{display:block;flex:none}
+  @media (prefers-reduced-motion:no-preference){
+    .st-bars rect{transform-box:fill-box;transform-origin:bottom;animation:st-grow .6s cubic-bezier(.2,.8,.3,1) both}
+    .st-bars rect:nth-child(1){animation-delay:.3s}
+    .st-bars rect:nth-child(2){animation-delay:.5s}
+    .st-bars rect:nth-child(3){animation-delay:.7s}
+  }
+  @keyframes st-grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  @media (max-width:760px){.st-top{flex-direction:column;align-items:flex-start}.st-icon{width:150px;height:150px}}
   .st-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px 32px}
   @media (max-width:760px){.st-grid{grid-template-columns:1fr}}
   .st-name{display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#111111;border-top:6px solid #5abdff;color:#ffffff}
