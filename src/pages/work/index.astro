@@ -16,27 +16,14 @@ const work = await getPhase1Work();
         <p style="margin: 0; color: #c8c8c8; max-width: 760px; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.45">The goal, what we built, and where each project is today.</p>
       </div>
       <svg class="st-icon" aria-hidden="true" width="300" height="300" viewBox="0 0 300 300">
-        <!-- A browser window with a project page and a small results card, drawn like the other heroes:
-             flat shapes, solid offset shadows. The bars grow in once, under 2s; off with reduced motion. -->
-        <path fill="#5abdff" d="M44 44h226v170H44z"></path>
-        <path fill="#ffffff" d="M30 30h226v170H30z"></path>
-        <path fill="#d6d6d6" d="M30 30h226v28H30z"></path>
-        <g fill="#111111"><circle cx="48" cy="44" r="5"></circle><circle cx="64" cy="44" r="5"></circle><circle cx="80" cy="44" r="5"></circle></g>
-        <path fill="#d6d6d6" d="M48 76h88v66H48z"></path>
-        <g fill="#111111">
-          <rect x="150" y="80" width="88" height="10"></rect>
-          <rect x="150" y="100" width="66" height="10"></rect>
-          <rect x="150" y="120" width="78" height="10"></rect>
-          <rect x="48" y="160" width="110" height="10"></rect>
-        </g>
-        <path fill="#fcee21" d="M164 164h120v120H164z"></path>
-        <path fill="#ffffff" d="M150 150h120v120H150z"></path>
-        <g class="st-bars">
-          <rect x="170" y="210" width="22" height="40" fill="#5abdff"></rect>
-          <rect x="199" y="188" width="22" height="62" fill="#fcee21"></rect>
-          <rect x="228" y="166" width="22" height="84" fill="#ef4326"></rect>
-        </g>
-        <rect x="164" y="250" width="92" height="4" fill="#111111"></rect>
+        <!-- Three people, drawn like the logo's ampersand: white shapes with blue, yellow and red
+             offset shadows. The shadows slide out once, under 2s; off with reduced motion. -->
+        <g class="st-sh st-sh1"><circle cx="78" cy="126" r="26" fill="#5abdff"></circle><path d="M28 250a50 50 0 0 1 100 0z" fill="#5abdff"></path></g>
+        <g><circle cx="66" cy="114" r="26" fill="#ffffff"></circle><path d="M16 238a50 50 0 0 1 100 0z" fill="#ffffff"></path></g>
+        <g class="st-sh st-sh2"><circle cx="234" cy="126" r="26" fill="#fcee21"></circle><path d="M184 250a50 50 0 0 1 100 0z" fill="#fcee21"></path></g>
+        <g><circle cx="222" cy="114" r="26" fill="#ffffff"></circle><path d="M172 238a50 50 0 0 1 100 0z" fill="#ffffff"></path></g>
+        <g class="st-sh st-sh3"><circle cx="156" cy="108" r="32" fill="#ef4326"></circle><path d="M94 272a62 62 0 0 1 124 0z" fill="#ef4326"></path></g>
+        <g><circle cx="144" cy="96" r="32" fill="#ffffff" stroke="#111111" stroke-width="10" paint-order="stroke"></circle><path d="M82 260a62 62 0 0 1 124 0z" fill="#ffffff" stroke="#111111" stroke-width="10" paint-order="stroke"></path></g>
       </svg>
     </div>
   </section>
@@ -65,12 +52,10 @@ const work = await getPhase1Work();
   .st-top{display:flex;align-items:center;justify-content:space-between;gap:64px}
   .st-icon{display:block;flex:none}
   @media (prefers-reduced-motion:no-preference){
-    .st-bars rect{transform-box:fill-box;transform-origin:bottom;animation:st-grow .6s cubic-bezier(.2,.8,.3,1) both}
-    .st-bars rect:nth-child(1){animation-delay:.3s}
-    .st-bars rect:nth-child(2){animation-delay:.5s}
-    .st-bars rect:nth-child(3){animation-delay:.7s}
+    .st-sh{animation:st-slide .7s cubic-bezier(.2,.8,.3,1) both}
+    .st-sh1{animation-delay:.2s}.st-sh2{animation-delay:.35s}.st-sh3{animation-delay:.5s}
   }
-  @keyframes st-grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  @keyframes st-slide{from{transform:translate(-12px,-12px)}to{transform:translate(0,0)}}
   @media (max-width:760px){.st-top{flex-direction:column;align-items:flex-start}.st-icon{width:150px;height:150px}}
   .st-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px 32px}
   @media (max-width:760px){.st-grid{grid-template-columns:1fr}}
