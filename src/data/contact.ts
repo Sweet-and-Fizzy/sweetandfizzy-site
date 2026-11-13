@@ -5,7 +5,7 @@ export const contact = {
   waysTitle: 'Three ways to start',
   ways: [
     { title: 'Request a 30-minute call', text: "and we'll send some times that work." },
-    { title: 'Send us the solicitation', text: "and your deadline, and we'll tell you what's doable." },
+    { title: 'Send us the solicitation', text: "and your deadline, and we’ll help scope a plan." },
     { title: 'Book a discovery sprint', text: 'to scope the work: $3,500 for one week, $9,500 for three.' },
   ],
   options: [
