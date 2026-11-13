@@ -1,7 +1,7 @@
 // Contact page copy, from the Draft copy tab.
 export const contact = {
   title: 'Tell us what you are working on',
-  body: 'A program, a proposal, a product or a website. Lissie or Andrew will reply within two days.',
+  body: 'A program, a proposal, a product, or a website. Lissie or Andrew will reply within two days.',
   waysTitle: 'Three ways to start',
   ways: [
     { title: 'Request a 30-minute call', text: "and we'll send some times that work." },
@@ -13,7 +13,7 @@ export const contact = {
     { value: 'program', label: 'A research computing program' },
     { value: 'proposal', label: 'A proposal with a deadline' },
     { value: 'startup', label: 'A startup or product' },
-    { value: 'website', label: 'A website, logo or brand' },
+    { value: 'website', label: 'A website, logo, or brand' },
     { value: 'other', label: 'Something else' },
   ],
   deadlineHint: 'Example: NSF CSSI due March 2',
