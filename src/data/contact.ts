@@ -4,9 +4,9 @@ export const contact = {
   body: 'A program, a proposal, a product or a website. Lissie or Andrew will reply within two days.',
   waysTitle: 'Three ways to start',
   ways: [
-    { title: 'A 30-minute call.', text: "Say so in your message, and we'll send a few times that work." },
-    { title: 'Proposal help.', text: 'Send the solicitation and your deadline, and we will tell you what is realistic.' },
-    { title: 'A discovery sprint', text: 'when you are ready to scope the work. $3,500 for one week or $9,500 for three.' },
+    { title: 'Request a 30-minute call', text: "and we'll send some times that work." },
+    { title: 'Send us the solicitation', text: "and your deadline, and we'll tell you what's doable." },
+    { title: 'Book a discovery sprint', text: 'to scope the work: $3,500 for one week, $9,500 for three.' },
   ],
   options: [
     { value: '', label: 'Choose one' },
