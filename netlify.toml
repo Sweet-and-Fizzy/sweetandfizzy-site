@@ -5,12 +5,6 @@
 [build.environment]
   NODE_VERSION = "24"
 
-# Remove at DNS cutover, when the site goes public.
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "noindex"
-
 # Astro puts a content hash in every file name under /_astro/ (CSS, JS, fonts,
 # optimized images), so a changed file always gets a new URL. Cache them for a
 # year. HTML keeps Netlify's default (revalidate every visit) so deploys show at once.
@@ -32,3 +26,103 @@
   for = "/apple-touch-icon.png"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+# URLs from the old WordPress site (sitemap_index.xml as of 2026-11-16), so
+# links and search results keep landing somewhere useful. 301 = permanent.
+[[redirects]]
+  from = "/access-support-portal/"
+  to = "/work/access-support/"
+  status = 301
+[[redirects]]
+  from = "/open-ondemand/"
+  to = "/work/open-ondemand/"
+  status = 301
+[[redirects]]
+  from = "/mghpcc-sc/"
+  to = "/work/mghpcc/"
+  status = 301
+[[redirects]]
+  from = "/campus-champions/"
+  to = "/connect-ci/"
+  status = 301
+[[redirects]]
+  from = "/ask-ci/"
+  to = "/connect-ci/"
+  status = 301
+[[redirects]]
+  from = "/nerc/"
+  to = "/#research"
+  status = 301
+[[redirects]]
+  from = "/emily-dickinson-museum/"
+  to = "/#websites"
+  status = 301
+[[redirects]]
+  from = "/molly-burnham/"
+  to = "/#websites"
+  status = 301
+[[redirects]]
+  from = "/pdmcbride/"
+  to = "/#websites"
+  status = 301
+[[redirects]]
+  from = "/lighthouse-holyoke/"
+  to = "/#websites"
+  status = 301
+[[redirects]]
+  from = "/erm/"
+  to = "/#websites"
+  status = 301
+[[redirects]]
+  from = "/wordpress-hosting-maintenance/"
+  to = "/#websites"
+  status = 301
+[[redirects]]
+  from = "/banktell/"
+  to = "/#startups"
+  status = 301
+[[redirects]]
+  from = "/jemurai/"
+  to = "/#startups"
+  status = 301
+[[redirects]]
+  from = "/eggz-social-investing-platform/"
+  to = "/#startups"
+  status = 301
+[[redirects]]
+  from = "/corvid-partners/"
+  to = "/#startups"
+  status = 301
+[[redirects]]
+  from = "/clients/"
+  to = "/work/"
+  status = 301
+[[redirects]]
+  from = "/demo-reel/"
+  to = "/work/"
+  status = 301
+[[redirects]]
+  from = "/digital-marketing-and-analytics/"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/category/*"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/author/*"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/feed/*"
+  to = "/"
+  status = 301
+# Search Console may still have the old WordPress sitemap registered.
+[[redirects]]
+  from = "/sitemap_index.xml"
+  to = "/sitemap-index.xml"
+  status = 301
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301
