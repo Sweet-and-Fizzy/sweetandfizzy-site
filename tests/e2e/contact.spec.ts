@@ -16,7 +16,7 @@ test('a successful send shows thanks and pushes one lead event', async ({ page }
   await page.getByLabel('Name', { exact: true }).fill('Ada');
   await page.getByLabel('Email', { exact: true }).fill('ada@example.org');
   await page.getByLabel('Institution or organization').fill('Example U');
-  await page.getByLabel('A few lines about it').fill('A CSSI proposal.');
+  await page.getByLabel('How can we help?').fill('A CSSI proposal.');
   await page.getByRole('button', { name: 'Send' }).click();
   await expect(page.getByText('Lissie or Andrew will reply within two days.').last()).toBeVisible();
   await expect(page.getByRole('link', { name: /book a call/i })).toHaveCount(0);
@@ -30,7 +30,7 @@ test('a failed send shows the error and moves focus to it', async ({ page }) => 
   await page.goto('/contact/?audience=website');
   await page.getByLabel('Name', { exact: true }).fill('Ada');
   await page.getByLabel('Email', { exact: true }).fill('ada@example.org');
-  await page.getByLabel('A few lines about it').fill('A new site.');
+  await page.getByLabel('How can we help?').fill('A new site.');
   await page.getByRole('button', { name: 'Send' }).click();
   const err = page.getByRole('alert');
   await expect(err).toContainText('That did not send');
@@ -51,7 +51,7 @@ test('the send button shows progress and blocks a second send', async ({ page })
   await page.goto('/contact/?audience=website');
   await page.getByLabel('Name', { exact: true }).fill('Ada');
   await page.getByLabel('Email', { exact: true }).fill('ada@example.org');
-  await page.getByLabel('A few lines about it').fill('A new site.');
+  await page.getByLabel('How can we help?').fill('A new site.');
   await page.getByRole('button', { name: 'Send' }).click();
   const btn = page.getByRole('button', { name: /Sending/ });
   await expect(btn).toBeDisabled();

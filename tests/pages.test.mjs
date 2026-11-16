@@ -5,9 +5,10 @@ import { readFileSync, existsSync } from 'node:fs';
 const read = (p) => readFileSync(`dist/${p}/index.html`, 'utf8');
 const built = existsSync('dist/index.html');
 
-test('Connect.CI page shows the three tiers and onboarding price', { skip: !built }, () => {
+// Tiers are hidden for now (membership.hidden in connect-ci.yaml); flip this test back when they return.
+test('Connect.CI page keeps the membership tiers hidden', { skip: !built }, () => {
   const html = read('connect-ci');
-  for (const t of ['Community', 'Program', 'Partner', '$7,500', 'From $15,000', 'Onboarding starts at $5,000']) assert.ok(html.includes(t), t);
+  for (const t of ['$7,500', 'From $15,000', 'Onboarding starts at']) assert.equal(html.includes(t), false, t);
 });
 
 test('Connect.CI FAQ uses native details elements', { skip: !built }, () => {
